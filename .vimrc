@@ -79,7 +79,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'sheerun/vim-polyglot'
 
 Plug 'preservim/nerdcommenter'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 
 Plug 'preservim/nerdtree'
@@ -129,9 +129,9 @@ let g:rainbow_active = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indentLine
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_char = '│'
-let g:indentLine_concealcursor = ''
-let g:indentLine_bufTypeExclude = ['help', 'terminal']
+" let g:indentLine_char = '│'
+" let g:indentLine_concealcursor = ''
+" let g:indentLine_bufTypeExclude = ['help', 'terminal']
 " let g:indentLine_conceallevel=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
