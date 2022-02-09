@@ -8,7 +8,6 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 
 ### CLI
 
-
 * [asdf](http://asdf-vm.com)
 * [bat](https://github.com/sharkdp/bat)
 * [blueutil](https://github.com/toy/blueutil) (macOS)
@@ -26,7 +25,7 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 * [pyenv](https://github.com/pyenv/pyenv)
 * [ranger](https://ranger.github.io)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
-* [spaceship](https://spaceship-prompt.sh)
+* [starship](https://starship.rs)
 * [tldr](https://tldr.sh)
 * [tmux](https://tmux.github.io)
 * [vifm](https://vifm.info)
@@ -89,6 +88,8 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 * [IINA](https://iina.io) (macOS)
 * [Itsycal](https://mowglii.com/itsycal) (macOS)
 * [Kap](https://getkap.co) (macOS)
+* [MonitorControl](https://github.com/MonitorControl/MonitorControl) (macOS)
+* [QuickShade](https://apps.apple.com/us/app/quickshade/id931571202?mt=12)
 * [SideNotes](https://apptorium.com/sidenotes) (macOS)
 * [The Unarchiver](https://theunarchiver.com) (macOS)
 * [Transmission](https://transmissionbt.com) (macOS)
