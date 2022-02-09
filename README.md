@@ -26,6 +26,7 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 * [ranger](https://ranger.github.io)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [starship](https://starship.rs)
+    * [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 * [tldr](https://tldr.sh)
 * [tmux](https://tmux.github.io)
 * [vifm](https://vifm.info)
