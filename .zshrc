@@ -5,9 +5,12 @@ export VISUAL=vim
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
+# go
+export GOPATH=$HOME/go-workspace
+export PATH=$PATH:$GOPATH/bin
+
 # conda
 export PATH=/usr/local/anaconda3/bin:$PATH
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -23,39 +26,28 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# go
-export GOPATH=$HOME/go-workspace
-export PATH=$PATH:$GOPATH/bin
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# >>> gcloud >>>
+# gcloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/rochakgupta/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rochakgupta/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/rochakgupta/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rochakgupta/google-cloud-sdk/completion.zsh.inc'; fi
-# <<< gcloud <<<
 
-# >>> nvm >>>
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# <<< nvm <<<
-
-# >>> android >>>
+# android
 # export PATH=~/Library/Android/sdk/platform-tools:$PATH
-# <<< android <<<
 
-# >>> spaceship >>>
-# autoload -U promptinit; promptinit
-# prompt spaceship
-# <<< spaceship <<<
+# starship
+eval "$(starship init zsh)"
 
-# >>> zoxide >>>
+# zoxide
 eval "$(zoxide init zsh)"
-# <<< zoxide <<<
 
-# >>> zsh-vi-mode >>>
+# zsh-vi-mode
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-# <<< zsh-vi-mode <<<
 
 function zvm_after_init() {
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
