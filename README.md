@@ -91,7 +91,7 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 * [Itsycal](https://mowglii.com/itsycal) (macOS)
 * [Kap](https://getkap.co) (macOS)
 * [MonitorControl](https://github.com/MonitorControl/MonitorControl) (macOS)
-* [QuickShade](https://apps.apple.com/us/app/quickshade/id931571202?mt=12)
+* [QuickShade](https://apps.apple.com/us/app/quickshade/id931571202?mt=12) (macOS)
 * [SideNotes](https://apptorium.com/sidenotes) (macOS)
 * [The Unarchiver](https://theunarchiver.com) (macOS)
 * [Transmission](https://transmissionbt.com) (macOS)
