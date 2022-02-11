@@ -6,5 +6,6 @@
       "trace.server": "verbose",
       "filetypes": ["go"]
     }
-  }
+  },
+  "suggest.maxCompleteItemCount": 10
 }
