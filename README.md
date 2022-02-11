@@ -45,7 +45,7 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 * [Cakebrew](https://cakebrew.com) (macOS)
 * [Docker](https://docker.com)
 * [Github Desktop](https://desktop.github.com)
-* [iTerm](https://iterm2.com) (macOS)
+* [iTerm2](https://iterm2.com) (macOS)
 * [Jetbrains Toolbox](https://jetbrains.com/toolbox-app)
     * Android Studio
     * GoLand
