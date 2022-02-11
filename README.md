@@ -14,6 +14,7 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 * [desk](https://github.com/jamesob/desk)
 * [exa](https://the.exa.website)
 * [fd](https://github.com/sharkdp/fd)
+* [fig](https://fig.io/)
 * [fzf](https://github.com/junegunn/fzf)
 * [git](https://git-scm.com)
 * [jq](https://stedolan.github.io/jq)
