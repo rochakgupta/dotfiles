@@ -8,7 +8,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set mouse=a
-set noincsearch
+set incsearch
+set scrolloff=8
 set t_Co=256
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/node_modules/*,*/env/*,*/venv/*
 
@@ -22,19 +23,24 @@ set relativenumber
 set numberwidth=5
 set signcolumn=yes
 
-set ts=4
+set tabstop=4
 set shiftwidth=4
 set smarttab
 set softtabstop=4
 set expandtab
 
+set nowrap
 set textwidth=110
-" set colorcolumn=120
+" set colorcolumn=80
 set formatoptions-=t
 set backspace=indent,eol,start
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
 set background=dark
+
+set noswapfile
+set undodir=~/.vim/undodir
+set undofile
 
 " Use new regular expression engine to avoid redrawtime exceeded error with typescript syntax highlighting
 set re=0
@@ -197,7 +203,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=100
+set updatetime=50
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -350,7 +356,15 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-go', 'coc-java', 'coc-pyright', 'coc-tsserver', 'coc-prettier']
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-git',
+    \ 'coc-go',
+    \ 'coc-java',
+    \ 'coc-pyright',
+    \ 'coc-tsserver',
+    \ 'coc-prettier'
+    \ ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
