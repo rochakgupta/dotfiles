@@ -9,8 +9,11 @@ export JAVA_HOME=`/usr/libexec/java_home -v 11`
 export GOPATH=$HOME/go-workspace
 export PATH=$PATH:$GOPATH/bin
 
+# rust
+export PATH=$PATH:/Users/rochakgupta/.cargo/bin
+
 # conda
-export PATH=/usr/local/anaconda3/bin:$PATH
+# export PATH=/usr/local/anaconda3/bin:$PATH
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
