@@ -26,6 +26,7 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 * [neovim](https://neovim.io)
 * [nightlight](https://github.com/smudge/nightlight) (macOS)
 * [nvm](https://github.com/nvm-sh/nvm)
+* [pet](https://github.com/knqyf263/pet)
 * [pyenv](https://github.com/pyenv/pyenv)
 * [ranger](https://ranger.github.io)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
