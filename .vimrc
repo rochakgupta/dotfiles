@@ -30,8 +30,8 @@ set softtabstop=4
 set expandtab
 
 set nowrap
-set textwidth=110
-" set colorcolumn=80
+set textwidth=79
+set colorcolumn=+1
 set formatoptions-=t
 set backspace=indent,eol,start
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -370,6 +370,8 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-prettier'
     \ ]
+
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
