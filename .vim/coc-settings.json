@@ -7,5 +7,6 @@
       "filetypes": ["go"]
     }
   },
-  "suggest.maxCompleteItemCount": 10
+  "suggest.maxCompleteItemCount": 10,
+  "prettier.printWidth": 80
 }
