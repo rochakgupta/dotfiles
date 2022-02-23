@@ -64,6 +64,7 @@ via their installer. If nothing works, just install them from source.
 
 ### Productivity
 * [Alfred](https://alfredapp.com) (macOS)
+* [Amethyst](https://ianyh.com/amethyst) (macOS)
 * [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12) (macOS)
 * [Contexts](https://contexts.co) (macOS)
 * [Dropzone](https://aptonic.com) (macOS)
