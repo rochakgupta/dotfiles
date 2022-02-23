@@ -2,9 +2,12 @@
 Configurations managed via [yadm](https://yadm.io).
 
 ## Tools
-Tools I use as part of my workflow. Better to install them before configuring them.
+Tools I use as part of my workflow. Better to install them before configuring
+them.
 
-Most of them can be installed via [Homebrew](https://brew.sh) on macOS or relevant package managers on Linux distros. For ones that are not, install them via their installer. If nothing works, just install them from source.
+Most of them can be installed via [Homebrew](https://brew.sh) on macOS or
+relevant package managers on Linux distros. For ones that are not, install them
+via their installer. If nothing works, just install them from source.
 
 ### CLI
 
@@ -70,6 +73,7 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or releva
 * [Mission Control Plus](https://fadel.io/missioncontrolplus) (macOS)
 * [PopClip](https://pilotmoon.com/popclip) (macOS)
 * [Rectangle](https://rectangleapp.com) (macOS)
+* [Swish](https://highlyopinionated.co/swish) (macOS)
 * [Vimac](https://vimacapp.com) (macOS)
 
 ### Authentication
