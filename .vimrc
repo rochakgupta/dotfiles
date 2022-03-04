@@ -87,6 +87,7 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-expand-region'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'sheerun/vim-polyglot'
