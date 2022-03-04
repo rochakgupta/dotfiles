@@ -89,6 +89,7 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-expand-region'
 Plug 'jiangmiao/auto-pairs'
+Plug 'roxma/vim-paste-easy'
 
 Plug 'sheerun/vim-polyglot'
 
