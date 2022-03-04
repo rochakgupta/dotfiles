@@ -72,7 +72,8 @@ let mapleader = "\<Space>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 
 Plug 'vimwiki/vimwiki'
 
@@ -113,11 +114,28 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gruvbox
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_number_column = 'bg0'
-let g:gruvbox_sign_column = 'bg0'
-let g:gruvbox_invert_selection = 0
-colorscheme gruvbox
+" let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_number_column = 'bg0'
+" let g:gruvbox_sign_column = 'bg0'
+" let g:gruvbox_invert_selection = 0
+" colorscheme gruvbox
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gruvbox-material
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set termguicolors
+
+" These need to be placed before setting the colorscheme
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_disable_italic_comment = 1
+
+colorscheme gruvbox-material
+
+let g:gruvbox_material_palette = 'original'
+let g:gruvbox_material_sign_column_background='none'
+let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_ui_contrast = 'high'
+let g:gruvbox_material_diagnostic_line_highlight = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vimwiki
@@ -140,11 +158,6 @@ let g:airline_theme='gruvbox'
 " vim-airline-themes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='base16_gruvbox_dark_hard'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-gitgutter
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_set_sign_backgrounds = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
