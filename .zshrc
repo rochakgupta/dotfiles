@@ -1,6 +1,5 @@
 export CLICOLOR=1
 
-alias vim=nvim
 export EDITOR=nvim
 export VISUAL=$EDITOR
 
