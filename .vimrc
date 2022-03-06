@@ -30,7 +30,7 @@ set softtabstop=4
 set expandtab
 
 set nowrap
-set textwidth=79
+set textwidth=119
 set colorcolumn=+1
 set formatoptions-=t
 set backspace=indent,eol,start
@@ -61,9 +61,17 @@ let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[6 q" "EI = NORMAL mode (ELSE)
 
+augroup vimrc-incsearch-highlight
+  autocmd!
+  autocmd CmdlineEnter /,\? :set hlsearch
+  autocmd CmdlineLeave /,\? :set nohlsearch
+augroup END
+
+
 syntax on
 syntax enable
 filetype plugin on
+filetype indent on
 
 let mapleader = "\<Space>"
 
