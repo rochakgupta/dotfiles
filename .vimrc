@@ -28,6 +28,7 @@ set shiftwidth=4
 set smarttab
 set softtabstop=4
 set expandtab
+set autoindent
 
 set nowrap
 set textwidth=119
@@ -62,12 +63,16 @@ let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[6 q" "EI = NORMAL mode (ELSE)
 
+" Works in tandem with incsearch for proper search highlighting
 augroup vimrc-incsearch-highlight
   autocmd!
   autocmd CmdlineEnter /,\? :set hlsearch
   autocmd CmdlineLeave /,\? :set nohlsearch
 augroup END
 
+" Drag lines up and down
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
 
 syntax on
 syntax enable
