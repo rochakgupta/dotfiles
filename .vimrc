@@ -34,7 +34,8 @@ set textwidth=119
 set colorcolumn=+1
 set formatoptions-=t
 set backspace=indent,eol,start
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=tab:>-,trail:~,extends:>,precedes:<
+" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
 set background=dark
 
@@ -98,6 +99,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-expand-region'
 Plug 'jiangmiao/auto-pairs'
 Plug 'roxma/vim-paste-easy'
+Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'sheerun/vim-polyglot'
 
@@ -169,6 +171,13 @@ let g:airline_theme='gruvbox'
 " vim-airline-themes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='base16_gruvbox_dark_hard'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-better-whitespace
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:better_whitespace_ctermcolor='237'
+let g:better_whitespace_guicolor='#3c3836'
+let g:show_spaces_that_precede_tabs=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
