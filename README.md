@@ -27,6 +27,8 @@ via their installer. If nothing works, just install them from source.
 * [nb](https://github.com/xwmx/nb)
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [neovim](https://neovim.io)
+* [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+    * Sauce Code Pro Nerd Font
 * [nightlight](https://github.com/smudge/nightlight) (macOS)
 * [nvm](https://github.com/nvm-sh/nvm)
 * [pet](https://github.com/knqyf263/pet)
