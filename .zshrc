@@ -1,6 +1,8 @@
 export CLICOLOR=1
-export EDITOR=vim
-export VISUAL=vim
+
+alias vim=nvim
+export EDITOR=nvim
+export VISUAL=$EDITOR
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
