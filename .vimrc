@@ -101,7 +101,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-expand-region'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'roxma/vim-paste-easy'
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -416,6 +416,7 @@ let g:coc_global_extensions = [
     \ ]
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+nnoremap <leader>d :CocAction<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
