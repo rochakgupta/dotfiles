@@ -35,9 +35,8 @@ set textwidth=119
 set colorcolumn=+1
 set formatoptions-=t
 set backspace=indent,eol,start
-set listchars=tab:>-,trail:~,extends:>,precedes:<
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list
+" set list
 set background=dark
 
 set noswapfile
