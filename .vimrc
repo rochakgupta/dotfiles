@@ -428,7 +428,7 @@ nnoremap <leader>bf :BLines<cr>
 nnoremap <leader>a :Rg<cr>
 nnoremap <leader>w :Rg! <c-r><c-w><cr>
 
-let g:fzf_layout = {'down':'~40%'}
+let g:fzf_layout = {'down':'~50%'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-fzf
