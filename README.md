@@ -28,7 +28,13 @@ via their installer. If nothing works, just install them from source.
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [neovim](https://neovim.io)
 * [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
-    * Sauce Code Pro Nerd Font
+    * DroidSansMono
+    * FiraMono
+    * Hack
+    * Hasklug
+    * Mononoki
+    * Sauce Code Pro
+    * UbuntuMono
 * [nightlight](https://github.com/smudge/nightlight) (macOS)
 * [nvm](https://github.com/nvm-sh/nvm)
 * [pet](https://github.com/knqyf263/pet)
