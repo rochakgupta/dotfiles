@@ -8,5 +8,9 @@
     }
   },
   "suggest.maxCompleteItemCount": 10,
-  "prettier.printWidth": 80
+  "prettier.printWidth": 80,
+  "explorer.git.enable": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.file.reveal.auto": true,
+  "explorer.previewAction.onHover": "content"
 }
