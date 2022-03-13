@@ -111,8 +111,8 @@ Plug 'preservim/nerdcommenter'
 " Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " vim-devicons must be last
 Plug 'ryanoasis/vim-devicons'
@@ -206,12 +206,12 @@ let g:rainbow_active = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdtree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>n :NERDTreeFind<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
+" nnoremap <leader>n :NERDTreeFind<CR>
+" nnoremap <C-n> :NERDTreeToggle<CR>
 
-let NERDTreeIgnore = ['\.pyc$', '^node_modules$', '^venv']
+" let NERDTreeIgnore = ['\.pyc$', '^node_modules$', '^venv']
 
-let g:NERDTreeWinSize = 40
+" let g:NERDTreeWinSize = 40
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 " autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
@@ -220,9 +220,9 @@ let g:NERDTreeWinSize = 40
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdtree-git-plugin
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeGitStatusUseNerdFonts = 1
-let g:NERDTreeGitStatusShowClean = 1
-let g:NERDTreeGitStatusConcealBrackets = 1
+" let g:NERDTreeGitStatusUseNerdFonts = 1
+" let g:NERDTreeGitStatusShowClean = 1
+" let g:NERDTreeGitStatusConcealBrackets = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-nerdtree-syntax-highlight
@@ -412,11 +412,13 @@ let g:coc_global_extensions = [
     \ 'coc-java',
     \ 'coc-pyright',
     \ 'coc-tsserver',
-    \ 'coc-prettier'
+    \ 'coc-prettier',
+    \ 'coc-explorer'
     \ ]
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 nnoremap <leader>d :CocAction<cr>
+nnoremap <leader>e <Cmd>CocCommand explorer<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
