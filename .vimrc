@@ -5,6 +5,9 @@
 " Plugin Management:
 " vim-plug: https://github.com/junegunn/vim-plug
 "
+" Fonts:
+" nerd-fonts: https://www.nerdfonts.com
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set mouse=a
