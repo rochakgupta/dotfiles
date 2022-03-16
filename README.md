@@ -28,7 +28,6 @@ via their installer. If nothing works, just install them from source.
 * [jless](https://pauljuliusmartinez.github.io)
 * [jq](https://stedolan.github.io/jq)
 * [lazygit](https://github.com/jesseduffield/lazygit)
-    * git
 * [nb](https://github.com/xwmx/nb)
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [neovim](https://neovim.io)
