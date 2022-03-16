@@ -21,9 +21,14 @@ via their installer. If nothing works, just install them from source.
 * [fx](https://github.com/antonmedv/fx)
 * [fzf](https://github.com/junegunn/fzf)
 * [git](https://git-scm.com)
+* [go](https://go.dev)
+* [gcloud](https://cloud.google.com/sdk/gcloud)
+* java
+    * [adoptopenjdk](https://formulae.brew.sh/cask/adoptopenjdk)
 * [jless](https://pauljuliusmartinez.github.io)
 * [jq](https://stedolan.github.io/jq)
 * [lazygit](https://github.com/jesseduffield/lazygit)
+    * git
 * [nb](https://github.com/xwmx/nb)
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [neovim](https://neovim.io)
@@ -36,22 +41,44 @@ via their installer. If nothing works, just install them from source.
     * Sauce Code Pro
     * UbuntuMono
 * [nightlight](https://github.com/smudge/nightlight) (macOS)
-* [nvm](https://github.com/nvm-sh/nvm)
+* node
+    * [nvm](https://github.com/nvm-sh/nvm)
 * [pet](https://github.com/knqyf263/pet)
-* [pyenv](https://github.com/pyenv/pyenv)
+* python
+    * [conda](https://docs.conda.io/en/latest)
 * [ranger](https://ranger.github.io)
+* [rust](https://www.rust-lang.org/)
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [starship](https://starship.rs)
-    * [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+    * nerd-fonts
 * [tldr](https://tldr.sh)
 * [tmux](https://tmux.github.io)
+    * [tpm](https://github.com/tmux-plugins/tpm)
 * [vifm](https://vifm.info)
+    * bat
+    * exa
     * [vifm-colors](https://github.com/vifm/vifm-colors)
 * [vim](https://vim.org)
-    * [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+    * nerd-fonts
+    * node
+    * [vim-plug](https://github.com/junegunn/vim-plug)
 * [yadm](https://yadm.io)
 * [zoxide](https://github.com/ajeetdsouza/zoxide)
 * [zsh](https://zsh.org)
+    * fzf
+    * gcloud
+    * go
+    * java
+    * lazygit
+    * neovim
+    * node
+    * python
+    * ripgrep
+    * rust
+    * starship
+    * vifm
+    * vim
+    * zoxide
     * [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
 
 ### Development
