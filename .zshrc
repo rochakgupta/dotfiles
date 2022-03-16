@@ -50,7 +50,7 @@ eval "$(starship init zsh)"
 # zoxide
 eval "$(zoxide init zsh)"
 
-# zsh-vi-mode
+# zsh-vi-mode: https://github.com/jeffreytse/zsh-vi-mode
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 function zvm_after_init() {
