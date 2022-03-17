@@ -52,6 +52,7 @@ via their installer. If nothing works, just install them from source.
     * nerd-fonts
 * [tldr](https://tldr.sh)
 * [tmux](https://tmux.github.io)
+    * [tmuxp](https://github.com/tmux-python/tmuxp)
     * [tpm](https://github.com/tmux-plugins/tpm)
 * [vifm](https://vifm.info)
     * bat
