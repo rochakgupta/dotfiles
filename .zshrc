@@ -62,7 +62,7 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
 fi
 
-export FZF_DEFAULT_OPTS='-e +i -m --height 50% --border=sharp'
+export FZF_DEFAULT_OPTS='-e -m --height 50% --border=sharp'
 
 # vifm
 function f() {
