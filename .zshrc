@@ -1,6 +1,6 @@
 export CLICOLOR=1
 
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/usr/local/bin/vim
 export VISUAL=$EDITOR
 
 # java
