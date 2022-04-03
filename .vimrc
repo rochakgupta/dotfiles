@@ -77,10 +77,8 @@ augroup END
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 
-syntax on
 syntax enable
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 let mapleader = "\<Space>"
 
@@ -94,20 +92,22 @@ Plug 'sainnhe/gruvbox-material'
 
 Plug 'vimwiki/vimwiki'
 
-Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-Plug 'terryma/vim-expand-region'
+" Plug 'terryma/vim-expand-region'
 " Plug 'jiangmiao/auto-pairs'
-Plug 'roxma/vim-paste-easy'
+" Plug 'roxma/vim-paste-easy'
 Plug 'ntpeters/vim-better-whitespace'
+
+Plug 'dhruvasagar/vim-zoom'
 
 Plug 'sheerun/vim-polyglot'
 
@@ -144,7 +144,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gruvbox-material
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set termguicolors
+set termguicolors
 
 " These need to be placed before setting the colorscheme
 let g:gruvbox_material_background = 'hard'
@@ -167,7 +167,7 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " undotree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>u :UndotreeToggle<CR>
+" nnoremap <leader>u :UndotreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
@@ -436,7 +436,7 @@ nnoremap <leader>bf :BLines<cr>
 nnoremap <leader>a :Rg<cr>
 nnoremap <leader>w :Rg! <c-r><c-w><cr>
 
-let g:fzf_layout = {'down':'~50%'}
+let g:fzf_layout = {'down':'~40%'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-fzf
