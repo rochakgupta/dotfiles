@@ -59,7 +59,7 @@ function zvm_after_init() {
 
 # fzf
 if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
 fi
 
 export FZF_DEFAULT_OPTS='-e -m --height 50% --border=sharp'
