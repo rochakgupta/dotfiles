@@ -1,12 +1,4 @@
 {
-  "languageserver": {
-    "go": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "trace.server": "verbose",
-      "filetypes": ["go"]
-    }
-  },
   "suggest.maxCompleteItemCount": 10,
   "prettier.printWidth": 80,
   "explorer.git.enable": true,
