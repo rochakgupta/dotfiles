@@ -52,7 +52,7 @@ set re=0
 " autocmd InsertEnter * set cul
 " autocmd InsertLeave * set nocul
 set cul
-set cursorcolumn
+" set cursorcolumn
 
 " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
 " Cursor settings:
@@ -62,9 +62,9 @@ set cursorcolumn
 " 4 -> solid underscore
 " 5 -> blinking vertical bar
 " 6 -> solid vertical bar
-let &t_SI.="\e[6 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[6 q" "EI = NORMAL mode (ELSE)
+" let &t_SI.="\e[6 q" "SI = INSERT mode
+" let &t_SR.="\e[4 q" "SR = REPLACE mode
+" let &t_EI.="\e[6 q" "EI = NORMAL mode (ELSE)
 
 " Works in tandem with incsearch for proper search highlighting
 augroup vimrc-incsearch-highlight
@@ -429,6 +429,8 @@ nnoremap <leader>e <Cmd>CocCommand explorer<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:fzf_buffers_jump = 1
+
 nnoremap <leader>p :Commands<cr>
 nnoremap <leader>o :GFiles<cr>
 nnoremap <leader>f :Lines<cr>
@@ -436,7 +438,12 @@ nnoremap <leader>bf :BLines<cr>
 nnoremap <leader>a :Rg<cr>
 nnoremap <leader>w :Rg! <c-r><c-w><cr>
 
-let g:fzf_layout = {'down':'~40%'}
+let g:fzf_layout = {'down':'~50%'}
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always -g "!package-lock.json" -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-fzf
