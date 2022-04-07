@@ -412,14 +412,19 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 let g:coc_config_home = '~/.vim'
 
 let g:coc_global_extensions = [
-    \ 'coc-json',
+    \ 'coc-eslint',
+    \ 'coc-explorer',
+    \ 'coc-format-json',
     \ 'coc-git',
     \ 'coc-go',
+    \ 'coc-highlight',
     \ 'coc-java',
-    \ 'coc-pyright',
-    \ 'coc-tsserver',
+    \ 'coc-json',
+    \ 'coc-pairs',
     \ 'coc-prettier',
-    \ 'coc-explorer'
+    \ 'coc-pyright',
+    \ 'coc-snippets',
+    \ 'coc-tsserver',
     \ ]
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
