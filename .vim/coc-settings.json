@@ -1,4 +1,5 @@
 {
+  "java.format.enabled": true,
   "suggest.maxCompleteItemCount": 10,
   "prettier.printWidth": 80,
   "explorer.git.enable": true,
