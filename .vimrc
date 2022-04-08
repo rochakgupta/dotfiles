@@ -414,7 +414,6 @@ let g:coc_config_home = '~/.vim'
 let g:coc_global_extensions = [
     \ 'coc-eslint',
     \ 'coc-explorer',
-    \ 'coc-format-json',
     \ 'coc-git',
     \ 'coc-go',
     \ 'coc-highlight',
