@@ -102,7 +102,7 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-" Plug 'terryma/vim-expand-region'
+Plug 'terryma/vim-expand-region'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'roxma/vim-paste-easy'
 Plug 'ntpeters/vim-better-whitespace'
@@ -161,8 +161,10 @@ let g:gruvbox_material_diagnostic_line_highlight = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vimwiki
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{
+    \ 'path': '~/vimwiki/',
+    \ 'syntax': 'markdown', 'ext': '.md'
+    \ }]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " undotree
@@ -274,9 +276,9 @@ set shortmess+=c
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -411,6 +413,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 let g:coc_config_home = '~/.vim'
 
+nnoremap <leader>d :CocAction<cr>
+
 let g:coc_global_extensions = [
     \ 'coc-eslint',
     \ 'coc-explorer',
@@ -426,9 +430,25 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ ]
 
+" coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-nnoremap <leader>d :CocAction<cr>
+
+" coc-explorer
 nnoremap <leader>e <Cmd>CocCommand explorer<CR>
+
+" coc-snippets
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? coc#_select_confirm() :
+    \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
@@ -445,9 +465,9 @@ nnoremap <leader>w :Rg! <c-r><c-w><cr>
 let g:fzf_layout = {'down':'~50%'}
 
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always -g "!package-lock.json" -- '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always -g "!package-lock.json" -- '.shellescape(<q-args>), 1,
+    \   fzf#vim#with_preview(), <bang>0)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-fzf
