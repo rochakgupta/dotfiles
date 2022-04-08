@@ -1,4 +1,6 @@
 {
+  "dialog.maxWidth": 80,
+  "diagnostic.checkCurrentLine": true,
   "java.format.enabled": true,
   "suggest.maxCompleteItemCount": 10,
   "prettier.printWidth": 80,
