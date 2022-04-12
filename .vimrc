@@ -458,11 +458,11 @@ let g:fzf_buffers_jump = 1
 nnoremap <leader>p :Commands<cr>
 nnoremap <leader>o :GFiles<cr>
 nnoremap <leader>f :Lines<cr>
-nnoremap <leader>bf :BLines<cr>
+nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :Rg<cr>
 nnoremap <leader>w :Rg! <c-r><c-w><cr>
 
-let g:fzf_layout = {'down':'~50%'}
+" let g:fzf_layout = {'down':'~50%'}
 
 command! -bang -nargs=* Rg
     \ call fzf#vim#grep(
