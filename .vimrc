@@ -115,6 +115,8 @@ Plug 'preservim/nerdcommenter'
 " Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 
+Plug 'vifm/vifm.vim'
+
 " Plug 'preservim/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -454,6 +456,8 @@ let g:coc_snippet_next = '<tab>'
 " fzf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_buffers_jump = 1
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-m:preview-up\""
 
 nnoremap <leader>p :Commands<cr>
 nnoremap <leader>o :GFiles<cr>
