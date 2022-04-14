@@ -59,8 +59,11 @@ via their installer. If nothing works, just install them from source.
     * exa
     * [vifm-colors](https://github.com/vifm/vifm-colors)
 * [vim](https://vim.org)
+    * fzf
     * nerd-fonts
     * node
+    * ripgrep
+    * vifm
     * [vim-plug](https://github.com/junegunn/vim-plug)
 * [yadm](https://yadm.io)
 * [zoxide](https://github.com/ajeetdsouza/zoxide)
