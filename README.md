@@ -14,6 +14,7 @@ via their installer. If nothing works, just install them from source.
 * [asdf](http://asdf-vm.com)
 * [bat](https://github.com/sharkdp/bat)
 * [blueutil](https://github.com/toy/blueutil) (macOS)
+* [cheat.sh](https://github.com/chubin/cheat.sh)
 * [desk](https://github.com/jamesob/desk)
 * [exa](https://the.exa.website)
 * [fd](https://github.com/sharkdp/fd)
