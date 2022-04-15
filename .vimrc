@@ -204,9 +204,14 @@ let g:airline_theme='base16_gruvbox_dark_hard'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-better-whitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:better_whitespace_ctermcolor='237'
-let g:better_whitespace_guicolor='#3c3836'
-let g:show_spaces_that_precede_tabs=1
+" These settings are no longer showing trailing whitespaces
+" let g:better_whitespace_ctermcolor='237'
+" let g:better_whitespace_guicolor='#3c3836'
+" let g:show_spaces_that_precede_tabs=1
+
+" So, these settings just strip whitespaces on file save as a workaround
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
