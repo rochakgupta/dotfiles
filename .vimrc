@@ -456,8 +456,8 @@ let g:coc_snippet_next = '<tab>'
 " fzf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_buffers_jump = 1
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-m:preview-up\""
+let g:fzf_layout = { 'down': '45%' }
+let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
 
 nnoremap <leader>p :Commands<cr>
 nnoremap <leader>o :GFiles<cr>
@@ -465,8 +465,6 @@ nnoremap <leader>f :Lines<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :Rg<cr>
 nnoremap <leader>w :Rg! <c-r><c-w><cr>
-
-" let g:fzf_layout = {'down':'~50%'}
 
 command! -bang -nargs=* Rg
     \ call fzf#vim#grep(
