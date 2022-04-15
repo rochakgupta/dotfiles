@@ -76,3 +76,10 @@ function f() {
 
 # lazygit
 alias c=lazygit
+
+# yadm
+function yc() {
+    cd ~
+    yadm enter lazygit
+    cd -
+}
