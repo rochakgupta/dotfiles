@@ -29,9 +29,11 @@ via their installer. If nothing works, just install them from source.
 * [jless](https://pauljuliusmartinez.github.io)
 * [jq](https://stedolan.github.io/jq)
 * [lazygit](https://github.com/jesseduffield/lazygit)
+    * git
 * [nb](https://github.com/xwmx/nb)
 * [ncdu](https://dev.yorhel.nl/ncdu)
 * [neovim](https://neovim.io)
+    * vim
 * [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
     * DroidSansMono
     * FiraMono
@@ -60,13 +62,16 @@ via their installer. If nothing works, just install them from source.
     * exa
     * [vifm-colors](https://github.com/vifm/vifm-colors)
 * [vim](https://vim.org)
+    * bat
     * fzf
+    * git
     * nerd-fonts
     * node
     * ripgrep
     * vifm
     * [vim-plug](https://github.com/junegunn/vim-plug)
 * [yadm](https://yadm.io)
+    * git
 * [zoxide](https://github.com/ajeetdsouza/zoxide)
 * [zsh](https://zsh.org)
     * fzf
