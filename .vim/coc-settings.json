@@ -1,10 +1,13 @@
 {
   "dialog.maxWidth": 80,
-  "diagnostic.checkCurrentLine": true,
-  "java.format.enabled": true,
-  "suggest.maxCompleteItemCount": 10,
   "prettier.printWidth": 80,
   "explorer.git.enable": true,
   "explorer.icon.enableNerdfont": true,
-  "explorer.file.reveal.auto": true
+  "explorer.file.reveal.auto": true,
+  "diagnostic.checkCurrentLine": true,
+  "suggest.maxCompleteItemCount": 10,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "java"
+  ]
 }
