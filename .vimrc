@@ -90,47 +90,37 @@ call plug#begin('~/.vim/plugged')
 " Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 
-Plug 'vimwiki/vimwiki'
-
-" Plug 'mbbill/undotree'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'sheerun/vim-polyglot'
 
 " Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'preservim/nerdcommenter'
+Plug 'luochen1990/rainbow'
+" Plug 'Yggdroot/indentLine'
+
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-expand-region'
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'roxma/vim-paste-easy'
 Plug 'ntpeters/vim-better-whitespace'
 
+" Plug 'vimwiki/vimwiki'
+" Plug 'mbbill/undotree'
+Plug 'vifm/vifm.vim'
+" Plug 'voldikss/vim-floaterm'
 Plug 'dhruvasagar/vim-zoom'
 
-Plug 'sheerun/vim-polyglot'
-
-Plug 'preservim/nerdcommenter'
-" Plug 'Yggdroot/indentLine'
-Plug 'luochen1990/rainbow'
-
-Plug 'vifm/vifm.vim'
-
-" Plug 'preservim/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" vim-devicons must be last
-Plug 'ryanoasis/vim-devicons'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
 Plug 'antoinemadec/coc-fzf'
-
 Plug 'liuchengxu/vista.vim'
+
+" vim-devicons must be last
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -159,19 +149,6 @@ let g:gruvbox_material_sign_column_background='none'
 let g:gruvbox_material_enable_bold = 1
 let g:gruvbox_material_ui_contrast = 'high'
 let g:gruvbox_material_diagnostic_line_highlight = 1
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vimwiki
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vimwiki_list = [{
-    \ 'path': '~/vimwiki/',
-    \ 'syntax': 'markdown', 'ext': '.md'
-    \ }]
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" undotree
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nnoremap <leader>u :UndotreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
@@ -204,15 +181,6 @@ nmap <S-Right> <Plug>AirlineSelectNextTab
 let g:airline_theme='base16_gruvbox_dark_hard'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-better-whitespace
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:better_whitespace_ctermcolor='237'
-let g:better_whitespace_guicolor='#3c3836'
-let g:show_spaces_that_precede_tabs=1
-let g:strip_whitespace_on_save=1
-let g:strip_whitespace_confirm=0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDCreateDefaultMappings = 1
@@ -233,34 +201,33 @@ let g:rainbow_active = 1
 " let g:indentLine_conceallevel=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nerdtree
+" vim-better-whitespace
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nnoremap <leader>n :NERDTreeFind<CR>
-" nnoremap <C-n> :NERDTreeToggle<CR>
-
-" let NERDTreeIgnore = ['\.pyc$', '^node_modules$', '^venv']
-
-" let g:NERDTreeWinSize = 40
-
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-" autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-"     \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
+let g:better_whitespace_ctermcolor='237'
+let g:better_whitespace_guicolor='#3c3836'
+let g:show_spaces_that_precede_tabs=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nerdtree-git-plugin
+" vimwiki
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:NERDTreeGitStatusUseNerdFonts = 1
-" let g:NERDTreeGitStatusShowClean = 1
-" let g:NERDTreeGitStatusConcealBrackets = 1
+" let g:vimwiki_list = [{
+    " \ 'path': '~/vimwiki/',
+    " \ 'syntax': 'markdown', 'ext': '.md'
+    " \ }]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-nerdtree-syntax-highlight
+" undotree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
-" let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
-" let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-" let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-" let g:NERDTreeLimitedSyntax = 1
+" nnoremap <leader>u :UndotreeToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-floaterm
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:floaterm_width = 0.9
+" let g:floaterm_height = 0.9
+" let g:floaterm_wintype = 'float'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
@@ -443,7 +410,6 @@ let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-git',
     \ 'coc-go',
-    \ 'coc-highlight',
     \ 'coc-java',
     \ 'coc-json',
     \ 'coc-pairs',
@@ -485,7 +451,6 @@ nnoremap <leader>o :GFiles<cr>
 nnoremap <leader>f :Lines<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :Rg<cr>
-nnoremap <leader>w :Rg! <c-r><c-w><cr>
 
 command! -bang -nargs=* Rg
     \ call fzf#vim#grep(
