@@ -72,6 +72,7 @@ via their installer. If nothing works, just install them from source.
     * [vim-plug](https://github.com/junegunn/vim-plug)
 * [yadm](https://yadm.io)
     * git
+* [yank](https://github.com/mptre/yank)
 * [zoxide](https://github.com/ajeetdsouza/zoxide)
 * [zsh](https://zsh.org)
     * fzf
@@ -79,7 +80,6 @@ via their installer. If nothing works, just install them from source.
     * go
     * java
     * lazygit
-    * neovim
     * node
     * python
     * ripgrep
