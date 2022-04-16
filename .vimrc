@@ -451,6 +451,7 @@ nnoremap <leader>o :GFiles<cr>
 nnoremap <leader>f :Lines<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :Rg<cr>
+nnoremap <leader>w :Windows<cr>
 
 command! -bang -nargs=* Rg
     \ call fzf#vim#grep(
