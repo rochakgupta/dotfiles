@@ -30,11 +30,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # gcloud
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/rochakgupta/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rochakgupta/google-cloud-sdk/path.zsh.inc'; fi
@@ -84,3 +79,8 @@ function yc() {
     yadm enter lazygit
     cd -
 }
+
+# nvm (at the bottom because it wants it to be the last thing that modifies the PATH)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
