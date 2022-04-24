@@ -7,8 +7,7 @@ export VISUAL=$EDITOR
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
 # go
-export GOPATH=$HOME/go-workspace
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/go/bin
 
 # rust
 export PATH=$PATH:/Users/rochakgupta/.cargo/bin
