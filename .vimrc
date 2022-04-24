@@ -107,7 +107,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-expand-region'
 Plug 'ntpeters/vim-better-whitespace'
 
-" Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 " Plug 'mbbill/undotree'
 Plug 'vifm/vifm.vim'
 " Plug 'voldikss/vim-floaterm'
@@ -212,10 +212,10 @@ let g:strip_whitespace_confirm=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vimwiki
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:vimwiki_list = [{
-    " \ 'path': '~/vimwiki/',
-    " \ 'syntax': 'markdown', 'ext': '.md'
-    " \ }]
+let g:vimwiki_list = [{
+    \ 'path': '~/vimwiki/',
+    \ 'syntax': 'markdown', 'ext': '.md'
+    \ }]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " undotree
