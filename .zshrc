@@ -79,7 +79,7 @@ function yc() {
     cd -
 }
 
-# nvm (at the bottom because it wants itself to be the last thing that modifies the PATH)
+# node (at the bottom because nvm wants itself to be the last thing that modifies the PATH)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
