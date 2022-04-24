@@ -1,11 +1,4 @@
 {
-  "dialog.maxWidth": 80,
-  "prettier.printWidth": 80,
-  "explorer.git.enable": true,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.file.reveal.auto": true,
-  "diagnostic.checkCurrentLine": true,
-  "suggest.maxCompleteItemCount": 10,
   "coc.preferences.formatOnSaveFiletypes": [
     "go",
     "html",
@@ -15,5 +8,16 @@
     "json",
     "typescript",
     "typescriptreact"
-  ]
+  ],
+  "diagnostic.checkCurrentLine": true,
+  "dialog.maxWidth": 80,
+  "explorer.buffer.root.template": "[icon & 1] BUFFERS",
+  "explorer.file.reveal.auto": true,
+  "explorer.file.root.template": "[icon & 1] PROJECT ([root])",
+  "explorer.file.showHiddenFiles": true,
+  "explorer.git.enable": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.width": 40,
+  "prettier.printWidth": 80,
+  "suggest.maxCompleteItemCount": 10
 }
