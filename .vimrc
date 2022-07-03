@@ -104,14 +104,14 @@ Plug 'luochen1990/rainbow'
 
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-Plug 'terryma/vim-expand-region'
+" Plug 'terryma/vim-expand-region'
 Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'vimwiki/vimwiki'
 " Plug 'mbbill/undotree'
 Plug 'vifm/vifm.vim'
 " Plug 'voldikss/vim-floaterm'
-Plug 'dhruvasagar/vim-zoom'
+" Plug 'dhruvasagar/vim-zoom'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
