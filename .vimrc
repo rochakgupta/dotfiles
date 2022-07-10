@@ -77,6 +77,9 @@ augroup END
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 
+" Make CTRL-C behave exactly like ESC
+imap <C-c> <Esc>
+
 syntax enable
 filetype plugin indent on
 
