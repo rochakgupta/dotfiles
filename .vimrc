@@ -113,7 +113,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'vimwiki/vimwiki'
 " Plug 'mbbill/undotree'
 Plug 'vifm/vifm.vim'
-" Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/vim-floaterm'
 " Plug 'dhruvasagar/vim-zoom'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -234,9 +234,10 @@ let g:vifm_embed_term = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-floaterm
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:floaterm_width = 0.9
-" let g:floaterm_height = 0.9
-" let g:floaterm_wintype = 'float'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+let g:floaterm_wintype = 'float'
+let g:floaterm_opener = 'edit'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
