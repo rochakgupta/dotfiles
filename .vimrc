@@ -454,6 +454,7 @@ let g:coc_snippet_next = '<tab>'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '45%' }
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
 
 nnoremap <leader>p :Commands<cr>
