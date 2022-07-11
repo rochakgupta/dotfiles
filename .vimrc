@@ -15,6 +15,7 @@ set incsearch
 set scrolloff=8
 set t_Co=256
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/node_modules/*,*/env/*,*/venv/*
+set splitbelow
 
 set visualbell
 set notitle
@@ -223,8 +224,12 @@ let g:vimwiki_list = [{
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vifm
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 let g:vifm_embed_term = 1
-" let g:vifm_embed_split = 1
+let g:vifm_embed_split = 1
+let g:vifm_replace_netrw = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " undotree
