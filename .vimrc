@@ -42,6 +42,7 @@ set backspace=indent,eol,start
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " set list
 set background=dark
+set termguicolors
 
 set noswapfile
 set undodir=~/.vim/undodir
@@ -92,7 +93,9 @@ let mapleader = "\<Space>"
 call plug#begin('~/.vim/plugged')
 
 " Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
+" Plug 'sainnhe/gruvbox-material'
+" Plug 'whatyouhide/vim-gotham'
+Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -140,25 +143,32 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gruvbox-material
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set termguicolors
-
 " These need to be placed before setting the colorscheme
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_disable_italic_comment = 1
+" let g:gruvbox_material_background = 'hard'
+" let g:gruvbox_material_disable_italic_comment = 1
+"
+" colorscheme gruvbox-material
+"
+" let g:gruvbox_material_palette = 'original'
+" let g:gruvbox_material_sign_column_background='none'
+" let g:gruvbox_material_enable_bold = 1
+" let g:gruvbox_material_ui_contrast = 'high'
+" let g:gruvbox_material_diagnostic_line_highlight = 1
 
-colorscheme gruvbox-material
+" colorscheme gotham
 
-let g:gruvbox_material_palette = 'original'
-let g:gruvbox_material_sign_column_background='none'
-let g:gruvbox_material_enable_bold = 1
-let g:gruvbox_material_ui_contrast = 'high'
-let g:gruvbox_material_diagnostic_line_highlight = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tokyonight-vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tokyonight_style = 'night' " available: night, storm
+
+colorscheme tokyonight
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
+" let g:airline_theme='gotham'
 
 let g:airline#extensions#fzf#enabled = 1
 
@@ -182,7 +192,7 @@ nmap <S-Right> <Plug>AirlineSelectNextTab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline-themes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='base16_gruvbox_dark_hard'
+" let g:airline_theme='gotham'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
