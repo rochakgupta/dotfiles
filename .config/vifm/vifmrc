@@ -438,7 +438,7 @@ set milleroptions=lsize:1,csize:2
 
 " Use vifm-colors for colorschemes
 " https://github.com/vifm/vifm-colors
-colorscheme gruvbox
+colorscheme palenight
 
 " ------------------------------------------------------------------------------
 
