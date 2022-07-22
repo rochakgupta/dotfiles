@@ -45,13 +45,21 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # zsh-vi-mode: https://github.com/jeffreytse/zsh-vi-mode
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-function zvm_after_init() {
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-}
+# function zvm_after_init() {
+  # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# }
+
+# edit command in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+# use \033 for ESC
+bindkey '^X^E' edit-command-line
 
 # fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
 fi
