@@ -3,6 +3,14 @@ export CLICOLOR=1
 export EDITOR=/usr/local/bin/vim
 export VISUAL=$EDITOR
 
+export KEYTIMEOUT=1
+
+# edit command in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+# use \033 for ESC
+bindkey '^X^E' edit-command-line
+
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
@@ -50,12 +58,6 @@ eval "$(zoxide init zsh)"
 # function zvm_after_init() {
   # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # }
-
-# edit command in editor
-autoload -Uz edit-command-line
-zle -N edit-command-line
-# use \033 for ESC
-bindkey '^X^E' edit-command-line
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
