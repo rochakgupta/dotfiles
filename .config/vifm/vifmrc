@@ -447,8 +447,8 @@ set wrap!
 
 " Use exa for directory tree
 " https://the.exa.website
-fileviewer */ exa --tree -L 4 -I .git %c
+fileviewer */,.*/ exa --tree -L 4 -I .git %c
 
 " Use bat for files
 " https://github.com/sharkdp/bat
-fileviewer *[^/] bat -f --wrap never --pager never %c -p
+fileviewer *[^/],.*[^/] bat -f --wrap never --pager never %c -p
