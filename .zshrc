@@ -37,9 +37,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# android
-# export PATH=~/Library/Android/sdk/platform-tools:$PATH
-
 # starship
 eval "$(starship init zsh)"
 
