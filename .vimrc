@@ -430,6 +430,14 @@ let g:coc_config_home = '~/.vim'
 
 nnoremap <leader>d :CocAction<cr>
 
+" coc-java
+" https://github.com/neoclide/coc-java/issues/99#issuecomment-663856695
+" If downloaded JDT LS crashes, replace it with the one that works by:
+" 1. rm -rf ~/.config/coc/extensions/coc-java-data/server
+" 2. curl https://download.eclipse.org/jdtls/milestones/0.57.0/jdt-language-server-0.57.0-202006172108.tar.gz -o server.tar.gz
+" 3. mkdir ~/.config/coc/extensions/coc-java-data/server
+" 4. tar xf server.tar.gz --directory=~/.config/coc/extensions/coc-java-data/server
+
 let g:coc_global_extensions = [
     \ 'coc-eslint',
     \ 'coc-explorer',
