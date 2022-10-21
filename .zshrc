@@ -89,7 +89,5 @@ function yc() {
     cd -
 }
 
-# node (at the bottom because nvm wants itself to be the last thing that modifies the PATH)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# asdf scripts need to be sourced after setting the $PATH and sourcing the framework (oh-my-zsh etc).
+. /usr/local/opt/asdf/libexec/asdf.sh
