@@ -63,5 +63,13 @@ function yc() {
     cd -
 }
 
-# asdf scripts need to be sourced after setting the $PATH and sourcing the framework (oh-my-zsh etc).
+# asdf: asdf scripts need to be sourced after setting the $PATH and sourcing the framework (oh-my-zsh etc).
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+# shell completion for tools installed by brew: https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+if type brew &>/dev/null; then
+  FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
