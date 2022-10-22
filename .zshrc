@@ -5,7 +5,7 @@ export EDITOR=/usr/local/bin/vim
 export VISUAL=$EDITOR
 
 ################################################################################
-# zsh plugin manager
+# zplug: zsh plugin manager
 # https://github.com/zplug/zplug
 ################################################################################
 export ZPLUG_HOME=/usr/local/opt/zplug
