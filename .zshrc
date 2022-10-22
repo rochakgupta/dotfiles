@@ -118,12 +118,6 @@ function yc() {
 }
 
 ################################################################################
-# asdf
-################################################################################
-# asdf scripts need to be sourced after setting the $PATH and sourcing the framework (oh-my-zsh etc).
-. /usr/local/opt/asdf/libexec/asdf.sh
-
-################################################################################
 # brew
 ################################################################################
 # shell completion for tools installed by brew
@@ -134,3 +128,9 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
+################################################################################
+# asdf
+################################################################################
+# asdf scripts need to be sourced after setting the $PATH and sourcing the framework (oh-my-zsh etc).
+. /usr/local/opt/asdf/libexec/asdf.sh
