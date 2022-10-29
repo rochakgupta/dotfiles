@@ -48,6 +48,9 @@ set noswapfile
 set undodir=~/.vim/undodir
 set undofile
 
+" Better clipboard behavior: https://stackoverflow.com/a/30691754
+set clipboard^=unnamed,unnamedplus
+
 " Use new regular expression engine to avoid redrawtime exceeded error with typescript syntax highlighting
 set re=0
 
