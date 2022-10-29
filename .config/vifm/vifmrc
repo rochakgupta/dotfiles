@@ -447,7 +447,7 @@ set wrap!
 
 " Use exa for directory tree
 " https://the.exa.website
-fileviewer */,.*/ exa --tree -L 4 -I .git %c
+fileviewer */,.*/ exa --icons --tree -L 4 -I .git %c
 
 " Use bat for files
 " https://github.com/sharkdp/bat
