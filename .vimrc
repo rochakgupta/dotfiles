@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rochak's Vim Config
 " rochak84@gmail.com
 "
@@ -158,6 +158,9 @@ call plug#end()
 " let g:gruvbox_material_ui_contrast = 'high'
 " let g:gruvbox_material_diagnostic_line_highlight = 1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-gotham
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme gotham
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -480,6 +483,7 @@ let g:coc_snippet_next = '<tab>'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '45%' }
+
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
 
