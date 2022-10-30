@@ -103,7 +103,7 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 
 " Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -120,7 +120,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'vimwiki/vimwiki'
 " Plug 'mbbill/undotree'
 Plug 'vifm/vifm.vim'
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 " Plug 'dhruvasagar/vim-zoom'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -255,10 +255,10 @@ let g:vifm_replace_netrw = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-floaterm
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:floaterm_width = 0.9
-let g:floaterm_height = 0.9
-let g:floaterm_wintype = 'float'
-let g:floaterm_opener = 'edit'
+" let g:floaterm_width = 0.9
+" let g:floaterm_height = 0.9
+" let g:floaterm_wintype = 'float'
+" let g:floaterm_opener = 'edit'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
