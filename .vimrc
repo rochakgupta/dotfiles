@@ -405,21 +405,21 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>xa  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader>xa  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <space>xe  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <leader>xe  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>xc  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader>xc  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>xo  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>xs  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <leader>xo  :<C-u>CocList outline<cr>
+" Search workleader symbols.
+nnoremap <silent><nowait> <leader>xs  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>xj  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <leader>xj  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>xk  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <leader>xk  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>xp  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <leader>xp  :<C-u>CocListResume<CR>
 
 let g:coc_config_home = '~/.vim'
 
