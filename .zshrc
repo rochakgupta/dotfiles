@@ -13,6 +13,7 @@ source $ZPLUG_HOME/init.zsh
 
 # must be the last plugin sourced
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-autosuggestions"
 
 # source plugins and add commands to $PATH
 zplug load
