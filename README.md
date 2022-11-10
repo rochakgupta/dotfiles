@@ -24,7 +24,6 @@ via their installer. If nothing works, just install them from source.
 * [git](https://git-scm.com)
 * [go](https://go.dev)
     * asdf
-* [gcloud](https://cloud.google.com/sdk/gcloud)
 * java
     * [adoptopenjdk](https://formulae.brew.sh/cask/adoptopenjdk)
     * asdf
