@@ -23,9 +23,11 @@ via their installer. If nothing works, just install them from source.
 * [fzf](https://github.com/junegunn/fzf)
 * [git](https://git-scm.com)
 * [go](https://go.dev)
+    * asdf
 * [gcloud](https://cloud.google.com/sdk/gcloud)
 * java
     * [adoptopenjdk](https://formulae.brew.sh/cask/adoptopenjdk)
+    * asdf
 * [jless](https://pauljuliusmartinez.github.io)
 * [jq](https://stedolan.github.io/jq)
 * [lazygit](https://github.com/jesseduffield/lazygit)
@@ -44,12 +46,13 @@ via their installer. If nothing works, just install them from source.
     * UbuntuMono
 * [nightlight](https://github.com/smudge/nightlight) (macOS)
 * node
-    * [nvm](https://github.com/nvm-sh/nvm)
+    * asdf
 * [pet](https://github.com/knqyf263/pet)
 * python
-    * [conda](https://docs.conda.io/en/latest)
+    * asdf
 * [ranger](https://ranger.github.io)
 * [rust](https://www.rust-lang.org/)
+    * asdf
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
 * [starship](https://starship.rs)
     * nerd-fonts
@@ -75,23 +78,9 @@ via their installer. If nothing works, just install them from source.
 * [yank](https://github.com/mptre/yank)
 * [zoxide](https://github.com/ajeetdsouza/zoxide)
 * [zsh](https://zsh.org)
-    * fzf
-    * gcloud
-    * go
-    * java
-    * lazygit
-    * node
-    * python
-    * ripgrep
-    * rust
-    * starship
-    * vifm
-    * vim
-    * zoxide
-    * [zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode)
+    * [zplug](https://github.com/zplug/zplug)
 
 ### Development
-* [Anaconda](https://anaconda.com)
 * [Cakebrew](https://cakebrew.com) (macOS)
 * [Docker](https://docker.com)
 * [Github Desktop](https://desktop.github.com)
