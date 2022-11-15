@@ -441,6 +441,7 @@ let g:coc_global_extensions = [
     \ 'coc-pairs',
     \ 'coc-prettier',
     \ 'coc-pyright',
+    \ 'coc-rust-analyzer',
     \ 'coc-tsserver',
     \ ]
 
