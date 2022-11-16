@@ -1,19 +1,21 @@
 add_newline = false
 
+# format = """
+# $directory\
+# $git_branch\
+# $git_status\
+# $sudo\
+# $fill\
+# $cmd_duration $jobs $time\
+# $line_break\
+# $character"""
+
 format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_status\
-$sudo\
-$line_break\
-$status\
-$character"""
+[┌─ ](bold cyan)$directory$git_branch$git_status$sudo$fill $cmd_duration$jobs$time
+[└](bold cyan)$character"""
 
 [directory]
 read_only = " ro"
-truncate_to_repo = false
 
 [git_branch]
 symbol = ""
@@ -25,7 +27,27 @@ diverged = "<>"
 renamed = "r"
 deleted = "x"
 
+[sudo]
+symbol = "su "
+
 [character]
 success_symbol = "[>](bold green)"
-error_symbol = "[x](bold red)"
+error_symbol = "[>](bold red)"
 vicmd_symbol = "[<](bold green)"
+
+[fill]
+style = "bold cyan"
+symbol = "─"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[jobs]
+style = "bold red"
+symbol = "j "
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "bold white"
