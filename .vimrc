@@ -442,7 +442,9 @@ let g:coc_global_extensions = [
     \ 'coc-prettier',
     \ 'coc-pyright',
     \ 'coc-rust-analyzer',
+    \ 'coc-sh',
     \ 'coc-tsserver',
+    \ 'coc-vimlsp',
     \ ]
 
 " coc-prettier
