@@ -29,6 +29,7 @@ via their installer. If nothing works, just install them from source.
     * asdf
 * [jless](https://pauljuliusmartinez.github.io)
 * [jq](https://stedolan.github.io/jq)
+* [jqp](https://github.com/noahgorstein/jqp)
 * [lazygit](https://github.com/jesseduffield/lazygit)
     * git
 * [nb](https://github.com/xwmx/nb)
@@ -53,6 +54,7 @@ via their installer. If nothing works, just install them from source.
 * [rust](https://www.rust-lang.org/)
     * asdf
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
+* [spotify-tui](https://github.com/Rigellute/spotify-tui)
 * [starship](https://starship.rs)
     * nerd-fonts
 * [tldr](https://tldr.sh)
