@@ -24,6 +24,7 @@ via their installer. If nothing works, just install them from source.
 * [git](https://git-scm.com)
 * [go](https://go.dev)
     * asdf
+* [gum](https://github.com/charmbracelet/gum)
 * java
     * [adoptopenjdk](https://formulae.brew.sh/cask/adoptopenjdk)
     * asdf
