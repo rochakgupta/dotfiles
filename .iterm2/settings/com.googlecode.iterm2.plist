@@ -1068,17 +1068,6 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x78-0x40000-0x7</key>
-		<dict>
-			<key>Action</key>
-			<integer>10</integer>
-			<key>Label</key>
-			<string></string>
-			<key>Text</key>
-			<string>\E</string>
-			<key>Version</key>
-			<integer>1</integer>
-		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
 			<key>Action</key>
