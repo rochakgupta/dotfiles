@@ -29,7 +29,7 @@ bindkey -v
 autoload -Uz edit-command-line
 zle -N edit-command-line
 # Ctrl+X followed by Ctrl+E in insert mode
-# bindkey '^X^E' edit-command-line
+bindkey '^X^E' edit-command-line
 # or v in normal mode
 bindkey -M vicmd v edit-command-line
 
