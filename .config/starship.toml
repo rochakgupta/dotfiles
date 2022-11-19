@@ -1,5 +1,3 @@
-add_newline = false
-
 # format = """
 # $directory\
 # $git_branch\
@@ -13,6 +11,8 @@ add_newline = false
 format = """
 [┌─ ](bold cyan)$directory$git_branch$git_status$sudo$fill $cmd_duration$jobs$time
 [└](bold cyan)$character"""
+
+add_newline = false
 
 [directory]
 read_only = " ro"
