@@ -6,34 +6,34 @@ export VISUAL=$EDITOR
 export PAGER=most
 
 ################################################################################
-# zplug: zsh plugin manager
-# https://github.com/zplug/zplug
+# Plugin Management:
+# zplug: https://github.com/zplug/zplug
 ################################################################################
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# must be the last plugin sourced
+# Must be the last plugin sourced
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 
-# source plugins and add commands to $PATH
+# Source plugins and add commands to $PATH
 zplug load
 
 ################################################################################
-# command editing
+# Command editing
 ################################################################################
-# using vim bindings
+# Using vim bindings
 bindkey -v
 
-# or in $EDITOR
+# Or in $EDITOR
 autoload -Uz edit-command-line
 zle -N edit-command-line
 # Ctrl+X followed by Ctrl+E in insert mode
 bindkey '^X^E' edit-command-line
-# or v in normal mode
+# Or v in normal mode
 bindkey -M vicmd v edit-command-line
 
-# add text objects for quotes and brackets like da" and ci(
+# Add text objects for quotes and brackets like da" and ci(
 autoload -Uz select-bracketed select-quoted
 zle -N select-quoted
 zle -N select-bracketed
@@ -47,8 +47,9 @@ for km in viopp visual; do
   done
 done
 
-# mimic Tim Pope's surround plugin
-# disabled as it conflicts with zsh-syntax-highlighting
+# Mimic Tim Pope's surround plugin
+# Disabled as it conflicts with zsh-syntax-highlighting
+#
 # autoload -Uz surround
 # zle -N delete-surround surround
 # zle -N add-surround surround
@@ -122,7 +123,7 @@ function yc() {
 ################################################################################
 # brew
 ################################################################################
-# shell completion for tools installed by brew
+# Shell completion for tools installed by brew
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 if type brew &>/dev/null; then
   FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
