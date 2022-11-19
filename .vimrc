@@ -1,14 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Rochak's Vim Config
-" rochak84@gmail.com
-"
-" Plugin Management:
-" vim-plug: https://github.com/junegunn/vim-plug
-"
-" Fonts:
-" nerd-fonts: https://www.nerdfonts.com
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 set mouse=a
 set incsearch
@@ -91,7 +80,8 @@ filetype plugin indent on
 let mapleader = "\<Space>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
+" Plugin Management:
+" vim-plug: https://github.com/junegunn/vim-plug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
