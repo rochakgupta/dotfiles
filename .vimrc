@@ -93,6 +93,9 @@ Plug 'ghifarit53/tokyonight-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Copy in vim over SSH copies to local system clipboard
+Plug 'haya14busa/vim-poweryank'
+
 " Plug 'sheerun/vim-polyglot'
 
 " Plug 'tpope/vim-fugitive'
@@ -189,6 +192,11 @@ nmap <S-Right> <Plug>AirlineSelectNextTab
 " vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:airline_theme='gotham'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-poweryank
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>y <Plug>(operator-poweryank-osc52)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
