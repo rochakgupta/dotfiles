@@ -19,7 +19,9 @@
   "explorer.git.enable": true,
   "explorer.icon.enableNerdfont": true,
   "explorer.width": 40,
+  "notification.disabledProgressSources": ["*"],
   "prettier.printWidth": 80,
-  "suggest.maxCompleteItemCount": 10,
-  "notification.disabledProgressSources": ["*"]
+  "pyright.inlayHints.functionReturnTypes": true,
+  "pyright.inlayHints.variableTypes": false,
+  "suggest.maxCompleteItemCount": 10
 }
