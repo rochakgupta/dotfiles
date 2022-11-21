@@ -1,3 +1,13 @@
 gui:
   expandFocusedSidePanel: true
-notARepository: 'skip'
+  theme:
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
+git:
+  branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --'
+  allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline'
+os:
+  editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
+notARepository: 'quit' # one of: 'prompt' | 'create' | 'skip' | 'quit'
