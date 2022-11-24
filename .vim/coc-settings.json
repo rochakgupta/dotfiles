@@ -18,10 +18,12 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.git.enable": true,
   "explorer.icon.enableNerdfont": true,
-  "explorer.width": 40,
+  "explorer.width": 30,
   "notification.disabledProgressSources": ["*"],
   "prettier.printWidth": 80,
   "pyright.inlayHints.functionReturnTypes": true,
   "pyright.inlayHints.variableTypes": false,
-  "suggest.maxCompleteItemCount": 10
+  "suggest.maxCompleteItemCount": 10,
+  "suggest.minTriggerInputLength": 3,
+  "suggest.snippetsSupport": false
 }
