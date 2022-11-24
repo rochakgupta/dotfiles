@@ -14,6 +14,10 @@ source $ZPLUG_HOME/init.zsh
 
 # Must be the last plugin sourced
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Must be loaded before zsh-autosuggestions
+zplug "Aloxaf/fzf-tab"
+
 zplug "zsh-users/zsh-autosuggestions"
 
 # Source plugins and add commands to $PATH
@@ -48,7 +52,7 @@ for km in viopp visual; do
 done
 
 # Mimic Tim Pope's surround plugin
-# Disabled as it conflicts with zsh-syntax-highlighting
+# Disabled as it conflicts with zsh-syntax-highlighting plugin
 #
 # autoload -Uz surround
 # zle -N delete-surround surround
@@ -91,7 +95,7 @@ eval "$(zoxide init zsh)"
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
 fi
-export FZF_DEFAULT_OPTS='-e -m --height 50% --border=sharp'
+export FZF_DEFAULT_OPTS='-e -m --reverse --height 50% --border=sharp'
 
 ################################################################################
 # vifm
