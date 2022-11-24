@@ -9,8 +9,8 @@
 # $character"""
 
 format = """
-[┌─ ](bold cyan)$directory$git_branch$git_status$sudo$fill $cmd_duration$jobs$time
-[└](bold cyan)$character"""
+[┌─ ](bold purple)$directory$git_branch$git_status$sudo$fill $cmd_duration$jobs$time
+[└](bold purple)$character"""
 
 add_newline = false
 
@@ -36,7 +36,7 @@ error_symbol = "[>](bold red)"
 vicmd_symbol = "[<](bold green)"
 
 [fill]
-style = "bold cyan"
+style = "bold purple"
 symbol = "─"
 
 [cmd_duration]
