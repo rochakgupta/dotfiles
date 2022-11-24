@@ -330,11 +330,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader><leader>cr <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader><leader>cf  <Plug>(coc-format-selected)
+nmap <leader><leader>cf  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -346,20 +346,20 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>z  <Plug>(coc-codeaction-selected)
-nmap <leader>z  <Plug>(coc-codeaction-selected)
+xmap <leader><leader>cas  <Plug>(coc-codeaction-selected)
+nmap <leader><leader>cas  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>zb  <Plug>(coc-codeaction)
+nmap <leader><leader>cab  <Plug>(coc-codeaction)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>zc  <Plug>(coc-codeaction-cursor)
+nmap <leader><leader>cac  <Plug>(coc-codeaction-cursor)
 
 " Apply AutoFix to problem on the current line.
-nmap <leader>zf  <Plug>(coc-fix-current)
+nmap <leader><leader>cxc  <Plug>(coc-fix-current)
 
 " Run the Code Lens action on the current line.
-nmap <leader>zl  <Plug>(coc-codelens-action)
+nmap <leader><leader>cla  <Plug>(coc-codelens-action)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -403,21 +403,21 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <leader>xa  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader><leader>cld  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <leader>xe  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <leader><leader>cle  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <leader>xc  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader><leader>clc  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <leader>xo  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader><leader>clo  :<C-u>CocList outline<cr>
 " Search workleader symbols.
-nnoremap <silent><nowait> <leader>xs  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <leader><leader>cls  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <leader>xj  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <leader><leader>cn  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <leader>xk  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <leader><leader>cp  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <leader>xp  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <leader><leader>clr  :<C-u>CocListResume<CR>
 
 let g:coc_config_home = '~/.vim'
 
@@ -474,7 +474,7 @@ command! -bang -nargs=* Rg
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-fzf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>c :CocFzfList<cr>
+nnoremap <leader><leader>l :CocFzfList<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vista
