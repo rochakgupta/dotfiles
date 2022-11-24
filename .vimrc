@@ -245,6 +245,8 @@ let g:vifm_embed_term = 1
 let g:vifm_embed_split = 1
 let g:vifm_replace_netrw = 1
 
+nnoremap <leader>v :Vifm<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " undotree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -479,7 +481,7 @@ nnoremap <leader><leader>l :CocFzfList<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vista
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>v :Vista finder coc<CR>
+nnoremap <leader>t :Vista finder coc<CR>
 nnoremap <C-t> :Vista!!<CR>
 
 let g:vista_fzf_preview = ['right:50%']
