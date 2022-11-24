@@ -196,7 +196,7 @@ nmap <S-Right> <Plug>AirlineSelectNextTab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-poweryank
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>y <Plug>(operator-poweryank-osc52)
+map <leader>y <Plug>(operator-poweryank-osc52)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
@@ -378,8 +378,8 @@ omap ac <Plug>(coc-classobj-a)
 if has('nvim-0.4.0') || has('patch-8.2.0750')
   nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<C-r>=coc#float#scroll(1)\<CR>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<C-r>=coc#float#scroll(0)\<CR>" : "\<Left>"
   vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
@@ -405,15 +405,15 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <leader><leader>cld  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader><leader>cld  :<C-u>CocList diagnostics<CR>
 " Manage extensions.
-nnoremap <silent><nowait> <leader><leader>cle  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <leader><leader>cle  :<C-u>CocList extensions<CR>
 " Show commands.
-nnoremap <silent><nowait> <leader><leader>clc  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader><leader>clc  :<C-u>CocList commands<CR>
 " Find symbol of current document.
-nnoremap <silent><nowait> <leader><leader>clo  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader><leader>clo  :<C-u>CocList outline<CR>
 " Search workleader symbols.
-nnoremap <silent><nowait> <leader><leader>cls  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <leader><leader>cls  :<C-u>CocList -I symbols<CR>
 " Do default action for next item.
 nnoremap <silent><nowait> <leader><leader>cn  :<C-u>CocNext<CR>
 " Do default action for previous item.
@@ -461,12 +461,12 @@ let g:fzf_layout = { 'down': '50%' }
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
 
-nnoremap <leader>p :Commands<cr>
-nnoremap <leader>o :GFiles<cr>
-nnoremap <leader>f :Lines<cr>
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>a :Rg<cr>
-nnoremap <leader>w :Windows<cr>
+nnoremap <leader>p :Commands<CR>
+nnoremap <leader>o :GFiles<CR>
+nnoremap <leader>f :Lines<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>a :Rg<CR>
+nnoremap <leader>w :Windows<CR>
 
 command! -bang -nargs=* Rg
     \ call fzf#vim#grep(
@@ -476,7 +476,7 @@ command! -bang -nargs=* Rg
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-fzf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader><leader>l :CocFzfList<cr>
+nnoremap <leader><leader>l :CocFzfList<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vista
