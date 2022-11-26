@@ -8,9 +8,13 @@
 # $line_break\
 # $character"""
 
+# format = """
+# [┌─ ](bold purple)$directory$git_branch$git_status$sudo$fill $cmd_duration$jobs$time
+# [└](bold purple)$character"""
+
 format = """
-[┌─ ](bold purple)$directory$git_branch$git_status$sudo$fill $cmd_duration$jobs$time
-[└](bold purple)$character"""
+$directory$git_branch$git_status$sudo
+$character"""
 
 add_newline = false
 
