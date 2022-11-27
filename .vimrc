@@ -438,6 +438,7 @@ let g:coc_global_extensions = [
     \ 'coc-go',
     \ 'coc-java',
     \ 'coc-json',
+    \ 'coc-pairs',
     \ 'coc-prettier',
     \ 'coc-pyright',
     \ 'coc-rust-analyzer',
