@@ -85,9 +85,7 @@ let mapleader = "\<Space>"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-" Plug 'morhetz/gruvbox'
 " Plug 'sainnhe/gruvbox-material'
-" Plug 'whatyouhide/vim-gotham'
 Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'vim-airline/vim-airline'
@@ -131,38 +129,26 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" gruvbox
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:gruvbox_contrast_dark = 'hard'
-" let g:gruvbox_number_column = 'bg0'
-" let g:gruvbox_sign_column = 'bg0'
-" let g:gruvbox_invert_selection = 0
-" colorscheme gruvbox
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gruvbox-material
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " These need to be placed before setting the colorscheme
 " let g:gruvbox_material_background = 'hard'
+" let g:gruvbox_material_diagnostic_line_highlight = 1
 " let g:gruvbox_material_disable_italic_comment = 1
+" let g:gruvbox_material_enable_bold = 1
+" let g:gruvbox_material_palette = 'material'
+" let g:gruvbox_material_sign_column_background='none'
+" let g:gruvbox_material_ui_contrast = 'high'
+" let g:gruvbox_material_transparent_background = 1
 "
 " colorscheme gruvbox-material
-"
-" let g:gruvbox_material_palette = 'original'
-" let g:gruvbox_material_sign_column_background='none'
-" let g:gruvbox_material_enable_bold = 1
-" let g:gruvbox_material_ui_contrast = 'high'
-" let g:gruvbox_material_diagnostic_line_highlight = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-gotham
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" colorscheme gotham
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tokyonight-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:tokyonight_style = 'night' " available: night, storm
+" available: night, storm
+let g:tokyonight_style = 'night'
+let g:tokyonight_transparent_background = 1
 
 colorscheme tokyonight
 
@@ -170,7 +156,6 @@ colorscheme tokyonight
 " vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
-" let g:airline_theme='gotham'
 
 let g:airline#extensions#fzf#enabled = 1
 
@@ -194,7 +179,8 @@ nmap <S-Right> <Plug>AirlineSelectNextTab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:airline_theme='gotham'
+" let g:airline_theme='gruvbox_material'
+let g:airline_theme = "tokyonight"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-poweryank
