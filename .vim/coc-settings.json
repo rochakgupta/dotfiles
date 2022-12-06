@@ -20,6 +20,8 @@
   "explorer.icon.enableNerdfont": true,
   "explorer.width": 30,
   "notification.disabledProgressSources": ["*"],
+  "pairs.enableBackspace": false,
+  "pairs.enableCharacters": ["{", "("],
   "prettier.printWidth": 80,
   "pyright.inlayHints.functionReturnTypes": true,
   "pyright.inlayHints.variableTypes": false,
