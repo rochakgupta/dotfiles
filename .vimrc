@@ -116,6 +116,9 @@ Plug 'vifm/vifm.vim'
 " Plug 'voldikss/vim-floaterm'
 " Plug 'dhruvasagar/vim-zoom'
 
+" Better indentation style for python
+Plug 'Vimjas/vim-python-pep8-indent'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
