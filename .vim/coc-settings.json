@@ -1,15 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "go",
-    "html",
-    "java",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "python",
-    "typescript",
-    "typescriptreact"
-  ],
+  "coc.preferences.formatOnSave": true,
   "diagnostic.checkCurrentLine": true,
   "dialog.maxWidth": 80,
   "explorer.buffer.root.template": "[icon & 1] BUFFERS",
