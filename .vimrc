@@ -96,7 +96,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Copy in vim over SSH copies to local system clipboard
 Plug 'haya14busa/vim-poweryank'
 
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
 " Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
