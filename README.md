@@ -9,7 +9,7 @@ Most of them can be installed via [Homebrew](https://brew.sh) on macOS or
 relevant package managers on Linux distros. For ones that are not, install them
 via their installer. If nothing works, just install them from source.
 
-### CLI
+### Command Line
 
 * [asdf](http://asdf-vm.com)
 * [bat](https://github.com/sharkdp/bat)
@@ -60,8 +60,9 @@ via their installer. If nothing works, just install them from source.
     * nerd-fonts
 * [tldr](https://tldr.sh)
 * [tmux](https://tmux.github.io)
-    * [tmuxp](https://github.com/tmux-python/tmuxp)
     * [tpm](https://github.com/tmux-plugins/tpm)
+* [tmuxp](https://github.com/tmux-python/tmuxp)
+    * tmux
 * [vifm](https://vifm.info)
     * bat
     * exa
@@ -88,29 +89,10 @@ via their installer. If nothing works, just install them from source.
 * [Github Desktop](https://desktop.github.com)
 * [iTerm2](https://iterm2.com) (macOS)
 * [Jetbrains Toolbox](https://jetbrains.com/toolbox-app)
-    * Android Studio
-    * GoLand
-    * IntelliJ
-    * PyCharm
 * [Postman](https://postman.com)
 * [Vagrant](https://vagrantup.com)
 * [VirtualBox](https://virtualbox.org)
 * [Visual Studio Code](https://code.visualstudio.com)
-
-### Productivity
-* [Alfred](https://alfredapp.com) (macOS)
-* [Amethyst](https://ianyh.com/amethyst) (macOS)
-* [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12) (macOS)
-* [Contexts](https://contexts.co) (macOS)
-* [Dropzone](https://aptonic.com) (macOS)
-* [Hammerspoon](https://hammerspoon.org) (macOS)
-* [Karabiner Elements](https://karabiner-elements.pqrs.org) (macOS)
-* [Keyboard Maestro](https://keyboardmaestro.com) (macOS)
-* [Mission Control Plus](https://fadel.io/missioncontrolplus) (macOS)
-* [PopClip](https://pilotmoon.com/popclip) (macOS)
-* [Rectangle](https://rectangleapp.com) (macOS)
-* [Swish](https://highlyopinionated.co/swish) (macOS)
-* [Vimac](https://vimacapp.com) (macOS)
 
 ### Authentication
 * [Authy](https://authy.com)
@@ -126,16 +108,33 @@ via their installer. If nothing works, just install them from source.
 * [HACK](https://apps.apple.com/us/app/hack-for-hacker-news-developer/id1464477788) (macOS)
 * [Pocket](https://getpocket.com)
 
-### Utilities
+### Productivity
+* [Alfred](https://alfredapp.com) (macOS)
+* [Amethyst](https://ianyh.com/amethyst) (macOS)
+* [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12) (macOS)
 * [AppCleaner](https://freemacsoft.net/appcleaner) (macOS)
-* [coconutBattery](https://coconut-flavour.com/coconutbattery) (macOS)
+* [Contexts](https://contexts.co) (macOS)
 * [DaisyDisk](https://daisydiskapp.com) (macOS)
 * [Dropbox](https://dropbox.com)
+* [Dropover](https://dropoverapp.com) (macOS)
+* [Dropzone](https://aptonic.com) (macOS)
+* [Hammerspoon](https://hammerspoon.org) (macOS)
 * [IINA](https://iina.io) (macOS)
 * [Itsycal](https://mowglii.com/itsycal) (macOS)
 * [Kap](https://getkap.co) (macOS)
+* [Karabiner Elements](https://karabiner-elements.pqrs.org) (macOS)
+* [Keyboard Maestro](https://keyboardmaestro.com) (macOS)
+* [Later](https://getlater.app) (macOS)
+* [Mission Control Plus](https://fadel.io/missioncontrolplus) (macOS)
 * [MonitorControl](https://github.com/MonitorControl/MonitorControl) (macOS)
+* [OnyX](https://www.titanium-software.fr/en/onyx.html) (macOS)
+* [PopClip](https://pilotmoon.com/popclip) (macOS)
 * [QuickShade](https://apps.apple.com/us/app/quickshade/id931571202?mt=12) (macOS)
+* [Rectangle](https://rectangleapp.com) (macOS)
+* [Shottr](https://shottr.cc) (macOS)
 * [SideNotes](https://apptorium.com/sidenotes) (macOS)
+* [Swish](https://highlyopinionated.co/swish) (macOS)
 * [The Unarchiver](https://theunarchiver.com) (macOS)
 * [Transmission](https://transmissionbt.com) (macOS)
+* [Vimac](https://vimacapp.com) (macOS)
+* [coconutBattery](https://coconut-flavour.com/coconutbattery) (macOS)
