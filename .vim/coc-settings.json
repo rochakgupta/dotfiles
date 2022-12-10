@@ -13,6 +13,7 @@
   "pairs.enableBackspace": false,
   "pairs.enableCharacters": ["{", "("],
   "prettier.printWidth": 80,
+  "pyright.completion.snippetSupport": false,
   "pyright.inlayHints.functionReturnTypes": true,
   "pyright.inlayHints.variableTypes": false,
   "suggest.maxCompleteItemCount": 10,
