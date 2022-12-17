@@ -1,14 +1,15 @@
 {
   "coc.preferences.formatOnSave": true,
   "diagnostic.checkCurrentLine": true,
-  "dialog.maxWidth": 80,
+  "diagnostic.messageDelay": 750,
   "explorer.buffer.root.template": "[icon & 1] BUFFERS",
+  "explorer.file.git.showUntrackedFiles": "system",
   "explorer.file.reveal.auto": true,
   "explorer.file.root.template": "[icon & 1] PROJECT ([root])",
-  "explorer.file.showHiddenFiles": true,
   "explorer.git.enable": true,
+  "explorer.git.showIgnored": false,
   "explorer.icon.enableNerdfont": true,
-  "explorer.width": 30,
+  "explorer.width": 40,
   "notification.disabledProgressSources": ["*"],
   "pairs.enableBackspace": false,
   "pairs.enableCharacters": ["{", "("],
@@ -16,7 +17,9 @@
   "pyright.completion.snippetSupport": false,
   "pyright.inlayHints.functionReturnTypes": true,
   "pyright.inlayHints.variableTypes": false,
-  "suggest.maxCompleteItemCount": 10,
-  "suggest.minTriggerInputLength": 3,
-  "suggest.snippetsSupport": false
+  "suggest.insertMode": "insert",
+  "suggest.maxCompleteItemCount": 15,
+  "suggest.minTriggerInputLength": 2,
+  "suggest.snippetsSupport": false,
+  "suggest.virtualText": true
 }
