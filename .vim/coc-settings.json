@@ -15,7 +15,7 @@
   "pairs.enableCharacters": ["{", "("],
   "prettier.printWidth": 80,
   "pyright.completion.snippetSupport": false,
-  "pyright.inlayHints.functionReturnTypes": true,
+  "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.variableTypes": false,
   "suggest.insertMode": "insert",
   "suggest.maxCompleteItemCount": 15,
