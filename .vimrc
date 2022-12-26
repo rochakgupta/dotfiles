@@ -98,6 +98,7 @@ Plug 'sheerun/vim-polyglot'
 
 " Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'kshenoy/vim-signature'
 
 Plug 'preservim/nerdcommenter'
 Plug 'luochen1990/rainbow'
@@ -186,6 +187,12 @@ let g:airline_theme = "tokyonight"
 " vim-poweryank
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>y <Plug>(operator-poweryank-osc52)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-signature
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:SignatureMarkTextHLDynamic = 1
+let g:SignatureMarkerTextHLDynamic = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nerdcommenter
