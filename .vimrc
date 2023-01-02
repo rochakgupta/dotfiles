@@ -33,6 +33,7 @@ set backspace=indent,eol,start
 set background=dark
 set termguicolors
 
+set hidden
 set noswapfile
 set undodir=~/.vim/undodir
 set undofile
