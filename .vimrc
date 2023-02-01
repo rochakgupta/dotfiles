@@ -69,8 +69,8 @@ augroup vimrc-incsearch-highlight
 augroup END
 
 " Drag lines up and down
-nnoremap <S-Up> :m-2<CR>
-nnoremap <S-Down> :m+<CR>
+" nnoremap <S-Up> :m-2<CR>
+" nnoremap <S-Down> :m+<CR>
 
 " Make CTRL-C behave exactly like ESC
 imap <C-c> <Esc>
@@ -105,6 +105,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'luochen1990/rainbow'
 " Plug 'Yggdroot/indentLine'
 
+Plug 'matze/vim-move'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 " Plug 'terryma/vim-expand-region'
@@ -214,6 +215,13 @@ let g:rainbow_active = 1
 " let g:indentLine_concealcursor = ''
 " let g:indentLine_bufTypeExclude = ['help', 'terminal']
 " let g:indentLine_conceallevel=1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-move
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:move_key_modifier = 'C'
+let g:move_key_modifier_visualmode = 'S'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-better-whitespace
