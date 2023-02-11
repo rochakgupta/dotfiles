@@ -469,7 +469,7 @@ let g:fzf_layout = { 'down': '50%' }
 let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
 
 nnoremap <leader>p :Commands<CR>
-nnoremap <leader>o :GFiles<CR>
+nnoremap <leader>o :Files<CR>
 nnoremap <leader>f :Lines<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>a :Rg<CR>
