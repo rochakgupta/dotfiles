@@ -77,6 +77,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 11`
 # python
 ################################################################################
 export PATH=$HOME/.local/bin:$PATH
+export PYTHONPYCACHEPREFIX=$(pwd)/.pyc
 
 ################################################################################
 # rust
@@ -98,7 +99,7 @@ eval "$(zoxide init zsh)"
 ################################################################################
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
+  export FZF_DEFAULT_COMMAND='rg --files'
 fi
 export FZF_DEFAULT_OPTS='-e -m --reverse --height 50% --border=sharp'
 
