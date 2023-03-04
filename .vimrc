@@ -25,7 +25,7 @@ set autoindent
 
 set nowrap
 set textwidth=119
-set colorcolumn=+1
+" set colorcolumn=+1
 set formatoptions-=t
 set backspace=indent,eol,start
 " set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
