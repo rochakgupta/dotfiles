@@ -5,6 +5,7 @@ set scrolloff=8
 set t_Co=256
 set wildignore+=*/.git/*,*/tmp/*,*.swp,*/node_modules/*,*/env/*,*/venv/*
 set splitbelow
+set splitright
 
 set visualbell
 set notitle
