@@ -93,7 +93,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Copy in vim over SSH copies to local system clipboard
-Plug 'haya14busa/vim-poweryank'
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
 Plug 'sheerun/vim-polyglot'
 
@@ -186,9 +186,11 @@ nmap <S-Right> <Plug>AirlineSelectNextTab
 let g:airline_theme = "tokyonight"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-poweryank
+" vim-oscyank
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>y <Plug>(operator-poweryank-osc52)
+nmap <leader>y <Plug>OSCYankOperator
+nmap <leader>yy <leader>y_
+vmap <leader>y <Plug>OSCYankVisual
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-signature
