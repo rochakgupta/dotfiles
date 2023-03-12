@@ -19,91 +19,109 @@ return {
   {
     'vifm/vifm.vim',
     config = function()
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
+      -- vim.g.loaded_netrw = 1
+      -- vim.g.loaded_netrwPlugin = 1
       vim.g.vifm_embed_term = 1
       vim.g.vifm_embed_split = 1
-      vim.g.vifm_replace_netrw = 1
-      vim.keymap.set('n', '<leader>x', '<cmd>Vifm<CR>')
+      vim.keymap.set('n', '<leader>v', '<cmd>Vifm<CR>')
     end
   },
 
- {
-   'folke/tokyonight.nvim',
-   priority = 1000,
-   lazy = true,
-   config = function()
-     require('tokyonight').setup({
-       style = 'night',
-       transparent = true,
-     })
-   end,
- },
+  {
+    'nvim-tree/nvim-tree.lua',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require('nvim-tree').setup({
+        hijack_netrw = false,
+        hijack_cursor = true,
+        update_focused_file = {
+          enable = true
+        }
+      })
+      -- vim.g.loaded_netrw = 1
+      -- vim.g.loaded_netrwPlugin = 1
+      vim.keymap.set('n', '<leader>x', '<cmd>NvimTreeToggle<CR>')
+    end
+  },
 
- {
-   'tiagovla/tokyodark.nvim',
-   priority = 1000,
-   lazy = true,
-   config = function()
-     vim.g.tokyodark_transparent_background = true
-     vim.g.tokyodark_enable_italic_comment = true
-     vim.g.tokyodark_enable_italic = true
-   end
- },
+  {
+    'folke/tokyonight.nvim',
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require('tokyonight').setup({
+        style = 'night',
+        transparent = true,
+      })
+    end,
+  },
 
- {
-   "catppuccin/nvim",
-   name = "catppuccin",
-   priority = 1000,
-   lazy = true,
-   config = function()
-     require('catppuccin').setup({
-       transparent_background = true,
-       term_colors = true,
-     })
-   end,
- },
+  {
+    'tiagovla/tokyodark.nvim',
+    priority = 1000,
+    lazy = true,
+    config = function()
+      vim.g.tokyodark_transparent_background = true
+      vim.g.tokyodark_enable_italic_comment = true
+      vim.g.tokyodark_enable_italic = true
+    end
+  },
 
- {
-   'rose-pine/neovim',
-   name = 'rose-pine',
-   priority = 1000,
-   lazy = true,
-   config = function()
-     require('rose-pine').setup({
-       disable_background = true,
-       disable_float_background = true,
-     })
-   end
- },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require('catppuccin').setup({
+        transparent_background = true,
+        term_colors = true,
+      })
+    end,
+  },
 
- {
-   'rebelot/kanagawa.nvim',
-   priority = 1000,
-   lazy = true,
-   config = function()
-     require('kanagawa').setup({
-       transparent = true,
-       theme = 'dragon'
-     })
-   end
- },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require('rose-pine').setup({
+        disable_background = true,
+        disable_float_background = true,
+      })
+    end
+  },
 
- {
-   'sainnhe/gruvbox-material',
-   priority = 1000,
-   lazy = true,
-   config = function()
-     vim.g.gruvbox_material_background = 'hard'
-     vim.g.gruvbox_material_diagnostic_line_highlight = 1
-     -- vim.g.gruvbox_material_disable_italic_comment = 1
-     -- vim.g.gruvbox_material_enable_bold = 1
-     vim.g.gruvbox_material_palette = 'material'
-     -- vim.g.gruvbox_material_sign_column_background='none'
-     vim.g.gruvbox_material_ui_contrast = 'high'
-     vim.g.gruvbox_material_transparent_background = 1
-   end
- },
+  {
+    'rebelot/kanagawa.nvim',
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require('kanagawa').setup({
+        transparent = true,
+        theme = 'dragon'
+      })
+    end
+  },
+
+  {
+    'sainnhe/gruvbox-material',
+    priority = 1000,
+    lazy = true,
+    config = function()
+      vim.g.gruvbox_material_background = 'hard'
+      vim.g.gruvbox_material_diagnostic_line_highlight = 1
+      -- vim.g.gruvbox_material_disable_italic_comment = 1
+      -- vim.g.gruvbox_material_enable_bold = 1
+      vim.g.gruvbox_material_palette = 'material'
+      -- vim.g.gruvbox_material_sign_column_background='none'
+      vim.g.gruvbox_material_ui_contrast = 'high'
+      vim.g.gruvbox_material_transparent_background = 1
+    end
+  },
 
   {
     'marko-cerovac/material.nvim',
