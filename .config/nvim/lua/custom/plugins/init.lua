@@ -163,6 +163,9 @@ return {
           -- "trouble",
           "which-key",
         },
+        disable = {
+          colored_cursor = true
+        },
       })
       vim.g.material_style = "deep ocean"
     end
