@@ -62,6 +62,11 @@ return {
       require('tokyonight').setup({
         style = 'night',
         transparent = true,
+        styles = {
+          keywords = { italic = false },
+          sidebars = "transparent",
+          floats = "transparent"
+        }
       })
     end,
   },
@@ -73,7 +78,7 @@ return {
     config = function()
       vim.g.tokyodark_transparent_background = true
       vim.g.tokyodark_enable_italic_comment = true
-      vim.g.tokyodark_enable_italic = true
+      vim.g.tokyodark_enable_italic = false
     end
   },
 
@@ -86,6 +91,9 @@ return {
       require('catppuccin').setup({
         transparent_background = true,
         term_colors = true,
+        styles = {
+          conditionals = {}
+        }
       })
     end,
   },
@@ -99,18 +107,7 @@ return {
       require('rose-pine').setup({
         disable_background = true,
         disable_float_background = true,
-      })
-    end
-  },
-
-  {
-    'rebelot/kanagawa.nvim',
-    priority = 1000,
-    lazy = true,
-    config = function()
-      require('kanagawa').setup({
-        transparent = true,
-        theme = 'dragon'
+        disable_italics = true
       })
     end
   },
@@ -121,13 +118,10 @@ return {
     lazy = true,
     config = function()
       vim.g.gruvbox_material_background = 'hard'
-      vim.g.gruvbox_material_diagnostic_line_highlight = 1
-      -- vim.g.gruvbox_material_disable_italic_comment = 1
-      -- vim.g.gruvbox_material_enable_bold = 1
       vim.g.gruvbox_material_palette = 'material'
-      -- vim.g.gruvbox_material_sign_column_background='none'
       vim.g.gruvbox_material_ui_contrast = 'high'
       vim.g.gruvbox_material_transparent_background = 1
+      vim.g.gruvbox_material_better_performance = 1
     end
   },
 
@@ -138,34 +132,26 @@ return {
     config = function()
       require('material').setup({
         contrast = {
-          floating_windows = true,
+          sidebars = true,
+          floating_windows = true
         },
         styles = {
           comments = { italic = true },
         },
-        plugins = { -- Uncomment the plugins that you use to highlight them
-          -- Available plugins:
-          -- "dap",
-          -- "dashboard",
+        plugins = {
           "gitsigns",
-          -- "hop",
           "indent-blankline",
-          -- "lspsaga",
-          -- "mini",
-          -- "neogit",
-          -- "neorg",
           "nvim-cmp",
-          -- "nvim-navic",
-          -- "nvim-tree",
-          -- "nvim-web-devicons",
-          -- "sneak",
+          "nvim-tree",
+          "nvim-web-devicons",
           "telescope",
-          -- "trouble",
           "which-key",
         },
         disable = {
-          colored_cursor = true
+          colored_cursor = true,
+          background = true
         },
+        lualine_style = "stealth"
       })
       vim.g.material_style = "deep ocean"
     end
