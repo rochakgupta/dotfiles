@@ -6,8 +6,15 @@ return {
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-      require('alpha').setup(require('alpha.themes.startify').config)
+    config = function()
+      local alpha = require 'alpha'
+      local dashboard = require 'alpha.themes.dashboard'
+      dashboard.section.buttons.val = {
+        dashboard.button("e", "  New file", "<cmd>ene <CR>"),
+        dashboard.button("c", "  Config", ":e ~/.config/nvim/init.lua <CR>"),
+        dashboard.button("q", "  Quit", ":qa <CR>"),
+      }
+      alpha.setup(dashboard.config)
     end
   },
 
@@ -18,8 +25,8 @@ return {
   {
     'ojroques/nvim-osc52',
     config = function()
-      vim.keymap.set('n', '<leader>y', require('osc52').copy_operator, {expr = true})
-      vim.keymap.set('n', '<leader>yy', '<leader>y_', {remap = true})
+      vim.keymap.set('n', '<leader>y', require('osc52').copy_operator, { expr = true })
+      vim.keymap.set('n', '<leader>yy', '<leader>y_', { remap = true })
       vim.keymap.set('v', '<leader>y', require('osc52').copy_visual)
     end
   },

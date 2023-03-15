@@ -56,4 +56,4 @@ vim.o.swapfile = false
 vim.o.undofile = true
 
 -- Set colorscheme
-vim.cmd.colorscheme 'material'
+vim.cmd.colorscheme 'tokyonight'

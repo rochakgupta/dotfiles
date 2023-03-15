@@ -133,7 +133,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = true,
-        theme = 'material',
+        theme = 'tokyonight',
       },
       sections = {
         lualine_c = {
