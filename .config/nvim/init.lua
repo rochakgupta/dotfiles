@@ -98,7 +98,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',          opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -120,9 +120,9 @@ require('lazy').setup({
     priority = 1000,
     lazy = true,
     config = function()
-      require('onedark').setup({
+      require('onedark').setup {
         transparent = true,
-      })
+      }
     end,
   },
 
@@ -139,8 +139,8 @@ require('lazy').setup({
         lualine_c = {
           {
             'filename',
-            path = 3
-          }
+            path = 3,
+          },
         },
       },
     },
@@ -157,7 +157,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',         opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
@@ -245,7 +245,7 @@ vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.termguicolors = true
 
 -- My options
-require('custom.options')
+require 'custom.options'
 
 -- [[ Basic Keymaps ]]
 
@@ -371,11 +371,10 @@ require('nvim-treesitter.configs').setup {
 }
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
@@ -432,7 +431,7 @@ local servers = {
   gopls = {},
   pyright = {},
   tsserver = {},
-  ["jdtls@1.10.0"] = {},
+  ['jdtls@1.10.0'] = {},
   jsonls = {},
   marksman = {},
   rust_analyzer = {},
@@ -520,7 +519,10 @@ cmp.setup {
 }
 
 -- My keymaps
-require('custom.keymaps')
+require 'custom.keymaps'
+
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

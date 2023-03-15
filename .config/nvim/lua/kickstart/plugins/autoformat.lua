@@ -40,14 +40,26 @@ return {
         local bufnr = args.buf
 
         -- Only attach to clients that support document formatting
+        -- if not client.server_capabilities.documentFormattingProvider then
+        --   return
+        -- end
+
+        local client_name
+
+        -- Fallback to null-ls if client does not support formatting
         if not client.server_capabilities.documentFormattingProvider then
-          return
+          client_name = 'null-ls'
         end
 
         -- Tsserver usually works poorly. Sorry you work with bad languages
         -- You can remove this line if you know what you're doing :)
-        if client.name == 'tsserver' then
-          return
+        -- if client.name == 'tsserver' then
+        --   return
+        -- end
+
+        -- Use formatter provided by null-ls for typescript and lua
+        if client.name == 'tsserver' or client.name == 'lua_ls' then
+          client_name = 'null-ls'
         end
 
         -- Create an autocmd that will run *before* we save the buffer.
@@ -63,6 +75,9 @@ return {
             vim.lsp.buf.format {
               async = false,
               filter = function(c)
+                if client_name then
+                  return c.name == client_name
+                end
                 return c.id == client.id
               end,
             }
