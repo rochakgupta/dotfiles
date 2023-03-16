@@ -7,8 +7,8 @@ return {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      local alpha = require 'alpha'
-      local dashboard = require 'alpha.themes.dashboard'
+      local alpha = require('alpha')
+      local dashboard = require('alpha.themes.dashboard')
       dashboard.section.buttons.val = {
         dashboard.button('e', '  New file', '<cmd>ene <CR>'),
         dashboard.button('c', '  Config', ':e ~/.config/nvim/init.lua <CR>'),
@@ -39,19 +39,19 @@ return {
       'jose-elias-alvarez/null-ls.nvim',
     },
     config = function()
-      local null_ls = require 'null-ls'
+      local null_ls = require('null-ls')
       local formatting = null_ls.builtins.formatting
-      null_ls.setup {
+      null_ls.setup({
         sources = {
           formatting.black,
           formatting.stylua,
         },
-      }
-      require('mason-null-ls').setup {
+      })
+      require('mason-null-ls').setup({
         ensure_installed = nil,
         automatic_installation = true,
         automatic_setup = false,
-      }
+      })
     end,
   },
 
@@ -72,13 +72,13 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('nvim-tree').setup {
+      require('nvim-tree').setup({
         hijack_netrw = false,
         hijack_cursor = true,
         update_focused_file = {
           enable = true,
         },
-      }
+      })
       -- vim.g.loaded_netrw = 1
       -- vim.g.loaded_netrwPlugin = 1
       vim.keymap.set('n', '<leader>x', '<cmd>NvimTreeToggle<CR>')
@@ -90,7 +90,7 @@ return {
     priority = 1000,
     lazy = true,
     config = function()
-      require('tokyonight').setup {
+      require('tokyonight').setup({
         style = 'night',
         transparent = true,
         styles = {
@@ -98,7 +98,7 @@ return {
           sidebars = 'transparent',
           floats = 'transparent',
         },
-      }
+      })
     end,
   },
 
@@ -119,13 +119,13 @@ return {
     priority = 1000,
     lazy = true,
     config = function()
-      require('catppuccin').setup {
+      require('catppuccin').setup({
         transparent_background = true,
         term_colors = true,
         styles = {
           conditionals = {},
         },
-      }
+      })
     end,
   },
 
@@ -135,11 +135,11 @@ return {
     priority = 1000,
     lazy = true,
     config = function()
-      require('rose-pine').setup {
+      require('rose-pine').setup({
         disable_background = true,
         disable_float_background = true,
         disable_italics = true,
-      }
+      })
     end,
   },
 
@@ -161,7 +161,7 @@ return {
     priority = 1000,
     lazy = true,
     config = function()
-      require('material').setup {
+      require('material').setup({
         contrast = {
           sidebars = true,
           floating_windows = true,
@@ -183,7 +183,7 @@ return {
           background = true,
         },
         lualine_style = 'stealth',
-      }
+      })
       vim.g.material_style = 'deep ocean'
     end,
   },

@@ -72,7 +72,7 @@ return {
               return
             end
 
-            vim.lsp.buf.format {
+            vim.lsp.buf.format({
               async = false,
               filter = function(c)
                 if client_name then
@@ -80,7 +80,7 @@ return {
                 end
                 return c.id == client.id
               end,
-            }
+            })
           end,
         })
       end,

@@ -22,10 +22,10 @@ return {
     'leoluz/nvim-dap-go',
   },
   config = function()
-    local dap = require 'dap'
-    local dapui = require 'dapui'
+    local dap = require('dap')
+    local dapui = require('dapui')
 
-    require('mason-nvim-dap').setup {
+    require('mason-nvim-dap').setup({
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
       automatic_setup = true,
@@ -36,7 +36,7 @@ return {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
       },
-    }
+    })
 
     -- You can provide additional configuration to the handlers,
     -- see mason-nvim-dap README for more information
@@ -49,12 +49,12 @@ return {
     vim.keymap.set('n', '<F3>', dap.step_out)
     vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint)
     vim.keymap.set('n', '<leader>B', function()
-      dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+      dap.set_breakpoint(vim.fn.input('Breakpoint condition: '))
     end)
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
-    dapui.setup {
+    dapui.setup({
       -- Set icons to characters that are more likely to work in every terminal.
       --    Feel free to remove or use ones that you like more! :)
       --    Don't feel like these are good choices.
@@ -71,7 +71,7 @@ return {
           terminate = '⏹',
         },
       },
-    }
+    })
 
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
