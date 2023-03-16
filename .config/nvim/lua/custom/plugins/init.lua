@@ -45,6 +45,7 @@ return {
         sources = {
           formatting.black,
           formatting.stylua,
+          formatting.prettierd,
         },
       })
       require('mason-null-ls').setup({
