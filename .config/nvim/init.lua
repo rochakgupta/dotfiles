@@ -430,6 +430,7 @@ local servers = {
   bashls = {},
   gopls = {},
   pyright = {},
+  ruff_lsp = {},
   tsserver = {},
   ['jdtls@1.10.0'] = {},
   jsonls = {},
