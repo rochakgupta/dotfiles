@@ -17,5 +17,4 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('x', '<leader>p', '"_dP')
 
 -- Use Leader-d to delete the selection to _ (black hole) register
-vim.keymap.set('n', '<leader>d', '"_d')
-vim.keymap.set('v', '<leader>d', '"_d')
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
