@@ -77,7 +77,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 11`
 # python
 ################################################################################
 export PATH=$HOME/.local/bin:$PATH
-export PYTHONPYCACHEPREFIX=$(pwd)/.pyc
+export PYTHONPYCACHEPREFIX=$HOME/.pyc
 
 ################################################################################
 # rust
