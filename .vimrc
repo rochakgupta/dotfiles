@@ -88,6 +88,7 @@ let mapleader = "\<Space>"
 call plug#begin('~/.vim/plugged')
 
 " Plug 'sainnhe/gruvbox-material'
+" Plug 'sainnhe/sonokai'
 Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'vim-airline/vim-airline'
@@ -148,6 +149,14 @@ call plug#end()
 " colorscheme gruvbox-material
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" sonokai
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:sonokai_better_performance = 1
+" let g:sonokai_transparent_background = 2
+"
+" colorscheme sonokai
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tokyonight-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " available: night, storm
@@ -184,6 +193,7 @@ nmap <S-Right> <Plug>AirlineSelectNextTab
 " vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:airline_theme='gruvbox_material'
+" let g:airline_theme='sonokai'
 let g:airline_theme = "tokyonight"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
