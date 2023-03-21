@@ -32,6 +32,21 @@ return {
   },
 
   {
+    'folke/zen-mode.nvim',
+    config = function()
+      require('zen-mode').setup({
+        window = {
+          options = {
+            signcolumn = 'no',
+            number = false,
+            relativenumber = false,
+          },
+        },
+      })
+    end,
+  },
+
+  {
     'jay-babu/mason-null-ls.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
