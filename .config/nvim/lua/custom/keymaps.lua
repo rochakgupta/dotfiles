@@ -2,8 +2,8 @@
 vim.keymap.set('i', '<C-c>', '<Esc>')
 
 -- Move groups of lines up and down with J and K
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv")
+-- vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+-- vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv")
 
 -- Keep the line in the center while using C-d and C-u
 vim.keymap.set('n', '<C-d>', '<C-d>zz')

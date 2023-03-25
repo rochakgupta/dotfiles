@@ -36,13 +36,44 @@ return {
     config = function()
       require('zen-mode').setup({
         window = {
-          options = {
-            signcolumn = 'no',
-            number = false,
-            relativenumber = false,
-          },
+          width = 140,
         },
       })
+      vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<cr>', { desc = 'Toggle [Z]en Mode' })
+    end,
+  },
+
+  {
+    'fedepujol/move.nvim',
+    config = function()
+      local opts = { noremap = true, silent = true }
+
+      vim.keymap.set('n', '<S-j>', ':MoveLine(1)<CR>', opts)
+      vim.keymap.set('n', '<S-k>', ':MoveLine(-1)<CR>', opts)
+      vim.keymap.set('n', '<S-h>', ':MoveHChar(-1)<CR>', opts)
+      vim.keymap.set('n', '<S-l>', ':MoveHChar(1)<CR>', opts)
+
+      vim.keymap.set('v', '<S-j>', ':MoveBlock(1)<CR>', opts)
+      vim.keymap.set('v', '<S-k>', ':MoveBlock(-1)<CR>', opts)
+      vim.keymap.set('v', '<S-h>', ':MoveHBlock(-1)<CR>', opts)
+      vim.keymap.set('v', '<S-l>', ':MoveHBlock(1)<CR>', opts)
+    end,
+  },
+
+  {
+    'ThePrimeagen/harpoon',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('harpoon').setup({})
+      vim.keymap.set('n', '<leader>ha', require('harpoon.mark').add_file, { desc = '[H]arpoon [A]dd file' })
+      vim.keymap.set('n', '<leader>hu', require('harpoon.ui').toggle_quick_menu, { desc = '[H]arpoon [U]I' })
+      vim.keymap.set('n', '<leader>hj', require('harpoon.ui').nav_prev, { desc = '[H]arpoon [J] Previous file' })
+      vim.keymap.set('n', '<leader>hk', require('harpoon.ui').nav_next, { desc = '[H]arpoon [K] Next file' })
+      for id = 1, 5 do
+        vim.keymap.set('n', '<leader>h' .. id, function()
+          require('harpoon.ui').nav_file(id)
+        end, { desc = '[H]arpoon File [' .. id .. ']' })
+      end
     end,
   },
 
@@ -68,17 +99,6 @@ return {
         automatic_installation = true,
         automatic_setup = false,
       })
-    end,
-  },
-
-  {
-    'vifm/vifm.vim',
-    config = function()
-      -- vim.g.loaded_netrw = 1
-      -- vim.g.loaded_netrwPlugin = 1
-      vim.g.vifm_embed_term = 1
-      vim.g.vifm_embed_split = 1
-      vim.keymap.set('n', '<leader>v', '<cmd>Vifm<CR>')
     end,
   },
 
