@@ -39,7 +39,7 @@ return {
           width = 140,
         },
       })
-      vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<cr>', { desc = 'Toggle [Z]en Mode' })
+      vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<CR>', { desc = 'Toggle [Z]en Mode' })
     end,
   },
 
@@ -69,7 +69,7 @@ return {
       vim.keymap.set('n', '<leader>hu', require('harpoon.ui').toggle_quick_menu, { desc = '[H]arpoon [U]I' })
       vim.keymap.set('n', '<leader>hj', require('harpoon.ui').nav_prev, { desc = '[H]arpoon [J] Previous file' })
       vim.keymap.set('n', '<leader>hk', require('harpoon.ui').nav_next, { desc = '[H]arpoon [K] Next file' })
-      for id = 1, 5 do
+      for id = 1, 9 do
         vim.keymap.set('n', '<leader>h' .. id, function()
           require('harpoon.ui').nav_file(id)
         end, { desc = '[H]arpoon File [' .. id .. ']' })

@@ -225,7 +225,7 @@ vim.o.mouse = 'a'
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamed,unnamedplus'
+-- vim.o.clipboard = 'unnamed,unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -234,14 +234,14 @@ vim.o.breakindent = true
 vim.o.undofile = true
 
 -- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
+-- vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 50
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
@@ -318,7 +318,7 @@ vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc =
 vim.keymap.set('n', '<leader>sc', require('telescope.builtin').commands, { desc = '[S]earch [C]ommands' })
 
 pcall(require('telescope').load_extension, 'harpoon')
-vim.keymap.set('n', '<leader>sh', '<cmd>Telescope harpoon marks<cr>', { desc = '[S]earch [H]arpoon Files' })
+vim.keymap.set('n', '<leader>sh', '<cmd>Telescope harpoon marks<CR>', { desc = '[S]earch [H]arpoon Files' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
