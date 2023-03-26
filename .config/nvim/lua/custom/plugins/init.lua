@@ -47,16 +47,11 @@ return {
     'fedepujol/move.nvim',
     config = function()
       local opts = { noremap = true, silent = true }
+      vim.keymap.set('n', '<leader>j', ':MoveLine(1)<CR>', opts)
+      vim.keymap.set('n', '<leader>k', ':MoveLine(-1)<CR>', opts)
 
-      vim.keymap.set('n', '<S-j>', ':MoveLine(1)<CR>', opts)
-      vim.keymap.set('n', '<S-k>', ':MoveLine(-1)<CR>', opts)
-      vim.keymap.set('n', '<S-h>', ':MoveHChar(-1)<CR>', opts)
-      vim.keymap.set('n', '<S-l>', ':MoveHChar(1)<CR>', opts)
-
-      vim.keymap.set('v', '<S-j>', ':MoveBlock(1)<CR>', opts)
-      vim.keymap.set('v', '<S-k>', ':MoveBlock(-1)<CR>', opts)
-      vim.keymap.set('v', '<S-h>', ':MoveHBlock(-1)<CR>', opts)
-      vim.keymap.set('v', '<S-l>', ':MoveHBlock(1)<CR>', opts)
+      vim.keymap.set('v', '<leader>j', ':MoveBlock(1)<CR>', opts)
+      vim.keymap.set('v', '<leader>k', ':MoveBlock(-1)<CR>', opts)
     end,
   },
 
@@ -67,13 +62,27 @@ return {
       require('harpoon').setup({})
       vim.keymap.set('n', '<leader>ha', require('harpoon.mark').add_file, { desc = '[H]arpoon [A]dd file' })
       vim.keymap.set('n', '<leader>hu', require('harpoon.ui').toggle_quick_menu, { desc = '[H]arpoon [U]I' })
-      vim.keymap.set('n', '<leader>hj', require('harpoon.ui').nav_prev, { desc = '[H]arpoon [J] Previous file' })
-      vim.keymap.set('n', '<leader>hk', require('harpoon.ui').nav_next, { desc = '[H]arpoon [K] Next file' })
+      vim.keymap.set('n', '<leader>hj', require('harpoon.ui').nav_next, { desc = '[H]arpoon [J] Next file' })
+      vim.keymap.set('n', '<leader>hk', require('harpoon.ui').nav_prev, { desc = '[H]arpoon [K] Previous file' })
       for id = 1, 9 do
         vim.keymap.set('n', '<leader>h' .. id, function()
           require('harpoon.ui').nav_file(id)
         end, { desc = '[H]arpoon File [' .. id .. ']' })
       end
+    end,
+  },
+
+  {
+    'voldikss/vim-floaterm',
+    config = function()
+      vim.g.floaterm_width = 0.9
+      vim.g.floaterm_height = 0.9
+      vim.g.floaterm_opener = 'edit'
+      vim.g.floaterm_autohide = 2
+
+      vim.keymap.set({ 'n', 't' }, '<leader>t', '<cmd>FloatermToggle<CR>', { desc = 'Toggle Floaterm' })
+      vim.keymap.set('n', '<leader>l', ':FloatermNew --name=lazygit lazygit<CR>', { desc = 'Open [L]azygit Floaterm' })
+      vim.keymap.set('n', '<leader>v', ':FloatermNew --name=vifm vifm<CR>', { desc = 'Open [V]ifm Floaterm' })
     end,
   },
 

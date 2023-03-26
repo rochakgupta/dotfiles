@@ -318,7 +318,7 @@ vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc =
 vim.keymap.set('n', '<leader>sc', require('telescope.builtin').commands, { desc = '[S]earch [C]ommands' })
 
 pcall(require('telescope').load_extension, 'harpoon')
-vim.keymap.set('n', '<leader>sh', '<cmd>Telescope harpoon marks<CR>', { desc = '[S]earch [H]arpoon Files' })
+vim.keymap.set('n', '<leader>hs', '<cmd>Telescope harpoon marks<CR>', { desc = '[H]arpoon [S]earch Files' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -559,8 +559,13 @@ cmp.setup({
     end, { 'i', 's' }),
   }),
   sources = {
+    { name = 'buffer' },
+    { name = 'path' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+  },
+  completion = {
+    max_item_count = 15,
   },
 })
 
