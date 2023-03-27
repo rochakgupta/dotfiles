@@ -95,6 +95,14 @@ return {
   },
 
   {
+    'mbbill/undotree',
+    config = function()
+      vim.g.undotree_SetFocusWhenToggle = 1
+      vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+    end,
+  },
+
+  {
     'jay-babu/mason-null-ls.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
@@ -238,6 +246,25 @@ return {
         lualine_style = 'stealth',
       })
       vim.g.material_style = 'deep ocean'
+    end,
+  },
+
+  {
+    'Mofiqul/vscode.nvim',
+    config = function()
+      local c = require('vscode.colors').get_colors()
+      require('vscode').setup({
+        transparent = true,
+        italic_comments = true,
+        disable_nvimtree_bg = true,
+        color_overrides = {
+          vscLineNumber = '#FFFFFF',
+        },
+        group_overrides = {
+          Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+        },
+      })
+      require('vscode').load()
     end,
   },
 }
