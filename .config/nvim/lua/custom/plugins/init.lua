@@ -80,9 +80,17 @@ return {
       vim.g.floaterm_opener = 'edit'
       vim.g.floaterm_autohide = 2
 
-      vim.keymap.set({ 'n', 't' }, '<leader>t', '<cmd>FloatermToggle<CR>', { desc = 'Toggle Floaterm' })
+      vim.keymap.set({ 'n', 't' }, '<leader>t', ':FloatermToggle<CR>', { desc = 'Toggle Floaterm' })
       vim.keymap.set('n', '<leader>l', ':FloatermNew --name=lazygit lazygit<CR>', { desc = 'Open [L]azygit Floaterm' })
       vim.keymap.set('n', '<leader>v', ':FloatermNew --name=vifm vifm<CR>', { desc = 'Open [V]ifm Floaterm' })
+    end,
+  },
+
+  {
+    'SmiteshP/nvim-navic',
+    dependencies = { 'neovim/nvim-lspconfig' },
+    config = function()
+      -- vim.b.navic_lazy_update_context = true
     end,
   },
 
