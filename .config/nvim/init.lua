@@ -140,20 +140,20 @@ require('lazy').setup({
       sections = {
         lualine_c = {
           {
-            'filename',
-            path = 3,
-          },
-        },
-      },
-      tabline = {
-        lualine_a = {
-          {
             function()
               return require('nvim-navic').get_location()
             end,
             cond = function()
               return require('nvim-navic').is_available()
             end,
+          },
+        },
+      },
+      tabline = {
+        lualine_a = {
+          {
+            'filename',
+            path = 1,
           },
         },
         lualine_z = {
@@ -474,6 +474,7 @@ local on_attach = function(client, bufnr)
 
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navic').attach(client, bufnr)
+    -- require('nvim-navbuddy').attach(client, bufnr)
   end
 
   -- Create a command `:Format` local to the LSP buffer
