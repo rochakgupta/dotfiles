@@ -105,7 +105,6 @@ return {
   --     require('nvim-navbuddy').setup({
   --       window = {
   --         border = 'rounded',
-  --         size = '80%',
   --       },
   --     })
   --     vim.keymap.set('n', '<leader>n', require('nvim-navbuddy').open, { desc = 'Open [N]avbuddy' })
