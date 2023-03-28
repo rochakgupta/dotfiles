@@ -32,7 +32,7 @@ vim.o.autoindent = true
 vim.o.wrap = false
 
 -- Disable thin cursor in insert mode
-vim.o.guicursor = ''
+vim.o.guicursor = 'a:block'
 
 -- Enable cursor line
 vim.o.cursorline = true
