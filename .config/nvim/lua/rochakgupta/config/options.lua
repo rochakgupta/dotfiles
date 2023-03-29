@@ -1,3 +1,41 @@
+-- Set highlight on search
+vim.o.hlsearch = false
+
+-- Make line numbers default
+vim.wo.number = true
+
+-- Enable mouse mode
+vim.o.mouse = 'a'
+
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+-- vim.o.clipboard = 'unnamed,unnamedplus'
+
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Save undo history
+vim.o.undofile = true
+
+-- Case insensitive searching UNLESS /C or capital in search
+-- vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- Keep signcolumn on by default
+vim.wo.signcolumn = 'yes'
+
+-- Decrease update time
+vim.o.updatetime = 50
+vim.o.timeout = true
+vim.o.timeoutlen = 300
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noinsert,noselect'
+
+-- NOTE: You should make sure your terminal supports this
+vim.o.termguicolors = true
+
 -- Open horizontal split below
 vim.o.splitbelow = true
 
@@ -41,7 +79,7 @@ vim.o.cursorline = true
 vim.o.scrolloff = 8
 
 -- Enable cursor column
--- vim.opt.cursorcolumn = true
+-- vim.o.cursorcolumn = true
 
 -- Change how auto formatting is done
 vim.opt.formatoptions:remove({ 'c', 'r', 'o', 't' })
@@ -56,4 +94,4 @@ vim.o.swapfile = false
 vim.o.undofile = true
 
 -- Set colorscheme
-vim.cmd.colorscheme('tokyonight')
+vim.cmd.colorscheme(require('rochakgupta.config.settings').colorscheme)
