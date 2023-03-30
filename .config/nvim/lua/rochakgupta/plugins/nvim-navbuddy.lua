@@ -7,9 +7,16 @@ return {
       'MunifTanjim/nui.nvim',
     },
     config = function()
+      local actions = require('nvim-navbuddy.actions')
       require('nvim-navbuddy').setup({
         window = {
           border = 'rounded',
+        },
+        mappings = {
+          ['<Down>'] = actions.next_sibling,
+          ['<Up>'] = actions.previous_sibling,
+          ['<Left>'] = actions.parent,
+          ['<Right>'] = actions.children,
         },
       })
       vim.keymap.set('n', '<leader>n', require('nvim-navbuddy').open, { desc = 'Open [N]avbuddy' })
