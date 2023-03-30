@@ -1,5 +1,6 @@
 return {
   {
+    -- Colorscheme
     'marko-cerovac/material.nvim',
     priority = 1000,
     lazy = true,

@@ -1,5 +1,6 @@
 return {
   {
+    --  Copy text to the system clipboard using the ANSI OSC52 sequence (enables copy over SSH)
     'ojroques/nvim-osc52',
     config = function()
       require('osc52').setup()

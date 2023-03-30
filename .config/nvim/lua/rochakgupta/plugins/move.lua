@@ -1,5 +1,6 @@
 return {
   {
+    -- Move block of lines with correct indent
     'fedepujol/move.nvim',
     config = function()
       local opts = { noremap = true, silent = true }

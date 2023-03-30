@@ -1,5 +1,6 @@
 return {
   {
+    -- Debugging
     'mfussenegger/nvim-dap',
     enabled = false,
     dependencies = {

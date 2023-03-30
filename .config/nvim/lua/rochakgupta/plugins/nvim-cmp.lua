@@ -1,6 +1,6 @@
 return {
   {
-    -- Autocompletion
+    -- Completion
     'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-nvim-lsp', -- Used and configured in nvim-lspconfig

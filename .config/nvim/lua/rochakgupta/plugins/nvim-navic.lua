@@ -1,5 +1,6 @@
 return {
   {
+    -- Display symbols in the form of breadcrumbs
     'SmiteshP/nvim-navic',
     dependencies = {
       'neovim/nvim-lspconfig', -- Used and configured in nvim-lspconfig

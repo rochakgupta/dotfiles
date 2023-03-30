@@ -1,5 +1,6 @@
 return {
   {
+    -- Colorscheme
     'sainnhe/gruvbox-material',
     priority = 1000,
     lazy = true,

@@ -1,5 +1,6 @@
 return {
   {
+    -- Navigate and perform actions on symbols with ease
     'SmiteshP/nvim-navbuddy',
     dependencies = {
       'neovim/nvim-lspconfig', -- Used and configured in nvim-lspconfig

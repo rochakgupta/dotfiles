@@ -1,5 +1,6 @@
 return {
   {
+    -- Faster file navigation
     'ThePrimeagen/harpoon',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()

@@ -1,5 +1,6 @@
 return {
   {
+    -- Colorscheme
     'tiagovla/tokyodark.nvim',
     priority = 1000,
     lazy = true,
