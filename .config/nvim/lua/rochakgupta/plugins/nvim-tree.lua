@@ -14,6 +14,12 @@ return {
         update_focused_file = {
           enable = true,
         },
+        modified = {
+          enable = true,
+        },
+        renderer = {
+          full_name = true,
+        },
       })
       vim.keymap.set('n', '<leader>x', '<cmd>NvimTreeToggle<CR>')
     end,

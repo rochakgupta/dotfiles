@@ -5,7 +5,7 @@ return {
     opts = {
       options = {
         icons_enabled = true,
-        theme = require('rochakgupta.config.settings').colorscheme,
+        theme = require('rochakgupta.settings').colorscheme,
       },
       sections = {
         lualine_c = {

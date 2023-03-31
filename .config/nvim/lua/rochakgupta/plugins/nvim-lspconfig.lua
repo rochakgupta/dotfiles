@@ -24,7 +24,7 @@ return {
     config = function()
       -- UI
       require('lspconfig.ui.windows').default_options = {
-        border = require('rochakgupta.config.settings').border,
+        border = require('rochakgupta.settings').border,
       }
 
       --  This function gets run when an LSP connects to a particular buffer.
@@ -108,7 +108,7 @@ return {
       -- Setup mason so it can manage external tooling
       require('mason').setup({
         ui = {
-          border = require('rochakgupta.config.settings').border,
+          border = require('rochakgupta.settings').border,
         },
       })
 

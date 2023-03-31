@@ -5,7 +5,7 @@ return {
     config = function()
       require('zen-mode').setup({
         window = {
-          width = 140,
+          width = 120,
         },
       })
       vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<CR>', { desc = 'Toggle [Z]en Mode' })

@@ -94,4 +94,4 @@ vim.o.swapfile = false
 vim.o.undofile = true
 
 -- Set colorscheme
-vim.cmd.colorscheme(require('rochakgupta.config.settings').colorscheme)
+vim.cmd.colorscheme(require('rochakgupta.settings').colorscheme)
