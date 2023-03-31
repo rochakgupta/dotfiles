@@ -54,9 +54,6 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
         },
-        completion = {
-          max_item_count = 15,
-        },
       })
     end,
   },
