@@ -8,17 +8,15 @@ return {
       vim.g.material_style = 'deep ocean'
     end,
     opts = {
-      contrast = {
-        sidebars = true,
-        floating_windows = true,
-      },
       styles = {
         comments = { italic = true },
       },
       plugins = {
+        'dap',
         'gitsigns',
         'indent-blankline',
         'nvim-cmp',
+        'nvim-navic',
         'nvim-tree',
         'nvim-web-devicons',
         'telescope',
