@@ -1,3 +1,5 @@
+local transparent = require('rochakgupta.settings').transparent
+
 return {
   {
     -- Colorscheme
@@ -6,8 +8,8 @@ return {
     priority = 1000,
     lazy = true,
     opts = {
-      disable_background = true,
-      disable_float_background = true,
+      disable_background = transparent,
+      disable_float_background = transparent,
       disable_italics = true,
     },
   },

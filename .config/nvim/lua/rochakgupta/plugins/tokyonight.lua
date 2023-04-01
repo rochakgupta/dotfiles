@@ -1,3 +1,5 @@
+local transparent = require('rochakgupta.settings').transparent
+
 return {
   {
     -- Colorscheme
@@ -6,11 +8,11 @@ return {
     lazy = true,
     opts = {
       style = 'night',
-      transparent = true,
+      transparent = transparent,
       styles = {
         keywords = { italic = false },
-        sidebars = 'transparent',
-        floats = 'transparent',
+        sidebars = transparent and 'transparent' or 'dark',
+        floats = transparent and 'transparent' or 'dark',
       },
     },
   },

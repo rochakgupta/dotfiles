@@ -24,7 +24,7 @@ return {
       },
       disable = {
         colored_cursor = true,
-        background = true,
+        background = require('rochakgupta.settings').transparent,
       },
       lualine_style = 'stealth',
     },

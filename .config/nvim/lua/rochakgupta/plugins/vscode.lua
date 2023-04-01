@@ -5,7 +5,7 @@ return {
     priority = 1000,
     lazy = true,
     opts = {
-      transparent = true,
+      transparent = require('rochakgupta.settings').transparent,
       italic_comments = true,
       disable_nvimtree_bg = true,
     },
