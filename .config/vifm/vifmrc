@@ -11,7 +11,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=/usr/local/bin/nvim
+set vicmd=nvim
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
@@ -127,7 +127,7 @@ mark h ~/
 " %m run the command in a menu window
 
 command! df df -h %m 2> /dev/null
-command! diff vim -d %f %F
+command! diff nvim -d %f %F
 command! zip zip -r %c.zip %f
 command! run !! ./%f
 command! make !!make %a
@@ -164,7 +164,7 @@ command! reload :write | restart full
 " program.
 
 " Markdown
-filetype *.md vim
+filetype *.md nvim
 
 " Pdf
 filetype {*.pdf},<application/pdf>
@@ -217,8 +217,8 @@ filetype {*.html,*.htm},<text/html>
        \ open -a Firefox.app,
        \ {Open in Chrome}
        \ open -a Google\ Chrome.app,
-       \ {Open in vim}
-       \ vim,
+       \ {Open in nvim}
+       \ nvim,
 fileviewer {*.html,*.htm},<text/html> w3m -dump -T text/html
 
 " Object
