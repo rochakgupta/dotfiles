@@ -1,3 +1,5 @@
+local transparent = require('rochakgupta.settings').transparent
+
 return {
   {
     -- Colorscheme
@@ -5,9 +7,9 @@ return {
     priority = 1000,
     lazy = true,
     opts = {
-      transparent = require('rochakgupta.settings').transparent,
+      transparent = transparent,
       italic_comments = true,
-      disable_nvimtree_bg = true,
+      disable_nvimtree_bg = transparent,
     },
   },
 }
