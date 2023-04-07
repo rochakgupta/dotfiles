@@ -8,8 +8,11 @@ return {
       require('telescope').setup({
         defaults = {
           layout_strategy = 'vertical',
+          layout_config = {
+            width = 0.9,
+          },
           path_display = {
-            truncate = 3,
+            'shorten',
           },
           mappings = {
             i = {
