@@ -1,4 +1,4 @@
-local transparent = require('rochakgupta.settings').transparent
+local settings = require('rochakgupta.settings')
 
 return {
   {
@@ -6,10 +6,10 @@ return {
     'rose-pine/neovim',
     name = 'rose-pine',
     priority = 1000,
-    lazy = true,
+    lazy = settings.colorscheme ~= 'rose-pine',
     opts = {
-      disable_background = transparent,
-      disable_float_background = transparent,
+      disable_background = settings.transparent,
+      disable_float_background = settings.transparent,
       disable_italics = true,
     },
   },

@@ -1,9 +1,11 @@
+local settings = require('rochakgupta.settings')
+
 return {
   {
     -- Colorscheme
     'marko-cerovac/material.nvim',
     priority = 1000,
-    lazy = true,
+    lazy = settings.colorscheme ~= 'material',
     init = function()
       vim.g.material_style = 'deep ocean'
     end,
@@ -24,7 +26,7 @@ return {
       },
       disable = {
         colored_cursor = true,
-        background = require('rochakgupta.settings').transparent,
+        background = settings.transparent,
       },
       lualine_style = 'stealth',
     },

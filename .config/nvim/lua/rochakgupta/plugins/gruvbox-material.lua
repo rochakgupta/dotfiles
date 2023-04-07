@@ -1,11 +1,13 @@
+local settings = require('rochakgupta.settings')
+
 return {
   {
     -- Colorscheme
     'sainnhe/gruvbox-material',
     priority = 1000,
-    lazy = true,
+    lazy = settings.colorscheme ~= 'gruvbox-material',
     init = function()
-      if require('rochakgupta.settings').transparent then
+      if settings.transparent then
         vim.g.gruvbox_material_background = 'hard'
         vim.g.gruvbox_material_ui_contrast = 'high'
         vim.g.gruvbox_material_transparent_background = 1

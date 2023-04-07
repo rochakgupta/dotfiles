@@ -1,12 +1,14 @@
+local settings = require('rochakgupta.settings')
+
 return {
   {
     -- Colorscheme
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
-    lazy = true,
+    lazy = settings.colorscheme ~= 'catppuccin',
     opts = {
-      transparent_background = require('rochakgupta.settings').transparent,
+      transparent_background = settings.transparent,
       term_colors = true,
       styles = {
         conditionals = {},

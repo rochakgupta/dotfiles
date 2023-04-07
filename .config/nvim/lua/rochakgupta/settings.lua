@@ -3,4 +3,5 @@ return {
   colorscheme = 'tokyonight',
   transparent = true,
   navic = false,
+  dap = false,
 }

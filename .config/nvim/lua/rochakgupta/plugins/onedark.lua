@@ -1,11 +1,13 @@
+local settings = require('rochakgupta.settings')
+
 return {
   {
     -- Colorscheme
     'navarasu/onedark.nvim',
     priority = 1000,
-    lazy = true,
+    lazy = settings.colorscheme ~= 'onedark',
     opts = {
-      transparent = require('rochakgupta.settings').transparent,
+      transparent = settings.transparent,
     },
   },
 }
