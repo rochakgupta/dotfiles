@@ -66,7 +66,9 @@ return {
         end, '[W]orkspace [L]ist Folders')
 
         if client.server_capabilities.documentSymbolProvider then
-          require('nvim-navic').attach(client, bufnr)
+          if require('rochakgupta.settings').navic then
+            require('nvim-navic').attach(client, bufnr)
+          end
           require('nvim-navbuddy').attach(client, bufnr)
         end
 
