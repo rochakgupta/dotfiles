@@ -1,6 +1,6 @@
 return {
   border = 'rounded',
-  colorscheme = 'material',
+  colorscheme = 'tokyonight',
   transparent = false,
   navic = false,
   dap = false,
