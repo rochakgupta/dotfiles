@@ -5,6 +5,7 @@
   "catppuccin": { "branch": "main", "commit": "90c4d1c6e1f8dd2cff9962b36a70b1e681947621" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
+  "codi.vim": { "branch": "master", "commit": "83b9859aaf8066d95892e01eb9c01571a4b325dd" },
   "fidget.nvim": { "branch": "main", "commit": "688b4fec4517650e29c3e63cfbb6e498b3112ba1" },
   "fzf": { "branch": "master", "commit": "20230402d087858ca9a93aa8fe53d289f29c1836" },
   "fzf-floaterm": { "branch": "master", "commit": "66a30db85a7adf573af9b8a4f3f8c4ce0a2d665e" },
