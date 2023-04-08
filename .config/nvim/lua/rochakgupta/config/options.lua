@@ -48,20 +48,22 @@ vim.o.incsearch = true
 -- Enable relative numbers
 vim.wo.relativenumber = true
 
--- Number of spaces a tab counts for
-vim.o.tabstop = 4
-
--- Number of spaces a tab counts for while performing editing operations
-vim.o.softtabstop = 4
-
--- A tab infront of the line inserts spaces
-vim.o.smarttab = true
-
--- Number of spaces to use for each step of (auto)indent
-vim.o.shiftwidth = 4
+-- Indentation guide: https://gist.github.com/LunarLambda/4c444238fb364509b72cfb891979f1dd
 
 -- Insert spaces for tabs
 vim.o.expandtab = true
+
+-- Number of spaces a tab counts for (detected automatically by vim-sleuth)
+-- vim.o.tabstop = 4
+
+-- Number of spaces to use for each step of (auto)indent (detected automatically by vim-sleuth)
+-- vim.o.shiftwidth = 4
+
+-- Number of spaces a tab counts for while performing editing operations
+vim.o.softtabstop = -1
+
+-- A tab infront of the line inserts spaces
+vim.o.smarttab = true
 
 -- Smart autoindenting when starting a new line
 vim.o.autoindent = true
