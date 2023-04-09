@@ -13,7 +13,11 @@ return {
 
       luasnip.config.setup()
 
+      vim.g.nvim_cmp_enabled = true
       cmp.setup({
+        enabled = function()
+          return vim.g.nvim_cmp_enabled
+        end,
         window = {
           documentation = cmp.config.window.bordered(),
         },
