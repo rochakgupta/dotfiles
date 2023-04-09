@@ -9,6 +9,10 @@ return {
     init = function()
       -- vim.b.navic_lazy_update_context = true
     end,
-    opts = {},
+    opts = {
+      lsp = {
+        auto_attach = require('rochakgupta.settings').navic,
+      },
+    },
   },
 }

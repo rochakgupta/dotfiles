@@ -11,13 +11,16 @@ return {
       local actions = require('nvim-navbuddy.actions')
       require('nvim-navbuddy').setup({
         window = {
-          border = 'rounded',
+          border = require('rochakgupta.settings').border,
         },
         mappings = {
           ['<Down>'] = actions.next_sibling,
           ['<Up>'] = actions.previous_sibling,
           ['<Left>'] = actions.parent,
           ['<Right>'] = actions.children,
+        },
+        lsp = {
+          auto_attach = true,
         },
       })
       vim.keymap.set('n', '<leader>n', require('nvim-navbuddy').open, { desc = 'Open [N]avbuddy' })
