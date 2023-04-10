@@ -25,3 +25,6 @@ require('lazy').setup('rochakgupta.plugins', {
     border = require('rochakgupta.settings').border,
   },
 })
+
+-- Set colorscheme after lazy is done loading
+vim.cmd.colorscheme(require('rochakgupta.settings').colorscheme)

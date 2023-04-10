@@ -1,2 +1,2 @@
-require('rochakgupta.lazy')
 require('rochakgupta.config')
+require('rochakgupta.lazy')

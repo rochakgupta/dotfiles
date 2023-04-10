@@ -97,6 +97,3 @@ vim.o.undofile = true
 
 -- Limit the maximum number of items to show in the popup menu
 vim.o.pumheight = 15
-
--- Set colorscheme
-vim.cmd.colorscheme(require('rochakgupta.settings').colorscheme)
