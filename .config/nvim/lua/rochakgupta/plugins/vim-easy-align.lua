@@ -1,5 +1,6 @@
 return {
   {
+    -- Vertical alignment
     'junegunn/vim-easy-align',
     init = function()
       -- Start interactive EasyAlign in visual mode (e.g. vipga)
