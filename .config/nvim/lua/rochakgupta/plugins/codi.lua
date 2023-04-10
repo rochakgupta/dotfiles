@@ -1,5 +1,6 @@
 return {
   {
+    -- REPL
     'metakirby5/codi.vim',
     cmd = { 'Codi', 'CodiNew', 'CodiSelect' },
     lazy = true,

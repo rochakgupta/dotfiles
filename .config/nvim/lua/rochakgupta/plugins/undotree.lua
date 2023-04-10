@@ -1,5 +1,6 @@
 return {
-  { -- Visualize undo history
+  {
+    -- Visualize undo history
     'mbbill/undotree',
     init = function()
       vim.g.undotree_SetFocusWhenToggle = 1

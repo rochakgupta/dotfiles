@@ -1,5 +1,6 @@
 return {
   {
+    -- Use neovim as editor in browsers
     'glacambre/firenvim',
     -- Lazy load firenvim
     -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297

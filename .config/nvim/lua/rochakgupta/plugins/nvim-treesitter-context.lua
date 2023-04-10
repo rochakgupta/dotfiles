@@ -1,5 +1,6 @@
 return {
   {
+    -- Code context
     'nvim-treesitter/nvim-treesitter-context',
     lazy = true,
     cmd = 'TSContextEnable',
