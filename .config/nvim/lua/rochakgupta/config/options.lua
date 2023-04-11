@@ -53,11 +53,11 @@ vim.wo.relativenumber = true
 -- Insert spaces for tabs
 vim.o.expandtab = true
 
--- Number of spaces a tab counts for (detected automatically by vim-sleuth)
--- vim.o.tabstop = 4
+-- Default number of spaces a tab counts for (detected automatically by vim-sleuth)
+vim.o.tabstop = 4
 
--- Number of spaces to use for each step of (auto)indent (detected automatically by vim-sleuth)
--- vim.o.shiftwidth = 4
+-- Default number of spaces to use for each step of (auto)indent (detected automatically by vim-sleuth)
+vim.o.shiftwidth = 4
 
 -- Number of spaces a tab counts for while performing editing operations
 vim.o.softtabstop = -1

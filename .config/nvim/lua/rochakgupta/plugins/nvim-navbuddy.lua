@@ -23,7 +23,7 @@ return {
           auto_attach = true,
         },
       })
-      vim.keymap.set('n', '<leader>n', require('nvim-navbuddy').open, { desc = 'Open [N]avbuddy' })
+      vim.keymap.set('n', '<leader>n', require('nvim-navbuddy').open, { desc = 'Open [N]avbuddy', silent = true })
     end,
   },
 }
