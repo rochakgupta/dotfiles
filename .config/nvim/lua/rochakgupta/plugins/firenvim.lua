@@ -49,6 +49,8 @@ return {
             vim.g.indent_blankline_enabled = false
             -- Disable nvim-cmp
             -- vim.g.nvim_cmp_enabled = false
+            -- Firefox only: Manually set the font size as default is too big
+            -- vim.o.guifont = 'mononoki_Nerd_Font_Mono:h14'
           end
         end,
       })
