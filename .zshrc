@@ -12,56 +12,23 @@ export PAGER=most
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
+# Syntax highlighting
 # Must be the last plugin sourced
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
+# Autocomplete with fzf
 # Must be loaded before zsh-autosuggestions
 zplug "Aloxaf/fzf-tab"
 
+# Suggestions
 zplug "zsh-users/zsh-autosuggestions"
+
+# Vi bindings
+ZVM_CURSOR_STYLE_ENABLED=false
+zplug "jeffreytse/zsh-vi-mode"
 
 # Source plugins and add commands to $PATH
 zplug load
-
-################################################################################
-# Command editing
-################################################################################
-# Using vim bindings
-bindkey -v
-
-# Or in $EDITOR
-autoload -Uz edit-command-line
-zle -N edit-command-line
-# Ctrl+X followed by Ctrl+E in insert mode
-bindkey '^X^E' edit-command-line
-# Or v in normal mode
-bindkey -M vicmd v edit-command-line
-
-# Add text objects for quotes and brackets like da" and ci(
-autoload -Uz select-bracketed select-quoted
-zle -N select-quoted
-zle -N select-bracketed
-for km in viopp visual; do
-  bindkey -M $km -- '-' vi-up-line-or-history
-  for c in {a,i}${(s..)^:-\'\"\`\|,./:;=+@}; do
-    bindkey -M $km $c select-quoted
-  done
-  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-    bindkey -M $km $c select-bracketed
-  done
-done
-
-# Mimic Tim Pope's surround plugin
-# Disabled as it conflicts with zsh-syntax-highlighting plugin
-#
-# autoload -Uz surround
-# zle -N delete-surround surround
-# zle -N add-surround surround
-# zle -N change-surround surround
-# bindkey -M vicmd cs change-surround
-# bindkey -M vicmd ds delete-surround
-# bindkey -M vicmd ys add-surround
-# bindkey -M visual S add-surround
 
 ################################################################################
 # go
@@ -97,7 +64,15 @@ eval "$(zoxide init zsh)"
 ################################################################################
 # fzf
 ################################################################################
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+function fzf_init() {
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+}
+
+# If zsh-vi-mode is used. Required because it overwrites existing keybindings
+zvm_after_init_commands+=(fzf_init)
+# Else
+# fzf_init()
+
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
 fi
