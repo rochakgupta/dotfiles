@@ -12,10 +12,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Lazy requires leaders to be set before it is setup
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- Setup lazy
 require('lazy').setup('rochakgupta.plugins', {
   change_detection = {
@@ -25,6 +21,3 @@ require('lazy').setup('rochakgupta.plugins', {
     border = require('rochakgupta.settings').border,
   },
 })
-
--- Set colorscheme after lazy is done loading
-vim.cmd.colorscheme(require('rochakgupta.settings').colorscheme)
