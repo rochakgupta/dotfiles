@@ -120,5 +120,6 @@ fi
 ################################################################################
 # asdf
 ################################################################################
-# asdf scripts need to be sourced after setting the $PATH and sourcing the framework (oh-my-zsh etc).
+# asdf scripts need to be sourced after setting the $PATH and sourcing the
+# framework (oh-my-zsh etc).
 . /usr/local/opt/asdf/libexec/asdf.sh
