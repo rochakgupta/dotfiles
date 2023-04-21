@@ -2,7 +2,8 @@ return {
   border = 'rounded',
   colorscheme = 'tokyonight',
   transparent = false,
+  dap = false,
   indent_blankline = false,
   navic = false,
-  dap = false,
+  which_key = false,
 }

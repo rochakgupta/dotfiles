@@ -2,7 +2,9 @@ return {
   {
     -- Debugging
     'mfussenegger/nvim-dap',
-    enabled = require('rochakgupta.settings').dap,
+    cond = function()
+      return require('rochakgupta.settings').dap
+    end,
     dependencies = {
       -- Creates a beautiful debugger UI
       'rcarriga/nvim-dap-ui',
