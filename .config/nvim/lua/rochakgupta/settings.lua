@@ -6,4 +6,6 @@ return {
   indent_blankline = false,
   navic = false,
   which_key = false,
+  oil = true,
+  vinegar = false,
 }
