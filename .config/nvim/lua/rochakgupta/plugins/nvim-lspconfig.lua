@@ -15,11 +15,15 @@ return {
         'j-hui/fidget.nvim',
         opts = {},
       },
+
       -- Additional lua configuration, makes nvim stuff amazing!
       {
         'folke/neodev.nvim',
         opts = {},
       },
+
+      -- Schema store
+      'b0o/schemastore.nvim',
     },
     config = function()
       -- UI
@@ -84,12 +88,21 @@ return {
         ruff_lsp = {},
         tsserver = {},
         ['jdtls@1.10.0'] = {},
-        jsonls = {},
+        jsonls = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+          },
+        },
         marksman = {},
         rust_analyzer = {},
         esbonio = {},
         vimls = {},
-        yamlls = {},
+        yamlls = {
+          yaml = {
+            schemas = require('schemastore').yaml.schemas(),
+          },
+        },
         lua_ls = {
           Lua = {
             workspace = { checkThirdParty = false },

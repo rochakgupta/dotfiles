@@ -42,6 +42,7 @@
   "onedark.nvim": { "branch": "master", "commit": "4497678c6b1847b663c4b23000d55f28a2f846ce" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "rose-pine": { "branch": "main", "commit": "63821c18a2840b3172fc5df15d9268d80f46fa17" },
+  "schemastore.nvim": { "branch": "main", "commit": "383abaefd6c062dd6a03aef2fa88e671780069ec" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "580b6c48651cabb63455e97d7e131ed557b8c7e2" },
   "telescope.nvim": { "branch": "master", "commit": "c1a2af0af69e80e14e6b226d3957a064cd080805" },
   "tokyodark.nvim": { "branch": "master", "commit": "32be5242f68be8a75ff5fbab358d14cb76887ab6" },
