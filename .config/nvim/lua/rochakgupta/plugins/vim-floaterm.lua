@@ -14,6 +14,7 @@ return {
       vim.g.floaterm_height = 0.9
       vim.g.floaterm_opener = 'edit'
       vim.g.floaterm_autohide = 2
+      vim.g.floaterm_giteditor = false
     end,
     config = function()
       vim.keymap.set('n', '<leader>st', ':Floaterms<CR>', { desc = '[S]earch [T]erminals' })
