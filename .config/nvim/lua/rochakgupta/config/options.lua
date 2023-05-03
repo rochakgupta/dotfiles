@@ -1,3 +1,9 @@
+-- Enable 24-bit RGB colors
+vim.o.termguicolors = true
+
+-- Enable dark background
+vim.o.background = 'dark'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
