@@ -1,3 +1,6 @@
+-- Binding to open command-line window
+vim.o.cedit = '<C-Y>'
+
 -- Enable 24-bit RGB colors
 vim.o.termguicolors = true
 
