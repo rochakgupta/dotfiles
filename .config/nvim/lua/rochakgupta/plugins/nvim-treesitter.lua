@@ -17,7 +17,7 @@ return {
           'rust',
           'tsx',
           'typescript',
-          'help',
+          'vimdoc',
           'vim',
           'java',
           'bash',
