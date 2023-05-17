@@ -1,7 +1,7 @@
 export CLICOLOR=1
 export KEYTIMEOUT=1
 
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=nvim
 export VISUAL=$EDITOR
 export PAGER=most
 
