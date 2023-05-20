@@ -71,39 +71,25 @@ return {
         end, { desc = 'Format current buffer with LSP' })
       end
 
-      local servers = {
-        bashls = {},
-        gopls = {},
-        pyright = {},
-        ruff_lsp = {},
-        tsserver = {},
-        ['jdtls@1.10.0'] = {},
-        jsonls = {
-          json = {
-            schemas = require('schemastore').json.schemas(),
-            validate = { enable = true },
-          },
-        },
-        marksman = {},
-        rust_analyzer = {},
-        esbonio = {},
-        vimls = {},
-        yamlls = {
-          yaml = {
-            schemas = require('schemastore').yaml.schemas(),
-          },
-        },
-        lua_ls = {
-          Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-          },
-        },
-      }
-
       -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+      local servers = {
+        'bashls',
+        'gopls',
+        'pyright',
+        'ruff_lsp',
+        'tsserver',
+        'jdtls@1.10.0',
+        'jsonls',
+        'marksman',
+        'rust_analyzer',
+        'esbonio',
+        'vimls',
+        'yamlls',
+        'lua_ls',
+      }
 
       -- Setup mason so it can manage external tooling
       require('mason').setup({
@@ -115,15 +101,58 @@ return {
       local mason_lspconfig = require('mason-lspconfig')
 
       mason_lspconfig.setup({
-        ensure_installed = vim.tbl_keys(servers),
+        ensure_installed = servers,
       })
 
+      local lsp_defaults = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+      }
+
+      local lspconfig = require('lspconfig')
+
+      lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util.default_config, lsp_defaults)
+
+      local default_handler = function(server)
+        -- See :help lspconfig-setup
+        lspconfig[server].setup({})
+      end
+
+      -- See :help mason-lspconfig-dynamic-server-setup
       mason_lspconfig.setup_handlers({
-        function(server_name)
-          require('lspconfig')[server_name].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = servers[server_name],
+        default_handler,
+        bashls = function()
+          lspconfig.bashls.setup({
+            filetypes = { 'sh', 'zsh' },
+          })
+        end,
+        jsonls = function()
+          lspconfig.jsonls.setup({
+            settings = {
+              json = {
+                schemas = require('schemastore').json.schemas(),
+                validate = { enable = true },
+              },
+            },
+          })
+        end,
+        yamlls = function()
+          lspconfig.yamlls.setup({
+            settings = {
+              yaml = {
+                schemas = require('schemastore').yaml.schemas(),
+              },
+            },
+          })
+        end,
+        lua_ls = function()
+          lspconfig.lua_ls.setup({
+            settings = {
+              Lua = {
+                workspace = { checkThirdParty = false },
+                telemetry = { enable = false },
+              },
+            },
           })
         end,
       })
