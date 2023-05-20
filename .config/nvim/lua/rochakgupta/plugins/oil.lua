@@ -33,6 +33,7 @@ return {
         float = {
           max_width = 50,
           max_height = 40,
+          border = require('rochakgupta.settings').border,
           win_options = {
             winblend = 0,
           },
