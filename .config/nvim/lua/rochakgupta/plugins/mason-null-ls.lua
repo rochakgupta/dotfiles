@@ -10,12 +10,17 @@ return {
     config = function()
       local null_ls = require('null-ls')
       local formatting = null_ls.builtins.formatting
+      local diagnostics = null_ls.builtins.diagnostics
       null_ls.setup({
         border = require('rochakgupta.settings').border,
         sources = {
           formatting.black,
           formatting.stylua,
           formatting.prettierd,
+          formatting.shfmt.with({
+            filetypes = { 'sh', 'zsh' },
+          }),
+          diagnostics.shellcheck,
         },
       })
       require('mason-null-ls').setup({
