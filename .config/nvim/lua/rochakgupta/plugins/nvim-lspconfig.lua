@@ -33,12 +33,6 @@ return {
 
       --  This function gets run when an LSP connects to a particular buffer.
       local on_attach = function(_, bufnr)
-        -- NOTE: Remember that lua is a real programming language, and as such it is possible
-        -- to define small helper and utility functions so you don't have to repeat yourself
-        -- many times.
-        --
-        -- In this case, we create a function that lets us more easily define mappings specific
-        -- for LSP related items. It sets the mode, buffer and description for us each time.
         local nmap = function(keys, func, desc)
           if desc then
             desc = 'LSP: ' .. desc
@@ -77,10 +71,6 @@ return {
         end, { desc = 'Format current buffer with LSP' })
       end
 
-      -- Enable the following language servers
-      --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-      --  Add any additional override configuration in the following tables. They will be passed to
-      --  the `settings` field of the server config. You must look up that documentation yourself.
       local servers = {
         bashls = {},
         gopls = {},
@@ -122,7 +112,6 @@ return {
         },
       })
 
-      -- Ensure the servers above are installed
       local mason_lspconfig = require('mason-lspconfig')
 
       mason_lspconfig.setup({
@@ -151,8 +140,8 @@ return {
       vim.keymap.set('n', '<leader>f', ':FormatToggle<CR>', { desc = 'Toggle Auto[f]ormatting' })
 
       -- Create an augroup that is used for managing our formatting autocmds.
-      --      We need one augroup per client to make sure that multiple clients
-      --      can attach to the same buffer without interfering with each other.
+      --  We need one augroup per client to make sure that multiple clients
+      --  can attach to the same buffer without interfering with each other.
       local _augroups = {}
       local get_augroup = function(client)
         if not _augroups[client.id] then
@@ -165,7 +154,6 @@ return {
       end
 
       -- Whenever an LSP attaches to a buffer, we will run this function.
-      --
       -- See `:help LspAttach` for more information about this autocmd event.
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('rochakgupta-lsp-attach-format', { clear = true }),
@@ -175,23 +163,12 @@ return {
           local client = vim.lsp.get_client_by_id(client_id)
           local bufnr = args.buf
 
-          -- Only attach to clients that support document formatting
-          -- if not client.server_capabilities.documentFormattingProvider then
-          --   return
-          -- end
-
           local client_name
 
           -- Fallback to null-ls if client does not support formatting
           if not client.server_capabilities.documentFormattingProvider then
             client_name = 'null-ls'
           end
-
-          -- Tsserver usually works poorly. Sorry you work with bad languages
-          -- You can remove this line if you know what you're doing :)
-          -- if client.name == 'tsserver' then
-          --   return
-          -- end
 
           -- Use formatter provided by null-ls for typescript and lua
           if client.name == 'tsserver' or client.name == 'lua_ls' then
