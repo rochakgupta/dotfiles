@@ -38,7 +38,7 @@ export PATH=$PATH:$HOME/go/bin
 ################################################################################
 # java
 ################################################################################
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 ################################################################################
 # python
@@ -65,7 +65,7 @@ eval "$(zoxide init zsh)"
 # fzf
 ################################################################################
 function fzf_init() {
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+	[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 }
 
 # If zsh-vi-mode is used. Required because it overwrites existing keybindings
@@ -73,8 +73,8 @@ zvm_after_init_commands+=(fzf_init)
 # Else
 # fzf_init()
 
-if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
+if type rg &>/dev/null; then
+	export FZF_DEFAULT_COMMAND='rg --files'
 fi
 export FZF_DEFAULT_OPTS='-e -m --reverse --height 50% --border=sharp'
 
@@ -82,12 +82,12 @@ export FZF_DEFAULT_OPTS='-e -m --reverse --height 50% --border=sharp'
 # vifm
 ################################################################################
 function f() {
-    local dst="$(command vifm --choose-dir - "$@")"
-    if [ -z "$dst" ]; then
-        echo 'Directory picking cancelled/failed'
-        return 1
-    fi
-    cd "$dst"
+	local dst="$(command vifm --choose-dir - "$@")"
+	if [ -z "$dst" ]; then
+		echo 'Directory picking cancelled/failed'
+		return 1
+	fi
+	cd "$dst"
 }
 
 ################################################################################
@@ -99,11 +99,10 @@ alias c=lazygit
 ################################################################################
 # yadm
 ################################################################################
-function yc() {
-    cd ~
-    yadm enter lazygit
-    cd -
-}
+function yc() (
+	cd -- ~ || exit
+	yadm enter lazygit
+)
 
 ################################################################################
 # brew
@@ -111,10 +110,10 @@ function yc() {
 # Shell completion for tools installed by brew
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 if type brew &>/dev/null; then
-  FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
+	FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
 
-  autoload -Uz compinit
-  compinit
+	autoload -Uz compinit
+	compinit
 fi
 
 ################################################################################
