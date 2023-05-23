@@ -38,7 +38,7 @@ export PATH=$PATH:$HOME/go/bin
 ################################################################################
 # java
 ################################################################################
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
 
 ################################################################################
 # python
