@@ -105,17 +105,9 @@ lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util.defa
 local handlers = {
   function(server)
     -- See :help lspconfig-setup
-    lspconfig[server].setup({})
+    lspconfig[server].setup(servers[server])
   end,
 }
-
-for server, opts in pairs(servers) do
-  if next(opts) then
-    handlers[server] = function()
-      lspconfig[server].setup(opts)
-    end
-  end
-end
 
 -- See :help mason-lspconfig-dynamic-server-setup
 mason_lspconfig.setup_handlers(handlers)
