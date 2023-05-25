@@ -1,9 +1,6 @@
 return {
   {
     'stevearc/oil.nvim',
-    cond = function()
-      return require('rochakgupta.settings').oil
-    end,
     config = function()
       require('oil').setup({
         columns = {},
