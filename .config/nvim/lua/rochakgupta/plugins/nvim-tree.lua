@@ -2,7 +2,12 @@ return {
   {
     -- File explorer
     'nvim-tree/nvim-tree.lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+      {
+        'nvim-tree/nvim-web-devicons',
+        opts = {},
+      },
+    },
     keys = {
       { '<leader>x', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle NvimTree' },
     },

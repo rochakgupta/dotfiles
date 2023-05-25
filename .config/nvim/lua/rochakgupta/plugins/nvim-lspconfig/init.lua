@@ -13,6 +13,9 @@ return {
       -- Useful status updates for LSP
       {
         'j-hui/fidget.nvim',
+        cond = function()
+          return require('rochakgupta.settings').fidget
+        end,
         opts = {
           window = {
             blend = 0,
