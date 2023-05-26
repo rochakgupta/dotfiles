@@ -65,7 +65,7 @@ return {
         options = {
           icons_enabled = true,
           theme = require('rochakgupta.settings').colorscheme,
-          disabled_filetypes = { 'NVimTree' },
+          disabled_filetypes = { 'NvimTree' },
         },
         sections = {
           lualine_a = { 'mode' },
