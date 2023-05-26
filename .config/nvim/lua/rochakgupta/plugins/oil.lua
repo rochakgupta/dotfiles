@@ -16,7 +16,7 @@ return {
           ['<C-s>'] = 'actions.select_split',
           ['<C-t>'] = 'actions.select_tab',
           ['<C-p>'] = 'actions.preview',
-          ['<C-x>'] = 'actions.close',
+          ['<ESC>'] = 'actions.close',
           ['<C-r>'] = 'actions.refresh',
           ['-'] = 'actions.parent',
           ['_'] = 'actions.open_cwd',
@@ -29,7 +29,7 @@ return {
         },
         float = {
           max_width = 50,
-          max_height = 40,
+          max_height = 50,
           border = require('rochakgupta.settings').border,
           win_options = {
             winblend = 0,
