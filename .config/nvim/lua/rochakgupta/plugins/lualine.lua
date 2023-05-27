@@ -5,10 +5,7 @@ return {
     -- Statusline
     'nvim-lualine/lualine.nvim',
     dependencies = {
-      {
-        'nvim-tree/nvim-web-devicons',
-        opts = {},
-      },
+      'nvim-tree/nvim-web-devicons',
       {
         'linrongbin16/lsp-progress.nvim',
         cond = function()
@@ -64,13 +61,13 @@ return {
       require('lualine').setup({
         options = {
           icons_enabled = true,
-          theme = require('rochakgupta.settings').colorscheme,
+          theme = settings.colorscheme,
           disabled_filetypes = { 'NvimTree' },
         },
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = require('rochakgupta.settings').navic and navic or filename,
+          lualine_c = settings.navic and navic or filename,
           lualine_x = sections_lualine_x,
           lualine_y = { 'progress' },
           lualine_z = { 'location' },

@@ -1,18 +1,18 @@
+local settings = require('rochakgupta.settings')
+
 return {
   {
     -- Display symbols in the form of breadcrumbs
     'SmiteshP/nvim-navic',
-    dependencies = {
-      'neovim/nvim-lspconfig', -- Used and configured in nvim-lspconfig
-    },
-    lazy = true,
+    lazy = settings.navic,
     init = function()
       -- vim.b.navic_lazy_update_context = true
     end,
     opts = {
-      lsp = {
-        auto_attach = require('rochakgupta.settings').navic,
-      },
+      -- Manually attached in nvim-lspconfig
+      -- lsp = {
+      --   auto_attach = settings.navic
+      -- },
     },
   },
 }

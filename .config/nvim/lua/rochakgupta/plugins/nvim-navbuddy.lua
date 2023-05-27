@@ -3,7 +3,6 @@ return {
     -- Navigate and perform actions on symbols with ease
     'SmiteshP/nvim-navbuddy',
     dependencies = {
-      'neovim/nvim-lspconfig', -- Used and configured in nvim-lspconfig
       'SmiteshP/nvim-navic', -- Used and configured in nvim-navic
       'MunifTanjim/nui.nvim',
     },
@@ -19,9 +18,10 @@ return {
           ['<Left>'] = actions.parent,
           ['<Right>'] = actions.children,
         },
-        lsp = {
-          auto_attach = true,
-        },
+        -- Manually attached in nvim-lspconfig
+        -- lsp = {
+        --   auto_attach = true,
+        -- },
       })
       vim.keymap.set('n', '<leader>n', ':Navbuddy<CR>', { desc = 'Open [N]avbuddy', silent = true })
     end,
