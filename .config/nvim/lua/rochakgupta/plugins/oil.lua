@@ -2,6 +2,15 @@ return {
   {
     'stevearc/oil.nvim',
     config = function()
+      local height_ratio = 0.85
+      local width_ratio = 0.25
+      local screen_w = vim.opt.columns:get()
+      local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+      local window_w = screen_w * width_ratio
+      local window_h = screen_h * height_ratio
+      local window_w_int = math.floor(window_w)
+      local window_h_int = math.floor(window_h)
+
       require('oil').setup({
         columns = {},
         win_options = {
@@ -16,7 +25,7 @@ return {
           ['<C-s>'] = 'actions.select_split',
           ['<C-t>'] = 'actions.select_tab',
           ['<C-p>'] = 'actions.preview',
-          ['<ESC>'] = 'actions.close',
+          ['<C-q>'] = 'actions.close',
           ['<C-r>'] = 'actions.refresh',
           ['-'] = 'actions.parent',
           ['_'] = 'actions.open_cwd',
@@ -28,8 +37,8 @@ return {
           show_hidden = true,
         },
         float = {
-          max_width = 50,
-          max_height = 50,
+          max_width = window_w_int,
+          max_height = window_h_int,
           border = require('rochakgupta.settings').border,
           win_options = {
             winblend = 0,
