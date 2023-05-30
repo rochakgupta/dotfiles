@@ -11,7 +11,7 @@ return {
       -- vim.g.loaded_netrwPlugin = 1
     end,
     config = function()
-      require('nvim-tree').setup {
+      require('nvim-tree').setup({
         hijack_netrw = false,
         hijack_cursor = true,
         respect_buf_cwd = true,
@@ -49,6 +49,9 @@ return {
           },
         },
         renderer = {
+          indent_markers = {
+            enable = true,
+          },
           highlight_git = true,
           icons = {
             show = {
@@ -57,7 +60,7 @@ return {
           },
           full_name = true,
         },
-      }
+      })
     end,
   },
 }
