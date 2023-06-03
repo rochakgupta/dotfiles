@@ -4,6 +4,9 @@ return {
   {
     -- Statusline
     'nvim-lualine/lualine.nvim',
+    cond = function()
+      return settings.lualine
+    end,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
       {
