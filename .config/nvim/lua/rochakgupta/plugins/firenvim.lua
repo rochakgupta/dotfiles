@@ -1,3 +1,5 @@
+local settings = require('rochakgupta.settings')
+
 return {
   {
     -- Use neovim as editor in browsers
@@ -42,15 +44,19 @@ return {
           local client = vim.api.nvim_get_chan_info(vim.v.event.chan).client
           if client ~= nil and client.name == 'Firenvim' then
             -- Disable lualine
-            require('lualine').hide({})
+            if settings.lualine then
+              require('lualine').hide({})
+            end
             -- Disable tabline
             vim.o.showtabline = 0
             -- Disable indent-blankline
-            vim.g.indent_blankline_enabled = false
+            if settings.indent_blankline then
+              vim.g.indent_blankline_enabled = false
+            end
             -- Disable nvim-cmp
             -- vim.g.nvim_cmp_enabled = false
             -- Firefox only: Manually set the font size as default is too big
-            -- vim.o.guifont = 'mononoki_Nerd_Font_Mono:h14'
+            vim.o.guifont = 'mononoki_Nerd_Font_Mono:h18'
           end
         end,
       })
