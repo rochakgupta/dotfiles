@@ -1,15 +1,16 @@
+export TERM=xterm-256color
 export CLICOLOR=1
 export KEYTIMEOUT=1
+export PAGER=most
 
 export EDITOR=nvim
-export VISUAL=$EDITOR
-export PAGER=most
+export VISUAL="$EDITOR"
 
 ################################################################################
 # Plugin Management:
 # zplug: https://github.com/zplug/zplug
 ################################################################################
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 # Syntax highlighting
@@ -19,6 +20,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Autocomplete with fzf
 # Must be loaded before zsh-autosuggestions
 zplug "Aloxaf/fzf-tab"
+zstyle ':fzf-tab:*' fzf-min-height 10
 
 # Suggestions
 zplug "zsh-users/zsh-autosuggestions"
@@ -31,25 +33,25 @@ zplug "jeffreytse/zsh-vi-mode"
 zplug load
 
 ################################################################################
+# brew
+################################################################################
+export PATH=/opt/homebrew/bin:$PATH
+
+################################################################################
 # go
 ################################################################################
-export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 ################################################################################
 # java
 ################################################################################
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
 
 ################################################################################
 # python
 ################################################################################
 export PATH=$HOME/.local/bin:$PATH
 export PYTHONPYCACHEPREFIX=$HOME/.pyc
-
-################################################################################
-# rust
-################################################################################
-. "$HOME/.cargo/env"
 
 ################################################################################
 # starship
@@ -74,9 +76,20 @@ zvm_after_init_commands+=(fzf_init)
 # fzf_init()
 
 if type rg &>/dev/null; then
-	export FZF_DEFAULT_COMMAND='rg --files'
+	export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
 fi
-export FZF_DEFAULT_OPTS='-e -m --reverse --height 50% --border=sharp'
+export FZF_DEFAULT_OPTS='-e -m --reverse --height 50% --border=sharp --bind "tab:toggle-out,shift-tab:toggle-in"'
+
+################################################################################
+# neovim
+################################################################################
+alias n=nvim
+
+################################################################################
+# vim
+################################################################################
+export VIMCONFIG=~/.vim
+alias v=vim
 
 ################################################################################
 # vifm
@@ -97,10 +110,15 @@ export CONFIG_DIR=$HOME/.config/lazygit
 alias c=lazygit
 
 ################################################################################
+# tmux
+################################################################################
+alias tma='tmux a -d || tmux new -c ~'
+
+################################################################################
 # yadm
 ################################################################################
 function yc() (
-	cd -- ~ || exit
+	cd ~
 	yadm enter lazygit
 )
 
@@ -110,10 +128,10 @@ function yc() (
 # Shell completion for tools installed by brew
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 if type brew &>/dev/null; then
-	FPATH="/usr/local/share/zsh/site-functions:${FPATH}"
+	FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+	FPATH="/opt/homebrew/share/zsh-completions:${FPATH}"
 
-	autoload -Uz compinit
-	compinit
+	autoload -Uz compinit && compinit -i
 fi
 
 ################################################################################
@@ -121,4 +139,4 @@ fi
 ################################################################################
 # asdf scripts need to be sourced after setting the $PATH and sourcing the
 # framework (oh-my-zsh etc).
-. /usr/local/opt/asdf/libexec/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
