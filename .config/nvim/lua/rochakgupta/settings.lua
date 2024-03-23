@@ -1,7 +1,7 @@
 return {
   border = 'rounded',
   colorscheme = 'tokyonight',
-  transparent = true,
+  transparent = false,
   dap = false,
   fidget = false,
   indent_blankline = false,
