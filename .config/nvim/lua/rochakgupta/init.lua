@@ -1,3 +1,5 @@
+local settings = require('rochakgupta.settings')
+
 -- Set leaders first
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -9,4 +11,4 @@ require('rochakgupta.config')
 require('rochakgupta.lazy')
 
 -- Set colorscheme after lazy
-vim.cmd.colorscheme(require('rochakgupta.settings').colorscheme)
+vim.cmd.colorscheme(settings.colorscheme)
