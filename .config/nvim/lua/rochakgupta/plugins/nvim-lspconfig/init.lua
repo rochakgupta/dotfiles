@@ -16,6 +16,7 @@ return {
       -- Useful status updates for LSP
       {
         'j-hui/fidget.nvim',
+        tag = 'legacy',
         cond = function()
           return require('rochakgupta.settings').fidget
         end,
