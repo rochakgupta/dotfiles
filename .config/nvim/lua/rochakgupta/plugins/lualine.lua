@@ -139,7 +139,6 @@ return {
           lualine_a = windows,
           lualine_z = tabs,
         },
-        extensions = { 'nvim-tree' },
       })
     end,
   },
