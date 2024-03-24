@@ -19,12 +19,14 @@ via their installer. If nothing works, just install them from source.
 - [bat](https://github.com/sharkdp/bat)
 - [cheat.sh](https://github.com/chubin/cheat.sh)
 - [desk](https://github.com/jamesob/desk)
+- [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 - [exa](https://the.exa.website)
 - [fd](https://github.com/sharkdp/fd)
 - [fig](https://fig.io/)
 - [fx](https://github.com/antonmedv/fx)
 - [fzf](https://github.com/junegunn/fzf)
 - [git](https://git-scm.com)
+  - diff-so-fancy
 - [go](https://go.dev)
   - asdf
 - java
@@ -34,6 +36,7 @@ via their installer. If nothing works, just install them from source.
 - [jq](https://stedolan.github.io/jq)
 - [lazygit](https://github.com/jesseduffield/lazygit)
   - git
+  - diff-so-fancy
 - [nb](https://github.com/xwmx/nb)
 - [ncdu](https://dev.yorhel.nl/ncdu)
 - [neovim](https://neovim.io)
