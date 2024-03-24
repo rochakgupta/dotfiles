@@ -1,5 +1,3 @@
-local settings = require('rochakgupta.settings')
-
 return {
   {
     -- Use neovim as editor in browsers
@@ -44,9 +42,7 @@ return {
           local client = vim.api.nvim_get_chan_info(vim.v.event.chan).client
           if client ~= nil and client.name == 'Firenvim' then
             -- Disable lualine
-            if settings.lualine then
-              require('lualine').hide({})
-            end
+            require('lualine').hide()
             -- Disable tabline
             vim.o.showtabline = 0
             -- Disable indent-blankline
