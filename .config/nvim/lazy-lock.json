@@ -40,7 +40,6 @@
   "nvim-web-devicons": { "branch": "master", "commit": "4af94fec29f508159ceab5413383e5dedd6c24e3" },
   "oil.nvim": { "branch": "master", "commit": "132b4ea0740c417b9d717411cab4cf187e1fd095" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
-  "rose-pine": { "branch": "main", "commit": "63821c18a2840b3172fc5df15d9268d80f46fa17" },
   "schemastore.nvim": { "branch": "main", "commit": "383abaefd6c062dd6a03aef2fa88e671780069ec" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "d90956833d7c27e73c621a61f20b29fdb7122709" },
