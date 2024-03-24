@@ -6,5 +6,6 @@ return {
   indent_blankline = false,
   lsp_progress = true,
   lualine = true,
+  sleuth = false,
   which_key = false,
 }
