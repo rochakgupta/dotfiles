@@ -10,15 +10,22 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>C', vim.lsp.buf.rename, 'Rename')
+
   nmap('<leader>ca', require('actions-preview').code_actions, '[C]ode [A]ction')
 
-  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+  nmap('gd', function()
+    require('telescope.builtin').lsp_definitions({ show_line = false })
+  end, '[G]oto [D]efinition')
   nmap('gr', function()
-    require('telescope.builtin').lsp_references({ fname_width = 40 })
+    require('telescope.builtin').lsp_references({ show_line = false })
   end, '[G]oto [R]eferences')
-  nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+  nmap('gi', function()
+    require('telescope.builtin').lsp_implementations({ show_line = false })
+  end, '[G]oto [I]mplementation')
+  nmap('<leader>D', function()
+    require('telescope.builtin').lsp_type_definitions({ show_line = false })
+  end, 'Type [D]efinition')
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
