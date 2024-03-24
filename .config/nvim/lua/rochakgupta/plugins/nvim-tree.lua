@@ -60,6 +60,19 @@ return {
           full_name = true,
         },
       })
+
+      -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes#workaround-when-using-rmagattiauto-session
+      vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+        desc = "Check if nvim-tree is open when session is restored (via persisted) and refresh it",
+        pattern = 'NvimTree*',
+        callback = function()
+          local api = require('nvim-tree.api')
+          local view = require('nvim-tree.view')
+          if not view.is_visible() then
+            api.tree.open()
+          end
+        end,
+      })
       
       vim.api.nvim_create_autocmd({ "VimResized" }, {
           desc = "Resize nvim-tree when nvim window is resized",

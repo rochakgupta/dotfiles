@@ -72,6 +72,9 @@ return {
       -- Enable telescope fzf native, if installed
       pcall(telescope.load_extension, 'fzf')
 
+      -- Enable persisted, if installed
+      pcall(telescope.load_extension, 'persisted')
+
       -- Keymaps
       vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
       vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
