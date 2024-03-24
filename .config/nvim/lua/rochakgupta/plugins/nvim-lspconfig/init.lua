@@ -33,6 +33,9 @@ return {
         opts = {},
       },
 
+      -- Java
+      'mfussenegger/nvim-jdtls',
+
       -- Schema store
       'b0o/schemastore.nvim',
 

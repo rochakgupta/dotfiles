@@ -57,6 +57,10 @@ local on_attach = function(client, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
 
+  if client.name == 'jdtls' then
+    require('jdtls.setup').add_commands()
+  end
+
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navbuddy').attach(client, bufnr)
   end
@@ -66,44 +70,6 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local servers = {
-  bashls = {
-    filetypes = { 'sh', 'zsh' },
-  },
-  gopls = {},
-  pyright = {},
-  ruff_lsp = {},
-  tsserver = {},
-  jdtls = {},
-  jsonls = {
-    settings = {
-      json = {
-        schemas = require('schemastore').json.schemas(),
-        validate = { enable = true },
-      },
-    },
-  },
-  marksman = {},
-  rust_analyzer = {},
-  esbonio = {},
-  vimls = {},
-  yamlls = {
-    settings = {
-      yaml = {
-        schemas = require('schemastore').yaml.schemas(),
-      },
-    },
-  },
-  lua_ls = {
-    settings = {
-      Lua = {
-        workspace = { checkThirdParty = false },
-        telemetry = { enable = false },
-      },
-    },
-  },
-}
-
 -- Setup mason so it can manage external tooling
 require('mason').setup({
   ui = {
@@ -111,10 +77,21 @@ require('mason').setup({
   },
 })
 
-local mason_lspconfig = require('mason-lspconfig')
-
-mason_lspconfig.setup({
-  ensure_installed = vim.tbl_keys(servers),
+require('mason-lspconfig').setup({
+  ensure_installed = {
+    'bashls',
+    'esbonio',
+    'gopls',
+    'jdtls',
+    'jsonls',
+    'lua_ls',
+    'marksman',
+    'pyright',
+    'rust_analyzer',
+    'tsserver',
+    'vimls',
+    'yamlls',
+  },
 })
 
 local lsp_defaults = {
@@ -126,12 +103,68 @@ local lspconfig = require('lspconfig')
 
 lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util.default_config, lsp_defaults)
 
-local handlers = {
-  function(server)
-    -- See :help lspconfig-setup
-    lspconfig[server].setup(servers[server])
-  end,
-}
+local lspconfig_configs = require('lspconfig.configs')
 
--- See :help mason-lspconfig-dynamic-server-setup
-mason_lspconfig.setup_handlers(handlers)
+lspconfig.bashls.setup({
+  filetypes = { 'sh', 'zsh' },
+})
+
+lspconfig.esbonio.setup({})
+
+lspconfig.gopls.setup({})
+
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Enable jdtls when a java file is opened',
+  pattern = 'java',
+  group = vim.api.nvim_create_augroup('rochakgupta-jdtls', { clear = true }),
+  callback = function()
+    require('rochakgupta.plugins.nvim-lspconfig.jdtls_config').setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+  end,
+})
+
+lspconfig.jsonls.setup({
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  },
+})
+
+lspconfig.lua_ls.setup({
+  settings = {
+    Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
+  },
+})
+
+lspconfig.marksman.setup({})
+
+lspconfig.pyright.setup({})
+
+lspconfig.rust_analyzer.setup({})
+
+lspconfig.tsserver.setup({})
+
+lspconfig.vimls.setup({})
+
+lspconfig.yamlls.setup({
+  settings = {
+    redhat = {
+      telemetry = {
+        enabled = false,
+      },
+    },
+    yaml = {
+      schemaStore = {
+        enable = false,
+      },
+      keyOrdering = false,
+    },
+  },
+})

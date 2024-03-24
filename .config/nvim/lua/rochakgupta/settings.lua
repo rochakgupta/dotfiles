@@ -3,6 +3,7 @@ return {
   colorscheme = 'tokyonight',
   background = 'dark',
   transparent = false,
+  log_level = vim.log.levels.OFF,
   fidget = false,
   gitlinker = true,
   indent_blankline = true,
