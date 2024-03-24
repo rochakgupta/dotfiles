@@ -47,7 +47,9 @@ set re=0
 
 " autocmd InsertEnter * set cul
 " autocmd InsertLeave * set nocul
-set cul
+if !&diff
+    set cursorline
+endif
 " set cursorcolumn
 
 " https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
