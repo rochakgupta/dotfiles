@@ -14,6 +14,7 @@ return {
           default_fallback = 'auto',
         },
         ensure_installed = {
+          'c',
           'go',
           'lua',
           'python',

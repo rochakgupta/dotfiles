@@ -18,6 +18,9 @@ return {
           formatting.black,
           formatting.stylua,
           formatting.prettierd,
+          formatting.clang_format.with({
+            extra_args = { '--style', 'webkit' },
+          }),
           formatting.shfmt.with({
             filetypes = { 'sh', 'zsh' },
           }),

@@ -80,6 +80,7 @@ require('mason').setup({
 require('mason-lspconfig').setup({
   ensure_installed = {
     'bashls',
+    'clangd',
     'esbonio',
     'gopls',
     'jdtls',
@@ -107,6 +108,10 @@ local lspconfig_configs = require('lspconfig.configs')
 
 lspconfig.bashls.setup({
   filetypes = { 'sh', 'zsh' },
+})
+
+lspconfig.clangd.setup({
+  cmd = { 'clangd', '--offset-encoding=utf-16' },
 })
 
 lspconfig.esbonio.setup({})

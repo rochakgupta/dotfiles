@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     -- Use formatter provided by null-ls for typescript and lua
-    if client.name == 'tsserver' or client.name == 'lua_ls' then
+    if client.name == 'tsserver' or client.name == 'lua_ls' or client.name == 'clangd' then
       client_name = 'null-ls'
     end
 
