@@ -10,6 +10,9 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      yadm = {
+        enable = true,
+      },
     },
   },
 }

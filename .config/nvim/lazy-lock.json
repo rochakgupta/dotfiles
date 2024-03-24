@@ -54,4 +54,5 @@
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "which-key.nvim": { "branch": "main", "commit": "fb027738340502b556c3f43051f113bcaa7e8e63" },
+  "yadm-git.vim": { "branch": "master", "commit": "681c36c58a7de5072cc13d6a4228c0b48fdbf6a4" }
 }
