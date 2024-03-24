@@ -10,8 +10,11 @@ return {
     opts = {
       transparent_background = settings.transparent,
       term_colors = true,
-      styles = {
-        conditionals = {},
+      integrations = {
+        fidget = true,
+        harpoon = true,
+        mason = true,
+        which_key = true,
       },
     },
   },
