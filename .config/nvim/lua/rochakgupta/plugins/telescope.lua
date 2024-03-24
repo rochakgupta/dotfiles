@@ -3,11 +3,28 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      {
+        -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+        -- Only load if `make` is available. Make sure you have the system
+        -- requirements installed.
+        'nvim-telescope/telescope-fzf-native.nvim',
+        -- NOTE: If you are having trouble with this installation,
+        --       refer to the README for telescope-fzf-native for more instructions.
+        build = 'make',
+        cond = function()
+          return vim.fn.executable('make') == 1
+        end,
+      },
+      'nvim-telescope/telescope-live-grep-args.nvim',
+    },
     config = function()
       local telescope = require('telescope')
       local actions = require('telescope.actions')
       local builtin = require('telescope.builtin')
+      local lga_actions = require('telescope-live-grep-args.actions')
+      local lga_shortcuts = require('telescope-live-grep-args.shortcuts')
 
       telescope.setup({
         defaults = {
@@ -15,7 +32,7 @@ return {
           layout_config = {
             width = 0.9,
             prompt_position = 'top',
-            preview_height = 0.4,
+            preview_height = 0.5,
           },
           scroll_strategy = 'limit',
           -- path_display = {
@@ -33,6 +50,16 @@ return {
           buffers = { sort_lastused = true },
           diagnostics = { layout_strategy = 'vertical' },
         },
+        extensions = {
+          live_grep_args = {
+            auto_quoting = true,
+            mappings = {
+              i = {
+                ['<C-k>'] = lga_actions.quote_prompt(),
+              },
+            },
+          },
+        },
       })
 
       -- Enable telescope fzf native, if installed
@@ -45,15 +72,24 @@ return {
       vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = '[S]earch [G]it Files' })
       vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = '[S]earch [S]omething' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
 
+      -- Enable telescope live grep args, if installed
+      local ok = pcall(telescope.load_extension, 'live_grep_args')
+      if ok then
+        vim.keymap.set('n', '<leader>ss', telescope.extensions.live_grep_args.live_grep_args, { desc = '[S]earch [S]omething' })
+        vim.keymap.set('n', '<leader>sw', lga_shortcuts.grep_word_under_cursor, { desc = '[S]earch current [W]ord' })
+        vim.keymap.set('v', '<leader>sv', lga_shortcuts.grep_visual_selection, { desc = '[S]earch [V]isual selection' })
+      else
+        vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+        vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = '[S]earch [S]omething' })
+      end
+
       -- Enable harpoon, if installed
-      local ok = pcall(telescope.load_extension, 'harpoon')
+      ok = pcall(telescope.load_extension, 'harpoon')
       if ok then
         vim.keymap.set('n', '<leader>hs', '<cmd>Telescope harpoon marks<CR>', { desc = '[H]arpoon [S]earch Files' })
       end
