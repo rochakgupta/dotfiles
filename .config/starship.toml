@@ -13,7 +13,7 @@
 # [└](bold purple)$character"""
 
 format = """
-$directory$git_branch$git_status$sudo
+$directory$git_branch$git_status$sudo$cmd_duration
 $character"""
 
 add_newline = false
@@ -46,6 +46,7 @@ symbol = "─"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
+min_time = 0
 
 [jobs]
 style = "bold red"
