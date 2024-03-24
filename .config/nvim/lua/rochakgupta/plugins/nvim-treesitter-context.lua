@@ -7,7 +7,6 @@ return {
       require('treesitter-context').setup({
         enable = false,
         mode = 'topline',
-        separator = '-',
       })
     end,
   },
