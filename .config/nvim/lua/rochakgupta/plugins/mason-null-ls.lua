@@ -5,9 +5,10 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       'williamboman/mason.nvim', -- Used and configured in nvim-lspconfig.lua
-      'jose-elias-alvarez/null-ls.nvim',
+      'nvimtools/none-ls.nvim',
     },
     config = function()
+      require('mason').setup()
       local null_ls = require('null-ls')
       local formatting = null_ls.builtins.formatting
       local diagnostics = null_ls.builtins.diagnostics
@@ -26,7 +27,6 @@ return {
       require('mason-null-ls').setup({
         ensure_installed = nil,
         automatic_installation = true,
-        automatic_setup = false,
       })
     end,
   },
