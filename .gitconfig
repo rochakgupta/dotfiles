@@ -2,10 +2,28 @@
 	email = rochak84@gmail.com
 	name = Rochak Gupta
 [color]
-	ui = auto
+	ui = true
 [core]
-	pager = less -FMRiX
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = /Users/rochakgupta/.gitignore
 [push]
 	default = simple
+[alias]
+	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 [pull]
 	rebase = true
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
