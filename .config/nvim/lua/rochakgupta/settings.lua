@@ -6,6 +6,5 @@ return {
   indent_blankline = false,
   lsp_progress = true,
   lualine = true,
-  navic = false,
   which_key = false,
 }

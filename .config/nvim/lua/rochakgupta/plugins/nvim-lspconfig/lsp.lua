@@ -35,9 +35,6 @@ local on_attach = function(client, bufnr)
   end, '[W]orkspace [L]ist Folders')
 
   if client.server_capabilities.documentSymbolProvider then
-    if settings.navic then
-      require('nvim-navic').attach(client, bufnr)
-    end
     require('nvim-navbuddy').attach(client, bufnr)
   end
 end

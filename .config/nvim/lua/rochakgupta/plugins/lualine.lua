@@ -45,17 +45,6 @@ return {
         },
       }
 
-      local navic = {
-        {
-          function()
-            return require('nvim-navic').get_location()
-          end,
-          cond = function()
-            return require('nvim-navic').is_available()
-          end,
-        },
-      }
-
       local sections_lualine_x = { 'encoding', 'fileformat', 'filetype' }
       if settings.lsp_progress then
         table.insert(sections_lualine_x, 1, require('lsp-progress').progress)
@@ -70,7 +59,7 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = settings.navic and navic or filename,
+          lualine_c = filename,
           lualine_x = sections_lualine_x,
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
