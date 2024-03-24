@@ -458,6 +458,7 @@ let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-git',
     \ 'coc-go',
+    \ 'coc-highlight',
     \ 'coc-java',
     \ 'coc-json',
     \ 'coc-pairs',
@@ -474,6 +475,9 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " coc-explorer
 nnoremap <leader>e <Cmd>CocCommand explorer<CR>
+
+" highlight ErrorText ctermfg=Red ctermbg=NONE cterm=underline guisp=NONE
+highlight ALEWarning ctermfg=LightRed ctermbg=NONE cterm=underline guisp=NONE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
