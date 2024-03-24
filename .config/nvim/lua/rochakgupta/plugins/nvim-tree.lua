@@ -11,6 +11,11 @@ return {
       -- vim.g.loaded_netrwPlugin = 1
     end,
     config = function()
+      local get_width = function()
+        local width_ratio = 0.25
+        return math.floor(vim.opt.columns:get() * width_ratio)
+      end
+
       require('nvim-tree').setup({
         hijack_netrw = false,
         hijack_cursor = true,
@@ -20,12 +25,9 @@ return {
           enable = true,
         },
         view = {
-          width = function()
-            local width_ratio = 0.25
-            return math.floor(vim.opt.columns:get() * width_ratio)
-          end,
+          width = get_width,
           float = {
-            enable = true,
+            enable = false,
             open_win_config = function()
               local height_ratio = 0.85
               local width_ratio = 0.25
@@ -49,9 +51,6 @@ return {
           },
         },
         renderer = {
-          indent_markers = {
-            enable = true,
-          },
           highlight_git = true,
           icons = {
             show = {
@@ -60,6 +59,15 @@ return {
           },
           full_name = true,
         },
+      })
+      
+      vim.api.nvim_create_autocmd({ "VimResized" }, {
+          desc = "Resize nvim-tree when nvim window is resized",
+          group = vim.api.nvim_create_augroup("NvimTreeResize", { clear = true }),
+          callback = function()
+            local width = get_width()
+            vim.cmd("tabdo NvimTreeResize " .. width)
+          end,
       })
     end,
   },
