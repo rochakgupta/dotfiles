@@ -10,6 +10,7 @@ return {
       style = 'night',
       transparent = settings.transparent,
       styles = {
+        comments = { fg = '#7e86ae' },
         keywords = { italic = false },
         sidebars = settings.transparent and 'transparent' or 'dark',
         floats = settings.transparent and 'transparent' or 'dark',
