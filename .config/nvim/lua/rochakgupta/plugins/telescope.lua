@@ -47,7 +47,14 @@ return {
           },
         },
         pickers = {
-          buffers = { sort_lastused = true },
+          buffers = {
+            sort_lastused = true,
+            mappings = {
+              i = {
+                ['<C-g>'] = actions.delete_buffer,
+              },
+            },
+          },
           diagnostics = { layout_strategy = 'vertical' },
         },
         extensions = {
