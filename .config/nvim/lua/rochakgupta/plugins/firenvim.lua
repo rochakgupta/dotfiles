@@ -1,6 +1,10 @@
 return {
   {
     -- Use neovim as editor in browsers
+    -- Extra setup:
+    --   1. Set cond = true
+    --   2. Run 'nvim --headless "+call firenvim#install(0) | q"' from terminal
+    --   3. Reset cond
     'glacambre/firenvim',
     -- Lazy load firenvim
     -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
@@ -52,7 +56,7 @@ return {
             -- Disable nvim-cmp
             -- vim.g.nvim_cmp_enabled = false
             -- Firefox only: Manually set the font size as default is too big
-            vim.o.guifont = 'mononoki_Nerd_Font_Mono:h18'
+            vim.o.guifont = 'JetbrainsMono_Nerd_Font_Mono:h18'
           end
         end,
       })
