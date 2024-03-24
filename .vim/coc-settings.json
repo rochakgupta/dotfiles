@@ -1,5 +1,6 @@
 {
   "coc.preferences.formatOnSave": true,
+  "colors.enable": true,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.messageDelay": 750,
   "explorer.buffer.root.template": "[icon & 1] BUFFERS",
