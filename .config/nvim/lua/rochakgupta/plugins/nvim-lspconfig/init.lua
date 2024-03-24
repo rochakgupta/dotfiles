@@ -48,6 +48,26 @@ return {
           })
         end,
       },
+
+      -- Preview LSP results in buffer
+      {
+        'rmagatti/goto-preview',
+        dependencies = {
+          'nvim-telescope/telescope.nvim', -- Used and configued in telescope
+        },
+        config = function()
+          require('goto-preview').setup({
+            references = {
+              telescope = require('telescope.config').values,
+            },
+            post_open_hook = function()
+              -- add preview window to buffer list
+              local buffer_num = vim.api.nvim_get_current_buf() -- current buffer
+              vim.api.nvim_buf_set_option(buffer_num, 'buflisted', true)
+            end,
+          })
+        end,
+      },
     },
     config = function()
       require('rochakgupta.plugins.nvim-lspconfig.ui')
