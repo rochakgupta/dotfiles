@@ -24,7 +24,8 @@ function M.setup(args)
   local root_dir = jdtls_setup.find_root({ '.git' }) or vim.fn.getcwd()
   utils.notify_debug('root: ' .. root_dir)
 
-  local data = root_dir .. '/.jdtls'
+  local data = vim.fn.expand('~/.jdtls' .. root_dir)
+  utils.notify_debug('data: ' .. data)
 
   local extended_client_capabilities = jdtls.extendedClientCapabilities
   extended_client_capabilities.resolveAdditionalTextEditsSupport = true
