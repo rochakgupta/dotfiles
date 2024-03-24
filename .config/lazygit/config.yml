@@ -6,6 +6,9 @@ gui:
     selectedRangeBgColor:
       - reverse
 git:
+  paging:
+    colorArg: always
+    pager: diff-so-fancy
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
   allBranchesLogCmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline"
 notARepository: "quit" # one of: 'prompt' | 'create' | 'skip' | 'quit'
