@@ -5,7 +5,7 @@ vim.o.cedit = '<C-Y>'
 vim.o.termguicolors = true
 
 -- Enable dark background
-vim.o.background = 'dark'
+vim.o.background = require('rochakgupta.settings').background
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -77,6 +77,9 @@ vim.o.smarttab = true
 -- Smart autoindenting when starting a new line
 vim.o.autoindent = true
 
+-- Better block editing in visual mode
+vim.o.virtualedit = 'block'
+
 -- Disable line wrap
 vim.o.wrap = false
 
@@ -88,6 +91,7 @@ vim.o.cursorline = true
 
 -- Set scroll offset
 vim.o.scrolloff = 8
+vim.o.sidescrolloff = 8
 
 -- Enable cursor column
 -- vim.o.cursorcolumn = true
@@ -107,3 +111,14 @@ vim.o.undofile = true
 
 -- Limit the maximum number of items to show in the popup menu
 vim.o.pumheight = 15
+
+-- Disable folds
+vim.o.foldenable = false
+
+-- Keep the topline the same when opening, closing or resizing horizontal splits
+vim.o.splitkeep = 'topline'
+
+-- Binary search is used as default to search through tag files. As such, they are expected to be sorted.
+-- If not due to some reason, E432 "Tags file not sorted" error is raised. Disabling binary search to avoid
+-- this error. Read more at https://neovim.io/doc/user/message.html.
+vim.o.tagbsearch = false

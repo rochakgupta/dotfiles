@@ -1,6 +1,7 @@
 return {
   border = 'rounded',
   colorscheme = 'tokyonight',
+  background = 'dark',
   transparent = false,
   fidget = false,
   indent_blankline = false,
