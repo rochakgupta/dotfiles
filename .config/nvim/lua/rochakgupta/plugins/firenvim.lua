@@ -54,7 +54,7 @@ return {
               require('ibl').update({ enabled = false })
             end
             -- Disable nvim-cmp
-            -- vim.g.nvim_cmp_enabled = false
+            -- require('cmp').setup({ enabled = false })
             -- Firefox only: Manually set the font size as default is too big
             vim.o.guifont = 'JetbrainsMono_Nerd_Font_Mono:h18'
           end

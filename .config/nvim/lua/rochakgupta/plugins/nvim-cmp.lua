@@ -15,10 +15,10 @@ return {
       local cmp = require('cmp')
       local snippy = require('snippy')
 
-      vim.g.nvim_cmp_enabled = true
       cmp.setup({
-        enabled = function()
-          return vim.g.nvim_cmp_enabled
+        enabled = function ()
+          -- Disable in buffers corresponding to telescope prompt
+          return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
         end,
         window = {
           documentation = cmp.config.window.bordered(),
