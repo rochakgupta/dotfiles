@@ -1,4 +1,5 @@
 local settings = require('rochakgupta.settings')
+local dark = settings.background == 'dark'
 
 return {
   {
@@ -7,28 +8,42 @@ return {
     priority = 1000,
     lazy = settings.colorscheme ~= 'material',
     init = function()
-      vim.g.material_style = 'deep ocean'
+      vim.g.material_style = dark and 'deep ocean' or 'lighter'
     end,
-    opts = {
-      styles = {
-        comments = { italic = true },
-      },
-      plugins = {
-        'dap',
-        'gitsigns',
-        'indent-blankline',
-        'nvim-cmp',
-        'nvim-navic',
-        'nvim-tree',
-        'nvim-web-devicons',
-        'telescope',
-        'which-key',
-      },
-      disable = {
-        colored_cursor = true,
-        background = settings.transparent,
-      },
-      lualine_style = 'stealth',
-    },
+    config = function()
+      require('material').setup({
+        styles = {
+          comments = { italic = true },
+        },
+        custom_highlights = {
+          Pmenu = { bg = dark and '#232637' or '#D3E1E8' },
+        },
+        custom_colors = function(colors)
+          colors.editor.border = '#606897'
+          if dark then
+            colors.backgrounds.cursor_line = '#2a2d3c'
+            colors.editor.selection = '#262a3f'
+            colors.syntax.comments = '#686f8a'
+          end
+        end,
+        plugins = {
+          'gitsigns',
+          'indent-blankline',
+          'nvim-cmp',
+          'nvim-tree',
+          'nvim-web-devicons',
+          'telescope',
+          'which-key',
+        },
+        disable = {
+          colored_cursor = true,
+          background = settings.transparent,
+        },
+        high_visibility = {
+          lighter = true,
+        },
+        lualine_style = dark and 'stealth' or 'default',
+      })
+    end,
   },
 }
