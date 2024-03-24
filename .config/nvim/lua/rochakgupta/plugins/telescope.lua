@@ -18,6 +18,7 @@ return {
         end,
       },
       'nvim-telescope/telescope-live-grep-args.nvim',
+      'nvim-telescope/telescope-ui-select.nvim',
     },
     config = function()
       local telescope = require('telescope')
@@ -71,6 +72,9 @@ return {
 
       -- Enable telescope fzf native, if installed
       pcall(telescope.load_extension, 'fzf')
+
+      -- Enable telescope-ui-select, if installed
+      pcall(telescope.load_extension, 'ui-select')
 
       -- Enable persisted, if installed
       pcall(telescope.load_extension, 'persisted')

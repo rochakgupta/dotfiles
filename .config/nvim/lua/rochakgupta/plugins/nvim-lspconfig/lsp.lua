@@ -11,8 +11,7 @@ local on_attach = function(client, bufnr)
   end
 
   nmap('<leader>C', vim.lsp.buf.rename, 'Rename')
-
-  nmap('<leader>ca', require('actions-preview').code_actions, '[C]ode [A]ction')
+  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gpc', require('goto-preview').close_all_win, '[C]lose All [P]review Windows')
   nmap('gpC', function()
