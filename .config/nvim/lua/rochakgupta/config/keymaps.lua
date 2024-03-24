@@ -31,13 +31,16 @@ end, { desc = 'Toggle quickfix list' })
 -- vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 -- vim.keymap.set('v', 'K', ":m '>-2<CR>gv=gv")
 
--- Keep the line in the center while using C-d and C-u
--- vim.keymap.set('n', '<C-d>', '<C-d>zz')
--- vim.keymap.set('n', '<C-u>', '<C-u>zz')
+-- Keep the line in the center while using C-d, C-u, C-f and C-b
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center' })
+vim.keymap.set('n', '<C-f>', '<C-f>zz', { desc = 'Scroll page down and center' })
+vim.keymap.set('n', '<C-b>', '<C-b>zz', { desc = 'Scroll page up and center' })
 
--- Keep the search result in center while jumping to next and previous result using n and N
--- vim.keymap.set('n', 'n', 'nzzzv')
--- vim.keymap.set('n', 'N', 'Nzzzv')
+-- Keep the search result in center while jumping to next and previous result using n and N and *
+vim.keymap.set('n', 'n', 'nzz', { desc = 'Go to next match and center' })
+vim.keymap.set('n', 'N', 'Nzz', { desc = 'Go to previous match and center' })
+vim.keymap.set('n', '*', '*zz', { desc = 'Go to next cursor match and center' })
 
 -- Use Leader-p to delete the selection to _ (black hole) register and replace it in place with contents of unnamed register
 vim.keymap.set('x', '<leader>p', '"_dp')
