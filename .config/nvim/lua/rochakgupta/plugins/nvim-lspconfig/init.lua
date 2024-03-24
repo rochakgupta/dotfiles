@@ -35,6 +35,19 @@ return {
 
       -- Schema store
       'b0o/schemastore.nvim',
+
+      -- Preview LSP code actions
+      {
+        'aznhe21/actions-preview.nvim',
+        dependencies = {
+          'nvim-telescope/telescope.nvim', -- Used and configued in telescope
+        },
+        config = function()
+          require('actions-preview').setup({
+            telescope = require('telescope.config').values,
+          })
+        end,
+      },
     },
     config = function()
       require('rochakgupta.plugins.nvim-lspconfig.ui')
