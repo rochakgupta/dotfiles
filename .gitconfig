@@ -1,0 +1,11 @@
+[user]
+	email = rochak84@gmail.com
+	name = Rochak Gupta
+[color]
+	ui = auto
+[core]
+	pager = less -FMRiX
+[push]
+	default = simple
+[pull]
+	rebase = true
