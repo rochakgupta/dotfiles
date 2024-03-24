@@ -5,16 +5,15 @@ return {
     dependencies = {
       'hrsh7th/cmp-nvim-lsp', -- Used and configured in nvim-lspconfig
       'hrsh7th/cmp-buffer',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
+      'dcampos/nvim-snippy',
+      'honza/vim-snippets',
+      'dcampos/cmp-snippy',
     },
     config = function()
       local cmp = require('cmp')
-      local luasnip = require('luasnip')
-
-      luasnip.config.setup()
+      local snippy = require('snippy')
 
       vim.g.nvim_cmp_enabled = true
       cmp.setup({
@@ -26,7 +25,7 @@ return {
         },
         snippet = {
           expand = function(args)
-            luasnip.lsp_expand(args.body)
+            snippy.expand_snippet(args.body)
           end,
         },
         preselect = cmp.PreselectMode.None,
@@ -40,8 +39,8 @@ return {
           ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
+            elseif snippy.can_expand_or_advance() then
+              snippy.expand_or_advance()
             else
               fallback()
             end
@@ -49,18 +48,18 @@ return {
           ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
+            elseif snippy.can_jump(-1) then
+              snippy.previous()
             else
               fallback()
             end
           end, { 'i', 's' }),
         }),
         sources = {
+          { name = 'snippy' },
+          { name = 'nvim_lsp' },
           { name = 'buffer' },
           { name = 'path' },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
         },
       })
 
