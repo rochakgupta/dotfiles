@@ -93,7 +93,8 @@ vim.o.scrolloff = 8
 -- vim.o.cursorcolumn = true
 
 -- Change how auto formatting is done
-vim.opt.formatoptions:remove({ 'c', 'r', 'o', 't' })
+-- Disabled as it only works when set via autocmd
+-- vim.opt.formatoptions:remove({ 'c', 'r', 'o', 't' })
 
 -- Make buffer hidden when it is abandoned
 vim.o.hidden = true
