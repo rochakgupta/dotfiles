@@ -178,6 +178,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#formatter = 'short_path'
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
