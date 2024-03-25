@@ -103,8 +103,6 @@ local lspconfig = require('lspconfig')
 
 lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util.default_config, lsp_defaults)
 
-local lspconfig_configs = require('lspconfig.configs')
-
 lspconfig.bashls.setup({
   filetypes = { 'sh', 'zsh' },
 })
