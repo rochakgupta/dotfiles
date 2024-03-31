@@ -13,7 +13,7 @@ return {
     },
     filter = {
       fzf = {
-        extra_opts = { '--bind', 'ctrl-o:toggle-all,ctrl-l:clear-query' },
+        extra_opts = { '--bind', 'ctrl-o:toggle-all,ctrl-l:clear-query,ctrl-u:preview-up,ctrl-d:preview-down' },
       },
     },
   },
