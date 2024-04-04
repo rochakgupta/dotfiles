@@ -16,9 +16,9 @@ return {
       local snippy = require('snippy')
 
       cmp.setup({
-        enabled = function ()
+        enabled = function()
           -- Disable in buffers corresponding to telescope prompt
-          return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+          return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt'
         end,
         window = {
           documentation = cmp.config.window.bordered(),
@@ -36,7 +36,7 @@ return {
           ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
           }),
-          ['<Tab>'] = cmp.mapping(function(fallback)
+          ['<C-n>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             elseif snippy.can_expand_or_advance() then
@@ -45,7 +45,7 @@ return {
               fallback()
             end
           end, { 'i', 's' }),
-          ['<S-Tab>'] = cmp.mapping(function(fallback)
+          ['<C-p>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             elseif snippy.can_jump(-1) then
