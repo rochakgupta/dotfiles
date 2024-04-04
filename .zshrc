@@ -1,10 +1,15 @@
 export TERM=xterm-256color
 export CLICOLOR=1
 export KEYTIMEOUT=1
-export PAGER=most
 
 export EDITOR=nvim
 export VISUAL="$EDITOR"
+
+if [[ "$EDITOR" == "nvim" ]]; then
+	export MANPAGER='nvim +Man!'
+else
+	export MANPAGER='vim -M +MANPAGER -'
+fi
 
 ################################################################################
 # Plugin Management:
