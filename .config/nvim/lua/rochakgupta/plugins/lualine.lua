@@ -122,6 +122,8 @@ return {
           icons_enabled = true,
           theme = settings.colorscheme,
           disabled_filetypes = { 'NvimTree' },
+          component_separators = '',
+          section_separators = '',
         },
         sections = {
           lualine_a = { 'mode' },
