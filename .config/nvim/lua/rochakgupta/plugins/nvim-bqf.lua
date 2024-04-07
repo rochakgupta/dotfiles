@@ -11,9 +11,13 @@ return {
       winblend = 0,
       -- auto_preview = false,
     },
+    func_map = {
+      pscrollup = '<C-u>',
+      pscrolldown = '<C-d>',
+    },
     filter = {
       fzf = {
-        extra_opts = { '--bind', 'ctrl-o:toggle-all,ctrl-l:clear-query,ctrl-u:preview-up,ctrl-d:preview-down' },
+        extra_opts = { '--bind', 'ctrl-o:toggle-all,ctrl-l:clear-query' },
       },
     },
   },
