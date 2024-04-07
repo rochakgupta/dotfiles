@@ -18,7 +18,9 @@ return {
       }
       dashboard.section.buttons.val = {
         dashboard.button('i', '  New file', '<cmd>ene<CR>'),
-        dashboard.button('c', '  Config', ':cd ~/.config/nvim<CR>:e ~/.config/nvim/init.lua<CR>'),
+        dashboard.button('c', '  Neovim Config', ':cd ~/.config/nvim<CR>:e ~/.config/nvim/init.lua<CR>'),
+        dashboard.button('t', '  Tmux Config', ':e ~/.tmux.conf<CR>'),
+        dashboard.button('z', '  Zsh Config', ':e ~/.zshrc<CR>'),
         dashboard.button('q', '  Quit', ':qa<CR>'),
       }
       alpha.setup(dashboard.config)
