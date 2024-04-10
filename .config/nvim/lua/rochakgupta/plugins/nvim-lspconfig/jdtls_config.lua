@@ -80,10 +80,6 @@ function M.setup(args)
           comments = {
             enabled = false,
           },
-          settings = {
-            url = vim.fn.expand('~/.config/java/formatter/formatter.xml'),
-            profile = 'Work',
-          },
         },
         completion = {
           importOrder = {
