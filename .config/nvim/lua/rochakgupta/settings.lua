@@ -2,7 +2,7 @@ return {
   border = 'rounded',
   colorscheme = 'tokyonight',
   background = 'dark',
-  transparent = false,
+  transparent = true,
   log_level = vim.log.levels.OFF,
   fidget = false,
   gitlinker = true,
