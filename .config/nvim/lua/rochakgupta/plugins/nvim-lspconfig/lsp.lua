@@ -38,7 +38,9 @@ local on_attach = function(client, bufnr)
   end, 'Type [D]efinition')
   nmap('gpD', require('goto-preview').goto_preview_type_definition, '[P]review Type [D]efinition')
 
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  nmap('<leader>ds', function()
+    require('telescope.builtin').lsp_document_symbols({ symbol_width = 75 })
+  end, '[D]ocument [S]ymbols')
 
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
