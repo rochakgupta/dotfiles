@@ -84,7 +84,7 @@ return {
             auto_quoting = true,
             mappings = {
               i = {
-                ['<C-k>'] = lga_actions.quote_prompt(),
+                ['<C-g>'] = lga_actions.quote_prompt(),
               },
             },
           },
