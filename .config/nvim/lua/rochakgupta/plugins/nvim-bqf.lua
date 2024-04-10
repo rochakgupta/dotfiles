@@ -9,7 +9,7 @@ return {
     show_title = false,
     preview = {
       winblend = 0,
-      -- auto_preview = false,
+      auto_preview = false,
     },
     func_map = {
       pscrollup = '<C-u>',
