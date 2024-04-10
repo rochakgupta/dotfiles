@@ -58,10 +58,6 @@ local on_attach = function(client, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
 
-  if client.name == 'jdtls' then
-    require('jdtls.setup').add_commands()
-  end
-
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navbuddy').attach(client, bufnr)
   end
