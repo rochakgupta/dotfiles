@@ -14,8 +14,8 @@ return {
       require('oil').setup({
         columns = {},
         win_options = {
-          number = false,
-          relativenumber = false,
+          number = true,
+          relativenumber = true,
         },
         use_default_keymaps = false,
         keymaps = {
