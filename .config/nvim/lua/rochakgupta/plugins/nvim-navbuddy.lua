@@ -22,6 +22,9 @@ return {
             mid = {
               size = '30%',
             },
+            right = {
+              preview = 'always',
+            },
           },
         },
         mappings = {
