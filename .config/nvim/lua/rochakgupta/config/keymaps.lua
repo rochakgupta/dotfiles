@@ -42,12 +42,6 @@ vim.keymap.set('n', 'n', 'nzz', { desc = 'Go to next match and center' })
 vim.keymap.set('n', 'N', 'Nzz', { desc = 'Go to previous match and center' })
 vim.keymap.set('n', '*', '*zz', { desc = 'Go to next cursor match and center' })
 
--- Use Leader-p to delete the selection to _ (black hole) register and replace it in place with contents of unnamed register
-vim.keymap.set('x', '<leader>p', '"_dp')
-
--- Use Leader-d to delete the selection to _ (black hole) register
-vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
-
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
