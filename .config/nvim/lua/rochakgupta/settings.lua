@@ -10,4 +10,5 @@ return {
   lsp_progress = true,
   sleuth = false,
   which_key = false,
+  yanky = true,
 }

@@ -100,6 +100,9 @@ return {
       -- Enable persisted, if installed
       pcall(telescope.load_extension, 'persisted')
 
+      -- Enable yanky, if installed
+      pcall(telescope.load_extension, 'yank_history')
+
       -- Keymaps
       vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
       vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
