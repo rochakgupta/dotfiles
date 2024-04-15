@@ -20,6 +20,8 @@ return {
           end,
         },
       },
+      -- Show window zoom status
+      'dhruvasagar/vim-zoom',
     },
     config = function()
       local jdt = {}
@@ -122,7 +124,7 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { filename },
+          lualine_c = { "vim.fn['zoom#statusline']()", filename },
           lualine_x = sections_lualine_x,
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
