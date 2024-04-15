@@ -61,55 +61,49 @@ return {
       end
 
       local filename = {
-        {
-          'filename',
-          path = 1,
-          fmt = function(str)
-            -- Bug in lualine causes jdt URI to break lualine. So, handling them myself.
-            -- https://github.com/nvim-lualine/lualine.nvim/issues/820
-            -- path = 1, so str is just the relative path with initial fragments shortened to a single character
-            if jdt.is_shortened_path(str) then
-              return jdt.clean_shortened_path(str)
-            end
-            return str
-          end,
-          -- cond = function()
-          --   -- Bug in lualine causes jdt URI to break lualine. So, disabling it for them.
-          --   -- https://github.com/nvim-lualine/lualine.nvim/issues/820
-          --   local buf = vim.fn.expand('%')
-          --   return not jdt.is_path(buf)
-          -- end,
-        },
+        'filename',
+        path = 1,
+        fmt = function(str)
+          -- Bug in lualine causes jdt URI to break lualine. So, handling them myself.
+          -- https://github.com/nvim-lualine/lualine.nvim/issues/820
+          -- path = 1, so str is just the relative path with initial fragments shortened to a single character
+          if jdt.is_shortened_path(str) then
+            return jdt.clean_shortened_path(str)
+          end
+          return str
+        end,
+        -- cond = function()
+        --   -- Bug in lualine causes jdt URI to break lualine. So, disabling it for them.
+        --   -- https://github.com/nvim-lualine/lualine.nvim/issues/820
+        --   local buf = vim.fn.expand('%')
+        --   return not jdt.is_path(buf)
+        -- end,
       }
 
       local tabs = {
-        {
-          'tabs',
-          mode = 2,
-          fmt = function(str)
-            -- mode = 2, so str is just the name of the file
-            local buf = vim.fn.expand('%')
-            if jdt.is_path(buf) then
-              return jdt.clean_suffix(str)
-            end
-            return str
-          end,
-        },
+        'tabs',
+        mode = 2,
+        fmt = function(str)
+          -- mode = 2, so str is just the name of the file
+          local buf = vim.fn.expand('%')
+          if jdt.is_path(buf) then
+            return jdt.clean_suffix(str)
+          end
+          return str
+        end,
       }
 
       local windows = {
-        {
-          'windows',
-          mode = 2,
-          fmt = function(str)
-            -- mode = 2, so str is just the name of the file
-            local buf = vim.fn.expand('%')
-            if jdt.is_path(buf) then
-              return jdt.clean_suffix(str)
-            end
-            return str
-          end,
-        },
+        'windows',
+        mode = 2,
+        fmt = function(str)
+          -- mode = 2, so str is just the name of the file
+          local buf = vim.fn.expand('%')
+          if jdt.is_path(buf) then
+            return jdt.clean_suffix(str)
+          end
+          return str
+        end,
       }
 
       local sections_lualine_x = { 'encoding', 'fileformat', 'filetype' }
@@ -128,7 +122,7 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = filename,
+          lualine_c = { filename },
           lualine_x = sections_lualine_x,
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
@@ -138,8 +132,8 @@ return {
           lualine_x = { 'location' },
         },
         tabline = {
-          lualine_a = windows,
-          lualine_z = tabs,
+          lualine_a = { windows },
+          lualine_z = { tabs },
         },
       })
     end,
