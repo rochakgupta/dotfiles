@@ -53,7 +53,7 @@ function M.setup(args)
           runtimes = {
             {
               name = 'JavaSE-17',
-              path = '/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home/',
+              path = os.getenv('JAVA17_HOME'),
               default = true,
             },
           },
