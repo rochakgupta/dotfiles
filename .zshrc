@@ -50,7 +50,8 @@ export PATH=$PATH:$(go env GOPATH)/bin
 ################################################################################
 # java
 ################################################################################
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+export JAVA17_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+export JAVA_HOME=$JAVA17_HOME
 
 ################################################################################
 # python
