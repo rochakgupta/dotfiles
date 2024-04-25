@@ -15,7 +15,6 @@
   "fzf-floaterm": { "branch": "master", "commit": "66a30db85a7adf573af9b8a4f3f8c4ce0a2d665e" },
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
   "gitsigns.nvim": { "branch": "main", "commit": "b1f9cf7c5c5639c006c937fc1819e09f358210fc" },
-  "goto-preview": { "branch": "main", "commit": "16ec236fabb40b2cebfe283b1d701338886462db" },
   "gruvbox-material": { "branch": "master", "commit": "a0dc84816b913e9afcf6b8a5ade304bfb47a6f65" },
   "harpoon": { "branch": "master", "commit": "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a" },
   "highlight-undo.nvim": { "branch": "main", "commit": "50a6884a8476be04ecce8f1c4ed692c5000ef0a1" },

@@ -13,30 +13,21 @@ local on_attach = function(client, bufnr)
   nmap('<leader>C', vim.lsp.buf.rename, 'Rename')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-  nmap('gpc', require('goto-preview').close_all_win, '[C]lose All [P]review Windows')
-  nmap('gpC', function()
-    require('goto-preview').close_all_win({ skip_curr_window = true })
-  end, '[C]lose All [P]review Windows Except Current')
-
   nmap('gd', function()
     require('telescope.builtin').lsp_definitions({ show_line = false })
   end, '[G]oto [D]efinition')
-  nmap('gpd', require('goto-preview').goto_preview_definition, '[P]review [D]efinition')
 
   nmap('gr', function()
     require('telescope.builtin').lsp_references({ show_line = false })
   end, '[G]oto [R]eferences')
-  nmap('gpr', require('goto-preview').goto_preview_references, '[P]review [R]eferences')
 
   nmap('gi', function()
     require('telescope.builtin').lsp_implementations({ show_line = false })
   end, '[G]oto [I]mplementation')
-  nmap('gpi', require('goto-preview').goto_preview_implementation, '[P]review [I]mplementation')
 
   nmap('<leader>D', function()
     require('telescope.builtin').lsp_type_definitions({ show_line = false })
   end, 'Type [D]efinition')
-  nmap('gpD', require('goto-preview').goto_preview_type_definition, '[P]review Type [D]efinition')
 
   nmap('<leader>ds', function()
     require('telescope.builtin').lsp_document_symbols({ symbol_width = 75 })
@@ -50,7 +41,6 @@ local on_attach = function(client, bufnr)
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-  nmap('gpD', require('goto-preview').goto_preview_declaration, '[P]review [D]eclaration')
 
   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
   nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
