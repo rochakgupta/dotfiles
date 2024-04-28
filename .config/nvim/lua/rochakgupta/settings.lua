@@ -5,6 +5,7 @@ return {
   transparent = true,
   log_level = vim.log.levels.OFF,
   fidget = false,
+  finder = 'fzf-lua',
   gitlinker = true,
   indent_blankline = true,
   lsp_progress = true,
