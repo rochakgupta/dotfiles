@@ -14,7 +14,7 @@ return {
       require('nvim-navbuddy').setup({
         window = {
           border = require('rochakgupta.settings').border,
-          size = { height = '75%', width = '75%' },
+          size = { height = '75%', width = '90%' },
           sections = {
             left = {
               size = '20%',
