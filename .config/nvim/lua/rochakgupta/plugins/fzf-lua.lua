@@ -13,7 +13,7 @@ return {
     local fzf_lua = require('fzf-lua')
     local actions = require('fzf-lua.actions')
 
-    fzf_lua.setup({
+    local opts = {
       winopts = {
         width = 0.9,
         border = require('rochakgupta.settings').border,
@@ -89,7 +89,8 @@ return {
           ['ctrl-q'] = actions.buf_edit_or_qf,
         },
       },
-    })
+    }
+    fzf_lua.setup(opts)
 
     if use_fzf_lua then
       fzf_lua.register_ui_select()
@@ -114,6 +115,21 @@ return {
       vim.keymap.set('n', '<leader>sw', fzf_lua.grep_cword, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>ss', fzf_lua.live_grep, { desc = '[S]earch [S]omething' })
       vim.keymap.set('v', '<leader>sv', fzf_lua.grep_visual, { desc = '[S]earch [V]isual selection' })
+
+      -- Harpoon
+      vim.keymap.set('n', '<leader>hs', function()
+        local harpoon_files = require('harpoon'):list()
+        local file_paths = {}
+        for _, item in ipairs(harpoon_files.items) do
+          table.insert(file_paths, item.value)
+        end
+
+        fzf_lua.fzf_exec(file_paths, {
+          prompt = 'Harpoon> ',
+          previewer = 'builtin',
+          actions = vim.tbl_extend('force', fzf_lua.defaults.actions.files, opts.actions.files),
+        })
+      end, { desc = '[H]arpoon [S]earch Files' })
     end
   end,
 }

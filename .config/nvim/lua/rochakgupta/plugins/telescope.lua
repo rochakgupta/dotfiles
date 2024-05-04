@@ -31,12 +31,17 @@ return {
       local telescope = require('telescope')
       local actions = require('telescope.actions')
       local builtin = require('telescope.builtin')
+      local pickers = require('telescope.pickers')
+      local finders = require('telescope.finders')
+      local config = require('telescope.config').values
+      local state = require('telescope.state')
+      local actions_state = require('telescope.actions.state')
 
       -- Scroll preview one line at a time
       -- https://github.com/nvim-telescope/telescope.nvim/issues/2602#issuecomment-1636809235
       local slow_scroll = function(prompt_bufnr, direction)
-        local previewer = require('telescope.actions.state').get_current_picker(prompt_bufnr).previewer
-        local status = require('telescope.state').get_status(prompt_bufnr)
+        local previewer = actions_state.get_current_picker(prompt_bufnr).previewer
+        local status = state.get_status(prompt_bufnr)
 
         -- Check if we actually have a previewer and a preview window
         if type(previewer) ~= 'table' or previewer.scroll_fn == nil or status.preview_win == nil then
@@ -111,11 +116,6 @@ return {
       -- Enable yanky, if installed
       pcall(telescope.load_extension, 'yank_history')
 
-      -- Enable harpoon, if installed
-      if pcall(telescope.load_extension, 'harpoon') then
-        vim.keymap.set('n', '<leader>hs', '<cmd>Telescope harpoon marks<CR>', { desc = '[H]arpoon [S]earch Files' })
-      end
-
       if use_telescope then
         -- Enable telescope-ui-select, if installed
         pcall(telescope.load_extension, 'ui-select')
@@ -149,6 +149,26 @@ return {
           vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
           vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = '[S]earch [S]omething' })
         end
+
+        -- Harpoon
+        vim.keymap.set('n', '<leader>hs', function()
+          local harpoon_files = require('harpoon'):list()
+          local file_paths = {}
+          for _, item in ipairs(harpoon_files.items) do
+            table.insert(file_paths, item.value)
+          end
+
+          pickers
+            .new({}, {
+              prompt_title = 'Harpoon',
+              finder = finders.new_table({
+                results = file_paths,
+              }),
+              previewer = config.file_previewer({}),
+              sorter = config.generic_sorter({}),
+            })
+            :find()
+        end, { desc = '[H]arpoon [S]earch Files' })
       end
     end,
   },
