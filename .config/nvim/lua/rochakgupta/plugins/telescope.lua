@@ -87,6 +87,7 @@ return {
                 slow_scroll(bufnr, -1)
               end,
               ['<C-s>'] = actions.select_horizontal,
+              ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
             },
             n = {
               ['<C-s>'] = actions.select_horizontal,
