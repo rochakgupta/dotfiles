@@ -28,6 +28,7 @@ require('mason-lspconfig').setup({
     'gopls',
     'jdtls',
     'jsonls',
+    'lemminx',
     'lua_ls',
     'marksman',
     'pyright',
@@ -79,6 +80,8 @@ lspconfig.jsonls.setup({
     },
   },
 })
+
+lspconfig.lemminx.setup({})
 
 lspconfig.lua_ls.setup({
   settings = {
