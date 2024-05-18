@@ -29,32 +29,23 @@ return {
           end,
         },
         preselect = cmp.PreselectMode.None,
-        mapping = cmp.mapping.preset.insert({
-          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        mapping = {
+          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete({}),
-          ['<CR>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
+          ['<C-y>'] = cmp.mapping(
+            cmp.mapping.confirm({
+              behavior = cmp.ConfirmBehavior.Insert,
+              select = true,
+            }),
+            { 'i', 'c' }
+          ),
+          ['<C-n>'] = cmp.mapping.select_next_item({
+            behavior = cmp.SelectBehavior.Insert,
           }),
-          ['<C-n>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif snippy.can_expand_or_advance() then
-              snippy.expand_or_advance()
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
-          ['<C-p>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif snippy.can_jump(-1) then
-              snippy.previous()
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
-        }),
+          ['<C-p>'] = cmp.mapping.select_prev_item({
+            behavior = cmp.SelectBehavior.Insert,
+          }),
+        },
         sources = {
           { name = 'snippy' },
           { name = 'nvim_lsp' },
@@ -62,6 +53,18 @@ return {
           { name = 'path' },
         },
       })
+
+      vim.keymap.set({ 'i', 's' }, '<C-j>', function()
+        if snippy.can_expand_or_advance() then
+          snippy.expand_or_advance()
+        end
+      end, { silent = true })
+
+      vim.keymap.set({ 'i', 's' }, '<C-k>', function()
+        if snippy.can_jump(-1) then
+          snippy.previous()
+        end
+      end, { silent = true })
 
       cmp.setup.cmdline('/', {
         mapping = cmp.mapping.preset.cmdline(),
