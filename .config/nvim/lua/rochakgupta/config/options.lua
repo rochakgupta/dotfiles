@@ -51,8 +51,8 @@ vim.o.splitbelow = true
 -- Open vertical split right
 vim.o.splitright = true
 
--- Show search result as you type
-vim.o.incsearch = true
+-- Show hits as you type
+vim.o.inccommand = 'nosplit'
 
 -- Enable relative numbers
 vim.wo.relativenumber = true
