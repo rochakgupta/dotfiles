@@ -7,6 +7,9 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Make CTRL-C behave exactly like ESC
 vim.keymap.set('i', '<C-c>', '<Esc>')
 
+-- Clear highlight on search upon pressing CTRL-C in normal mode
+vim.keymap.set('n', '<C-c>', '<cmd>nohlsearch<CR>')
+
 -- Quickfix list keymaps
 vim.keymap.set('n', ']q', ':cnext<CR>', { desc = 'Go to next item in quickfix list' })
 vim.keymap.set('n', '[q', ':cprevious<CR>', { desc = 'Go to previous item in quickfix list' })
