@@ -1,9 +1,8 @@
 return {
   'olimorris/persisted.nvim',
   init = function()
-    vim.keymap.set('n', '<leader>bs', '<cmd>SessionSave<CR>', { desc = '[S]ave session' })
-    vim.keymap.set('n', '<leader>br', '<cmd>SessionLoad<CR>', { desc = '[R]estore session' })
-    vim.keymap.set('n', '<leader>bd', '<cmd>SessionDelete<CR>', { desc = '[D]elete session' })
+    vim.keymap.set('n', '<leader>S', '<cmd>SessionSave<CR>', { desc = '[S]ave session' })
+    vim.keymap.set('n', '<leader>L', '<cmd>SessionLoad<CR>', { desc = '[L]oad session' })
   end,
   config = function()
     require('persisted').setup({
