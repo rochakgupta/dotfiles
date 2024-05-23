@@ -50,7 +50,11 @@ export PATH=$PATH:$(go env GOPATH)/bin
 ################################################################################
 # java
 ################################################################################
+# Neovim only
 export JAVA17_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+export JAVA_DEBUG_DIR=~/Documents/GitHub/java-debug
+export VSCODE_JAVA_TEST_DIR=~/Documents/GitHub/vscode-java-test
+
 export JAVA_HOME=$JAVA17_HOME
 
 ################################################################################
