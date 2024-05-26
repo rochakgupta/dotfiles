@@ -16,7 +16,7 @@
   "explorer.icon.enableNerdfont": true,
   "explorer.width": 40,
   "java.format.enabled": true,
-  "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:/Users/rochakgupta/.config/java/lombok/lombok-1.18.22.jar -Xbootclasspath/a:/Users/rochakgupta/.config/java/lombok/lombok-1.18.22.jar",
+  "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:/Users/rochakgupta/.config/java/lombok-1.18.22.jar -Xbootclasspath/a:/Users/rochakgupta/.config/java/lombok-1.18.22.jar",
   "json.format.enable": true,
   "notification.disabledProgressSources": ["*"],
   "pairs.enableBackspace": false,
