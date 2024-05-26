@@ -84,6 +84,10 @@ function M.setup(args)
           includeDecompiledSources = true,
         },
         format = {
+          settings = {
+            url = vim.fn.expand('~/.config/java/eclipse-java-google-style.xml'),
+            profile = 'GoogleStyle',
+          },
           comments = {
             enabled = false,
           },
