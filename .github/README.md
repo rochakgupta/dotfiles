@@ -112,6 +112,7 @@ via their installer. If nothing works, just install them from source.
 - [Vagrant](https://vagrantup.com)
 - [VirtualBox](https://virtualbox.org)
 - [Visual Studio Code](https://code.visualstudio.com)
+- [WezTerm](https://wezfurlong.org/wezterm)
 
 #### macOS
 
