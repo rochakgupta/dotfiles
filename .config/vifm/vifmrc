@@ -448,9 +448,9 @@ colorscheme palenight
 " Preview
 set wrap!
 
-" Use exa for directory tree
-" https://the.exa.website
-fileviewer */,.*/ exa --icons --tree -L 4 -I .git %c
+" Use eza for directory tree
+" https://eza.rocks
+fileviewer */,.*/ eza --icons=always --tree -L 4 -I .git %c
 
 " Use bat for files
 " https://github.com/sharkdp/bat

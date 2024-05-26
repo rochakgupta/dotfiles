@@ -20,7 +20,7 @@ via their installer. If nothing works, just install them from source.
 - [cheat.sh](https://github.com/chubin/cheat.sh)
 - [desk](https://github.com/jamesob/desk)
 - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-- [exa](https://the.exa.website)
+- [eza](https://eza.rocks)
 - [fd](https://github.com/sharkdp/fd)
 - [fig](https://fig.io/)
 - [fx](https://github.com/antonmedv/fx)
@@ -70,7 +70,7 @@ via their installer. If nothing works, just install them from source.
   - tmux
 - [vifm](https://vifm.info)
   - bat
-  - exa
+  - eza
   - nerd-fonts
   - [vifm-colors](https://github.com/vifm/vifm-colors)
 - [vim](https://vim.org)
