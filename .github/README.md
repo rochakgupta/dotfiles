@@ -47,6 +47,7 @@ via their installer. If nothing works, just install them from source.
   - FiraMono
   - Hack
   - Hasklug
+  - JetbrainsMono
   - Mononoki
   - Sauce Code Pro
   - UbuntuMono
@@ -58,7 +59,6 @@ via their installer. If nothing works, just install them from source.
 - [rust](https://www.rust-lang.org/)
   - asdf
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [spotify-tui](https://github.com/Rigellute/spotify-tui)
 - [starship](https://starship.rs)
   - nerd-fonts
 - [tldr](https://tldr.sh)
@@ -109,7 +109,6 @@ via their installer. If nothing works, just install them from source.
 - [Kindle Comic Converter](https://kcc.iosphe.re)
 - [Kindle Comic Creator](https://amazon.com/Kindle-Comic-Creator/b?ie=UTF8&node=23496309011)
 - [Pocket](https://getpocket.com)
-- [Postman](https://postman.com)
 - [Vagrant](https://vagrantup.com)
 - [VirtualBox](https://virtualbox.org)
 - [Visual Studio Code](https://code.visualstudio.com)
