@@ -4,13 +4,19 @@ return {
     'jay-babu/mason-null-ls.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-      'nvimtools/none-ls.nvim',
       'williamboman/mason.nvim', -- Configured in mason.lua
+      {
+        'nvimtools/none-ls.nvim',
+        dependencies = {
+          -- Builtins moved out of none-ls
+          -- https://github.com/nvimtools/none-ls.nvim/discussions/81
+          'gbprod/none-ls-shellcheck.nvim',
+        },
+      },
     },
     config = function()
       local null_ls = require('null-ls')
       local formatting = null_ls.builtins.formatting
-      local diagnostics = null_ls.builtins.diagnostics
       null_ls.setup({
         border = require('rochakgupta.settings').border,
         sources = {
@@ -23,7 +29,8 @@ return {
           formatting.shfmt.with({
             filetypes = { 'sh', 'zsh' },
           }),
-          diagnostics.shellcheck,
+          require('none-ls-shellcheck.diagnostics'),
+          require('none-ls-shellcheck.code_actions'),
         },
       })
       require('mason-null-ls').setup({
