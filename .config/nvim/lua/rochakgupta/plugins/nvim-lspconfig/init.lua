@@ -4,7 +4,7 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
+      'williamboman/mason.nvim', -- Configured in mason.lua
       'williamboman/mason-lspconfig.nvim',
 
       -- nvim-cmp source for built-in LSP client

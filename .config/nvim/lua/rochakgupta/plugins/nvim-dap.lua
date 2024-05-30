@@ -11,7 +11,7 @@ return {
     'nvim-neotest/nvim-nio',
 
     -- Installs the debug adapters
-    'williamboman/mason.nvim',
+    'williamboman/mason.nvim', -- Configured in mason.lua
     'jay-babu/mason-nvim-dap.nvim',
 
     -- Debuggers
@@ -104,8 +104,8 @@ return {
     require('dap-go').setup()
 
     -- Install Python specific config
-    -- Cannot determine path to debugpy package installed via mason as mason is setup in nvim-lspconfig
-    -- which has a dependency on nvim-jdtls which has a dependency on nvim-dap.
-    require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+    local debugpy_install = require('mason-registry').get_package('debugpy'):get_install_path()
+    local python_install = debugpy_install .. '/venv/bin/python'
+    require('dap-python').setup(python_install)
   end,
 }
