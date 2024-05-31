@@ -22,6 +22,8 @@ return {
       },
       -- Show window zoom status
       'dhruvasagar/vim-zoom',
+
+      'SmiteshP/nvim-navic',
     },
     config = function()
       local jdt = {}
@@ -108,6 +110,10 @@ return {
         end,
       }
 
+      local navic = {
+        'navic',
+      }
+
       local sections_lualine_x = { 'encoding', 'fileformat', 'filetype' }
       if settings.lsp_progress then
         table.insert(sections_lualine_x, 1, require('lsp-progress').progress)
@@ -134,8 +140,8 @@ return {
           lualine_x = { 'location' },
         },
         tabline = {
-          lualine_a = { windows },
-          lualine_z = { tabs },
+          lualine_a = { navic },
+          lualine_z = { windows },
         },
       })
     end,

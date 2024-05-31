@@ -11,6 +11,7 @@ return {
       'hrsh7th/cmp-nvim-lsp',
 
       -- Document symbol visibility
+      'SmiteshP/nvim-navic',
       'SmiteshP/nvim-navbuddy',
 
       -- Useful status updates for LSP
