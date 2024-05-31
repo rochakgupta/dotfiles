@@ -5,7 +5,7 @@ vim.diagnostic.config({
   virtual_text = false,
   float = {
     show_header = true,
-    source = 'always',
+    source = true,
     border = require('rochakgupta.settings').border,
   },
 })

@@ -32,9 +32,9 @@ function M.setup(args)
 
   -- https://github.com/mfussenegger/nvim-jdtls?tab=readme-ov-file#debugger-via-nvim-dap
   local bundles = {
-    vim.fn.glob(os.getenv('JAVA_DEBUG_DIR') .. '/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar', 1),
+    vim.fn.glob(os.getenv('JAVA_DEBUG_DIR') .. '/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar', true),
   }
-  vim.list_extend(bundles, vim.split(vim.fn.glob(os.getenv('VSCODE_JAVA_TEST_DIR') .. '/server/*.jar', 1), '\n'))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(os.getenv('VSCODE_JAVA_TEST_DIR') .. '/server/*.jar', true), '\n'))
 
   local config = {
     cmd = {
