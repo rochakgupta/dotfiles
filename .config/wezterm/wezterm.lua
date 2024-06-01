@@ -48,6 +48,12 @@ config.keys = {
 			cwd = wezterm.home_dir,
 		}),
 	},
+	-- Do not prompt for confirmation when closing current tab
+	{
+		key = "w",
+		mods = "CMD",
+		action = wezterm.action.CloseCurrentTab({ confirm = false }),
+	},
 }
 
 return config
