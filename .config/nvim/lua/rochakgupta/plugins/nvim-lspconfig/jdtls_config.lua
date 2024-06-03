@@ -32,9 +32,9 @@ function M.setup(args)
 
   -- https://github.com/mfussenegger/nvim-jdtls?tab=readme-ov-file#debugger-via-nvim-dap
   local bundles = {
-    vim.fn.glob(os.getenv('JAVA_DEBUG_DIR') .. '/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar', true),
+    vim.fn.glob('~/Documents/GitHub/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar', true),
   }
-  vim.list_extend(bundles, vim.split(vim.fn.glob(os.getenv('VSCODE_JAVA_TEST_DIR') .. '/server/*.jar', true), '\n'))
+  vim.list_extend(bundles, vim.split(vim.fn.glob('~/Documents/GitHub/vscode-java-test/server/*.jar', true), '\n'))
 
   local config = {
     cmd = {
@@ -60,7 +60,7 @@ function M.setup(args)
           runtimes = {
             {
               name = 'JavaSE-17',
-              path = os.getenv('JAVA17_HOME'),
+              path = '/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home',
               default = true,
             },
           },
