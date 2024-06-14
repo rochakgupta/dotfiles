@@ -7,9 +7,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
-    cond = function()
-      return settings.gitlinker
-    end,
+    cond = settings.gitlinker,
     config = function()
       local gitlinker = require('gitlinker')
       local actions = require('gitlinker.actions')

@@ -5,9 +5,7 @@ return {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
-    cond = function()
-      return settings.indent_blankline
-    end,
+    cond = settings.indent_blankline,
     config = function()
       -- Overrides have to be done after the colorscheme is set.
       require('ibl').setup({

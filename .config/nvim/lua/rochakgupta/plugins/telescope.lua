@@ -15,15 +15,11 @@ return {
         -- NOTE: If you are having trouble with this installation,
         --       refer to the README for telescope-fzf-native for more instructions.
         build = 'make',
-        cond = function()
-          return vim.fn.executable('make') == 1
-        end,
+        cond = vim.fn.executable('make') == 1,
       },
       {
         'nvim-telescope/telescope-live-grep-args.nvim',
-        cond = function()
-          return use_telescope
-        end,
+        cond = use_telescope,
       },
       'nvim-telescope/telescope-ui-select.nvim',
     },

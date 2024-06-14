@@ -8,9 +8,7 @@ return {
       'nvim-tree/nvim-web-devicons',
       {
         'linrongbin16/lsp-progress.nvim',
-        cond = function()
-          return settings.lsp_progress
-        end,
+        cond = settings.lsp_progress,
         opts = {
           max_size = 50,
           client_format = function(client_name, _, series_messages)

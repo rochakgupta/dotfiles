@@ -1,8 +1,6 @@
 return {
   'gbprod/yanky.nvim',
-  cond = function()
-    return require('rochakgupta.settings').yanky
-  end,
+  cond = require('rochakgupta.settings').yanky,
   config = function()
     require('yanky').setup({
       ring = {
