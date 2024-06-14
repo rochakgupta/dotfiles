@@ -1,6 +1,3 @@
 return {
-  {
-    -- Jinja2
-    'glench/vim-jinja2-syntax',
-  },
+  'glench/vim-jinja2-syntax',
 }

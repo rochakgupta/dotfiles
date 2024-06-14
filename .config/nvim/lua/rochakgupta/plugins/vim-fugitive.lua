@@ -1,6 +1,6 @@
 local settings = require('rochakgupta.settings')
+
 return {
-  -- Git integration
   'tpope/vim-fugitive',
   init = function()
     if not settings.gitlinker then

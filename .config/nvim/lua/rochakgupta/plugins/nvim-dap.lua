@@ -1,20 +1,11 @@
 return {
   'mfussenegger/nvim-dap',
   dependencies = {
-    -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
-
-    -- Evaluate as virtual text
     'theHamsta/nvim-dap-virtual-text',
-
-    -- Required dependency for nvim-dap-ui
     'nvim-neotest/nvim-nio',
-
-    -- Installs the debug adapters
     'williamboman/mason.nvim', -- Configured in mason.lua
     'jay-babu/mason-nvim-dap.nvim',
-
-    -- Debuggers
     'leoluz/nvim-dap-go',
     'mfussenegger/nvim-dap-python',
   },

@@ -1,5 +1,3 @@
 return {
-  {
-    'ipkiss42/xwiki.vim',
-  },
+  'ipkiss42/xwiki.vim',
 }
