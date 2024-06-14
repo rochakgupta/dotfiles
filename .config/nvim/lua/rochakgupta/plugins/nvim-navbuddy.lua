@@ -1,11 +1,9 @@
 return {
   'SmiteshP/nvim-navbuddy',
-  -- Uncomment if attaching automatically
-  -- event = 'LspAttach',
   dependencies = {
-    'SmiteshP/nvim-navic',
+    'SmiteshP/nvim-navic', -- Configured in nvim-navic.lua
     'MunifTanjim/nui.nvim',
-    'nvim-telescope/telescope.nvim', -- Used and configued in telescope
+    'nvim-telescope/telescope.nvim', -- Configured in telescope.lua
   },
   config = function()
     local actions = require('nvim-navbuddy.actions')
@@ -32,10 +30,9 @@ return {
         ['<Right>'] = actions.children(),
         ['t'] = actions.telescope(require('telescope.config').values),
       },
-      -- Uncomment if attaching automatically
-      -- lsp = {
-      --   auto_attach = true,
-      -- },
+      lsp = {
+        auto_attach = true,
+      },
     })
     vim.keymap.set('n', '<leader>n', ':Navbuddy<CR>', { desc = 'Open [N]avbuddy', silent = true })
   end,
