@@ -2,7 +2,7 @@ return {
   'Wansmer/treesj',
   keys = { '<space>j' },
   dependencies = {
-    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter', -- Configured in nvim-treesitter.lua
   },
   config = function()
     require('treesj').setup({

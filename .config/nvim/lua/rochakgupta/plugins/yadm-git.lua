@@ -1,7 +1,7 @@
 return {
   'seanbreckenridge/yadm-git.vim',
   dependencies = {
-    'tpope/vim-fugitive',
+    'tpope/vim-fugitive', -- Configured in vim-fugitive.lua
   },
   config = function()
     -- Git gutter via gitsigns only works locally (darwin) for some reason

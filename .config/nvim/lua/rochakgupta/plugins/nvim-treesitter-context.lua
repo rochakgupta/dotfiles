@@ -1,5 +1,5 @@
 return {
-  'nvim-treesitter/nvim-treesitter-context',
+  'nvim-treesitter/nvim-treesitter-context', -- Configured in nvim-treesitter.lua
   cmd = 'TSContextEnable',
   config = function()
     require('treesitter-context').setup({

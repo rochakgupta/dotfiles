@@ -15,8 +15,8 @@ return {
         end,
       },
     },
-    'dhruvasagar/vim-zoom', -- Show window zoom status
-    'SmiteshP/nvim-navic',
+    'dhruvasagar/vim-zoom', -- Configured in vim-zoom.lua
+    'SmiteshP/nvim-navic', -- Configured in nvim-navic.lua
   },
   config = function()
     local filename = {

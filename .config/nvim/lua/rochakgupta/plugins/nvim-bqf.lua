@@ -2,7 +2,7 @@ return {
   'kevinhwang91/nvim-bqf',
   ft = 'qf',
   dependencies = {
-    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter', -- Configured in nvim-treesitter.lua
   },
   opts = {
     auto_resize_height = true,
