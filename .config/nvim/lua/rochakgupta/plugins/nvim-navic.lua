@@ -5,5 +5,6 @@ return {
       auto_attach = true,
     },
     lazy_update_context = true,
+    highlight = true,
   },
 }
