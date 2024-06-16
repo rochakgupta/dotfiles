@@ -48,7 +48,7 @@ return {
           -- Disable tabline
           vim.o.showtabline = 0
           -- Disable indent-blankline
-          if require('rochakgupta.settings').indent_blankline then
+          if vim.g.rg_indent_blankline then
             require('ibl').update({ enabled = false })
           end
           -- Disable nvim-cmp

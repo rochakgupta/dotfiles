@@ -9,9 +9,7 @@ return {
     {
       'j-hui/fidget.nvim',
       tag = 'legacy',
-      cond = function()
-        return require('rochakgupta.settings').fidget
-      end,
+      cond = vim.g.rg_fidget,
       opts = {
         window = {
           blend = 0,

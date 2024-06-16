@@ -4,8 +4,8 @@ vim.o.cedit = '<C-Y>'
 -- Enable 24-bit RGB colors
 vim.o.termguicolors = true
 
--- Enable dark background
-vim.o.background = require('rochakgupta.settings').background
+-- Set background
+vim.o.background = vim.g.rg_background
 
 -- Set highlight on search
 vim.o.hlsearch = true

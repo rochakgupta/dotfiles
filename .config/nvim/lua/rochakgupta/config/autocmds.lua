@@ -1,4 +1,4 @@
-if not require('rochakgupta.settings').yanky then
+if not vim.g.rg_yanky then
   vim.api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight on yank',
     callback = function()

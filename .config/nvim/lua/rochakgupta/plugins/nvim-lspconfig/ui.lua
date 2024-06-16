@@ -1,4 +1,4 @@
-local border = require('rochakgupta.settings').border
+local border = vim.g.rg_border
 
 -- Documentation
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {

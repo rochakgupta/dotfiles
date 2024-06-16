@@ -1,11 +1,9 @@
-local settings = require('rochakgupta.settings')
-
 return {
   'ruifm/gitlinker.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
   },
-  cond = settings.gitlinker,
+  cond = vim.g.rg_gitlinker,
   config = function()
     local gitlinker = require('gitlinker')
     local actions = require('gitlinker.actions')

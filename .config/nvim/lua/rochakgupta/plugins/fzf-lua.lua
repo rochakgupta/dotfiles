@@ -1,5 +1,3 @@
-local use_fzf_lua = require('rochakgupta.settings').finder == 'fzf-lua'
-
 return {
   'ibhagwan/fzf-lua',
   dependencies = {
@@ -16,7 +14,7 @@ return {
     local opts = {
       winopts = {
         width = 0.9,
-        border = require('rochakgupta.settings').border,
+        border = vim.g.rg_border,
         preview = {
           vertical = 'up:50%',
           layout = 'vertical',
@@ -92,7 +90,7 @@ return {
     }
     fzf_lua.setup(opts)
 
-    if use_fzf_lua then
+    if vim.g.rg_fzf_lua then
       fzf_lua.register_ui_select()
 
       vim.keymap.set('n', '<leader>?', fzf_lua.oldfiles, { desc = '[?] Find recently opened files' })

@@ -1,9 +1,7 @@
-local settings = require('rochakgupta.settings')
-
 return {
   'lukas-reineke/indent-blankline.nvim',
   main = 'ibl',
-  cond = settings.indent_blankline,
+  cond = vim.g.rg_indent_blankline,
   config = function()
     -- Overrides have to be done after the colorscheme is set.
     require('ibl').setup({
@@ -20,11 +18,11 @@ return {
         -- char = '┊',
       },
     })
-    if settings.colorscheme == 'material' then
+    if vim.g.rg_colorscheme == 'material' then
       local hooks = require('ibl.hooks')
       hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
         vim.api.nvim_set_hl(0, 'IblScope', {
-          fg = (settings.background == 'dark' and '#c793ea' or '#876ad7'),
+          fg = (vim.g.rg_background == 'dark' and '#c793ea' or '#876ad7'),
           nocombine = true,
         })
       end)

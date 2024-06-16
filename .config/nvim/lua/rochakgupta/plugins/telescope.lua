@@ -1,4 +1,4 @@
-local use_telescope = require('rochakgupta.settings').finder == 'telescope'
+local use_telescope = vim.g.rg_telescope
 
 return {
   'nvim-telescope/telescope.nvim',

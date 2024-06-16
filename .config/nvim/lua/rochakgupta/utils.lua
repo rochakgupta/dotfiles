@@ -56,7 +56,7 @@ function M.notify_debug(message)
 end
 
 function M.notify(message, level)
-  if level >= require('rochakgupta.settings').log_level then
+  if level >= vim.g.rg_log_level then
     vim.notify(message, level)
   end
 end

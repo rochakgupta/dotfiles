@@ -1,5 +1,5 @@
 return {
   'folke/which-key.nvim',
-  cond = require('rochakgupta.settings').which_key,
+  cond = vim.g.rg_which_key,
   opts = {},
 }

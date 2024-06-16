@@ -64,7 +64,7 @@ return {
         },
       },
       floating = {
-        border = require('rochakgupta.settings').border,
+        border = vim.g.rg_border,
       },
     })
 

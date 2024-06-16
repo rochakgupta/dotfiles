@@ -1,12 +1,10 @@
-local settings = require('rochakgupta.settings')
-
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
     'nvim-tree/nvim-web-devicons',
     {
       'linrongbin16/lsp-progress.nvim',
-      cond = settings.lsp_progress,
+      cond = vim.g.rg_lsp_progress,
       opts = {
         max_size = 50,
         client_format = function(client_name, _, series_messages)
@@ -39,14 +37,14 @@ return {
     }
 
     local sections_lualine_x = { 'encoding', 'fileformat', 'filetype' }
-    if settings.lsp_progress then
+    if vim.g.rg_lsp_progress then
       table.insert(sections_lualine_x, 1, require('lsp-progress').progress)
     end
 
     require('lualine').setup({
       options = {
         icons_enabled = true,
-        theme = settings.colorscheme,
+        theme = vim.g.rg_colorscheme,
         disabled_filetypes = { 'NvimTree' },
         component_separators = '',
         section_separators = '',

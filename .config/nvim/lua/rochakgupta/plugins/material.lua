@@ -1,10 +1,9 @@
-local settings = require('rochakgupta.settings')
-local dark = settings.background == 'dark'
+local dark = vim.g.rg_background == 'dark'
 
 return {
   'marko-cerovac/material.nvim',
   priority = 1000,
-  lazy = settings.colorscheme ~= 'material',
+  lazy = vim.g.rg_colorscheme ~= 'material',
   init = function()
     vim.g.material_style = dark and 'deep ocean' or 'lighter'
   end,
@@ -35,7 +34,7 @@ return {
       },
       disable = {
         colored_cursor = true,
-        background = settings.transparent,
+        background = vim.g.rg_transparent,
       },
       high_visibility = {
         lighter = true,

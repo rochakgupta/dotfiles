@@ -6,6 +6,6 @@ vim.diagnostic.config({
   float = {
     show_header = true,
     source = true,
-    border = require('rochakgupta.settings').border,
+    border = vim.g.rg_border,
   },
 })

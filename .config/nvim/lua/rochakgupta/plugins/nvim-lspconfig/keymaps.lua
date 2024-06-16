@@ -1,6 +1,6 @@
 local M = {}
 
-local use_telescope = require('rochakgupta.settings').finder == 'telescope'
+local use_telescope = vim.g.rg_telescope
 
 function M.init(bufnr)
   local nmap = function(keys, func, desc)

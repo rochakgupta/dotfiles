@@ -18,6 +18,6 @@ require('lazy').setup('rochakgupta.plugins', {
     enabled = false,
   },
   ui = {
-    border = require('rochakgupta.settings').border,
+    border = vim.g.rg_border,
   },
 })

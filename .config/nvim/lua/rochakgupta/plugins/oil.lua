@@ -38,7 +38,7 @@ return {
       float = {
         max_width = window_w_int,
         max_height = window_h_int,
-        border = require('rochakgupta.settings').border,
+        border = vim.g.rg_border,
         win_options = {
           winblend = 0,
         },

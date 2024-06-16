@@ -1,9 +1,7 @@
-local settings = require('rochakgupta.settings')
-
 return {
   'tpope/vim-fugitive',
   init = function()
-    if not settings.gitlinker then
+    if not vim.g.rg_gitlinker then
       local set_keymaps = function(key, copy, desc)
         local cmd = copy and 'GBrowse!' or 'GBrowse'
         vim.keymap.set('n', key, '<cmd>' .. cmd .. '<CR>', { desc = desc, noremap = false })

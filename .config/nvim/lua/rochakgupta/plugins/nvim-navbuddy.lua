@@ -9,7 +9,7 @@ return {
     local actions = require('nvim-navbuddy.actions')
     require('nvim-navbuddy').setup({
       window = {
-        border = require('rochakgupta.settings').border,
+        border = vim.g.rg_border,
         size = { height = '75%', width = '90%' },
         sections = {
           left = {

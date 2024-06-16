@@ -1,17 +1,15 @@
-local settings = require('rochakgupta.settings')
-
 return {
   'folke/tokyonight.nvim',
   priority = 1000,
-  lazy = settings.colorscheme ~= 'tokyonight',
+  lazy = vim.g.rg_colorscheme ~= 'tokyonight',
   opts = {
     style = 'night',
-    transparent = settings.transparent,
+    transparent = vim.g.rg_transparent,
     styles = {
       comments = { fg = '#7e86ae' },
       keywords = { italic = false },
-      sidebars = settings.transparent and 'transparent' or 'dark',
-      floats = settings.transparent and 'transparent' or 'dark',
+      sidebars = vim.g.rg_transparent and 'transparent' or 'dark',
+      floats = vim.g.rg_transparent and 'transparent' or 'dark',
     },
   },
 }
