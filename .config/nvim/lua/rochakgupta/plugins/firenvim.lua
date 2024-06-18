@@ -7,7 +7,15 @@ return {
   -- Lazy load firenvim
   -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
   cond = not not vim.g.started_by_firenvim,
-  init = function()
+  -- cond = not not vim.g.started_by_firenvim,
+  build = function()
+    require('lazy').load({
+      plugins = 'firenvim',
+      wait = true,
+    })
+    vim.fn['firenvim#install'](0)
+  end,
+  config = function()
     local filename = function(ext)
       return '/tmp/{hostname}_{pathname%10}' .. '.' .. ext
     end
@@ -30,29 +38,14 @@ return {
         },
       },
     }
-  end,
-  build = function()
-    require('lazy').load({
-      { plugins = 'firenvim' },
-      { wait = true },
-    })
-    vim.fn['firenvim#install'](0)
-  end,
-  config = function()
+
     vim.api.nvim_create_autocmd('UIEnter', {
       callback = function(_)
         local client = vim.api.nvim_get_chan_info(vim.v.event.chan).client
         if client ~= nil and client.name == 'Firenvim' then
-          -- Disable lualine
-          require('lualine').hide()
           -- Disable tabline
           vim.o.showtabline = 0
-          -- Disable indent-blankline
-          if vim.g.rg_indent_blankline then
-            require('ibl').update({ enabled = false })
-          end
-          -- Disable nvim-cmp
-          -- require('cmp').setup({ enabled = false })
+
           -- Firefox only: Manually set the font size as default is too big
           vim.o.guifont = 'JetbrainsMono_Nerd_Font_Mono:h18'
         end

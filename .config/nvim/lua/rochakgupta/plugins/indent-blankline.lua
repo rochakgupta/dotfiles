@@ -1,7 +1,7 @@
 return {
   'lukas-reineke/indent-blankline.nvim',
   main = 'ibl',
-  cond = vim.g.rg_indent_blankline,
+  cond = vim.g.rg_indent_blankline and not vim.g.started_by_firenvim,
   config = function()
     -- Overrides have to be done after the colorscheme is set.
     require('ibl').setup({

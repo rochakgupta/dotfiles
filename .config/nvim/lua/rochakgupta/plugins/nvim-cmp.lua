@@ -10,6 +10,7 @@ return {
     'dcampos/cmp-snippy',
     'rcarriga/cmp-dap',
   },
+  -- cond = not vim.g.started_by_firenvim,
   config = function()
     local cmp = require('cmp')
     local snippy = require('snippy')
