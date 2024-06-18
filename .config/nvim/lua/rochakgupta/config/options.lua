@@ -122,3 +122,6 @@ vim.o.splitkeep = 'topline'
 -- If not due to some reason, E432 "Tags file not sorted" error is raised. Disabling binary search to avoid
 -- this error. Read more at https://neovim.io/doc/user/message.html.
 vim.o.tagbsearch = false
+
+-- Make jumplist behave like tagstack
+vim.o.jumpoptions = 'stack'
