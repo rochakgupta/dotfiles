@@ -3,13 +3,9 @@ return {
   priority = 1000,
   lazy = vim.g.rg_colorscheme ~= 'gruvbox-material',
   init = function()
-    if vim.g.rg_transparent then
-      vim.g.gruvbox_material_background = 'hard'
-      vim.g.gruvbox_material_ui_contrast = 'high'
-      vim.g.gruvbox_material_transparent_background = 1
-    end
-    vim.g.gruvbox_material_foreground = 'original'
-    vim.g.gruvbox_material_statusline_style = 'original'
+    vim.g.gruvbox_material_background = 'hard'
+    vim.g.gruvbox_material_ui_contrast = 'high'
+    vim.g.gruvbox_material_transparent_background = vim.g.rg_transparent and 1 or 0
     vim.g.gruvbox_material_better_performance = 1
   end,
   config = function()
