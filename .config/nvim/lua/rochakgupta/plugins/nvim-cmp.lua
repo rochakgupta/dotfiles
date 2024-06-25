@@ -67,7 +67,7 @@ return {
       end
     end, { silent = true })
 
-    cmp.setup.cmdline('/', {
+    cmp.setup.cmdline({ '/', '?' }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = 'buffer' },
@@ -77,6 +77,7 @@ return {
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
+        { name = 'buffer' },
         { name = 'path' },
       }, {
         {
