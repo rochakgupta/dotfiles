@@ -1,6 +1,9 @@
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(client, bufnr)
   require('rochakgupta.plugins.nvim-lspconfig.keymaps').init(bufnr)
+
+  -- Disable language server provided semantic token highlights in favor of treesitter's
+  client.server_capabilities.semanticTokensProvider = nil
 end
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
