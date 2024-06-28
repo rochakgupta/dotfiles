@@ -39,7 +39,9 @@ return {
 
     local sections_lualine_x = { 'encoding', 'fileformat', 'filetype' }
     if vim.g.rg_lsp_progress then
-      table.insert(sections_lualine_x, 1, require('lsp-progress').progress)
+      table.insert(sections_lualine_x, 1, function()
+        return require('lsp-progress').progress()
+      end)
     end
 
     require('lualine').setup({
