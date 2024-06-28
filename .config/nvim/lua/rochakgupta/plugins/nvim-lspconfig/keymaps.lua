@@ -45,13 +45,13 @@ function M.init(bufnr)
     end
   end, '[G]oto [I]mplementation')
 
-  nmap('<leader>D', function()
+  nmap('gt', function()
     if use_telescope then
       require('telescope.builtin').lsp_type_definitions({ show_line = false })
     else
       require('fzf-lua').lsp_typedefs()
     end
-  end, 'Type [D]efinition')
+  end, '[G]oto [T]ype Definition')
 
   nmap('<leader>ds', function()
     if use_telescope then
