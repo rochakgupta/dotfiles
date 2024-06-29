@@ -61,16 +61,12 @@ return {
       },
     })
 
-    -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes#workaround-when-using-rmagattiauto-session
-    vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-      desc = 'Check if nvim-tree is open when session is restored (via persisted) and refresh it',
-      pattern = 'NvimTree*',
-      callback = function()
-        local api = require('nvim-tree.api')
-        local view = require('nvim-tree.view')
-        if not view.is_visible() then
-          api.tree.open()
-        end
+    -- Close nvim-tree before saving session via persisted plugin as it has issues restoring it
+    vim.api.nvim_create_autocmd({ 'User' }, {
+      pattern = 'PersistedSavePre',
+      group = vim.api.nvim_create_augroup('PersistedHooks', { clear = true }),
+      callback = function(_)
+        vim.cmd('NvimTreeClose')
       end,
     })
 
