@@ -1,7 +1,5 @@
 local M = {}
 
-local use_telescope = vim.g.rg_telescope
-
 function M.init(bufnr)
   local nmap = function(keys, func, desc)
     if desc then
@@ -15,7 +13,7 @@ function M.init(bufnr)
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gd', function()
-    if use_telescope then
+    if vim.g.rg_telescope then
       require('telescope.builtin').lsp_definitions({ show_line = false })
     else
       require('fzf-lua').lsp_definitions({
@@ -25,7 +23,7 @@ function M.init(bufnr)
   end, '[G]oto [D]efinition')
 
   nmap('gr', function()
-    if use_telescope then
+    if vim.g.rg_telescope then
       require('telescope.builtin').lsp_references({ show_line = false })
     else
       require('fzf-lua').lsp_references({
@@ -36,7 +34,7 @@ function M.init(bufnr)
   end, '[G]oto [R]eferences')
 
   nmap('gi', function()
-    if use_telescope then
+    if vim.g.rg_telescope then
       require('telescope.builtin').lsp_implementations({ show_line = false })
     else
       require('fzf-lua').lsp_implementations({
@@ -46,7 +44,7 @@ function M.init(bufnr)
   end, '[G]oto [I]mplementation')
 
   nmap('gt', function()
-    if use_telescope then
+    if vim.g.rg_telescope then
       require('telescope.builtin').lsp_type_definitions({ show_line = false })
     else
       require('fzf-lua').lsp_typedefs()
@@ -54,7 +52,7 @@ function M.init(bufnr)
   end, '[G]oto [T]ype Definition')
 
   nmap('<leader>ds', function()
-    if use_telescope then
+    if vim.g.rg_telescope then
       require('telescope.builtin').lsp_document_symbols({ symbol_width = 75 })
     else
       require('fzf-lua').lsp_document_symbols()
@@ -62,7 +60,7 @@ function M.init(bufnr)
   end, '[D]ocument [S]ymbols')
 
   nmap('<leader>ws', function()
-    if use_telescope then
+    if vim.g.rg_telescope then
       require('telescope.builtin').lsp_dynamic_workspace_symbols()
     else
       require('fzf-lua').lsp_live_workspace_symbols()

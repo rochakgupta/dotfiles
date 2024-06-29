@@ -3,10 +3,27 @@ return {
   dependencies = {
     'SmiteshP/nvim-navic', -- Configured in nvim-navic.lua
     'MunifTanjim/nui.nvim',
-    'nvim-telescope/telescope.nvim', -- Configured in telescope.lua
+    {
+      'nvim-telescope/telescope.nvim', -- Configured in telescope.lua
+      cond = vim.g.rg_telescope,
+    },
   },
   config = function()
     local actions = require('nvim-navbuddy.actions')
+
+    local mappings = {
+      ['<Down>'] = actions.next_sibling(),
+      ['<Up>'] = actions.previous_sibling(),
+      ['<Left>'] = actions.parent(),
+      ['<Right>'] = actions.children(),
+    }
+
+    if vim.g.rg_telescope then
+      mappings = vim.tbl_extend('force', mappings, {
+        ['t'] = actions.telescope(require('telescope.config').values),
+      })
+    end
+
     require('nvim-navbuddy').setup({
       window = {
         border = vim.g.rg_border,
@@ -23,13 +40,7 @@ return {
           },
         },
       },
-      mappings = {
-        ['<Down>'] = actions.next_sibling(),
-        ['<Up>'] = actions.previous_sibling(),
-        ['<Left>'] = actions.parent(),
-        ['<Right>'] = actions.children(),
-        ['t'] = actions.telescope(require('telescope.config').values),
-      },
+      mappings = mappings,
       lsp = {
         auto_attach = true,
       },
