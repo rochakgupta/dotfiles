@@ -2,8 +2,8 @@
 local on_attach = function(client, bufnr)
   require('rochakgupta.plugins.nvim-lspconfig.keymaps').init(bufnr)
 
-  -- Disable language server provided semantic token highlights in favor of treesitter's
-  client.server_capabilities.semanticTokensProvider = nil
+  -- Prevent language server semantic token highlights from overwriting treesitter highlights
+  -- client.server_capabilities.semanticTokensProvider = nil
 end
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
