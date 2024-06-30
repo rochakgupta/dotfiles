@@ -36,24 +36,11 @@ return {
           -- Rotate preview clockwise/counter-clockwise
           ['<F5>'] = 'toggle-preview-ccw',
           ['<F6>'] = 'toggle-preview-cw',
-          ['<C-f>'] = 'preview-page-down',
-          ['<C-b>'] = 'preview-page-up',
+          ['<C-f>'] = 'preview-down',
+          ['<C-b>'] = 'preview-up',
+          ['<C-d>'] = 'preview-page-down',
+          ['<C-u>'] = 'preview-page-up',
           ['<C-r>'] = 'preview-page-reset',
-        },
-        fzf = {
-          -- fzf '--bind=' options
-          ['ctrl-l'] = 'clear-query',
-          ['ctrl-c'] = 'abort',
-          ['tab'] = 'toggle-out',
-          ['shift-tab'] = 'toggle-in',
-          ['ctrl-o'] = 'toggle-all',
-          ['ctrl-f'] = 'preview-down',
-          ['ctrl-b'] = 'preview-up',
-          -- Only valid with fzf previewers (bat/cat/git/etc)
-          ['f3'] = 'toggle-preview-wrap',
-          ['f4'] = 'toggle-preview',
-          ['ctrl-d'] = 'preview-page-down',
-          ['ctrl-u'] = 'preview-page-up',
         },
       },
       actions = {

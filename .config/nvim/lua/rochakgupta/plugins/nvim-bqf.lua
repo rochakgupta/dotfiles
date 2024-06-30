@@ -15,10 +15,5 @@ return {
       pscrollup = '<C-u>',
       pscrolldown = '<C-d>',
     },
-    filter = {
-      fzf = {
-        extra_opts = { '--bind', 'ctrl-o:toggle-all,ctrl-l:clear-query' },
-      },
-    },
   },
 }
