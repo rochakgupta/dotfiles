@@ -485,9 +485,7 @@ highlight ALEWarning ctermfg=LightRed ctermbg=NONE cterm=underline guisp=NONE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '50%' }
-
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-let $FZF_DEFAULT_OPTS="--bind \"tab:toggle-out,shift-tab:toggle-in,ctrl-l:clear-query,ctrl-f:preview-down,ctrl-b:preview-up\""
 
 nnoremap <leader>p :Commands<CR>
 nnoremap <leader>o :Files<CR>
