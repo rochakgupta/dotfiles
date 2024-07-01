@@ -4,7 +4,7 @@
 vim.g.rg_background = 'dark'
 vim.g.rg_border = 'rounded'
 vim.g.rg_colorscheme = 'tokyonight'
-vim.g.rg_transparent = true
+vim.g.rg_transparent = false
 
 -- Plugins
 vim.g.rg_telescope = false
