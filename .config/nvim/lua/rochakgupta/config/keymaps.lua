@@ -16,6 +16,12 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Keymaps to resize windows
+vim.keymap.set('n', '<C-.>', '<C-w><', { desc = 'Decrease size of window' })
+vim.keymap.set('n', '<C-/>', '<C-w>>', { desc = 'Increase size of window' })
+vim.keymap.set('n', '<C-;>', '<C-W>+', { desc = 'Decrease size of window' })
+vim.keymap.set('n', "<C-'>", '<C-W>-', { desc = 'Increase size of window' })
+
 -- Quickfix list keymaps
 vim.keymap.set('n', ']q', ':cnext<CR>', { desc = 'Go to next item in quickfix list' })
 vim.keymap.set('n', '[q', ':cprevious<CR>', { desc = 'Go to previous item in quickfix list' })
