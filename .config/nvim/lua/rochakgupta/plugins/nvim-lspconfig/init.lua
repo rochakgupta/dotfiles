@@ -17,7 +17,7 @@ return {
       },
     },
     {
-      'folke/neodev.nvim',
+      'folke/neodev.nvim', -- TODO: Switch to folke/lazydev.nvim for Neovim >= v0.10.0
       opts = {},
     },
     {
