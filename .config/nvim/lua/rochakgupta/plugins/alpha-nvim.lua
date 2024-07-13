@@ -29,5 +29,6 @@ return {
       dashboard.button('q', '  Quit', ':qa<CR>'),
     }
     alpha.setup(dashboard.config)
+    vim.keymap.set('n', '<leader>ga', ':Alpha<CR>', { desc = 'Open Alpha Dashboard' })
   end,
 }
