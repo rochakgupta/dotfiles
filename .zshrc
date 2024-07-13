@@ -114,6 +114,24 @@ export FZF_DEFAULT_OPTS='
 --bind "ctrl-j:last"'
 
 ################################################################################
+# atuin
+################################################################################
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+
+function atuin_keybindings() {
+    bindkey '^z' atuin-search
+}
+
+# Set atuin keybindings after zsh-vi-mode adds its keybindings to prevent atuin
+# keybindings from getting overwritten.
+if [[ "$ZSH_VI_MODE_ENABLED" == 1 ]]; then
+    zvm_after_init_commands+=(atuin_keybindings)
+else
+    atuin_keybindings
+fi
+
+################################################################################
 # neovim
 ################################################################################
 alias n=nvim
