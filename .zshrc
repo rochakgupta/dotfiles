@@ -31,8 +31,11 @@ zstyle ':fzf-tab:*' fzf-min-height 10
 zplug "zsh-users/zsh-autosuggestions"
 
 # Vi bindings
-ZVM_CURSOR_STYLE_ENABLED=false
-zplug "jeffreytse/zsh-vi-mode"
+ZSH_VI_MODE_ENABLED=1
+if [[ "$ZSH_VI_MODE_ENABLED" == 1 ]]; then
+    ZVM_CURSOR_STYLE_ENABLED=false
+    zplug "jeffreytse/zsh-vi-mode"
+fi
 
 # Source plugins and add commands to $PATH
 zplug load
@@ -75,14 +78,18 @@ function fzf_init() {
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 }
 
-# If zsh-vi-mode is used. Required because it overwrites existing keybindings
-zvm_after_init_commands+=(fzf_init)
-# Else
-# fzf_init()
+# Run fzf's init script that adds fzf keybindings after zsh-vi-mode adds its
+# keybindings to prevent fzf keybindings from getting overwritten.
+if [[ "$ZSH_VI_MODE_ENABLED" == 1 ]]; then
+    zvm_after_init_commands+=(fzf_init)
+else
+    fzf_init
+fi
 
 if type rg &>/dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
 fi
+
 export FZF_DEFAULT_OPTS='
 --exact
 --multi
