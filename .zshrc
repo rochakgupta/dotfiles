@@ -97,15 +97,21 @@ export FZF_DEFAULT_OPTS='
 --height 50%
 --border=sharp
 --bind "ctrl-l:clear-query"
---bind "ctrl-o:toggle-all"
+--bind "alt-a:beginning-of-line"
+--bind "alt-e:end-of-line"
+--bind "ctrl-f:preview-down"
+--bind "ctrl-b:preview-up"
+--bind "ctrl-d:preview-page-down"
+--bind "ctrl-u:preview-page-up"
 --bind "f3:toggle-preview-wrap"
 --bind "f4:toggle-preview"
 --bind "tab:toggle-out"
 --bind "shift-tab:toggle-in"
---bind "ctrl-f:preview-down"
---bind "ctrl-b:preview-up"
---bind "ctrl-d:preview-page-down"
---bind "ctrl-u:preview-page-up"'
+--bind "ctrl-space:toggle"
+--bind "ctrl-o:toggle-all"
+--bind "alt-l:clear-selection"
+--bind "ctrl-k:first"
+--bind "ctrl-j:last"'
 
 ################################################################################
 # neovim
