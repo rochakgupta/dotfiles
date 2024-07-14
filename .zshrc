@@ -64,7 +64,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
 # python
 ################################################################################
 export PATH=$HOME/.local/bin:$PATH
-export PYTHONPYCACHEPREFIX=$HOME/.pyc
+export PYTHONPYCACHEPREFIX=$HOME/.cache/pycache
+alias activate="source .venv/bin/activate"
 
 ################################################################################
 # starship
