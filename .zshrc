@@ -80,18 +80,6 @@ eval "$(zoxide init zsh)"
 ################################################################################
 # fzf
 ################################################################################
-function fzf_init() {
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-}
-
-# Run fzf's init script that adds fzf keybindings after zsh-vi-mode adds its
-# keybindings to prevent fzf keybindings from getting overwritten.
-if [[ "$ZSH_VI_MODE_ENABLED" == 1 ]]; then
-    zvm_after_init_commands+=(fzf_init)
-else
-    fzf_init
-fi
-
 if type rg &>/dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
 fi
@@ -118,6 +106,18 @@ export FZF_DEFAULT_OPTS='
 --bind "alt-l:clear-selection"
 --bind "ctrl-k:first"
 --bind "ctrl-j:last"'
+
+function fzf_init() {
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+}
+
+# Run fzf's init script that adds fzf keybindings after zsh-vi-mode adds its
+# keybindings to prevent fzf keybindings from getting overwritten.
+if [[ "$ZSH_VI_MODE_ENABLED" == 1 ]]; then
+    zvm_after_init_commands+=(fzf_init)
+else
+    fzf_init
+fi
 
 ################################################################################
 # atuin
