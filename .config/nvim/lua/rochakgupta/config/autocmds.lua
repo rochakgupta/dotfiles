@@ -17,3 +17,10 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
   group = vim.api.nvim_create_augroup('SetFormatOptions', { clear = true }),
 })
+
+vim.api.nvim_create_autocmd('VimResized', {
+  pattern = '*',
+  command = 'wincmd =',
+  desc = 'Resize windows when host window is resized',
+  group = vim.api.nvim_create_augroup('WinResize', { clear = true }),
+})

@@ -71,7 +71,7 @@ return {
     })
 
     vim.api.nvim_create_autocmd({ 'VimResized' }, {
-      desc = 'Resize nvim-tree when nvim window is resized',
+      desc = 'Resize nvim-tree window when host window is resized',
       group = vim.api.nvim_create_augroup('NvimTreeResize', { clear = true }),
       callback = function()
         local width = get_width()
