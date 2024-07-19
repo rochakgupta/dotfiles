@@ -17,6 +17,9 @@ vim.g.rg_sleuth = false
 vim.g.rg_which_key = false
 vim.g.rg_yanky = true
 
+-- Plugin settings
+vim.g.rg_plantuml_local = true
+
 -- Log level
 vim.g.rg_log_level = vim.log.levels.OFF
 
