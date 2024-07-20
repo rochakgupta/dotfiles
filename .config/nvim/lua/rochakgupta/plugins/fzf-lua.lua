@@ -23,10 +23,8 @@ return {
         },
       },
       keymap = {
-        -- These override the default tables completely
-        -- no need to set to `false` to disable a bind
-        -- delete or modify is sufficient
         builtin = {
+          false, -- do not inherit from defaults
           -- neovim `:tmap` mappings for the fzf win
           ['<F1>'] = 'toggle-help',
           ['<F2>'] = 'toggle-fullscreen',
@@ -42,27 +40,42 @@ return {
           ['<C-u>'] = 'preview-page-up',
           ['<C-r>'] = 'preview-page-reset',
         },
+        fzf = {
+          false, -- do not inherit from defaults
+          -- fzf '--bind=' options
+          ['ctrl-l'] = 'clear-query',
+          ['alt-a'] = 'beginning-of-line',
+          ['alt-e'] = 'end-of-line',
+          ['tab'] = 'toggle-out',
+          ['shift-tab'] = 'toggle-in',
+          ['ctrl-space'] = 'toggle',
+          ['ctrl-o'] = 'toggle-all',
+          ['alt-l'] = 'clear-selection',
+          ['ctrl-k'] = 'first',
+          ['ctrl-j'] = 'last',
+          -- Only valid with fzf previewers (bat/cat/git/etc)
+          ['f3'] = 'toggle-preview-wrap',
+          ['f4'] = 'toggle-preview',
+          ['ctrl-f'] = 'preview-down',
+          ['ctrl-b'] = 'preview-up',
+          ['ctrl-d'] = 'preview-page-down',
+          ['ctrl-u'] = 'preview-page-up',
+        },
       },
       actions = {
-        -- These override the default tables completely
-        -- no need to set to `false` to disable an action
-        -- delete or modify is sufficient
         files = {
           -- providers that inherit these actions:
           --   files, git_files, git_status, grep, lsp
           --   oldfiles, quickfix, loclist, tags, btags
           --   args
-          -- default action opens a single selection
-          -- or sends multiple selection to quickfix
-          -- replace the default action with the below
-          -- to open all files whether single or multiple
-          -- ["default"]     = actions.file_edit,
+          false, -- do not inherit from defaults,
           ['default'] = actions.file_edit_or_qf,
           ['ctrl-s'] = actions.file_split,
           ['ctrl-v'] = actions.file_vsplit,
           ['ctrl-q'] = actions.file_edit_or_qf,
         },
         buffers = {
+          false, -- do not inherit from defaults
           -- providers that inherit these actions:
           --   buffers, tabs, lines, blines
           ['default'] = actions.buf_edit_or_qf,
