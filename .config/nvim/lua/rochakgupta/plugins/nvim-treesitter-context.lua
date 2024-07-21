@@ -7,6 +7,8 @@ return {
     require('treesitter-context').setup({
       enable = false,
       mode = 'topline',
+      multiline_threshold = 1,
+      separator = vim.g.rg_colorscheme ~= 'tokyonight' and '' or nil,
     })
   end,
 }
