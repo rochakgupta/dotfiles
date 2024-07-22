@@ -7,8 +7,11 @@ vim.o.background = vim.g.rg_background
 -- Set highlight on search
 vim.o.hlsearch = true
 
--- Make line numbers default
+-- Enable line numbers
 vim.wo.number = true
+
+-- Enable relative line numbers
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -20,9 +23,6 @@ vim.o.mouse = 'a'
 
 -- Enable break indent
 vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
 
 -- Case insensitive searching UNLESS /C or capital in search
 -- vim.o.ignorecase = true
@@ -39,9 +39,6 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noinsert,noselect'
 
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
-
 -- Open horizontal split below
 vim.o.splitbelow = true
 
@@ -50,9 +47,6 @@ vim.o.splitright = true
 
 -- Show hits as you type
 vim.o.inccommand = 'nosplit'
-
--- Enable relative numbers
-vim.wo.relativenumber = true
 
 -- Indentation guide: https://gist.github.com/LunarLambda/4c444238fb364509b72cfb891979f1dd
 
