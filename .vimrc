@@ -1,87 +1,70 @@
-set nocompatible
-set mouse=a
-set incsearch
-set scrolloff=8
-set t_Co=256
-set wildignore+=*/.git/*,*/tmp/*,*.swp,*/node_modules/*,*/env/*,*/venv/*
-set splitbelow
-set splitright
-
-set visualbell
-set notitle
-set noerrorbells
-set t_vb=
-
-set number
-set relativenumber
-set numberwidth=5
-set signcolumn=yes
-
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set softtabstop=4
-set expandtab
 set autoindent
-
-set nowrap
-set textwidth=119
-set colorcolumn=+1
-set formatoptions-=t
-set backspace=indent,eol,start
-" set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-" set list
 set background=dark
-set termguicolors
-
+set backspace=indent,eol,start
+set breakindent
+set completeopt=menuone,noinsert,noselect
+set cursorline
+set expandtab
 set hidden
+set incsearch
+set jumpoptions=stack
+set lazyredraw
+" set list
+" set listchars=trail:~,nbsp:+,tab:│\ ,eol:↴
+set mouse=a
+set nofoldenable
 set noswapfile
-set undodir=~/.vim/undodir
-set undofile
+set notagbsearch
+set notitle
+set novisualbell
+set nowrap
+set number
+set numberwidth=4
+set pumheight=15
+set redrawtime=10000
+set regexpengine=0
+set relativenumber
+set scrolloff=8
+set shiftwidth=4
+set sidescrolloff=8
+set signcolumn=yes
+set smartcase
+set smarttab
+set softtabstop=-1
+set splitbelow
+set splitkeep=topline
+set splitright
+set tabstop=4
+set termguicolors
+set timeout
+set timeoutlen=300
+set updatetime=50
+set virtualedit=block
 
-" Better clipboard behavior: https://stackoverflow.com/a/30691754
-set clipboard^=unnamed,unnamedplus
-
-" Use new regular expression engine to avoid redrawtime exceeded error with typescript syntax highlighting
-set re=0
-
-" autocmd InsertEnter * set cul
-" autocmd InsertLeave * set nocul
-if !&diff
-    set cursorline
-endif
-" set cursorcolumn
-
-" https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
-" Cursor settings:
-" 1 -> blinking block
-" 2 -> solid block
-" 3 -> blinking underscore
-" 4 -> solid underscore
-" 5 -> blinking vertical bar
-" 6 -> solid vertical bar
-" let &t_SI.="\e[6 q" "SI = INSERT mode
-" let &t_SR.="\e[4 q" "SR = REPLACE mode
-" let &t_EI.="\e[6 q" "EI = NORMAL mode (ELSE)
+" Set by vim-plug
+" syntax enable
+" filetype plugin indent on
 
 " Works in tandem with incsearch for proper search highlighting
-augroup vimrc-incsearch-highlight
+augroup vimrc_incsearch_highlight
   autocmd!
   autocmd CmdlineEnter /,\? :set hlsearch
   autocmd CmdlineLeave /,\? :set nohlsearch
 augroup END
 
-" Drag lines up and down
-" nnoremap <S-Up> :m-2<CR>
-" nnoremap <S-Down> :m+<CR>
+" Works only when set via autocmd due to some reason
+autocmd FileType * set formatoptions-=cro
 
 " Make CTRL-C behave exactly like ESC
 imap <C-c> <Esc>
 
-syntax enable
-filetype plugin indent on
-
 let mapleader = "\<Space>"
+
+nnoremap <leader><leader>c :e ~/.vimrc<CR>
+nnoremap <leader><leader>s :source ~/.vimrc<CR>
+
+let rg_colorscheme = 'tokyonight'
+let rg_transparent = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Management:
@@ -89,48 +72,84 @@ let mapleader = "\<Space>"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-" Plug 'sainnhe/gruvbox-material'
-" Plug 'sainnhe/sonokai'
-Plug 'ghifarit53/tokyonight-vim'
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
 
+" Colorschemes
+Plug 'sainnhe/gruvbox-material', Cond(rg_colorscheme == 'gruvbox')
+Plug 'kaicataldo/material.vim', Cond(rg_colorscheme == 'material', { 'branch': 'main' })
+Plug 'sainnhe/sonokai', Cond(rg_colorscheme == 'sonokai')
+Plug 'ghifarit53/tokyonight-vim', Cond(rg_colorscheme == 'tokyonight')
+
+" Status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Copy in vim over SSH copies to local system clipboard
+" Copy to system clipboard over SSH
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
+" Language pack
 Plug 'sheerun/vim-polyglot'
 
-" Plug 'tpope/vim-fugitive'
+" Git integration
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
+" Visualize marks
 Plug 'kshenoy/vim-signature'
 
-Plug 'preservim/nerdcommenter'
+" Commenting
+Plug 'tpope/vim-commentary'
+
+" Rainbow parantheses
 Plug 'luochen1990/rainbow'
+
+" Indent guide
 " Plug 'Yggdroot/indentLine'
 
+" Move lines up and down
 Plug 'matze/vim-move'
+
+" Repeat supported plugin maps
+Plug 'tpope/vim-repeat'
+
+" Operate on surroundings
 Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
-" Plug 'terryma/vim-expand-region'
+
+" Increase/decrease visual selection
+Plug 'terryma/vim-expand-region'
+
+" Whitespace highlighting
 Plug 'ntpeters/vim-better-whitespace'
 
+" Wiki
 Plug 'vimwiki/vimwiki'
-" Plug 'mbbill/undotree'
-Plug 'vifm/vifm.vim'
-" Plug 'voldikss/vim-floaterm'
-" Plug 'dhruvasagar/vim-zoom'
 
-" Better indentation style for python
+" Visualize undo history
+Plug 'mbbill/undotree'
+
+" Zoom (in/out) windows
+Plug 'dhruvasagar/vim-zoom'
+
+" Better indentation in python
 Plug 'Vimjas/vim-python-pep8-indent'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'antoinemadec/coc-fzf'
-Plug 'liuchengxu/vista.vim'
 
-" vim-devicons must be last
+" Floating terminal
+Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/fzf-floaterm'
+
+" Adapter to VS Code extensions like language servers
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
+
+" Icons
+" Must be last
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -138,40 +157,57 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gruvbox-material
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" These need to be placed before setting the colorscheme
-" let g:gruvbox_material_background = 'hard'
-" let g:gruvbox_material_diagnostic_line_highlight = 1
-" let g:gruvbox_material_disable_italic_comment = 1
-" let g:gruvbox_material_enable_bold = 1
-" let g:gruvbox_material_palette = 'material'
-" let g:gruvbox_material_sign_column_background='none'
-" let g:gruvbox_material_ui_contrast = 'high'
-" let g:gruvbox_material_transparent_background = 1
-"
-" colorscheme gruvbox-material
+if rg_colorscheme == 'gruvbox'
+  let g:gruvbox_material_background = 'hard'
+  let g:gruvbox_material_diagnostic_line_highlight = 1
+  let g:gruvbox_material_disable_italic_comment = 1
+  let g:gruvbox_material_enable_bold = 1
+  let g:gruvbox_material_palette = 'material'
+  let g:gruvbox_material_sign_column_background='none'
+  let g:gruvbox_material_ui_contrast = 'high'
+  let g:gruvbox_material_transparent_background = rg_transparent
+
+  let rg_colorscheme = 'gruvbox-material'
+  let rg_airline_theme = 'gruvbox_material'
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" material
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if rg_colorscheme == 'material'
+  let g:material_theme_style = 'ocean'
+
+  let rg_airline_theme = rg_colorscheme
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " sonokai
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:sonokai_better_performance = 1
-" let g:sonokai_transparent_background = 2
-"
-" colorscheme sonokai
+if rg_colorscheme == 'sonokai'
+  let g:sonokai_better_performance = 1
+  let g:sonokai_transparent_background = rg_transparent ? 2 : 0
+
+  let rg_airline_theme = rg_colorscheme
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tokyonight-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" available: night, storm
-let g:tokyonight_style = 'night'
-let g:tokyonight_transparent_background = 1
+if rg_colorscheme == 'tokyonight'
+  let g:tokyonight_style = 'night'
+  let g:tokyonight_transparent_background = rg_transparent
 
-colorscheme tokyonight
+  let rg_airline_theme = rg_colorscheme
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorscheme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+execute 'colorscheme ' .. rg_colorscheme
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
-
 let g:airline#extensions#fzf#enabled = 1
 
 let g:airline#extensions#tabline#enabled = 1
@@ -189,15 +225,13 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>0 <Plug>AirlineSelectTab0
-nmap <S-Left> <Plug>AirlineSelectPrevTab
-nmap <S-Right> <Plug>AirlineSelectNextTab
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline-themes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:airline_theme='gruvbox_material'
-" let g:airline_theme='sonokai'
-let g:airline_theme = "tokyonight"
+let g:airline_theme = rg_airline_theme
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-oscyank
@@ -213,13 +247,6 @@ let g:SignatureMarkTextHLDynamic = 1
 let g:SignatureMarkerTextHLDynamic = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nerdcommenter
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDCreateDefaultMappings = 1
-let g:NERDSpaceDelims = 1
-let g:NERDCommentEmptyLines = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " rainbow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rainbow_active = 1
@@ -232,7 +259,6 @@ let g:rainbow_active = 1
 " let g:indentLine_bufTypeExclude = ['help', 'terminal']
 " let g:indentLine_conceallevel=1
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-move
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -242,11 +268,11 @@ let g:move_key_modifier_visualmode = 'S'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-better-whitespace
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:better_whitespace_ctermcolor='237'
-let g:better_whitespace_guicolor='#3c3836'
-let g:show_spaces_that_precede_tabs=1
-let g:strip_whitespace_on_save=1
-let g:strip_whitespace_confirm=0
+let g:better_whitespace_ctermcolor = '237'
+let g:better_whitespace_guicolor = '#3c3836'
+let g:show_spaces_that_precede_tabs = 1
+let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vimwiki
@@ -258,29 +284,65 @@ let g:vimwiki_list = [{
 let g:vimwiki_global_ext = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vifm
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:loaded_netrw = 1
-" let g:loaded_netrwPlugin = 1
-
-let g:vifm_embed_term = 1
-let g:vifm_embed_split = 1
-" let g:vifm_replace_netrw = 1
-
-nnoremap <leader>v :Vifm<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " undotree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nnoremap <leader>u :UndotreeToggle<CR>
+if has("persistent_undo")
+  let target_path = expand('~/.undodir')
+
+  " create the directory and any parent directories
+  " if the location does not exist.
+  if !isdirectory(target_path)
+      call mkdir(target_path, "p", 0700)
+  endif
+
+  let &undodir = target_path
+  set undofile
+endif
+
+nnoremap <leader>U :UndotreeToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:fzf_vim = {}
+let g:fzf_vim.buffers_jump = 1
+let g:fzf_vim.preview_window = ['up,50%', 'ctrl-/']
+let g:fzf_layout = { 'down': '50%' }
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
+
+nnoremap <leader>? :History<CR>
+nnoremap <leader>/ :BLines<CR>
+nnoremap <leader>sf :Files<CR>
+nnoremap <leader>sg :GFiles<CR>
+nnoremap <leader>sb :Buffers<CR>
+nnoremap <leader>ss :Rg<CR>
+nnoremap <leader>sc :Commands<CR>
+nnoremap <leader>sk :Maps<CR>
+
+command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always -g "!package-lock.json" -- '.shellescape(<q-args>), 1,
+    \   fzf#vim#with_preview(), <bang>0)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-floaterm
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:floaterm_width = 0.9
-" let g:floaterm_height = 0.9
-" let g:floaterm_wintype = 'float'
-" let g:floaterm_opener = 'edit'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+let g:floaterm_wintype = 'float'
+let g:floaterm_opener = 'edit'
+let g:floaterm_autohide = 2
+
+nnoremap <leader>o :FloatermNew --name=default --title=default<CR>
+nnoremap <leader>l :FloatermNew --name=lazygit --title=lazygit lazygit<CR>
+nnoremap <leader>v :FloatermNew --name=vifm --title=vifm vifm<CR>
+tnoremap <leader>t <C-\><C-n>:FloatermHide<CR>
+nnoremap <leader>t :FloatermShow<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf-floaterm
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>st :Floaterms<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc
@@ -292,28 +354,20 @@ set encoding=utf-8
 set nobackup
 set nowritebackup
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=50
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
-
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: There's always complete item selected by default, you may want to enable
 " no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <C-n>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <expr><C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+inoremap <silent><expr> <C-y> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
@@ -321,21 +375,14 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
@@ -354,11 +401,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader><leader>cr <Plug>(coc-rename)
+nmap <leader>C <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader><leader>cf  <Plug>(coc-format-selected)
-nmap <leader><leader>cf  <Plug>(coc-format-selected)
+xmap <leader>F  <Plug>(coc-format-selected)
+nmap <leader>F  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -368,22 +415,25 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Applying codeAction to the selected region.
+" Applying code actions to the selected code block
 " Example: `<leader>aap` for current paragraph
-xmap <leader><leader>cas  <Plug>(coc-codeaction-selected)
-nmap <leader><leader>cas  <Plug>(coc-codeaction-selected)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader><leader>cab  <Plug>(coc-codeaction)
+" Remap keys for applying code actions at the cursor position
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+" Remap keys for apply code actions affect whole buffer
+nmap <leader>ab  <Plug>(coc-codeaction-source)
+" Apply the most preferred quickfix action to fix diagnostic on the current line
+nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader><leader>cac  <Plug>(coc-codeaction-cursor)
-
-" Apply AutoFix to problem on the current line.
-nmap <leader><leader>cxc  <Plug>(coc-fix-current)
+" Remap keys for applying refactor code actions
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 
 " Run the Code Lens action on the current line.
-nmap <leader><leader>cla  <Plug>(coc-codelens-action)
+nmap <leader>al  <Plug>(coc-codelens-action)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -397,7 +447,7 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
+if has('patch-8.2.0750')
   nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
   nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
   inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<C-r>=coc#float#scroll(1)\<CR>" : "\<Right>"
@@ -411,6 +461,9 @@ endif
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
 
+" Search workspace symbols
+nnoremap <silent><nowait> <space>ws  :<C-u>CocList -I symbols<CR>
+
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
 
@@ -423,35 +476,10 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <leader><leader>cld  :<C-u>CocList diagnostics<CR>
-" Manage extensions.
-nnoremap <silent><nowait> <leader><leader>cle  :<C-u>CocList extensions<CR>
-" Show commands.
-nnoremap <silent><nowait> <leader><leader>clc  :<C-u>CocList commands<CR>
-" Find symbol of current document.
-nnoremap <silent><nowait> <leader><leader>clo  :<C-u>CocList outline<CR>
-" Search workleader symbols.
-nnoremap <silent><nowait> <leader><leader>cls  :<C-u>CocList -I symbols<CR>
-" Do default action for next item.
-nnoremap <silent><nowait> <leader><leader>cn  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <leader><leader>cp  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <leader><leader>clr  :<C-u>CocListResume<CR>
+" Disabled as it messes up vim-airline upon re-sourcing config
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 let g:coc_config_home = '~/.vim'
-
-" coc-java
-" https://github.com/neoclide/coc-java/issues/99#issuecomment-663856695
-" If downloaded JDT LS crashes, replace it with the one that works by:
-" 1. rm -rf ~/.config/coc/extensions/coc-java-data/server
-" 2. curl https://download.eclipse.org/jdtls/milestones/0.57.0/jdt-language-server-0.57.0-202006172108.tar.gz -o server.tar.gz
-" 3. mkdir ~/.config/coc/extensions/coc-java-data/server
-" 4. tar xf server.tar.gz --directory=~/.config/coc/extensions/coc-java-data/server
 
 let g:coc_global_extensions = [
     \ 'coc-eslint',
@@ -475,48 +503,15 @@ let g:coc_global_extensions = [
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " coc-explorer
-nnoremap <leader>e <Cmd>CocCommand explorer<CR>
+nnoremap <leader>x <Cmd>CocCommand explorer<CR>
 
 " highlight ErrorText ctermfg=Red ctermbg=NONE cterm=underline guisp=NONE
 highlight ALEWarning ctermfg=LightRed ctermbg=NONE cterm=underline guisp=NONE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fzf
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:fzf_buffers_jump = 1
-let g:fzf_layout = { 'down': '50%' }
-" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-
-nnoremap <leader>p :Commands<CR>
-nnoremap <leader>o :Files<CR>
-nnoremap <leader>f :Lines<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>a :Rg<CR>
-nnoremap <leader>w :Windows<CR>
-
-command! -bang -nargs=* Rg
-    \ call fzf#vim#grep(
-    \   'rg --column --line-number --no-heading --color=always -g "!package-lock.json" -- '.shellescape(<q-args>), 1,
-    \   fzf#vim#with_preview(), <bang>0)
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-fzf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader><leader>l :CocFzfList<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vista
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>t :Vista finder coc<CR>
-nnoremap <C-t> :Vista!!<CR>
-
-let g:vista_fzf_preview = ['right:50%']
-let g:vista_close_on_jump = 1
-let g:vista_blink  = [0, 0]
-let g:vista_sidebar_width = 40
-let g:vista_default_executive = 'coc'
-let g:vista_finder_alternative_executives = ['coc']
-let g:vista#renderer#enable_icon = 1
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_keep_fzf_colors = 1
-let g:vista_highlight_whole_line = 1
+nnoremap <silent> <leader>sa :<C-u>CocFzfList actions<CR>
+nnoremap <silent> <leader>sd :<C-u>CocFzfList diagnostics<CR>
+nnoremap <silent> <leader>ds :<C-u>CocFzfList outline<CR>
+nnoremap <silent> <leader>sr :<C-u>CocFzfListResume<CR>
