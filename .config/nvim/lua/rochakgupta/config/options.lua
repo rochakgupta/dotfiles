@@ -36,6 +36,9 @@ vim.o.updatetime = 50
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
+-- Do not redraw screen while executing macros, registers, etc.
+vim.o.lazyredraw = true
+
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noinsert,noselect'
 
