@@ -90,6 +90,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Copy to system clipboard over SSH
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
+" Highlight yank
+Plug 'machakann/vim-highlightedyank'
+
 " Language pack
 Plug 'sheerun/vim-polyglot'
 
@@ -105,9 +108,6 @@ Plug 'tpope/vim-commentary'
 
 " Rainbow parantheses
 Plug 'luochen1990/rainbow'
-
-" Indent guide
-" Plug 'Yggdroot/indentLine'
 
 " Move lines up and down
 Plug 'matze/vim-move'
@@ -248,6 +248,11 @@ nmap <leader>yy <leader>y_
 vmap <leader>y <Plug>OSCYankVisual
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-highlightedyank
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:highlightedyank_highlight_duration = 150
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-signature
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:SignatureMarkTextHLDynamic = 1
@@ -257,14 +262,6 @@ let g:SignatureMarkerTextHLDynamic = 1
 " rainbow
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rainbow_active = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" indentLine
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:indentLine_char = '│'
-" let g:indentLine_concealcursor = ''
-" let g:indentLine_bufTypeExclude = ['help', 'terminal']
-" let g:indentLine_conceallevel=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-move
