@@ -23,8 +23,12 @@ return {
         return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt' or require('cmp_dap').is_dap_buffer()
       end,
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+          border = vim.g.rg_border,
+        }),
+        documentation = cmp.config.window.bordered({
+          border = vim.g.rg_border,
+        }),
       },
       snippet = {
         expand = function(args)
