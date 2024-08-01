@@ -5,6 +5,7 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
     'dcampos/nvim-snippy',
     'honza/vim-snippets',
     'dcampos/cmp-snippy',
@@ -22,6 +23,7 @@ return {
         return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt' or require('cmp_dap').is_dap_buffer()
       end,
       window = {
+        completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
       snippet = {
@@ -48,10 +50,11 @@ return {
         }),
       },
       sources = {
-        { name = 'snippy' },
         { name = 'nvim_lsp' },
         { name = 'buffer' },
+        { name = 'nvim_lsp_signature_help' },
         { name = 'path' },
+        { name = 'snippy' },
       },
     })
 
