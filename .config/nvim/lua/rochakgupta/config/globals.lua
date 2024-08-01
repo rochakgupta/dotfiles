@@ -2,7 +2,7 @@
 
 -- UI
 vim.g.rg_background = 'dark'
-vim.g.rg_border = 'rounded'
+vim.g.rg_border = 'single'
 vim.g.rg_colorscheme = 'tokyonight'
 vim.g.rg_transparent = false
 

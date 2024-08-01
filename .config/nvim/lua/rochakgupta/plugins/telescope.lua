@@ -43,6 +43,8 @@ return {
 
     telescope.setup({
       defaults = {
+        border = vim.g.rg_border ~= 'none',
+        borderchars = vim.g.rg_border == 'single' and { '─', '│', '─', '│', '┌', '┐', '┘', '└' } or nil,
         layout_strategy = 'vertical',
         layout_config = {
           width = 0.9,
