@@ -59,6 +59,13 @@ return {
         },
         full_name = true,
       },
+      actions = {
+        file_popup = {
+          open_win_config = {
+            border = vim.g.rg_border,
+          },
+        },
+      },
     })
 
     -- Close nvim-tree before saving session via persisted plugin as it has issues restoring it
