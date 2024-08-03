@@ -26,6 +26,7 @@ set regexpengine=0
 set relativenumber
 set scrolloff=8
 set shiftwidth=4
+set showcmd
 set sidescrolloff=8
 set signcolumn=yes
 set smartcase
