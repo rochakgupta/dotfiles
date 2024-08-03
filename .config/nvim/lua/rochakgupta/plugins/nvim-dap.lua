@@ -73,11 +73,11 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
-    vim.keymap.set('n', '<space>bt', dap.toggle_breakpoint, { desc = 'Debug: Toggle breakpoint' })
-    vim.keymap.set('n', '<space>dr', dap.run_to_cursor, { desc = 'Debug: Run to cursor' })
+    vim.keymap.set('n', '<leader>bt', dap.toggle_breakpoint, { desc = 'Debug: Toggle breakpoint' })
+    vim.keymap.set('n', '<leader>dr', dap.run_to_cursor, { desc = 'Debug: Run to cursor' })
 
     -- Eval var under cursor
-    vim.keymap.set('n', '<space>de', function()
+    vim.keymap.set('n', '<leader>de', function()
       dapui.eval(nil, { enter = true })
     end, { desc = 'Debug: Evaluate under cursor' })
 

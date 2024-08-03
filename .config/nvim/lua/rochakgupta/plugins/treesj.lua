@@ -1,6 +1,6 @@
 return {
   'Wansmer/treesj',
-  keys = { '<space>j' },
+  keys = { '<leader>j' },
   dependencies = {
     'nvim-treesitter/nvim-treesitter', -- Configured in nvim-treesitter.lua
   },
