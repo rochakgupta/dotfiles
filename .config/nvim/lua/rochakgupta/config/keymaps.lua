@@ -29,17 +29,13 @@ vim.keymap.set('n', '[q', ':cprevious<CR>', { desc = 'Go to previous item in qui
 vim.keymap.set('n', ']Q', ':clast<CR>', { desc = 'Go to last item in quickfix list' })
 vim.keymap.set('n', '[Q', ':cfirst<CR>', { desc = 'Go to first item in quickfix list' })
 vim.keymap.set('n', '<leader>q', function()
-  local qf_exists = false
   for _, win in pairs(vim.fn.getwininfo()) do
     if win['quickfix'] == 1 then
-      qf_exists = true
+      vim.cmd('cclose')
+      return
     end
   end
-  if qf_exists == true then
-    vim.cmd('cclose')
-  else
-    vim.cmd('copen')
-  end
+  vim.cmd('copen')
 end, { desc = 'Toggle quickfix list' })
 
 -- Move groups of lines up and down with J and K
