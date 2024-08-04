@@ -1,3 +1,12 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Globals
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let rg_colorscheme = 'tokyonight'
+let rg_transparent = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Options
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent
 set background=dark
 set backspace=indent,eol,start
@@ -6,6 +15,7 @@ set completeopt=menuone,noinsert,noselect
 set cursorline
 set expandtab
 set hidden
+set hlsearch
 set incsearch
 set jumpoptions=stack
 set lazyredraw
@@ -46,23 +56,50 @@ set virtualedit=block
 " syntax enable
 " filetype plugin indent on
 
-" Works in tandem with incsearch for proper search highlighting
-augroup vimrc_incsearch_highlight
-  autocmd!
-  autocmd CmdlineEnter /,\? :set hlsearch
-  autocmd CmdlineLeave /,\? :set nohlsearch
-augroup end
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Keymaps
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = "\<Space>"
 
 " Make CTRL-C behave exactly like ESC
 imap <C-c> <Esc>
 
-let mapleader = "\<Space>"
-
+" Vim config
 nnoremap <leader><leader>c :e ~/.vimrc<CR>
 nnoremap <leader><leader>s :source ~/.vimrc<CR>
 
-let rg_colorscheme = 'tokyonight'
-let rg_transparent = 0
+" Clear highlight on search upon pressing CTRL-C in normal mode
+nnoremap <C-c> <Cmd>nohlsearch<CR>
+
+" Use CTRL+<hjkl> to switch between windows
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+
+" Quickfix list keymaps
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
+nnoremap ]Q :clast<CR>
+nnoremap [Q :cfirst<CR>
+
+function! ToggleQuickfixList() abort
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+nnoremap <leader>q :call ToggleQuickfixList<CR>
+
+" Keep the line in the center while using C-d, C-u
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" Keep the search result in center while jumping to next and previous result using n and N and *
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Management:
@@ -416,7 +453,7 @@ nmap <leader>C <Plug>(coc-rename)
 xmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
 
-augroup mygroup
+augroup rg_coc_group
   autocmd!
   " Setup formatexpr specified filetype(s).
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
@@ -520,7 +557,7 @@ highlight ALEWarning ctermfg=LightRed ctermbg=NONE cterm=underline guisp=NONE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-fzf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <leader>sa :<C-u>CocFzfList actions<CR>
-nnoremap <silent> <leader>sd :<C-u>CocFzfList diagnostics<CR>
-nnoremap <silent> <leader>ds :<C-u>CocFzfList outline<CR>
-nnoremap <silent> <leader>sr :<C-u>CocFzfListResume<CR>
+nnoremap <leader>sa :CocFzfList actions<CR>
+nnoremap <leader>sd :CocFzfList diagnostics<CR>
+nnoremap <leader>ds :CocFzfList outline<CR>
+nnoremap <leader>sr :CocFzfListResume<CR>
