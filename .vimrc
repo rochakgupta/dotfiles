@@ -51,10 +51,7 @@ augroup vimrc_incsearch_highlight
   autocmd!
   autocmd CmdlineEnter /,\? :set hlsearch
   autocmd CmdlineLeave /,\? :set nohlsearch
-augroup END
-
-" Works only when set via autocmd due to some reason
-autocmd FileType * set formatoptions-=cro
+augroup end
 
 " Make CTRL-C behave exactly like ESC
 imap <C-c> <Esc>
@@ -252,6 +249,13 @@ vmap <leader>y <Plug>OSCYankVisual
 " vim-highlightedyank
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:highlightedyank_highlight_duration = 150
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-polyglot
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" This plugin sets formatoptions via ftplugin
+" so setting my overrides after it via FileType autocmd
+autocmd FileType * setlocal formatoptions-=cro
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-signature
