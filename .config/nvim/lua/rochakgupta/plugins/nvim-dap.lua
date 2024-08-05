@@ -73,23 +73,23 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
-    vim.keymap.set('n', '<leader>bt', dap.toggle_breakpoint, { desc = 'Debug: Toggle breakpoint' })
-    vim.keymap.set('n', '<leader>dr', dap.run_to_cursor, { desc = 'Debug: Run to cursor' })
+    vim.keymap.set('n', '<leader>bt', dap.toggle_breakpoint, { desc = 'DAP: Toggle breakpoint' })
+    vim.keymap.set('n', '<leader>dr', dap.run_to_cursor, { desc = 'DAP: Run to cursor' })
 
     -- Eval var under cursor
     vim.keymap.set('n', '<leader>de', function()
       dapui.eval(nil, { enter = true })
-    end, { desc = 'Debug: Evaluate under cursor' })
+    end, { desc = 'DAP: Evaluate under cursor' })
 
-    vim.keymap.set('n', '<F1>', dap.continue, { desc = 'Debug: Continue' })
-    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step over' })
-    vim.keymap.set('n', '<F3>', dap.step_into, { desc = 'Debug: Step into' })
-    vim.keymap.set('n', '<F4>', dap.step_out, { desc = 'Debug: Step out' })
-    vim.keymap.set('n', '<F5>', dap.restart, { desc = 'Debug: Restart' })
-    vim.keymap.set('n', '<F6>', dap.clear_breakpoints, { desc = 'Debug: Clear breakpoints' })
-    vim.keymap.set('n', '<F7>', dap.close, { desc = 'Debug: Close' })
+    vim.keymap.set('n', '<F1>', dap.continue, { desc = 'DAP: Continue' })
+    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'DAP: Step over' })
+    vim.keymap.set('n', '<F3>', dap.step_into, { desc = 'DAP: Step into' })
+    vim.keymap.set('n', '<F4>', dap.step_out, { desc = 'DAP: Step out' })
+    vim.keymap.set('n', '<F5>', dap.restart, { desc = 'DAP: Restart' })
+    vim.keymap.set('n', '<F6>', dap.clear_breakpoints, { desc = 'DAP: Clear breakpoints' })
+    vim.keymap.set('n', '<F7>', dap.close, { desc = 'DAP: Close' })
     -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-    vim.keymap.set('n', '<F8>', dapui.toggle, { desc = 'Debug: See last session result' })
+    vim.keymap.set('n', '<F8>', dapui.toggle, { desc = 'DAP: See last session result' })
 
     -- Install Go specific config
     require('dap-go').setup()

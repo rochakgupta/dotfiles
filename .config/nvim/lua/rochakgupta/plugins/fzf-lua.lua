@@ -93,26 +93,26 @@ return {
 
     fzf_lua.register_ui_select()
 
-    vim.keymap.set('n', '<leader>?', fzf_lua.oldfiles, { desc = '[?] Find recently opened files' })
-    vim.keymap.set('n', '<leader>/', fzf_lua.lgrep_curbuf, { desc = '[/] Fuzzily search in current buffer' })
+    vim.keymap.set('n', '<leader>?', fzf_lua.oldfiles, { desc = 'FzfLua: Search recently opened files' })
+    vim.keymap.set('n', '<leader>/', fzf_lua.lgrep_curbuf, { desc = 'FzfLua: Search in current buffer' })
     vim.keymap.set('n', '<leader>sa', function()
       fzf_lua.files({
         find_opts = [[-type f -printf '%P\n']],
         rg_opts = [[--color=never --files --hidden --follow]],
         fd_opts = [[--color=never --type f --hidden --follow]],
       })
-    end, { desc = '[S]earch [A]ll Files' })
-    vim.keymap.set('n', '<leader>sf', fzf_lua.files, { desc = '[S]earch [F]iles' })
-    vim.keymap.set('n', '<leader>sg', fzf_lua.git_files, { desc = '[S]earch [G]it Files' })
-    vim.keymap.set('n', '<leader>sb', fzf_lua.buffers, { desc = '[S]earch [B]uffers' })
-    vim.keymap.set('n', '<leader>sh', fzf_lua.helptags, { desc = '[S]earch [H]elp' })
-    vim.keymap.set('n', '<leader>sd', fzf_lua.diagnostics_workspace, { desc = '[S]earch [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sr', fzf_lua.resume, { desc = '[S]earch [R]esume' })
-    vim.keymap.set('n', '<leader>sk', fzf_lua.keymaps, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>sc', fzf_lua.commands, { desc = '[S]earch [C]ommands' })
-    vim.keymap.set('n', '<leader>sw', fzf_lua.grep_cword, { desc = '[S]earch current [W]ord' })
-    vim.keymap.set('n', '<leader>ss', fzf_lua.live_grep, { desc = '[S]earch [S]omething' })
-    vim.keymap.set('v', '<leader>sv', fzf_lua.grep_visual, { desc = '[S]earch [V]isual selection' })
+    end, { desc = 'FzfLua: Search all files' })
+    vim.keymap.set('n', '<leader>sf', fzf_lua.files, { desc = 'FzfLua: Search files' })
+    vim.keymap.set('n', '<leader>sg', fzf_lua.git_files, { desc = 'FzfLua: Search git files' })
+    vim.keymap.set('n', '<leader>sb', fzf_lua.buffers, { desc = 'FzfLua: Search buffers' })
+    vim.keymap.set('n', '<leader>sh', fzf_lua.helptags, { desc = 'FzfLua: Search help' })
+    vim.keymap.set('n', '<leader>sd', fzf_lua.diagnostics_workspace, { desc = 'FzfLua: Search diagnostics' })
+    vim.keymap.set('n', '<leader>sr', fzf_lua.resume, { desc = 'FzfLua: Search resume' })
+    vim.keymap.set('n', '<leader>sk', fzf_lua.keymaps, { desc = 'FzfLua: Search keymaps' })
+    vim.keymap.set('n', '<leader>sc', fzf_lua.commands, { desc = 'FzfLua: Search commands' })
+    vim.keymap.set('n', '<leader>sw', fzf_lua.grep_cword, { desc = 'FzfLua: Search current word' })
+    vim.keymap.set('n', '<leader>ss', fzf_lua.live_grep, { desc = 'FzfLua: Search something' })
+    vim.keymap.set('v', '<leader>sv', fzf_lua.grep_visual, { desc = 'FzfLua: Search visual selection' })
 
     -- Harpoon
     vim.keymap.set('n', '<leader>hs', function()
@@ -127,6 +127,6 @@ return {
         previewer = 'builtin',
         actions = vim.tbl_extend('force', fzf_lua.defaults.actions.files, opts.actions.files),
       })
-    end, { desc = '[H]arpoon [S]earch Files' })
+    end, { desc = 'FzfLua + Harpoon: Search files' })
   end,
 }

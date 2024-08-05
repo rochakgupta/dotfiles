@@ -108,33 +108,33 @@ return {
     pcall(telescope.load_extension, 'ui-select')
 
     -- Keymaps
-    vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-    vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
+    vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = 'Telescope: Search recently opened files' })
+    vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Telescope: Search in current buffer' })
     vim.keymap.set('n', '<leader>sa', function()
       builtin.find_files({
         hidden = true,
         no_ignore = true,
         no_parent_ignore = true,
       })
-    end, { desc = '[S]earch [A]ll Files' })
-    vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-    vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = '[S]earch [G]it Files' })
-    vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
-    vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-    vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-    vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-    vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
+    end, { desc = 'Telescope: Search all files' })
+    vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Telescope: Search files' })
+    vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = 'Telescope: Search git Files' })
+    vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Telescope: Search buffers' })
+    vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Telescope: Search help' })
+    vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Telescope: Search diagnostics' })
+    vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Telescope: Search resume' })
+    vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = 'Telescope: Search keymaps' })
+    vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = 'Telescope: Search commands' })
 
     -- Enable telescope live grep args, if installed
     if pcall(telescope.load_extension, 'live_grep_args') then
       local lga_shortcuts = require('telescope-live-grep-args.shortcuts')
-      vim.keymap.set('n', '<leader>ss', telescope.extensions.live_grep_args.live_grep_args, { desc = '[S]earch [S]omething' })
-      vim.keymap.set('n', '<leader>sw', lga_shortcuts.grep_word_under_cursor, { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('v', '<leader>sv', lga_shortcuts.grep_visual_selection, { desc = '[S]earch [V]isual selection' })
+      vim.keymap.set('n', '<leader>ss', telescope.extensions.live_grep_args.live_grep_args, { desc = 'Telescope: Search something' })
+      vim.keymap.set('n', '<leader>sw', lga_shortcuts.grep_word_under_cursor, { desc = 'Telescope: Search current word' })
+      vim.keymap.set('v', '<leader>sv', lga_shortcuts.grep_visual_selection, { desc = 'Telescope: Search visual selection' })
     else
-      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = '[S]earch [S]omething' })
+      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Telescope: Search current word' })
+      vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = 'Telescope: Search something' })
     end
 
     -- Harpoon
@@ -155,6 +155,6 @@ return {
           sorter = config.generic_sorter({}),
         })
         :find()
-    end, { desc = '[H]arpoon [S]earch Files' })
+    end, { desc = 'Telescope + Harpoon: Search files' })
   end,
 }

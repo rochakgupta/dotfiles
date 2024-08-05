@@ -45,6 +45,6 @@ return {
         auto_attach = true,
       },
     })
-    vim.keymap.set('n', '<leader>n', ':Navbuddy<CR>', { desc = 'Open [N]avbuddy', silent = true })
+    vim.keymap.set('n', '<leader>n', ':Navbuddy<CR>', { desc = 'Navbuddy: Open', silent = true })
   end,
 }

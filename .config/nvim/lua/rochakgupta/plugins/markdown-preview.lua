@@ -22,6 +22,6 @@ return {
     vim.g.mkdp_auto_close = 0
     vim.g.mkdp_combine_preview = 1
 
-    vim.keymap.set('n', '<leader>mp', ':MarkdownPreview<CR>', { desc = '[M]arkdown [P]review' })
+    vim.keymap.set('n', '<leader>mp', ':MarkdownPreview<CR>', { desc = 'MarkdownPreview: Preview' })
   end,
 }

@@ -13,15 +13,15 @@ return {
 
     vim.keymap.set('n', '<leader>ha', function()
       harpoon:list():add()
-    end, { desc = '[H]arpoon [A]dd file' })
+    end, { desc = 'Harpoon: Add file' })
     vim.keymap.set('n', '<leader>hu', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end, { desc = '[H]arpoon [U]I' })
+    end, { desc = 'Harpoon: Toggle UI' })
 
     for id = 1, 5 do
       vim.keymap.set('n', '<leader>h' .. id, function()
         harpoon:list():select(id)
-      end, { desc = '[H]arpoon File [' .. id .. ']' })
+      end, { desc = 'Harpoon: Open file [' .. id .. ']' })
     end
   end,
 }

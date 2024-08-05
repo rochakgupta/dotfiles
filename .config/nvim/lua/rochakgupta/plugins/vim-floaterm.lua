@@ -15,11 +15,11 @@ return {
     vim.g.floaterm_giteditor = false
   end,
   config = function()
-    vim.keymap.set('n', '<leader>st', ':Floaterms<CR>', { desc = '[S]earch [T]erminals' })
-    vim.keymap.set('n', '<leader>o', ':FloatermNew --name=default --title=default<CR>', { desc = '[O]pen Default Terminal' })
-    vim.keymap.set('n', '<leader>l', ':FloatermNew --name=lazygit --title=lazygit lazygit<CR>', { desc = 'Open [L]azygit Terminal' })
-    vim.keymap.set('n', '<leader>v', ':FloatermNew --name=vifm --title=vifm vifm<CR>', { desc = 'Open [V]ifm Terminal' })
-    vim.keymap.set('t', '<leader>t', '<C-\\><C-n>:FloatermHide<CR>', { desc = 'Hide [T]erminal' })
-    vim.keymap.set('n', '<leader>t', ':FloatermShow<CR>', { desc = 'Show [T]erminal' })
+    vim.keymap.set('n', '<leader>st', ':Floaterms<CR>', { desc = 'Floaterm: Search terminals' })
+    vim.keymap.set('n', '<leader>o', ':FloatermNew --name=default --title=default<CR>', { desc = 'Floaterm: Open default terminal' })
+    vim.keymap.set('n', '<leader>l', ':FloatermNew --name=lazygit --title=lazygit lazygit<CR>', { desc = 'Floaterm: Open lazygit' })
+    vim.keymap.set('n', '<leader>v', ':FloatermNew --name=vifm --title=vifm vifm<CR>', { desc = 'Floaterm: Open vifm' })
+    vim.keymap.set('t', '<leader>t', '<C-\\><C-n>:FloatermHide<CR>', { desc = 'Floaterm: Hide terminal' })
+    vim.keymap.set('n', '<leader>t', ':FloatermShow<CR>', { desc = 'Floaterm: Show terminal' })
   end,
 }

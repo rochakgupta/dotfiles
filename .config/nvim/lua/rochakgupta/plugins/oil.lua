@@ -44,6 +44,6 @@ return {
         },
       },
     })
-    vim.keymap.set('n', '-', require('oil').open_float, { desc = 'Open parent directory' })
+    vim.keymap.set('n', '-', require('oil').open_float, { desc = 'Oil: Open parent directory' })
   end,
 }

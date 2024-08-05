@@ -11,8 +11,8 @@ return {
       min_count_to_highlight = 2,
     })
 
-    vim.keymap.set('n', '<leader>it', require('illuminate').toggle, { desc = '[T]oggle [I]lluminate' })
-    vim.keymap.set('n', ']r', require('illuminate').goto_next_reference, { desc = 'Go to next reference' })
-    vim.keymap.set('n', '[r', require('illuminate').goto_prev_reference, { desc = 'Go to previous reference' })
+    vim.keymap.set('n', '<leader>it', require('illuminate').toggle, { desc = 'Illuminate: Toggle' })
+    vim.keymap.set('n', ']r', require('illuminate').goto_next_reference, { desc = 'Illuminate: Go to next reference' })
+    vim.keymap.set('n', '[r', require('illuminate').goto_prev_reference, { desc = 'Illuminate: Go to previous reference' })
   end,
 }

@@ -31,7 +31,7 @@ return {
       end, { desc = desc })
     end
 
-    set_keymaps('gy', actions.copy_to_clipboard, 'Copy [R]emote url of file to clipboard')
-    set_keymaps('gY', actions.open_in_browser, 'Open [R]emote url of file in browser')
+    set_keymaps('gy', actions.copy_to_clipboard, 'Gitlinker: Copy remote url of file to clipboard')
+    set_keymaps('gY', actions.open_in_browser, 'Gitlinker: Open remote url of file in browser')
   end,
 }

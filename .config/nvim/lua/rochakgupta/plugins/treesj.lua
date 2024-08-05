@@ -9,6 +9,6 @@ return {
       use_default_keymaps = false,
       max_join_length = 1000,
     })
-    vim.keymap.set('n', '<leader>j', require('treesj').toggle, { desc = 'Toggle [J]oin via treesj' })
+    vim.keymap.set('n', '<leader>j', require('treesj').toggle, { desc = 'Treesj: Toggle join' })
   end,
 }

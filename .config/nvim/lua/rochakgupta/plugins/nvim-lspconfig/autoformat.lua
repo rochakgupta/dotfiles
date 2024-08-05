@@ -6,7 +6,7 @@ vim.api.nvim_create_user_command('FormatToggle', function()
   print('Setting autoformatting to: ' .. tostring(format_is_enabled))
 end, {})
 
-vim.keymap.set('n', '<leader>f', ':FormatToggle<CR>', { desc = 'Toggle Auto[f]ormatting' })
+vim.keymap.set('n', '<leader>f', ':FormatToggle<CR>', { desc = 'LSP: Toggle autoformatting' })
 
 -- Create an augroup that is used for managing our formatting autocmds.
 --  We need one augroup per client to make sure that multiple clients

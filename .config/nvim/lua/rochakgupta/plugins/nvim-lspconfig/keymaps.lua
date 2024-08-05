@@ -10,7 +10,7 @@ function M.init(bufnr)
   end
 
   nmap('<leader>C', vim.lsp.buf.rename, 'Rename')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>ca', vim.lsp.buf.code_action, 'Code action')
 
   nmap('gd', function()
     if vim.g.rg_telescope then
@@ -20,7 +20,7 @@ function M.init(bufnr)
         jump_to_single_result = true,
       })
     end
-  end, '[G]oto [D]efinition')
+  end, 'Go to definition')
 
   nmap('gr', function()
     if vim.g.rg_telescope then
@@ -31,7 +31,7 @@ function M.init(bufnr)
         includeDeclaration = false,
       })
     end
-  end, '[G]oto [R]eferences')
+  end, 'Go to references')
 
   nmap('gi', function()
     if vim.g.rg_telescope then
@@ -41,7 +41,7 @@ function M.init(bufnr)
         jump_to_single_result = true,
       })
     end
-  end, '[G]oto [I]mplementation')
+  end, 'Go to implementation')
 
   nmap('gt', function()
     if vim.g.rg_telescope then
@@ -49,7 +49,7 @@ function M.init(bufnr)
     else
       require('fzf-lua').lsp_typedefs()
     end
-  end, '[G]oto [T]ype Definition')
+  end, 'Go to type definition')
 
   nmap('<leader>ds', function()
     if vim.g.rg_telescope then
@@ -57,7 +57,7 @@ function M.init(bufnr)
     else
       require('fzf-lua').lsp_document_symbols()
     end
-  end, '[D]ocument [S]ymbols')
+  end, 'Document symbols')
 
   nmap('<leader>ws', function()
     if vim.g.rg_telescope then
@@ -65,20 +65,20 @@ function M.init(bufnr)
     else
       require('fzf-lua').lsp_live_workspace_symbols()
     end
-  end, '[W]orkspace [S]ymbols')
+  end, 'Workspace symbols')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
-  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+  nmap('gD', vim.lsp.buf.declaration, 'Go to declaration')
 
-  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace folder')
+  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder')
   nmap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, '[W]orkspace [L]ist Folders')
+  end, 'List workspace folders')
 end
 
 return M

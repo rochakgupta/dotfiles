@@ -9,8 +9,8 @@ return {
         vim.keymap.set('v', key, ':' .. cmd .. '<CR>', { desc = desc, noremap = false })
       end
 
-      set_keymaps('gy', true, 'Copy [R]emote url of file to clipboard')
-      set_keymaps('gY', false, 'Open [R]emote url of file in browser')
+      set_keymaps('gy', true, 'Fugitive: Copy remote url of file to clipboard')
+      set_keymaps('gY', false, 'Fugitive: Open remote url of file in browser')
     end
   end,
 }
