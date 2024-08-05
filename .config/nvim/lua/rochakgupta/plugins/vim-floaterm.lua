@@ -19,7 +19,7 @@ return {
     vim.keymap.set('n', '<leader>o', ':FloatermNew --name=default --title=default<CR>', { desc = 'Floaterm: Open default terminal' })
     vim.keymap.set('n', '<leader>l', ':FloatermNew --name=lazygit --title=lazygit lazygit<CR>', { desc = 'Floaterm: Open lazygit' })
     vim.keymap.set('n', '<leader>v', ':FloatermNew --name=vifm --title=vifm vifm<CR>', { desc = 'Floaterm: Open vifm' })
-    vim.keymap.set('t', '<leader>t', '<C-\\><C-n>:FloatermHide<CR>', { desc = 'Floaterm: Hide terminal' })
-    vim.keymap.set('n', '<leader>t', ':FloatermShow<CR>', { desc = 'Floaterm: Show terminal' })
+    vim.keymap.set('t', '<C-/>', '<C-\\><C-n>:FloatermHide<CR>', { desc = 'Floaterm: Hide terminal' })
+    vim.keymap.set('n', '<C-/>', ':FloatermShow<CR>', { desc = 'Floaterm: Show terminal' })
   end,
 }
