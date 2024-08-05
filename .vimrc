@@ -20,7 +20,7 @@ set incsearch
 set jumpoptions=stack
 set lazyredraw
 " set list
-" set listchars=trail:~,nbsp:+,tab:│\ ,eol:↴
+" set listchars=tab:>·,trail:~,extends:>,precedes:<,nbsp:+
 set mouse=a
 set nofoldenable
 set noswapfile
@@ -508,16 +508,16 @@ nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Search workspace symbols
-nnoremap <silent><nowait> <space>ws  :<C-u>CocList -I symbols<CR>
+nnoremap <silent><nowait> <space>ws :CocList -I symbols<CR>
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
