@@ -382,8 +382,8 @@ let g:floaterm_autohide = 2
 nnoremap <leader>o :FloatermNew --name=default --title=default<CR>
 nnoremap <leader>l :FloatermNew --name=lazygit --title=lazygit lazygit<CR>
 nnoremap <leader>v :FloatermNew --name=vifm --title=vifm vifm<CR>
-tnoremap <leader>t <C-\><C-n>:FloatermHide<CR>
-nnoremap <leader>t :FloatermShow<CR>
+tnoremap <C-/> <C-\><C-n>:FloatermHide<CR>
+nnoremap <C-/> :FloatermShow<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf-floaterm
