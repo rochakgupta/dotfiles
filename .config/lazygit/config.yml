@@ -1,6 +1,7 @@
 gui:
   expandFocusedSidePanel: true
   sidePanelWidth: 0.25
+  filterMode: fuzzy
   border: single
   theme:
     selectedLineBgColor:
