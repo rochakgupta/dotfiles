@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local native_fullscreen = true
+local native_fullscreen = false
 
 local config = wezterm.config_builder()
 
