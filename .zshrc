@@ -73,6 +73,33 @@ alias activate="source .venv/bin/activate"
 eval "$(starship init zsh)"
 
 ################################################################################
+# zathura
+################################################################################
+zopen() {
+    local _file
+    if [[ $# -eq 0 ]]; then
+        _file=$(find -E ~/Dropbox ~/Documents ~/Desktop ~/Downloads -regex ".*\.(pdf)" | sort | fzf)
+    elif [[ -d $1 ]]; then
+        _file=$(find -E "$1" -regex ".*\.(pdf)" | sort | fzf)
+    else
+        _file=$1
+    fi
+
+    if [[ -z $_file ]]; then
+        echo 'No file specified'
+        return 1
+    fi
+
+    local _file_type=$(file -b --mime-type "$_file")
+    if [[ $_file_type == 'application/pdf'* ]]; then
+        zathura "$_file" &
+    else
+        echo "$_file is $_file_type"
+        return 1
+    fi
+}
+
+################################################################################
 # zoxide
 ################################################################################
 eval "$(zoxide init zsh)"
