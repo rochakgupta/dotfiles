@@ -107,7 +107,7 @@ export FZF_DEFAULT_OPTS='
 --bind "ctrl-k:first"
 --bind "ctrl-j:last"'
 
-function fzf_init() {
+fzf_init() {
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 }
 
@@ -125,7 +125,7 @@ fi
 export ATUIN_NOBIND="true"
 eval "$(atuin init zsh)"
 
-function atuin_keybindings() {
+atuin_keybindings() {
     bindkey '^z' atuin-search
 }
 
@@ -153,13 +153,13 @@ alias vc="vim -u NONE"
 ################################################################################
 # vifm
 ################################################################################
-function f() {
-    local dst="$(command vifm --choose-dir - "$@")"
-    if [ -z "$dst" ]; then
+f() {
+    local _dir="$(command vifm --choose-dir - "$@")"
+    if [ -z "$_dir" ]; then
         echo 'Directory picking cancelled/failed'
         return 1
     fi
-    cd "$dst"
+    cd "$_dir"
 }
 
 ################################################################################
@@ -176,7 +176,7 @@ alias ta='tmux a -d || tmux new -c ~'
 ################################################################################
 # yadm
 ################################################################################
-function yc() (
+yc() (
     cd ~
     yadm enter lazygit
 )
