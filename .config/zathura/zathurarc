@@ -1,0 +1,11 @@
+# See 'man zathura' and 'man zathurarc'
+
+set font "JetBrainsMono Nerd Font Mono 12"
+set guioptions ""
+set recolor-keephue "true"
+set recolor-reverse-video "true"
+set scroll-full-overlap 0.01
+set scroll-page-aware "true"
+set scroll-step 20
+set selection-clipboard clipboard
+set window-title-basename "true"
