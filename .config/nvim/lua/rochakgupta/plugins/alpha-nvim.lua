@@ -22,7 +22,7 @@ return {
       dashboard.button('l', '  Config: lazygit', ':cd ~/.config/lazygit<CR>:e ~/.config/lazygit/config.yml<CR>'),
       dashboard.button('n', '  Config: neovim', ':cd ~/.config/nvim<CR>:e ~/.config/nvim/init.lua<CR>'),
       dashboard.button('s', '  Config: starship', ':e ~/.config/starship.toml<CR>'),
-      dashboard.button('t', '  Config: tmux', ':e ~/.tmux.conf<CR>'),
+      dashboard.button('t', '  Config: tmux', ':cd ~/.config/tmux<CR>:e ~/.config/tmux/tmux.conf<CR>'),
       dashboard.button('v', '  Config: vim', ':e ~/.vimrc<CR>'),
       dashboard.button('f', '  Config: vifm', ':cd ~/.config/vifm<CR>:e ~/.config/vifm/vifmrc<CR>'),
       dashboard.button('w', '  Config: wezterm', ':cd ~/.config/wezterm<CR>:e ~/.config/wezterm/wezterm.lua<CR>'),
