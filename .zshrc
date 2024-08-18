@@ -1,221 +1,297 @@
+################################################################################
+# begin
+################################################################################
 export TERM=xterm-256color
 export CLICOLOR=1
 export KEYTIMEOUT=1
+export PATH=$HOME/.local/bin:$PATH
 
-export EDITOR=nvim
-export VISUAL="$EDITOR"
+has() {
+    command -v "$1" >/dev/null 2>&1
+}
 
-if [[ "$EDITOR" == "nvim" ]]; then
-    export MANPAGER='nvim +Man!'
-else
-    export MANPAGER='vim -M +MANPAGER -'
-fi
+suppress_warn=0
+warn() {
+    if [[ $suppress_warn -eq 0 ]]; then
+        echo "$1"
+        return 1
+    fi
+}
 
-################################################################################
-# Plugin Management:
-# zplug: https://github.com/zplug/zplug
-################################################################################
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-# Syntax highlighting
-# Must be the last plugin sourced
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-# Autocomplete with fzf
-# Must be loaded before zsh-autosuggestions
-zplug "Aloxaf/fzf-tab"
-zstyle ':fzf-tab:*' fzf-min-height 10
-
-# Suggestions
-zplug "zsh-users/zsh-autosuggestions"
-
-# Vi bindings
-ZSH_VI_MODE_ENABLED=1
-if [[ "$ZSH_VI_MODE_ENABLED" == 1 ]]; then
-    ZVM_CURSOR_STYLE_ENABLED=false
-    zplug "jeffreytse/zsh-vi-mode"
-fi
-
-# Source plugins and add commands to $PATH
-zplug load
+err() {
+    echo "$1"
+    return 1
+}
 
 ################################################################################
 # brew
 ################################################################################
-export PATH=/opt/homebrew/bin:$PATH
+if [[ -d /opt/homebrew/bin ]]; then
+    export PATH=/opt/homebrew/bin:$PATH
+    eval "$(brew shellenv)"
+
+    # Shell completion for tools installed by brew
+    # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+else
+    warn "brew not found"
+fi
+
+################################################################################
+# vim + neovim
+################################################################################
+export VIMCONFIG=~/.vim
+export EDITOR=vim
+export MANPAGER='vim -M +MANPAGER -'
+
+alias v=vim
+alias vc="vim -u NONE"
+
+if has nvim; then
+    export EDITOR=nvim
+    export MANPAGER='nvim +Man!'
+
+    alias n=nvim
+    alias nc="nvim --clean"
+else
+    warn "nvim not found"
+fi
+
+export VISUAL=$EDITOR
+
+################################################################################
+# zplug
+################################################################################
+if has brew && brew --prefix zplug >/dev/null 2>&1; then
+    export ZPLUG_HOME=$(brew --prefix zplug)
+    source $ZPLUG_HOME/init.zsh
+
+    # Additional completions
+    zplug "zsh-users/zsh-completions"
+
+    # Syntax highlighting
+    # Must be the last plugin sourced
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+    # Autocomplete with fzf
+    # Must be loaded before zsh-autosuggestions
+    zplug "Aloxaf/fzf-tab"
+    zstyle ':fzf-tab:*' fzf-min-height 10
+
+    # Suggestions
+    # Must be loaded after fzf-tab
+    zplug "zsh-users/zsh-autosuggestions"
+
+    # Vi bindings
+    ZVM_CURSOR_STYLE_ENABLED=false
+    zplug "jeffreytse/zsh-vi-mode"
+
+    # Source plugins and add commands to $PATH
+    zplug load
+
+    if ! zplug check; then
+        warn "run 'zplug install' to install missing plugins"
+    fi
+else
+    warn "zplug not found"
+fi
 
 ################################################################################
 # mise
 ################################################################################
-eval "$(mise activate zsh --shims)"
+if has mise; then
+    eval "$(mise activate zsh --shims)"
+else
+    warn "mise not found"
+fi
 
 ################################################################################
 # go
 ################################################################################
-export PATH=$PATH:$(go env GOPATH)/bin
+if has go; then
+    export PATH=$PATH:$(go env GOPATH)/bin
+else
+    warn "go not found"
+fi
 
 ################################################################################
 # java
 ################################################################################
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+if [[ -d $JAVA_HOME ]]; then
+    export JAVA_HOME
+else
+    warn "$JAVA_HOME not found"
+fi
 
 ################################################################################
 # python
 ################################################################################
-export PATH=$HOME/.local/bin:$PATH
 export PYTHONPYCACHEPREFIX=$HOME/.cache/pycache
-alias activate="source .venv/bin/activate"
+
+activate() {
+    local _file=".venv/bin/activate"
+    if [[ -f $_file ]]; then
+        source $_file
+    else
+        err "$_file not found"
+    fi
+}
 
 ################################################################################
 # starship
 ################################################################################
-eval "$(starship init zsh)"
+if has starship; then
+    eval "$(starship init zsh)"
+else
+    warn "starship not found"
+fi
 
 ################################################################################
 # zathura
 ################################################################################
-zopen() {
-    local _file
-    if [[ $# -eq 0 ]]; then
-        _file=$(find -E ~/Dropbox ~/Documents ~/Desktop ~/Downloads -regex ".*\.(pdf)" | sort | fzf)
-    elif [[ -d $1 ]]; then
-        _file=$(find -E "$1" -regex ".*\.(pdf)" | sort | fzf)
-    else
-        _file=$1
-    fi
+if has zathura; then
+    zopen() {
+        local _file
+        if [[ $# -eq 0 ]]; then
+            _file=$(find -E ~/Dropbox ~/Documents ~/Desktop ~/Downloads -regex ".*\.(pdf)" | fzf)
+        elif [[ -d $1 ]]; then
+            _file=$(find -E "$1" -regex ".*\.(pdf)" | fzf)
+        else
+            _file=$1
+        fi
 
-    if [[ -z $_file ]]; then
-        echo 'No file specified'
-        return 1
-    fi
+        if [[ -z $_file ]]; then
+            echo 'No file specified'
+            return 1
+        fi
 
-    local _file_type=$(file -b --mime-type "$_file")
-    if [[ $_file_type == 'application/pdf'* ]]; then
-        zathura "$_file" &
-    else
-        echo "$_file is $_file_type"
-        return 1
-    fi
-}
+        local _file_type=$(file -b --mime-type "$_file")
+        if [[ $_file_type == 'application/pdf'* ]]; then
+            zathura "$_file" &
+        else
+            echo "$_file is $_file_type"
+            return 1
+        fi
+    }
+fi
 
 ################################################################################
 # zoxide
 ################################################################################
-eval "$(zoxide init zsh)"
-
-################################################################################
-# fzf
-################################################################################
-if type rg &>/dev/null; then
-    export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
+if has zoxide; then
+    eval "$(zoxide init zsh)"
+else
+    warn "zoxide not found"
 fi
 
-export FZF_DEFAULT_OPTS='
---exact
---multi
---reverse
---height 50%
---border=sharp
---bind "ctrl-l:clear-query"
---bind "alt-a:beginning-of-line"
---bind "alt-e:end-of-line"
---bind "ctrl-f:preview-down"
---bind "ctrl-b:preview-up"
---bind "ctrl-d:preview-page-down"
---bind "ctrl-u:preview-page-up"
---bind "f3:toggle-preview-wrap"
---bind "f4:toggle-preview"
---bind "tab:toggle-out"
---bind "shift-tab:toggle-in"
---bind "ctrl-space:toggle"
---bind "ctrl-o:toggle-all"
---bind "alt-l:clear-selection"
---bind "ctrl-k:first"
---bind "ctrl-j:last"'
+################################################################################
+# rg + fzf
+################################################################################
+if has fzf; then
+    if has rg; then
+        export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!**/{.git,node_modules,vendor}/*"'
+    else
+        warn "rg not found"
+    fi
 
-fzf_init() {
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-}
+    export FZF_DEFAULT_OPTS='
+    --exact
+    --multi
+    --reverse
+    --height 50%
+    --border=sharp
+    --bind "ctrl-l:clear-query"
+    --bind "alt-a:beginning-of-line"
+    --bind "alt-e:end-of-line"
+    --bind "ctrl-f:preview-down"
+    --bind "ctrl-b:preview-up"
+    --bind "ctrl-d:preview-page-down"
+    --bind "ctrl-u:preview-page-up"
+    --bind "f3:toggle-preview-wrap"
+    --bind "f4:toggle-preview"
+    --bind "tab:toggle-out"
+    --bind "shift-tab:toggle-in"
+    --bind "ctrl-space:toggle"
+    --bind "ctrl-o:toggle-all"
+    --bind "alt-l:clear-selection"
+    --bind "ctrl-k:first"
+    --bind "ctrl-j:last"'
 
-# Run fzf's init script that adds fzf keybindings after zsh-vi-mode adds its
-# keybindings to prevent fzf keybindings from getting overwritten.
-if [[ "$ZSH_VI_MODE_ENABLED" == 1 ]]; then
+    fzf_init() {
+        source <(fzf --zsh)
+    }
+    # Run fzf init script that adds fzf keybindings after zsh-vi-mode adds its
+    # keybindings to prevent fzf keybindings from getting overwritten.
     zvm_after_init_commands+=(fzf_init)
 else
-    fzf_init
+    warn "fzf not found"
 fi
 
 ################################################################################
 # atuin
 ################################################################################
-export ATUIN_NOBIND="true"
-eval "$(atuin init zsh)"
+if has atuin; then
+    export ATUIN_NOBIND="true"
+    eval "$(atuin init zsh)"
 
-atuin_keybindings() {
-    bindkey '^z' atuin-search
-}
-
-# Set atuin keybindings after zsh-vi-mode adds its keybindings to prevent atuin
-# keybindings from getting overwritten.
-if [[ "$ZSH_VI_MODE_ENABLED" == 1 ]]; then
+    atuin_keybindings() {
+        bindkey '^z' atuin-search
+    }
+    # Set atuin keybindings after zsh-vi-mode adds its keybindings to prevent atuin
+    # keybindings from getting overwritten.
     zvm_after_init_commands+=(atuin_keybindings)
 else
-    atuin_keybindings
+    warn "atuin not found"
 fi
-
-################################################################################
-# neovim
-################################################################################
-alias n=nvim
-alias nc="nvim --clean"
-
-################################################################################
-# vim
-################################################################################
-export VIMCONFIG=~/.vim
-alias v=vim
-alias vc="vim -u NONE"
 
 ################################################################################
 # vifm
 ################################################################################
-f() {
-    local _dir="$(command vifm --choose-dir - "$@")"
-    if [ -z "$_dir" ]; then
-        echo 'Directory picking cancelled/failed'
-        return 1
-    fi
-    cd "$_dir"
-}
+if has vifm; then
+    f() {
+        local _dir="$(command vifm --choose-dir - "$@")"
+        if [ -z "$_dir" ]; then
+            echo 'Directory picking cancelled/failed'
+            return 1
+        fi
+        cd "$_dir"
+    }
+else
+    warn "vifm not found"
+fi
 
 ################################################################################
 # lazygit
 ################################################################################
-export CONFIG_DIR=$HOME/.config/lazygit
-alias c=lazygit
+if has lazygit; then
+    export CONFIG_DIR=$HOME/.config/lazygit
+    alias c=lazygit
+else
+    warn "lazygit not found"
+fi
 
 ################################################################################
 # tmux
 ################################################################################
-alias ta='tmux a -d || tmux new -c ~'
+if has tmux; then
+    alias ta='tmux a -d || tmux new -c ~'
+else
+    warn "tmux not found"
+fi
 
 ################################################################################
 # yadm
 ################################################################################
-yc() (
-    cd ~
-    yadm enter lazygit
-)
-
-################################################################################
-# brew
-################################################################################
-# Shell completion for tools installed by brew
-# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
-if type brew &>/dev/null; then
-    FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
-    FPATH="/opt/homebrew/share/zsh-completions:${FPATH}"
-
-    autoload -Uz compinit && compinit -i
+if has yadm; then
+    yc() (
+        cd ~ && yadm enter lazygit
+    )
+else
+    warn "yadm not found"
 fi
+
+################################################################################
+# end
+################################################################################
+autoload -Uz compinit && compinit -i
