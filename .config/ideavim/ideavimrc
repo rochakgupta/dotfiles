@@ -35,7 +35,7 @@ map <C-c> <Esc>
 
 " Mappings to <Action> don't work with noremap
 " https://github.com/JetBrains/ideavim#executing-ide-actions
-nnoremap <leader>e :e ~/.ideavimrc<CR>
+nnoremap <leader>e :e ~/.config/ideavim/ideavimrc<CR>
 nnoremap <leader>r :action IdeaVim.ReloadVimRc.reload<CR>
 
 nnoremap gr :action FindUsages<CR>
