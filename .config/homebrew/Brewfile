@@ -61,6 +61,7 @@ cask "coconutbattery"
 cask "contexts" # Purchased
 cask "coteditor"
 cask "daisydisk" # Purchased
+cask "firefox"
 cask "flux"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-mononoki-nerd-font"
