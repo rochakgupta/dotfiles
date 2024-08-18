@@ -1,4 +1,0 @@
-check_update = false
-
-[venv]
-backend = "venv"
