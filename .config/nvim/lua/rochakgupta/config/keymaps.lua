@@ -23,20 +23,27 @@ vim.keymap.set('n', '<C-/>', '<C-w>>', { desc = 'Increase size of window' })
 vim.keymap.set('n', '<C-;>', '<C-W>+', { desc = 'Decrease size of window' })
 vim.keymap.set('n', "<C-'>", '<C-W>-', { desc = 'Increase size of window' })
 
--- Quickfix list keymaps
+-- Quickfix/Location list keymaps
 vim.keymap.set('n', ']q', ':cnext<CR>', { desc = 'Go to next item in quickfix list' })
 vim.keymap.set('n', '[q', ':cprevious<CR>', { desc = 'Go to previous item in quickfix list' })
 vim.keymap.set('n', ']Q', ':clast<CR>', { desc = 'Go to last item in quickfix list' })
 vim.keymap.set('n', '[Q', ':cfirst<CR>', { desc = 'Go to first item in quickfix list' })
+vim.keymap.set('n', ']l', ':lnext<CR>', { desc = 'Go to next item in location list' })
+vim.keymap.set('n', '[l', ':lprevious<CR>', { desc = 'Go to previous item in location list' })
+vim.keymap.set('n', ']L', ':llast<CR>', { desc = 'Go to last item in location list' })
+vim.keymap.set('n', '[L', ':lfirst<CR>', { desc = 'Go to first item in location list' })
 vim.keymap.set('n', '<leader>q', function()
   for _, win in pairs(vim.fn.getwininfo()) do
+    if win['loclist'] == 1 then
+      vim.cmd('lclose')
+      return
+    end
     if win['quickfix'] == 1 then
       vim.cmd('cclose')
       return
     end
   end
-  vim.cmd('copen')
-end, { desc = 'Toggle quickfix list' })
+end, { desc = 'Close quickfix/location list' })
 
 -- Move groups of lines up and down with J and K
 -- Disabled as K is already bound to vim.lsp.buf.hover()
