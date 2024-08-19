@@ -88,6 +88,9 @@ return {
           ['ctrl-q'] = actions.buf_edit_or_qf,
         },
       },
+      diagnostics = {
+        multiline = false,
+      },
     }
     fzf_lua.setup(opts)
 
