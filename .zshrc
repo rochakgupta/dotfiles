@@ -201,18 +201,19 @@ if has fzf; then
     --reverse
     --height 50%
     --border=sharp
-    --bind "ctrl-x:clear-query"
-    --bind "ctrl-f:preview-down"
-    --bind "ctrl-b:preview-up"
-    --bind "ctrl-d:preview-page-down"
-    --bind "ctrl-u:preview-page-up"
-    --bind "f3:toggle-preview-wrap"
-    --bind "f4:toggle-preview"
-    --bind "ctrl-space:toggle"
-    --bind "ctrl-o:toggle-all"
-    --bind "ctrl-l:clear-selection"
-    --bind "ctrl-k:first"
-    --bind "ctrl-j:last"'
+    --bind=ctrl-x:clear-query
+    --bind=ctrl-f:preview-down
+    --bind=ctrl-b:preview-up
+    --bind=ctrl-d:preview-page-down
+    --bind=ctrl-u:preview-page-up
+    --bind=f3:toggle-preview-wrap
+    --bind=f4:toggle-preview
+    --bind=ctrl-space:toggle
+    --bind=ctrl-o:toggle-all
+    --bind=ctrl-l:clear-selection
+    --bind=ctrl-k:first
+    --bind=ctrl-j:last
+    '
 
     fzf_init() {
         source <(fzf --zsh)
