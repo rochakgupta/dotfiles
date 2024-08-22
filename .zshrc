@@ -201,20 +201,16 @@ if has fzf; then
     --reverse
     --height 50%
     --border=sharp
-    --bind "ctrl-l:clear-query"
-    --bind "alt-a:beginning-of-line"
-    --bind "alt-e:end-of-line"
+    --bind "ctrl-x:clear-query"
     --bind "ctrl-f:preview-down"
     --bind "ctrl-b:preview-up"
     --bind "ctrl-d:preview-page-down"
     --bind "ctrl-u:preview-page-up"
     --bind "f3:toggle-preview-wrap"
     --bind "f4:toggle-preview"
-    --bind "tab:toggle-out"
-    --bind "shift-tab:toggle-in"
     --bind "ctrl-space:toggle"
     --bind "ctrl-o:toggle-all"
-    --bind "alt-l:clear-selection"
+    --bind "ctrl-l:clear-selection"
     --bind "ctrl-k:first"
     --bind "ctrl-j:last"'
 
