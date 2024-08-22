@@ -43,14 +43,10 @@ return {
         fzf = {
           false, -- do not inherit from defaults
           -- fzf '--bind=' options
-          ['ctrl-l'] = 'clear-query',
-          ['alt-a'] = 'beginning-of-line',
-          ['alt-e'] = 'end-of-line',
-          ['tab'] = 'toggle-out',
-          ['shift-tab'] = 'toggle-in',
+          ['ctrl-x'] = 'clear-query',
           ['ctrl-space'] = 'toggle',
           ['ctrl-o'] = 'toggle-all',
-          ['alt-l'] = 'clear-selection',
+          ['ctrl-l'] = 'clear-selection',
           ['ctrl-k'] = 'first',
           ['ctrl-j'] = 'last',
           -- Only valid with fzf previewers (bat/cat/git/etc)
