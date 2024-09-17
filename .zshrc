@@ -139,54 +139,24 @@ activate() {
 }
 
 ################################################################################
-# starship
+# atuin
 ################################################################################
-if has starship; then
-    eval "$(starship init zsh)"
-else
-    warn "starship not found"
-fi
+if has atuin; then
+    export ATUIN_NOBIND="true"
+    eval "$(atuin init zsh)"
 
-################################################################################
-# zathura
-################################################################################
-if has zathura; then
-    zopen() {
-        local _file
-        if [[ $# -eq 0 ]]; then
-            _file=$(find -E ~/Dropbox ~/Documents ~/Desktop ~/Downloads -regex ".*\.(pdf)" | fzf)
-        elif [[ -d $1 ]]; then
-            _file=$(find -E "$1" -regex ".*\.(pdf)" | fzf)
-        else
-            _file=$1
-        fi
-
-        if [[ -z $_file ]]; then
-            echo 'No file specified'
-            return 1
-        fi
-
-        local _file_type=$(file -b --mime-type "$_file")
-        if [[ $_file_type == 'application/pdf'* ]]; then
-            zathura "$_file" &
-        else
-            echo "$_file is $_file_type"
-            return 1
-        fi
+    atuin_keybindings() {
+        bindkey '^z' atuin-search
     }
-fi
-
-################################################################################
-# zoxide
-################################################################################
-if has zoxide; then
-    eval "$(zoxide init zsh)"
+    # Set atuin keybindings after zsh-vi-mode adds its keybindings to prevent atuin
+    # keybindings from getting overwritten.
+    zvm_after_init_commands+=(atuin_keybindings)
 else
-    warn "zoxide not found"
+    warn "atuin not found"
 fi
 
 ################################################################################
-# rg + fzf
+# fzf + rg
 ################################################################################
 if has fzf; then
     if has rg; then
@@ -226,20 +196,31 @@ else
 fi
 
 ################################################################################
-# atuin
+# lazygit
 ################################################################################
-if has atuin; then
-    export ATUIN_NOBIND="true"
-    eval "$(atuin init zsh)"
-
-    atuin_keybindings() {
-        bindkey '^z' atuin-search
-    }
-    # Set atuin keybindings after zsh-vi-mode adds its keybindings to prevent atuin
-    # keybindings from getting overwritten.
-    zvm_after_init_commands+=(atuin_keybindings)
+if has lazygit; then
+    export CONFIG_DIR=$HOME/.config/lazygit
+    alias c=lazygit
 else
-    warn "atuin not found"
+    warn "lazygit not found"
+fi
+
+################################################################################
+# starship
+################################################################################
+if has starship; then
+    eval "$(starship init zsh)"
+else
+    warn "starship not found"
+fi
+
+################################################################################
+# tmux
+################################################################################
+if has tmux; then
+    alias ta='tmux a -d || tmux new -c ~'
+else
+    warn "tmux not found"
 fi
 
 ################################################################################
@@ -259,25 +240,6 @@ else
 fi
 
 ################################################################################
-# lazygit
-################################################################################
-if has lazygit; then
-    export CONFIG_DIR=$HOME/.config/lazygit
-    alias c=lazygit
-else
-    warn "lazygit not found"
-fi
-
-################################################################################
-# tmux
-################################################################################
-if has tmux; then
-    alias ta='tmux a -d || tmux new -c ~'
-else
-    warn "tmux not found"
-fi
-
-################################################################################
 # yadm
 ################################################################################
 if has yadm; then
@@ -286,6 +248,44 @@ if has yadm; then
     )
 else
     warn "yadm not found"
+fi
+
+################################################################################
+# zathura
+################################################################################
+if has zathura; then
+    zopen() {
+        local _file
+        if [[ $# -eq 0 ]]; then
+            _file=$(find -E ~/Dropbox ~/Documents ~/Desktop ~/Downloads -regex ".*\.(pdf)" | fzf)
+        elif [[ -d $1 ]]; then
+            _file=$(find -E "$1" -regex ".*\.(pdf)" | fzf)
+        else
+            _file=$1
+        fi
+
+        if [[ -z $_file ]]; then
+            echo 'No file specified'
+            return 1
+        fi
+
+        local _file_type=$(file -b --mime-type "$_file")
+        if [[ $_file_type == 'application/pdf'* ]]; then
+            zathura "$_file" &
+        else
+            echo "$_file is $_file_type"
+            return 1
+        fi
+    }
+fi
+
+################################################################################
+# zoxide
+################################################################################
+if has zoxide; then
+    eval "$(zoxide init zsh)"
+else
+    warn "zoxide not found"
 fi
 
 ################################################################################
