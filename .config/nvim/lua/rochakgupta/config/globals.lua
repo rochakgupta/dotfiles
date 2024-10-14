@@ -3,8 +3,8 @@
 -- UI
 vim.g.rg_background = 'dark'
 vim.g.rg_border = 'single'
-vim.g.rg_colorscheme = 'tokyonight'
-vim.g.rg_transparent = false
+vim.g.rg_colorscheme = 'sonokai'
+vim.g.rg_transparent = true
 
 -- Plugins
 vim.g.rg_telescope = false
