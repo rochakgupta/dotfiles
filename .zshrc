@@ -45,14 +45,14 @@ export EDITOR=vim
 export MANPAGER='vim -M +MANPAGER -'
 
 alias v=vim
-alias vc="vim -u NONE"
+alias vv="vim -u NONE"
 
 if has nvim; then
     export EDITOR=nvim
     export MANPAGER='nvim +Man!'
 
     alias n=nvim
-    alias nc="nvim --clean"
+    alias nn="nvim --clean"
 else
     warn "nvim not found"
 fi
