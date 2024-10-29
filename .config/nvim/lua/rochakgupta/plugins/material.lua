@@ -3,7 +3,7 @@ local dark = vim.g.rg_background == 'dark'
 return {
   'marko-cerovac/material.nvim',
   priority = 1000,
-  lazy = vim.g.rg_colorscheme ~= 'material',
+  lazy = vim.g.rg_color ~= 'material',
   init = function()
     vim.g.material_style = dark and 'deep ocean' or 'lighter'
   end,

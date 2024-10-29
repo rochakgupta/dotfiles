@@ -8,7 +8,7 @@ return {
       enable = false,
       mode = 'topline',
       multiline_threshold = 1,
-      separator = vim.g.rg_colorscheme ~= 'tokyonight' and '' or nil,
+      separator = vim.g.rg_color ~= 'tokyonight' and '' or nil,
     })
   end,
 }

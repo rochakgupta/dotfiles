@@ -1,7 +1,7 @@
 return {
   'sainnhe/gruvbox-material',
   priority = 1000,
-  lazy = vim.g.rg_colorscheme ~= 'gruvbox-material',
+  lazy = vim.g.rg_color ~= 'gruvbox',
   init = function()
     vim.g.gruvbox_material_background = 'hard'
     vim.g.gruvbox_material_ui_contrast = 'high'
@@ -9,6 +9,7 @@ return {
     vim.g.gruvbox_material_better_performance = 1
   end,
   config = function()
+    vim.g.rg_colorscheme = 'gruvbox-material'
     -- Using autocmd because overrides must be set after loading the colorscheme but before setting it.
     vim.api.nvim_create_autocmd('ColorScheme', {
       desc = 'Set gruvbox-material float highlights',

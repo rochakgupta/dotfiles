@@ -3,8 +3,9 @@
 -- UI
 vim.g.rg_background = 'dark'
 vim.g.rg_border = 'single'
-vim.g.rg_colorscheme = 'github_dark_high_contrast'
-vim.g.rg_transparent = true
+vim.g.rg_color = 'github'
+vim.g.rg_colorscheme = vim.g.rg_color
+vim.g.rg_transparent = false
 
 -- Plugins
 vim.g.rg_telescope = false

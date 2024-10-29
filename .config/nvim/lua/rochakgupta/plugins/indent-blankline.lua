@@ -18,7 +18,7 @@ return {
         -- char = '┊',
       },
     })
-    if vim.g.rg_colorscheme == 'material' then
+    if vim.g.rg_color == 'material' then
       local hooks = require('ibl.hooks')
       hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
         vim.api.nvim_set_hl(0, 'IblScope', {

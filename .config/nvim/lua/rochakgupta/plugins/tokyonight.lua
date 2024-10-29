@@ -1,7 +1,7 @@
 return {
   'folke/tokyonight.nvim',
   priority = 1000,
-  lazy = vim.g.rg_colorscheme ~= 'tokyonight',
+  lazy = vim.g.rg_color ~= 'tokyonight',
   opts = {
     style = 'night',
     transparent = vim.g.rg_transparent,
