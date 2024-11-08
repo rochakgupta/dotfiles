@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     -- Use formatter provided by null-ls instead of language server
-    if client.name == 'tsserver' or client.name == 'lua_ls' or client.name == 'clangd' then
+    if client.name == 'ts_ls' or client.name == 'lua_ls' or client.name == 'clangd' then
       client_name = 'null-ls'
     end
 

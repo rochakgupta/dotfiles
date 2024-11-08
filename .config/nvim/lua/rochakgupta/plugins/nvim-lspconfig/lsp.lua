@@ -23,7 +23,7 @@ require('mason-lspconfig').setup({
     'marksman',
     'pyright',
     'rust_analyzer',
-    'tsserver',
+    'ts_ls',
     'vimls',
     'yamlls',
   },
@@ -88,7 +88,7 @@ lspconfig.pyright.setup({})
 
 lspconfig.rust_analyzer.setup({})
 
-lspconfig.tsserver.setup({})
+lspconfig.ts_ls.setup({})
 
 lspconfig.vimls.setup({})
 
