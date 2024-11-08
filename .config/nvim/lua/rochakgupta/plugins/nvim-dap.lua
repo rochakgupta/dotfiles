@@ -95,8 +95,13 @@ return {
     require('dap-go').setup()
 
     -- Install Python specific config
-    local debugpy_install = require('mason-registry').get_package('debugpy'):get_install_path()
-    local python_install = debugpy_install .. '/venv/bin/python'
-    require('dap-python').setup(python_install)
+    local mason_registry = require('mason-registry')
+    if mason_registry.is_installed('debugpy') then
+      local debugpy_install = mason_registry.get_package('debugpy'):get_install_path()
+      local python_install = debugpy_install .. '/venv/bin/python'
+      require('dap-python').setup(python_install)
+    else
+      require('rochakgupta.utils').notify_warn('Install debugpy via mason')
+    end
   end,
 }

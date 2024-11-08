@@ -18,6 +18,11 @@ function M.setup(args)
     return
   end
 
+  if not mason_registry.is_installed('jdtls') then
+    utils.notify_warn('Install jdtls via mason')
+    return
+  end
+
   local jdtls_install = mason_registry.get_package('jdtls'):get_install_path()
   local lombok = jdtls_install .. '/lombok.jar'
 
