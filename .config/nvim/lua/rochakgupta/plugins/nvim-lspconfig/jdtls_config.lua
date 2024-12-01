@@ -92,6 +92,7 @@ function M.setup(args)
           settings = {
             url = vim.fn.expand('~/.config/java/eclipse-java-google-style.xml'),
             profile = 'GoogleStyle',
+            enabled = false,
           },
           comments = {
             enabled = false,

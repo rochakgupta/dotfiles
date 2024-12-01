@@ -1,0 +1,16 @@
+return {
+  'bashls',
+  'clangd',
+  'esbonio',
+  'gopls',
+  'jdtls',
+  'jsonls',
+  'lemminx',
+  'lua_ls',
+  'marksman',
+  'pyright',
+  'rust_analyzer',
+  'ts_ls',
+  'vimls',
+  'yamlls',
+}

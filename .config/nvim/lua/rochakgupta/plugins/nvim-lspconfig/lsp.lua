@@ -10,25 +10,6 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'bashls',
-    'clangd',
-    'esbonio',
-    'gopls',
-    'jdtls',
-    'jsonls',
-    'lemminx',
-    'lua_ls',
-    'marksman',
-    'pyright',
-    'rust_analyzer',
-    'ts_ls',
-    'vimls',
-    'yamlls',
-  },
-})
-
 local lsp_defaults = {
   capabilities = capabilities,
   on_attach = on_attach,
@@ -53,7 +34,7 @@ lspconfig.gopls.setup({})
 vim.api.nvim_create_autocmd('FileType', {
   desc = 'Enable jdtls when a java file is opened',
   pattern = 'java',
-  group = vim.api.nvim_create_augroup('rochakgupta-jdtls', { clear = true }),
+  group = vim.api.nvim_create_augroup('JdtlsStart', { clear = true }),
   callback = function()
     require('rochakgupta.plugins.nvim-lspconfig.jdtls_config').setup({
       on_attach = on_attach,

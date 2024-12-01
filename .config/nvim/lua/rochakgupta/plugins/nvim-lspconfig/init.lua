@@ -1,8 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-    'williamboman/mason.nvim', -- Configured in mason.lua
-    'williamboman/mason-lspconfig.nvim',
+    'williamboman/mason-lspconfig.nvim', -- Configured in mason-lspconfig.lua
     'hrsh7th/cmp-nvim-lsp',
     'SmiteshP/nvim-navic', -- Configured in nvim-navic.lua
     'SmiteshP/nvim-navbuddy', -- Configured in nvim-navbuddy.lua
@@ -31,6 +30,5 @@ return {
   config = function()
     require('rochakgupta.plugins.nvim-lspconfig.ui')
     require('rochakgupta.plugins.nvim-lspconfig.lsp')
-    require('rochakgupta.plugins.nvim-lspconfig.autoformat')
   end,
 }
