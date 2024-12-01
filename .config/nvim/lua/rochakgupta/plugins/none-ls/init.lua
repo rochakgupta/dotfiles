@@ -6,7 +6,6 @@ return {
     -- https://github.com/nvimtools/none-ls.nvim/discussions/81
     'gbprod/none-ls-shellcheck.nvim',
   },
-  cond = vim.g.rg_none_ls,
   event = {
     'BufReadPre',
     'BufNewFile',

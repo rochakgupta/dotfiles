@@ -10,8 +10,6 @@ vim.g.rg_transparent = false
 -- Plugins
 vim.g.rg_telescope = false
 vim.g.rg_fzf_lua = not vim.g.rg_telescope
-vim.g.rg_none_ls = true
-vim.g.rg_nvim_lint = not vim.g.rg_none_ls
 vim.g.rg_fidget = false
 vim.g.rg_lsp_progress = true
 vim.g.rg_gitlinker = true
