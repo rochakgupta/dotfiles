@@ -120,6 +120,7 @@ return {
     vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Telescope: Search files' })
     vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = 'Telescope: Search git Files' })
     vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Telescope: Search buffers' })
+    vim.keymap.set('n', '<leader>sq', builtin.quickfix, { desc = 'Telescope: Search quickfix' })
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Telescope: Search help' })
     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Telescope: Search diagnostics' })
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Telescope: Search resume' })

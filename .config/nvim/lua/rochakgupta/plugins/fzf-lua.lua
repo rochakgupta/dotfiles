@@ -104,6 +104,7 @@ return {
     vim.keymap.set('n', '<leader>sf', fzf_lua.files, { desc = 'FzfLua: Search files' })
     vim.keymap.set('n', '<leader>sg', fzf_lua.git_files, { desc = 'FzfLua: Search git files' })
     vim.keymap.set('n', '<leader>sb', fzf_lua.buffers, { desc = 'FzfLua: Search buffers' })
+    vim.keymap.set('n', '<leader>sq', fzf_lua.quickfix, { desc = 'FzfLua: Search quickfix' })
     vim.keymap.set('n', '<leader>sh', fzf_lua.helptags, { desc = 'FzfLua: Search help' })
     vim.keymap.set('n', '<leader>sd', fzf_lua.diagnostics_workspace, { desc = 'FzfLua: Search diagnostics' })
     vim.keymap.set('n', '<leader>sr', fzf_lua.resume, { desc = 'FzfLua: Search resume' })
