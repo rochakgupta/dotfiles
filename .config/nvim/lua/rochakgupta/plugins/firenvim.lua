@@ -46,7 +46,8 @@ return {
           vim.o.showtabline = 0
 
           -- Firefox only: Manually set the font size as default is too big
-          vim.o.guifont = 'JetbrainsMono_Nerd_Font_Mono:h18'
+          local fonts = { 'SauceCodePro', 'JetbrainsMono' }
+          vim.o.guifont = fonts[1] .. ' Nerd Font Mono:h18'
         end
       end,
     })
