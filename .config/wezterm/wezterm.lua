@@ -29,9 +29,10 @@ end)
 config.audible_bell = "Disabled"
 
 config.font_size = 12.0
+local fonts = { "SauceCodePro", "JetbrainsMono" }
 config.font = wezterm.font({
-	family = "JetBrainsMono Nerd Font Mono",
-	weight = "Bold",
+	family = fonts[1] .. " Nerd Font Mono",
+	weight = "DemiBold",
 })
 -- Disable ligatures
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
