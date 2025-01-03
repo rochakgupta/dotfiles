@@ -33,6 +33,14 @@ function M.init(bufnr)
     end
   end, 'Go to references')
 
+  nmap('gc', function()
+    if vim.g.rg_telescope then
+      require('telescope.builtin').lsp_incoming_calls({ show_line = false })
+    else
+      require('fzf-lua').lsp_incoming_calls()
+    end
+  end, 'Go to incoming calls')
+
   nmap('gi', function()
     if vim.g.rg_telescope then
       require('telescope.builtin').lsp_implementations({ show_line = false })
