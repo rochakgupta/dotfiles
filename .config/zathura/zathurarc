@@ -1,6 +1,5 @@
 # See 'man zathura' and 'man zathurarc'
 
-set font "JetBrainsMono Nerd Font Mono 12"
 set guioptions ""
 set recolor-keephue "true"
 set recolor-reverse-video "true"
