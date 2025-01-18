@@ -1,7 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter-context',
   keys = {
-    { '<leader>ct', '<cmd>TSContextToggle<CR>', desc = 'TreesitterContext: Toggle' },
+    { '<leader>tc', '<cmd>TSContextToggle<CR>', desc = 'TreesitterContext: Toggle' },
   },
   config = function()
     require('treesitter-context').setup({
