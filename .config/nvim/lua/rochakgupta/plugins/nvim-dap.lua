@@ -73,7 +73,7 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
-    vim.keymap.set('n', '<leader>bt', dap.toggle_breakpoint, { desc = 'DAP: Toggle breakpoint' })
+    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'DAP: Toggle breakpoint' })
     vim.keymap.set('n', '<leader>dr', dap.run_to_cursor, { desc = 'DAP: Run to cursor' })
 
     -- Eval var under cursor
