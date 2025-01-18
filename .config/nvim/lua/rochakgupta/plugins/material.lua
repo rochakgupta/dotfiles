@@ -30,7 +30,6 @@ return {
         'nvim-tree',
         'nvim-web-devicons',
         'telescope',
-        'which-key',
       },
       disable = {
         colored_cursor = true,

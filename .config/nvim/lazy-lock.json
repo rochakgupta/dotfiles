@@ -88,7 +88,6 @@
   "vim-snippets": { "branch": "master", "commit": "9bd88e07865bd4fa982d46356c227b07de66412a" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-zoom": { "branch": "master", "commit": "01c737005312c09e0449d6518decf8cedfee32c7" },
-  "which-key.nvim": { "branch": "main", "commit": "fb027738340502b556c3f43051f113bcaa7e8e63" },
   "xwiki.vim": { "branch": "master", "commit": "8551414062245924c870bd4049c166bab155f9f5" },
   "yadm-git.vim": { "branch": "master", "commit": "681c36c58a7de5072cc13d6a4228c0b48fdbf6a4" },
   "yanky.nvim": { "branch": "main", "commit": "7c5cbf0122ff2dfbb6a92f14885894f65949cc8b" }

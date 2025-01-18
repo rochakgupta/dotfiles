@@ -15,7 +15,6 @@ vim.g.rg_lsp_progress = true
 vim.g.rg_gitlinker = true
 vim.g.rg_indent_blankline = true
 vim.g.rg_sleuth = false
-vim.g.rg_which_key = false
 vim.g.rg_yanky = true
 
 -- Plugin settings
