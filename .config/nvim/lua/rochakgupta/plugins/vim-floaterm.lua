@@ -16,8 +16,9 @@ return {
   end,
   config = function()
     vim.keymap.set('n', '<leader>st', ':Floaterms<CR>', { desc = 'Floaterm: Search terminals' })
-    vim.keymap.set('n', '<leader>o', ':FloatermNew --name=default --title=default<CR>', { desc = 'Floaterm: Open default terminal' })
+    vim.keymap.set('n', '<leader>o', ':FloatermNew --name=scratch --title=scratch<CR>', { desc = 'Floaterm: Open scratch terminal' })
     vim.keymap.set('n', '<leader>l', ':FloatermNew --name=lazygit --title=lazygit lazygit<CR>', { desc = 'Floaterm: Open lazygit' })
+    vim.keymap.set('n', '<leader>L', ':FloatermNew --name=lazygit-yadm --title=lazygit-yadm yadm enter lazygit<CR>', { desc = 'Floaterm: Open lazygit (yadm)' })
     vim.keymap.set('n', '<leader>v', ':FloatermNew --name=vifm --title=vifm vifm<CR>', { desc = 'Floaterm: Open vifm' })
     vim.keymap.set('t', '<C-t>', '<C-\\><C-n>:FloatermHide<CR>', { desc = 'Floaterm: Hide terminal' })
     vim.keymap.set('n', '<C-t>', ':FloatermShow<CR>', { desc = 'Floaterm: Show terminal' })
