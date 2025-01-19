@@ -3,5 +3,23 @@ return {
   version = '*',
   config = function()
     require('mini.bracketed').setup()
+
+    require('mini.operators').setup({
+      evaluate = {
+        prefix = '',
+      },
+      exchange = {
+        prefix = '<leader>e',
+      },
+      multiply = {
+        prefix = '',
+      },
+      replace = {
+        prefix = '<leader>r',
+      },
+      sort = {
+        prefix = '',
+      },
+    })
   end,
 }
