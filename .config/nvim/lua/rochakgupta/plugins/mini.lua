@@ -2,6 +2,8 @@ return {
   'echasnovski/mini.nvim',
   version = '*',
   config = function()
+    require('mini.align').setup()
+
     require('mini.bracketed').setup()
 
     require('mini.move').setup()
