@@ -6,6 +6,8 @@ return {
 
     require('mini.bracketed').setup()
 
+    require('mini.comment').setup()
+
     require('mini.move').setup()
 
     require('mini.operators').setup({
