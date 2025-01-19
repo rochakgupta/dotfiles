@@ -4,6 +4,8 @@ return {
   config = function()
     require('mini.bracketed').setup()
 
+    require('mini.move').setup()
+
     require('mini.operators').setup({
       evaluate = {
         prefix = '',
