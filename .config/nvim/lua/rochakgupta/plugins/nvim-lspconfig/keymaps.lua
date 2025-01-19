@@ -33,7 +33,7 @@ function M.init(bufnr)
     end
   end, 'Go to references')
 
-  nmap('gc', function()
+  nmap('gC', function()
     if vim.g.rg_telescope then
       require('telescope.builtin').lsp_incoming_calls({ show_line = false })
     else
