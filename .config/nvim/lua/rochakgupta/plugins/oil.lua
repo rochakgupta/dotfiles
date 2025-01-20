@@ -11,6 +11,7 @@ return {
     local window_h_int = math.floor(window_h)
 
     require('oil').setup({
+      default_file_explorer = false,
       columns = {},
       win_options = {
         number = true,
@@ -28,7 +29,7 @@ return {
         ['<C-s>'] = { 'actions.select', opts = { horizontal = true } },
         ['<C-\\>'] = { 'actions.select', opts = { vertical = true } },
         ['<C-p>'] = 'actions.preview',
-        ['<C-q>'] = { 'actions.close', mode = 'n' },
+        ['<leader>m'] = { 'actions.close', mode = 'n' },
         ['<C-l>'] = 'actions.refresh',
         ['H'] = { 'actions.parent', mode = 'n' },
         ['_'] = { 'actions.open_cwd', mode = 'n' },
@@ -50,6 +51,6 @@ return {
         },
       },
     })
-    vim.keymap.set('n', '-', require('oil').open_float, { desc = 'Oil: Open parent directory' })
+    vim.keymap.set('n', '<leader>m', require('oil').open_float, { desc = 'Oil: Open parent directory' })
   end,
 }
