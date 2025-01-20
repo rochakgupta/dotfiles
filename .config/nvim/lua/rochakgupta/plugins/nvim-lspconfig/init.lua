@@ -2,7 +2,14 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     'williamboman/mason-lspconfig.nvim', -- Configured in mason-lspconfig.lua
-    'hrsh7th/cmp-nvim-lsp',
+    {
+      'hrsh7th/cmp-nvim-lsp', -- Configured in nvim-cmp.lua
+      cond = vim.g.rg_nvim_cmp,
+    },
+    {
+      'saghen/blink.cmp', -- Configured in blink.lua
+      cond = vim.g.rg_blink,
+    },
     'SmiteshP/nvim-navic', -- Configured in nvim-navic.lua
     'SmiteshP/nvim-navbuddy', -- Configured in nvim-navbuddy.lua
     {

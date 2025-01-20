@@ -1,5 +1,6 @@
 return {
   'hrsh7th/nvim-cmp',
+  cond = vim.g.rg_nvim_cmp,
   dependencies = {
     'hrsh7th/cmp-nvim-lsp', -- Used and configured in nvim-lspconfig
     'hrsh7th/cmp-buffer',
@@ -20,7 +21,7 @@ return {
       enabled = function()
         -- Disable in buffers corresponding to telescope prompt
         -- Enable in nvim-dap buffers
-        return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt' or require('cmp_dap').is_dap_buffer()
+        return vim.api.nvim_get_option_value('buftype', { buf = 0 }) ~= 'prompt' or require('cmp_dap').is_dap_buffer()
       end,
       window = {
         completion = cmp.config.window.bordered({

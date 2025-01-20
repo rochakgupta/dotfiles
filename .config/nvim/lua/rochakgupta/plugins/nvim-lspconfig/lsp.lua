@@ -6,9 +6,13 @@ local on_attach = function(client, bufnr)
   -- client.server_capabilities.semanticTokensProvider = nil
 end
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local capabilities
+if vim.g.rg_nvim_cmp then
+  capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+else
+  capabilities = require('blink.cmp').get_lsp_capabilities()
+end
 
 local lsp_defaults = {
   capabilities = capabilities,

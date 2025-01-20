@@ -8,6 +8,8 @@ vim.g.rg_colorscheme = vim.g.rg_color
 vim.g.rg_transparent = false
 
 -- Plugins
+vim.g.rg_blink = vim.version().minor >= 10
+vim.g.rg_nvim_cmp = not vim.g.rg_blink
 vim.g.rg_telescope = false
 vim.g.rg_fzf_lua = not vim.g.rg_telescope
 vim.g.rg_fidget = false
