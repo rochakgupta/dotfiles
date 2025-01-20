@@ -30,6 +30,11 @@ return {
       dashboard.button('q', '  Quit', ':qa<CR>'),
     }
     alpha.setup(dashboard.config)
-    vim.keymap.set('n', '<leader>ga', ':Alpha<CR>', { desc = 'Alpha: Open dashboard' })
+
+    local cwd = vim.fn.getcwd()
+    vim.keymap.set('n', '<leader>ga', function()
+      vim.cmd('cd ' .. cwd)
+      vim.cmd('Alpha')
+    end, { desc = 'Alpha: Open dashboard' })
   end,
 }
