@@ -13,6 +13,11 @@ config.window_padding = {
 
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
+
 if native_fullscreen then
 	config.native_macos_fullscreen_mode = true
 end
