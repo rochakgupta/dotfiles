@@ -1,5 +1,39 @@
 local M = {}
 
+M.non_filetypes = { 'qf', 'NvimTree', 'oil', 'minifiles', 'Navbuddy', 'floaterm' }
+
+function M.delete_non_filetypes_buffers()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if M.is_table_value(M.non_filetypes, vim.bo[buf].filetype) then
+      vim.api.nvim_buf_delete(buf, { force = true })
+    end
+  end
+end
+
+function M.delete_buffers_without_files()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if not M.is_table_value(M.non_filetypes, vim.bo[buf].filetype) then
+      local filename = vim.api.nvim_buf_get_name(buf)
+      if filename == '' or vim.fn.filereadable(filename) == 0 then
+        vim.api.nvim_buf_delete(buf, { force = true })
+      end
+    end
+  end
+end
+
+function M.delete_buffers_outside_cwd()
+  local cwd = vim.fn.getcwd()
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if not M.is_table_value(M.non_filetypes, vim.bo[buf].filetype) then
+      local bufname = vim.api.nvim_buf_get_name(buf)
+      local bufpath = vim.fn.fnamemodify(bufname, ':p:h')
+      if not vim.startswith(bufpath, cwd) then
+        vim.api.nvim_buf_delete(buf, { force = true })
+      end
+    end
+  end
+end
+
 function M.get_project_root()
   local dir = vim.fs.dirname(vim.fs.find({ '.git' }, { path = vim.fn.expand('%:p:h'), upward = true })[1])
   if not dir then

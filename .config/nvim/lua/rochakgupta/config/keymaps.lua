@@ -1,3 +1,5 @@
+local utils = require('rochakgupta.utils')
+
 -- Remap space as leader key
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -55,3 +57,11 @@ vim.keymap.set('n', '*', '*zz', { desc = 'Go to next cursor match and center' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+
+-- Delete buffers backing files which:
+-- 1. Do not exist
+-- 2. Exist outside current working directory
+vim.keymap.set('n', '<leader>cb', function()
+  utils.delete_buffers_without_files()
+  utils.delete_buffers_outside_cwd()
+end, { desc = 'Cleanup Buffers' })
