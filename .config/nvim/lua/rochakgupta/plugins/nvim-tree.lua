@@ -68,8 +68,8 @@ return {
       },
     })
 
-    -- Close nvim-tree before saving session via persisted plugin as it has issues restoring it
     vim.api.nvim_create_autocmd({ 'User' }, {
+      desc = 'Close nvim-tree before saving session as it cannot be restored properly',
       pattern = 'PersistedSavePre',
       group = vim.api.nvim_create_augroup('PersistedHooks', { clear = true }),
       callback = function(_)

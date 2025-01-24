@@ -119,3 +119,6 @@ vim.o.tagbsearch = false
 
 -- Make jumplist behave like tagstack
 vim.o.jumpoptions = 'stack'
+
+-- What to store in session
+vim.o.sessionoptions = 'buffers,curdir,folds,globals,help,tabpages,winpos,winsize'

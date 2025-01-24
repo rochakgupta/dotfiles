@@ -18,6 +18,7 @@ return {
     }
     dashboard.section.buttons.val = {
       dashboard.button('i', '  New File', '<cmd>ene<CR>'),
+      dashboard.button('r', '  Restore Session', '<cmd>SessionLoad<CR>'),
       dashboard.button('b', '  Config: bat', ':cd ~/.config/bat<CR>:e ~/.config/bat/config<CR>'),
       dashboard.button('l', '  Config: lazygit', ':cd ~/.config/lazygit<CR>:e ~/.config/lazygit/config.yml<CR>'),
       dashboard.button('n', '  Config: neovim', ':cd ~/.config/nvim<CR>:e ~/.config/nvim/init.lua<CR>'),
