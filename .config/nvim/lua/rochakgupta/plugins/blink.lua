@@ -57,6 +57,11 @@ return {
         'path',
         'snippets',
       },
+      providers = {
+        lsp = {
+          fallbacks = {},
+        },
+      },
     },
   },
   opts_extend = { 'sources.default' },
