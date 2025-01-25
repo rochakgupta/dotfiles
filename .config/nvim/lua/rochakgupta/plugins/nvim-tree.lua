@@ -3,9 +3,6 @@ return {
   dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
-  keys = {
-    { '<leader>z', '<cmd>NvimTreeToggle<CR>', desc = 'NvimTree: Toggle' },
-  },
   init = function()
     -- vim.g.loaded_netrw = 1
     -- vim.g.loaded_netrwPlugin = 1
@@ -68,6 +65,7 @@ return {
       },
     })
 
+    vim.keymap.set('n', '<leader>z', '<cmd>NvimTreeToggle<CR>', { desc = 'NvimTree: Toggle' })
 
     vim.api.nvim_create_autocmd({ 'VimResized' }, {
       desc = 'Resize nvim-tree window when host window is resized',
