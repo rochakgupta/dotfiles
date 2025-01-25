@@ -1,7 +1,7 @@
 return {
   'SmiteshP/nvim-navbuddy',
   dependencies = {
-    'SmiteshP/nvim-navic', -- Configured in nvim-navic.lua
+    'SmiteshP/nvim-navic',
     'MunifTanjim/nui.nvim',
     {
       'nvim-telescope/telescope.nvim', -- Configured in telescope.lua

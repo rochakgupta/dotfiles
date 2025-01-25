@@ -1,3 +1,5 @@
+local utils = require('rochakgupta.utils')
+
 return {
   'nvim-lualine/lualine.nvim',
   cond = not vim.g.started_by_firenvim,
@@ -7,20 +9,21 @@ return {
       'linrongbin16/lsp-progress.nvim',
       cond = vim.g.rg_lsp_progress,
       opts = {
-        max_size = 50,
+        max_size = 100,
         client_format = function(client_name, _, series_messages)
           -- Overidden to remove spinner as it breaks lualine
-          return #series_messages > 0 and ('[' .. client_name .. '] ' .. table.concat(series_messages, ', ')) or nil
+          return #series_messages > 0 and ('[' .. client_name .. '] ' .. table.concat(series_messages, ' | ')) or nil
         end,
       },
     },
     'dhruvasagar/vim-zoom', -- Configured in vim-zoom.lua
-    'SmiteshP/nvim-navic', -- Configured in nvim-navic.lua
   },
   config = function()
     local filename = {
       'filename',
       path = 1,
+      -- Disable vim mode color changes
+      -- color = 'lualine_a_normal',
     }
 
     local tabs = {
@@ -31,10 +34,6 @@ return {
     local windows = {
       'windows',
       mode = 2,
-    }
-
-    local navic = {
-      'navic',
     }
 
     local sections_lualine_x = { 'encoding', 'fileformat', 'filetype' }
@@ -48,7 +47,10 @@ return {
       options = {
         icons_enabled = true,
         theme = vim.g.rg_colorscheme,
-        disabled_filetypes = { 'NvimTree' },
+        disabled_filetypes = {
+          statusline = utils.non_filetypes,
+          winbar = utils.non_filetypes,
+        },
         component_separators = '',
         section_separators = '',
       },
@@ -65,8 +67,8 @@ return {
         lualine_x = { 'location' },
       },
       tabline = {
-        lualine_a = { navic },
-        lualine_z = { windows },
+        lualine_a = { windows },
+        lualine_z = { tabs },
       },
     })
   end,
