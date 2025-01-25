@@ -68,14 +68,6 @@ return {
       },
     })
 
-    vim.api.nvim_create_autocmd({ 'User' }, {
-      desc = 'Close nvim-tree before saving session as it cannot be restored properly',
-      pattern = 'PersistedSavePre',
-      group = vim.api.nvim_create_augroup('PersistedHooks', { clear = true }),
-      callback = function(_)
-        vim.cmd('NvimTreeClose')
-      end,
-    })
 
     vim.api.nvim_create_autocmd({ 'VimResized' }, {
       desc = 'Resize nvim-tree window when host window is resized',
