@@ -27,11 +27,18 @@ return {
     completion = {
       menu = {
         border = vim.g.rg_border,
+        draw = {
+          columns = { { 'kind_icon' }, { 'label', 'label_description', 'source_name', gap = 1 } },
+        },
       },
       list = {
         selection = {
           preselect = false,
           auto_insert = true,
+        },
+        cycle = {
+          from_bottom = false,
+          from_top = false,
         },
       },
       documentation = {
@@ -47,6 +54,7 @@ return {
       enabled = true,
       window = {
         border = vim.g.rg_border,
+        direction_priority = { 's', 'n' },
       },
     },
 
@@ -57,6 +65,16 @@ return {
         'path',
         'snippets',
       },
+      cmdline = function()
+        local type = vim.fn.getcmdtype()
+        if type == '/' or type == '?' then
+          return { 'buffer' }
+        end
+        if type == ':' or type == '@' then
+          return { 'cmdline', 'buffer' }
+        end
+        return {}
+      end,
       providers = {
         lsp = {
           fallbacks = {},
