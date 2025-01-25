@@ -21,7 +21,7 @@ return {
       enabled = function()
         -- Disable in buffers corresponding to telescope prompt
         -- Enable in nvim-dap buffers
-        return vim.api.nvim_get_option_value('buftype', { buf = 0 }) ~= 'prompt' or require('cmp_dap').is_dap_buffer()
+        return vim.bo.buftype ~= 'prompt' or require('cmp_dap').is_dap_buffer()
       end,
       window = {
         completion = cmp.config.window.bordered({

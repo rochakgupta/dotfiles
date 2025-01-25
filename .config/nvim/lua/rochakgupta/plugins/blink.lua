@@ -6,7 +6,7 @@ return {
   opts = {
     enabled = function()
       -- Disable in buffers corresponding to telescope prompt
-      return vim.api.nvim_get_option_value('buftype', { buf = 0 }) ~= 'prompt'
+      return vim.bo.buftype ~= 'prompt'
     end,
     keymap = {
       preset = 'default',
