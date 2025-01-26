@@ -84,7 +84,7 @@ vim.o.guicursor = 'a:block'
 vim.o.cursorline = true
 
 -- Set scroll offset
-vim.o.scrolloff = 8
+vim.o.scrolloff = 999
 vim.o.sidescrolloff = 8
 
 -- Enable cursor column
