@@ -82,6 +82,18 @@ return {
       end,
     })
 
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniFilesBufferCreate',
+      callback = function(args)
+        vim.keymap.set('n', '<C-w>', function(path)
+          -- Works only if cursor is on the valid file system entry
+          local cur_entry_path = MiniFiles.get_fs_entry().path
+          local cur_directory = vim.fs.dirname(cur_entry_path)
+          vim.fn.chdir(cur_directory)
+        end, { buffer = args.data.buf_id })
+      end,
+    })
+
     require('mini.move').setup()
 
     require('mini.operators').setup({
