@@ -40,6 +40,10 @@ return {
         width_nofocus = 30,
         width_preview = 100,
       },
+      content = {
+        -- Disable icons
+        prefix = function() end,
+      },
     })
 
     vim.keymap.set('n', '<leader>x', function()
