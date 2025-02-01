@@ -27,6 +27,7 @@ return {
         ['<CR>'] = 'actions.select',
         ['L'] = 'actions.select',
         ['<C-s>'] = { 'actions.select', opts = { horizontal = true } },
+        ['<C-w>'] = { 'actions.cd' },
         ['<C-\\>'] = { 'actions.select', opts = { vertical = true } },
         ['<C-p>'] = 'actions.preview',
         ['<leader>m'] = { 'actions.close', mode = 'n' },
