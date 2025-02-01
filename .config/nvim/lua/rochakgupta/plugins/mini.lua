@@ -34,7 +34,7 @@ return {
         use_as_default_explorer = true,
       },
       windows = {
-        max_number = 3,
+        max_number = 2,
         preview = true,
         width_focus = 30,
         width_nofocus = 30,
