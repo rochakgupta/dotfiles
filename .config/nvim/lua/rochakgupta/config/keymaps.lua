@@ -26,16 +26,29 @@ vim.keymap.set('n', '<C-;>', '<C-W>+', { desc = 'Decrease size of window' })
 vim.keymap.set('n', "<C-'>", '<C-W>-', { desc = 'Increase size of window' })
 
 -- Quickfix/Location list keymaps
+local last_list_type = 'quickfix'
 vim.keymap.set('n', '<leader>q', function()
-  for _, win in pairs(vim.fn.getwininfo()) do
-    if win['loclist'] == 1 then
+  local windows = vim.fn.getwininfo()
+  for _, win in pairs(windows) do
+    if win.loclist == 1 then
       vim.cmd('lclose')
+      last_list_type = 'location'
       return
     end
-    if win['quickfix'] == 1 then
+    if win.quickfix == 1 then
       vim.cmd('cclose')
+      last_list_type = 'quickfix'
       return
     end
+  end
+
+  if last_list_type == 'location' and #vim.fn.getloclist(0) > 0 then
+    vim.cmd('lopen')
+    return
+  end
+  if last_list_type == 'quickfix' and #vim.fn.getqflist() > 0 then
+    vim.cmd('copen')
+    return
   end
 end, { desc = 'Close quickfix/location list' })
 
