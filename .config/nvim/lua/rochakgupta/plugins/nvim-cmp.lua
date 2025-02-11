@@ -10,7 +10,6 @@ return {
     'dcampos/nvim-snippy',
     'honza/vim-snippets',
     'dcampos/cmp-snippy',
-    'rcarriga/cmp-dap',
   },
   -- cond = not vim.g.started_by_firenvim,
   config = function()
@@ -20,8 +19,7 @@ return {
     cmp.setup({
       enabled = function()
         -- Disable in buffers corresponding to telescope prompt
-        -- Enable in nvim-dap buffers
-        return vim.bo.buftype ~= 'prompt' or require('cmp_dap').is_dap_buffer()
+        return vim.bo.buftype ~= 'prompt'
       end,
       window = {
         completion = cmp.config.window.bordered({
@@ -95,16 +93,6 @@ return {
           },
         },
       }),
-    })
-
-    cmp.setup.filetype({
-      'dap-repl',
-      'dapui_watches',
-      'dapui_hover',
-    }, {
-      sources = {
-        { name = 'dap' },
-      },
     })
   end,
 }
