@@ -87,6 +87,25 @@ return {
       diagnostics = {
         multiline = false,
       },
+      previewers = {
+        git_diff = {
+          pager = false,
+        },
+      },
+      git = {
+        status = {
+          preview_pager = false,
+        },
+        commits = {
+          preview_pager = false,
+        },
+        bcommits = {
+          preview_pager = false,
+        },
+        blame = {
+          preview_pager = false,
+        },
+      },
     }
     fzf_lua.setup(opts)
 
@@ -113,6 +132,28 @@ return {
     vim.keymap.set('n', '<leader>sw', fzf_lua.grep_cword, { desc = 'FzfLua: Search current word' })
     vim.keymap.set('n', '<leader>ss', fzf_lua.live_grep, { desc = 'FzfLua: Search something' })
     vim.keymap.set('v', '<leader>sv', fzf_lua.grep_visual, { desc = 'FzfLua: Search visual selection' })
+
+    local horizontal_preview_opts = {
+      winopts = {
+        preview = {
+          horizontal = 'right:50%',
+          layout = 'horizontal',
+        },
+      },
+    }
+
+    vim.keymap.set('n', '<leader>gs', function()
+      fzf_lua.git_status(horizontal_preview_opts)
+    end, { desc = 'FzfLua: Git status' })
+    vim.keymap.set('n', '<leader>gc', function()
+      fzf_lua.git_commits(horizontal_preview_opts)
+    end, { desc = 'FzfLua: Git commits' })
+    vim.keymap.set('n', '<leader>gg', function()
+      fzf_lua.git_bcommits(horizontal_preview_opts)
+    end, { desc = 'FzfLua: Git buffer commits' })
+    vim.keymap.set({ 'n', 'v' }, '<leader>gb', function()
+      fzf_lua.git_blame(horizontal_preview_opts)
+    end, { desc = 'FzfLua: Git blame' })
 
     -- Harpoon
     vim.keymap.set('n', '<leader>hs', function()

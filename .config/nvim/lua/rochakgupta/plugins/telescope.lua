@@ -49,7 +49,12 @@ return {
         layout_config = {
           width = 0.9,
           prompt_position = 'top',
-          preview_height = 0.5,
+          horizontal = {
+            preview_width = 0.5,
+          },
+          vertical = {
+            preview_height = 0.5,
+          },
         },
         scroll_strategy = 'limit',
         -- path_display = {
@@ -81,7 +86,15 @@ return {
             },
           },
         },
-        diagnostics = { layout_strategy = 'vertical' },
+        git_status = {
+          layout_strategy = 'horizontal',
+        },
+        git_commits = {
+          layout_strategy = 'horizontal',
+        },
+        git_bcommits = {
+          layout_strategy = 'horizontal',
+        },
       },
       extensions = {
         live_grep_args = {
@@ -137,6 +150,10 @@ return {
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = 'Telescope: Search current word' })
       vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = 'Telescope: Search something' })
     end
+
+    vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Telescope: Git status' })
+    vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'Telescope: Git commits' })
+    vim.keymap.set('n', '<leader>gg', builtin.git_bcommits, { desc = 'Telescope: Git buffer commits' })
 
     -- Harpoon
     vim.keymap.set('n', '<leader>hs', function()
