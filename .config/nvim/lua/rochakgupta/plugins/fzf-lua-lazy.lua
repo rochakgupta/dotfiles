@@ -14,6 +14,6 @@ return {
         change_cwd_to_plugin = 'ctrl-w',
       },
     })
-    vim.keymap.set('n', '<leader>sl', require('fzf-lua-lazy').search, { desc = 'FzfLua + Lazy: Search plugins' })
+    vim.keymap.set('n', '<leader>sp', require('fzf-lua-lazy').search, { desc = 'FzfLua + Lazy: Search plugins' })
   end,
 }
