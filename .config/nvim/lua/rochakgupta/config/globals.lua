@@ -16,6 +16,7 @@ vim.g.rg_fidget = false
 vim.g.rg_lsp_progress = true
 vim.g.rg_gitlinker = true
 vim.g.rg_indent_blankline = true
+vim.g.rg_snacks_indent = not vim.g.rg_indent_blankline
 vim.g.rg_sleuth = false
 vim.g.rg_yanky = true
 
