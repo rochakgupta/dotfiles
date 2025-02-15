@@ -21,10 +21,6 @@ return {
         },
       },
     },
-    {
-      'folke/neodev.nvim', -- TODO: Switch to folke/lazydev.nvim for Neovim >= v0.10.0
-      opts = {},
-    },
     'mfussenegger/nvim-jdtls',
     'b0o/schemastore.nvim',
   },
