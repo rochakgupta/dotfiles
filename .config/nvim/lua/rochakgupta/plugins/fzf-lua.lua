@@ -64,7 +64,7 @@ return {
           --   oldfiles, quickfix, loclist, tags, btags
           --   args
           false, -- do not inherit from defaults,
-          ['default'] = actions.file_edit_or_qf,
+          ['enter'] = actions.file_edit_or_qf,
           ['ctrl-s'] = actions.file_split,
           ['ctrl-v'] = actions.file_vsplit,
           ['ctrl-q'] = actions.file_edit_or_qf,
@@ -73,7 +73,7 @@ return {
           false, -- do not inherit from defaults
           -- providers that inherit these actions:
           --   buffers, tabs, lines, blines
-          ['default'] = actions.buf_edit_or_qf,
+          ['enter'] = actions.buf_edit_or_qf,
           ['ctrl-s'] = actions.buf_split,
           ['ctrl-v'] = actions.buf_vsplit,
           ['ctrl-g'] = {
