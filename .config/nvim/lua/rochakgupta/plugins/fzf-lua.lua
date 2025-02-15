@@ -112,7 +112,6 @@ return {
     fzf_lua.register_ui_select()
 
     vim.keymap.set('n', '<leader>?', fzf_lua.oldfiles, { desc = 'FzfLua: Search recently opened files' })
-    vim.keymap.set('n', '<leader>/', fzf_lua.lgrep_curbuf, { desc = 'FzfLua: Search in current buffer' })
     vim.keymap.set('n', '<leader>sa', function()
       fzf_lua.files({
         find_opts = [[-type f -printf '%P\n']],
@@ -124,36 +123,23 @@ return {
     vim.keymap.set('n', '<leader>sg', fzf_lua.git_files, { desc = 'FzfLua: Search git files' })
     vim.keymap.set('n', '<leader>sb', fzf_lua.buffers, { desc = 'FzfLua: Search buffers' })
     vim.keymap.set('n', '<leader>sq', fzf_lua.quickfix, { desc = 'FzfLua: Search quickfix' })
+    vim.keymap.set('n', '<leader>sl', fzf_lua.loclist, { desc = 'FzfLua: Search location list' })
     vim.keymap.set('n', '<leader>sh', fzf_lua.helptags, { desc = 'FzfLua: Search help' })
     vim.keymap.set('n', '<leader>sd', fzf_lua.diagnostics_workspace, { desc = 'FzfLua: Search diagnostics' })
     vim.keymap.set('n', '<leader>sr', fzf_lua.resume, { desc = 'FzfLua: Search resume' })
     vim.keymap.set('n', '<leader>sk', fzf_lua.keymaps, { desc = 'FzfLua: Search keymaps' })
     vim.keymap.set('n', '<leader>sc', fzf_lua.commands, { desc = 'FzfLua: Search commands' })
+    vim.keymap.set('n', '<leader>:', fzf_lua.command_history, { desc = 'FzfLua: Search command history' })
     vim.keymap.set('n', '<leader>sw', fzf_lua.grep_cword, { desc = 'FzfLua: Search current word' })
-    vim.keymap.set('n', '<leader>ss', fzf_lua.live_grep, { desc = 'FzfLua: Search something' })
     vim.keymap.set('v', '<leader>sv', fzf_lua.grep_visual, { desc = 'FzfLua: Search visual selection' })
-
-    local horizontal_preview_opts = {
-      winopts = {
-        preview = {
-          horizontal = 'right:50%',
-          layout = 'horizontal',
-        },
-      },
-    }
-
-    vim.keymap.set('n', '<leader>gs', function()
-      fzf_lua.git_status(horizontal_preview_opts)
-    end, { desc = 'FzfLua: Git status' })
-    vim.keymap.set('n', '<leader>gc', function()
-      fzf_lua.git_commits(horizontal_preview_opts)
-    end, { desc = 'FzfLua: Git commits' })
-    vim.keymap.set('n', '<leader>gg', function()
-      fzf_lua.git_bcommits(horizontal_preview_opts)
-    end, { desc = 'FzfLua: Git buffer commits' })
-    vim.keymap.set({ 'n', 'v' }, '<leader>gb', function()
-      fzf_lua.git_blame(horizontal_preview_opts)
-    end, { desc = 'FzfLua: Git blame' })
+    vim.keymap.set('n', '<leader>ss', fzf_lua.live_grep, { desc = 'FzfLua: Search something' })
+    vim.keymap.set('n', '<leader>/', fzf_lua.lgrep_curbuf, { desc = 'FzfLua: Search in current buffer' })
+    vim.keymap.set('n', '<leader>sj', fzf_lua.jumps, { desc = 'FzfLua: Search jumps' })
+    vim.keymap.set('n', '<leader>sm', fzf_lua.manpages, { desc = 'FzfLua: Search manpages' })
+    vim.keymap.set('n', '<leader>gs', fzf_lua.git_status, { desc = 'FzfLua: Search git status' })
+    vim.keymap.set('n', '<leader>gc', fzf_lua.git_commits, { desc = 'FzfLua: Search git commits' })
+    vim.keymap.set('n', '<leader>gg', fzf_lua.git_bcommits, { desc = 'FzfLua: Search buffer commits' })
+    vim.keymap.set({ 'n', 'v' }, '<leader>gb', fzf_lua.git_blame, { desc = 'FzfLua: Search git blame' })
 
     -- Harpoon
     vim.keymap.set('n', '<leader>hs', function()
