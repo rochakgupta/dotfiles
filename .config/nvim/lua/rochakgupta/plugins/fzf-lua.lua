@@ -86,6 +86,11 @@ return {
       diagnostics = {
         multiline = false,
       },
+      lsp = {
+        code_actions = {
+          previewer = false,
+        },
+      },
       previewers = {
         git_diff = {
           pager = false,
