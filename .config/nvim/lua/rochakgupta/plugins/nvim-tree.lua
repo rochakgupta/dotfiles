@@ -3,10 +3,7 @@ return {
   dependencies = {
     'nvim-tree/nvim-web-devicons',
   },
-  init = function()
-    -- vim.g.loaded_netrw = 1
-    -- vim.g.loaded_netrwPlugin = 1
-  end,
+  cond = vim.g.rg_nvim_tree,
   config = function()
     local get_width = function()
       local width_ratio = 0.25

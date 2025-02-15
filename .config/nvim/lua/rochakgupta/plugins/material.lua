@@ -29,7 +29,6 @@ return {
         'nvim-cmp',
         'nvim-tree',
         'nvim-web-devicons',
-        'telescope',
       },
       disable = {
         colored_cursor = true,

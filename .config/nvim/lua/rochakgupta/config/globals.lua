@@ -10,13 +10,20 @@ vim.g.rg_transparent = false
 -- Plugins
 vim.g.rg_blink = vim.version().minor >= 10
 vim.g.rg_nvim_cmp = not vim.g.rg_blink
-vim.g.rg_telescope = false
-vim.g.rg_fzf_lua = not vim.g.rg_telescope
+
+vim.g.rg_fzf_lua = true
+vim.g.rg_snacks_picker = not vim.g.rg_fzf_lua
+
+vim.g.rg_nvim_tree = true
+vim.g.rg_snacks_explorer = not vim.g.rg_nvim_tree
+
 vim.g.rg_fidget = false
 vim.g.rg_lsp_progress = true
-vim.g.rg_gitlinker = true
+
 vim.g.rg_indent_blankline = true
 vim.g.rg_snacks_indent = not vim.g.rg_indent_blankline
+
+vim.g.rg_gitlinker = true
 vim.g.rg_sleuth = false
 vim.g.rg_yanky = true
 

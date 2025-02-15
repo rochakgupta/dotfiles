@@ -17,10 +17,6 @@ return {
     local snippy = require('snippy')
 
     cmp.setup({
-      enabled = function()
-        -- Disable in buffers corresponding to telescope prompt
-        return vim.bo.buftype ~= 'prompt'
-      end,
       window = {
         completion = cmp.config.window.bordered({
           border = vim.g.rg_border,

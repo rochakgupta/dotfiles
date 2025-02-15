@@ -1,6 +1,5 @@
 return {
   'roginfarrer/fzf-lua-lazy.nvim',
-  cond = vim.g.rg_fzf_lua,
   dependencies = {
     'ibhagwan/fzf-lua',
   },

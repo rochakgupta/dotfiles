@@ -13,65 +13,63 @@ function M.init(bufnr)
   nmap('<leader>ca', vim.lsp.buf.code_action, 'Code action')
 
   nmap('gd', function()
-    if vim.g.rg_telescope then
-      require('telescope.builtin').lsp_definitions({ show_line = false })
-    else
+    if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_definitions({
         jump_to_single_result = true,
       })
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_definitions()
     end
   end, 'Go to definition')
 
   nmap('gr', function()
-    if vim.g.rg_telescope then
-      require('telescope.builtin').lsp_references({ show_line = false })
-    else
+    if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_references({
         jump_to_single_result = true,
         includeDeclaration = false,
       })
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_references()
     end
   end, 'Go to references')
 
-  nmap('gC', function()
-    if vim.g.rg_telescope then
-      require('telescope.builtin').lsp_incoming_calls({ show_line = false })
-    else
+  if vim.g.rg_fzf_lua then
+    nmap('gC', function()
       require('fzf-lua').lsp_incoming_calls()
-    end
-  end, 'Go to incoming calls')
+    end, 'Go to incoming calls')
+  end
 
   nmap('gi', function()
-    if vim.g.rg_telescope then
-      require('telescope.builtin').lsp_implementations({ show_line = false })
-    else
+    if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_implementations({
         jump_to_single_result = true,
       })
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_implementations()
     end
   end, 'Go to implementation')
 
   nmap('gt', function()
-    if vim.g.rg_telescope then
-      require('telescope.builtin').lsp_type_definitions({ show_line = false })
-    else
+    if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_typedefs()
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_type_definitions()
     end
   end, 'Go to type definition')
 
   nmap('<leader>ds', function()
-    if vim.g.rg_telescope then
-      require('telescope.builtin').lsp_document_symbols({ symbol_width = 75 })
-    else
+    if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_document_symbols()
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_symbols()
     end
   end, 'Document symbols')
 
   nmap('<leader>ws', function()
-    if vim.g.rg_telescope then
-      require('telescope.builtin').lsp_dynamic_workspace_symbols()
-    else
+    if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_live_workspace_symbols()
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_workspace_symbols()
     end
   end, 'Workspace symbols')
 

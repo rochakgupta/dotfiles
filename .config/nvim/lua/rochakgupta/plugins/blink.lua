@@ -4,10 +4,6 @@ return {
   dependencies = 'rafamadriz/friendly-snippets',
   version = '*',
   opts = {
-    enabled = function()
-      -- Disable in buffers corresponding to telescope prompt
-      return vim.bo.buftype ~= 'prompt'
-    end,
     keymap = {
       preset = 'default',
       ['<Tab>'] = {},
