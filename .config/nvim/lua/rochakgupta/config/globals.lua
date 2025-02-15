@@ -11,7 +11,7 @@ vim.g.rg_transparent = false
 vim.g.rg_blink = vim.version().minor >= 10
 vim.g.rg_nvim_cmp = not vim.g.rg_blink
 
-vim.g.rg_fzf_lua = true
+vim.g.rg_fzf_lua = false
 vim.g.rg_snacks_picker = not vim.g.rg_fzf_lua
 
 vim.g.rg_nvim_tree = true
