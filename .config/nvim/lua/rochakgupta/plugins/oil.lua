@@ -11,7 +11,7 @@ return {
     local window_h_int = math.floor(window_h)
 
     require('oil').setup({
-      default_file_explorer = false,
+      default_file_explorer = true,
       columns = {},
       win_options = {
         number = true,
