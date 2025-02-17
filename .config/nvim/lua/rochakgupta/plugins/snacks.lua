@@ -116,7 +116,7 @@ return {
     })
 
     if vim.g.rg_snacks_explorer then
-      vim.keymap.set('n', '<leader>z', require('snacks.picker').explorer, { desc = 'Snacks: Toggle explorer' })
+      vim.keymap.set('n', '<leader>x', require('snacks.picker').explorer, { desc = 'Snacks: Toggle explorer' })
     end
 
     if vim.g.rg_snacks_picker then

@@ -1,6 +1,14 @@
 local M = {}
 
-M.non_filetypes = { 'qf', 'NvimTree', 'oil', 'minifiles', 'Navbuddy', 'floaterm' }
+M.non_filetypes = {
+  'Navbuddy',
+  'NvimTree',
+  'floaterm',
+  'oil',
+  'qf',
+  'snacks_layout_box',
+  'snacks_picker_list',
+}
 
 function M.delete_non_filetypes_buffers()
   for _, buf in ipairs(vim.api.nvim_list_bufs()) do
