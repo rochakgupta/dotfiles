@@ -4,6 +4,8 @@ local native_fullscreen = false
 
 local config = wezterm.config_builder()
 
+config.max_fps = 120
+
 config.window_padding = {
 	left = "0",
 	right = "0",
