@@ -61,7 +61,15 @@ return {
         'path',
         'snippets',
       },
-      cmdline = function()
+      providers = {
+        lsp = {
+          fallbacks = {},
+        },
+      },
+    },
+
+    cmdline = {
+      sources = function()
         local type = vim.fn.getcmdtype()
         if type == '/' or type == '?' then
           return { 'buffer' }
@@ -71,11 +79,6 @@ return {
         end
         return {}
       end,
-      providers = {
-        lsp = {
-          fallbacks = {},
-        },
-      },
     },
   },
   opts_extend = { 'sources.default' },
