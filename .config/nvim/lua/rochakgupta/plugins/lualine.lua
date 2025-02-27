@@ -2,7 +2,7 @@ local utils = require('rochakgupta.utils')
 
 return {
   'nvim-lualine/lualine.nvim',
-  cond = not vim.g.started_by_firenvim,
+  cond = vim.g.rg_lualine,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
     {

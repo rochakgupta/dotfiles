@@ -38,7 +38,7 @@ return {
 
     require('snacks').setup({
       indent = {
-        enabled = vim.g.rg_snacks_indent and not vim.g.started_by_firenvim,
+        enabled = vim.g.rg_snacks_indent,
         animate = {
           enabled = false,
         },

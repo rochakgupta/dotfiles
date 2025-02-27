@@ -6,6 +6,7 @@ return {
       opts = {},
     },
   },
+  cond = vim.g.rg_gitsigns,
   opts = {
     signs = {
       add = { text = '+' },

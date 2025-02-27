@@ -11,7 +11,6 @@ return {
     'honza/vim-snippets',
     'dcampos/cmp-snippy',
   },
-  -- cond = not vim.g.started_by_firenvim,
   config = function()
     local cmp = require('cmp')
     local snippy = require('snippy')
