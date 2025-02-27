@@ -49,6 +49,9 @@ return {
       },
       picker = {
         enabled = vim.g.rg_snacks_picker or vim.g.rg_snacks_explorer,
+        matcher = {
+          fuzzy = false,
+        },
         layout = {
           preset = 'dropdown',
           layout = {
