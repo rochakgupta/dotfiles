@@ -7,7 +7,7 @@ return {
 
     local explorer_float_layout = {
       preset = 'default',
-      preview = false,
+      preview = true,
       layout = {
         width = 0.9,
         height = 0.9,
