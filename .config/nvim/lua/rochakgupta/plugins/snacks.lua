@@ -76,6 +76,9 @@ return {
           },
         },
         formatters = {
+          file = {
+            truncate = 1000,
+          },
           selected = {
             show_always = true,
             unselected = false,
