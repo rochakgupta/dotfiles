@@ -85,6 +85,13 @@ return {
           },
         },
         sources = {
+          select = {
+            layout = {
+              layout = {
+                min_height = 25,
+              },
+            },
+          },
           explorer = {
             hidden = true,
             auto_close = explorer_float,
