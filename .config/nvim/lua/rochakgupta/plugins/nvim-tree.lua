@@ -4,6 +4,14 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   cond = vim.g.rg_nvim_tree,
+  cmd = 'NvimTreeToggle',
+  keys = {
+    {
+      '<leader>z',
+      '<cmd>NvimTreeToggle<CR>',
+      desc = 'NvimTree: Toggle',
+    },
+  },
   config = function()
     local get_width = function()
       local width_ratio = 0.25
@@ -61,8 +69,6 @@ return {
         },
       },
     })
-
-    vim.keymap.set('n', '<leader>x', '<cmd>NvimTreeToggle<CR>', { desc = 'NvimTree: Toggle' })
 
     vim.api.nvim_create_autocmd({ 'VimResized' }, {
       desc = 'Resize nvim-tree window when host window is resized',

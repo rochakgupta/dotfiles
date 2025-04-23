@@ -17,8 +17,8 @@ vim.g.rg_fzf_lua = false
 vim.g.rg_snacks_picker = not vim.g.rg_fzf_lua
 
 -- Explorer
-vim.g.rg_nvim_tree = false
-vim.g.rg_snacks_explorer = not vim.g.rg_nvim_tree
+vim.g.rg_nvim_tree = true
+vim.g.rg_snacks_explorer = true
 
 -- Progress
 vim.g.rg_fidget = false
