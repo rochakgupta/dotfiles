@@ -15,7 +15,7 @@ return {
         imageFormat = 'svg',
       },
     }
-    vim.g.mkdp_browser = '/Applications/Google Chrome.app'
+    vim.g.mkdp_browser = '/Applications/Firefox.app'
     vim.g.mkdp_filetypes = { 'markdown', 'plantuml' }
     vim.g.mkdp_echo_preview_url = 1
     -- vim.g.mkdp_theme = 'light'
