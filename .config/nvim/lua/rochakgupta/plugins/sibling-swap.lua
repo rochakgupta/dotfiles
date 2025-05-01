@@ -3,11 +3,25 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
   },
+  keys = {
+    {
+      '<leader>A',
+      function()
+        require('sibling-swap').swap_with_left()
+      end,
+      desc = 'SiblingSwap: Swap with left sibling',
+    },
+    {
+      '<leader>a',
+      function()
+        require('sibling-swap').swap_with_right()
+      end,
+      desc = 'SiblingSwap: Swap with right sibling',
+    },
+  },
   config = function()
     require('sibling-swap').setup({
       use_default_keymaps = false,
     })
-    vim.keymap.set('n', '<leader>A', require('sibling-swap').swap_with_left, { desc = 'SiblingSwap: Swap with left sibling' })
-    vim.keymap.set('n', '<leader>a', require('sibling-swap').swap_with_right, { desc = 'SiblingSwap: Swap with right sibling' })
   end,
 }
