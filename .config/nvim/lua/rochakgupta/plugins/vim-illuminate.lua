@@ -1,5 +1,6 @@
 return {
   'RRethy/vim-illuminate',
+  cond = vim.g.rg_illuminate,
   config = function()
     require('illuminate').configure({
       providers = {

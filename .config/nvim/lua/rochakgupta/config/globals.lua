@@ -28,6 +28,10 @@ vim.g.rg_lsp_progress = true
 vim.g.rg_indent_blankline = vim.g.rg_not_started_by_firenvim
 vim.g.rg_snacks_indent = vim.g.rg_not_started_by_firenvim and not vim.g.rg_indent_blankline
 
+-- Illuminate
+vim.g.rg_illuminate = false
+vim.g.rg_snacks_words = not vim.g.rg_illuminate
+
 -- Others
 vim.g.rg_gitlinker = true
 vim.g.rg_gitsigns = vim.g.rg_not_started_by_firenvim -- Buggy and not needed in firenvim, so disabling

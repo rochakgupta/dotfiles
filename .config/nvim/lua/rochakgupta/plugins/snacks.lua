@@ -37,15 +37,15 @@ return {
     }
 
     require('snacks').setup({
+      explorer = {
+        enabled = vim.g.rg_snacks_explorer,
+        replace_netrw = false,
+      },
       indent = {
         enabled = vim.g.rg_snacks_indent,
         animate = {
           enabled = false,
         },
-      },
-      explorer = {
-        enabled = vim.g.rg_snacks_explorer,
-        replace_netrw = false,
       },
       picker = {
         enabled = vim.g.rg_snacks_picker or vim.g.rg_snacks_explorer,
@@ -126,6 +126,9 @@ return {
           },
         },
       },
+      words = {
+        enabled = vim.g.rg_snacks_words,
+      },
     })
 
     if vim.g.rg_snacks_explorer then
@@ -174,6 +177,15 @@ return {
       vim.keymap.set('n', '<leader>gg', require('snacks.picker').git_log_file, { desc = 'Snacks: Search git log for file' })
       vim.keymap.set('n', '<leader>gb', require('snacks.picker').git_log_line, { desc = 'Snacks: Search git log for line' })
       vim.keymap.set('n', '<leader>gd', require('snacks.picker').git_diff, { desc = 'Snacks: Search git diff' })
+    end
+
+    if vim.g.rg_snacks_words then
+      vim.keymap.set({ 'n', 't' }, ']r', function()
+        require('snacks.words').jump(vim.v.count1)
+      end, { desc = 'Snacks: Go to next word' })
+      vim.keymap.set({ 'n', 't' }, '[r', function()
+        require('snacks.words').jump(-vim.v.count1)
+      end, { desc = 'Snacks: Go to prev word' })
     end
   end,
 }
