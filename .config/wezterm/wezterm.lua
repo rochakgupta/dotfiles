@@ -68,5 +68,13 @@ config.keys = {
 		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
 }
+-- CTRL + number to activate that tab
+for i = 1, 9 do
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = "CTRL",
+		action = wezterm.action.ActivateTab(i - 1),
+	})
+end
 
 return config
