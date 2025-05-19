@@ -20,6 +20,16 @@ function M.init(bufnr)
     elseif vim.g.rg_snacks_picker then
       require('snacks.picker').lsp_definitions()
     end
+  end, 'Go to definition (direct)')
+
+  nmap('gD', function()
+    if vim.g.rg_fzf_lua then
+      require('fzf-lua').lsp_definitions()
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_definitions({
+        auto_confirm = false,
+      })
+    end
   end, 'Go to definition')
 
   nmap('gr', function()
@@ -29,15 +39,24 @@ function M.init(bufnr)
         includeDeclaration = false,
       })
     elseif vim.g.rg_snacks_picker then
-      require('snacks.picker').lsp_references()
+      require('snacks.picker').lsp_references({
+        include_declaration = false,
+      })
+    end
+  end, 'Go to references (direct)')
+
+  nmap('gR', function()
+    if vim.g.rg_fzf_lua then
+      require('fzf-lua').lsp_references({
+        includeDeclaration = false,
+      })
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_references({
+        auto_confirm = false,
+        include_declaration = false,
+      })
     end
   end, 'Go to references')
-
-  if vim.g.rg_fzf_lua then
-    nmap('gC', function()
-      require('fzf-lua').lsp_incoming_calls()
-    end, 'Go to incoming calls')
-  end
 
   nmap('gi', function()
     if vim.g.rg_fzf_lua then
@@ -47,13 +66,35 @@ function M.init(bufnr)
     elseif vim.g.rg_snacks_picker then
       require('snacks.picker').lsp_implementations()
     end
+  end, 'Go to implementation (direct)')
+
+  nmap('gI', function()
+    if vim.g.rg_fzf_lua then
+      require('fzf-lua').lsp_implementations()
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_implementations({
+        auto_confirm = false,
+      })
+    end
   end, 'Go to implementation')
 
   nmap('gt', function()
     if vim.g.rg_fzf_lua then
-      require('fzf-lua').lsp_typedefs()
+      require('fzf-lua').lsp_typedefs({
+        jump_to_single_result = true,
+      })
     elseif vim.g.rg_snacks_picker then
       require('snacks.picker').lsp_type_definitions()
+    end
+  end, 'Go to type definition (direct)')
+
+  nmap('gT', function()
+    if vim.g.rg_fzf_lua then
+      require('fzf-lua').lsp_typedefs()
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_type_definitions({
+        auto_confirm = false,
+      })
     end
   end, 'Go to type definition')
 
@@ -76,9 +117,6 @@ function M.init(bufnr)
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-
-  -- Lesser used LSP functionality
-  nmap('gD', vim.lsp.buf.declaration, 'Go to declaration')
 
   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add workspace folder')
   nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove workspace folder')
