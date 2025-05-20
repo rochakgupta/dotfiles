@@ -25,6 +25,9 @@ vim.keymap.set('n', '<C-/>', '<C-w>>', { desc = 'Increase size of window' })
 vim.keymap.set('n', '<C-;>', '<C-W>+', { desc = 'Decrease size of window' })
 vim.keymap.set('n', "<C-'>", '<C-W>-', { desc = 'Increase size of window' })
 
+-- Keymap to toggle line numbers
+vim.keymap.set('n', '<C-g>', ':set number! relativenumber!<CR>', { desc = 'Toggle line numbers' })
+
 -- Quickfix/Location list keymaps
 local last_list_type = 'quickfix'
 vim.keymap.set('n', '<leader>q', function()
