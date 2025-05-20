@@ -13,6 +13,12 @@ return {
     vim.g.floaterm_opener = 'edit'
     vim.g.floaterm_autohide = 2
     vim.g.floaterm_giteditor = false
+    vim.g.floatterm_fzf_layout = {
+      window = {
+        width = 0.5,
+        height = 0.5,
+      },
+    }
   end,
   config = function()
     vim.keymap.set('n', '<leader>st', ':Floaterms<CR>', { desc = 'Floaterm: Search terminals' })
