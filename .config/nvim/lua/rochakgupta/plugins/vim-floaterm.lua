@@ -33,5 +33,6 @@ return {
     vim.keymap.set('t', '<C-x>', '<C-\\><C-n>:FloatermKill<CR>', { desc = 'Floaterm: Kill terminal' })
     vim.keymap.set('n', '<C-x>', ':FloatermKill!<CR>', { desc = 'Floaterm: Kill all terminals' })
     vim.keymap.set('t', '<C-g>', '<C-\\><C-n>:set number! relativenumber!<CR>A', { desc = 'Floaterm: Toggle line numbers' })
+    vim.keymap.set('t', '<C-Space>', '<C-\\><C-n>', { desc = 'Floaterm: Enter normal mode' })
   end,
 }
