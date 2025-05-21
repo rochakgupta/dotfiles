@@ -28,6 +28,8 @@ return {
     vim.keymap.set('n', '<leader>v', ':FloatermNew --name=vifm --title=vifm vifm<CR>', { desc = 'Floaterm: Open vifm' })
     vim.keymap.set('t', '<C-t>', '<C-\\><C-n>:FloatermHide<CR>', { desc = 'Floaterm: Hide terminal' })
     vim.keymap.set('n', '<C-t>', ':FloatermShow<CR>', { desc = 'Floaterm: Show terminal' })
+    vim.keymap.set('t', '<C-]>', '<C-\\><C-n>:FloatermNext<CR>', { desc = 'Floaterm: Next terminal' })
+    vim.keymap.set('t', '<C-[>', '<C-\\><C-n>:FloatermPrev<CR>', { desc = 'Floaterm: Previous terminal' })
     vim.keymap.set('t', '<C-x>', '<C-\\><C-n>:FloatermKill<CR>', { desc = 'Floaterm: Kill terminal' })
     vim.keymap.set('n', '<C-x>', ':FloatermKill!<CR>', { desc = 'Floaterm: Kill all terminals' })
   end,
