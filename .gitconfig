@@ -14,6 +14,8 @@
 	rebase = true
 [merge]
     conflictstyle = zdiff3
+[diff]
+    algorithm = histogram
 [interactive]
 	diffFilter = diff-so-fancy --patch
 [color "diff-highlight"]
