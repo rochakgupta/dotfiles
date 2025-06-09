@@ -19,12 +19,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Keymaps to resize windows
-vim.keymap.set('n', '<C-.>', '<C-w><', { desc = 'Decrease size of window' })
-vim.keymap.set('n', '<C-/>', '<C-w>>', { desc = 'Increase size of window' })
-vim.keymap.set('n', '<C-;>', '<C-W>+', { desc = 'Decrease size of window' })
-vim.keymap.set('n', "<C-'>", '<C-W>-', { desc = 'Increase size of window' })
-
 -- Keymap to toggle line numbers
 vim.keymap.set('n', '<C-g>', ':set number! relativenumber!<CR>', { desc = 'Toggle line numbers' })
 
