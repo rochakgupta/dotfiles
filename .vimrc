@@ -115,7 +115,6 @@ endfunction
 " Colorschemes
 Plug 'sainnhe/gruvbox-material', Cond(rg_colorscheme == 'gruvbox')
 Plug 'kaicataldo/material.vim', Cond(rg_colorscheme == 'material', { 'branch': 'main' })
-Plug 'sainnhe/sonokai', Cond(rg_colorscheme == 'sonokai')
 Plug 'ghifarit53/tokyonight-vim', Cond(rg_colorscheme == 'tokyonight')
 
 " Status line
@@ -218,16 +217,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if rg_colorscheme == 'material'
   let g:material_theme_style = 'ocean'
-
-  let rg_airline_theme = rg_colorscheme
-endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" sonokai
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if rg_colorscheme == 'sonokai'
-  let g:sonokai_better_performance = 1
-  let g:sonokai_transparent_background = rg_transparent ? 2 : 0
 
   let rg_airline_theme = rg_colorscheme
 endif
