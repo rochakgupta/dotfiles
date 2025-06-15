@@ -35,14 +35,18 @@ end)
 
 config.audible_bell = "Disabled"
 
-config.font_size = 12
-local fonts = {
-	"JetbrainsMono",
-	"SauceCodePro",
-}
+local font = ({
+	{ family = "FiraMono", size = 12, weight = "Regular" },
+	{ family = "JetbrainsMono", size = 12, weight = "DemiBold" },
+	{ family = "Mononoki", size = 12.5, weight = "DemiBold" },
+	{ family = "SauceCodePro", size = 12, weight = "DemiBold" },
+	{ family = "UbuntuMono", size = 14, weight = "Regular" },
+})[4]
+
+config.font_size = font.size
 config.font = wezterm.font({
-	family = fonts[2] .. " Nerd Font Mono",
-	weight = "DemiBold",
+	family = font.family .. " Nerd Font Mono",
+	weight = font.weight,
 })
 -- Disable ligatures
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
