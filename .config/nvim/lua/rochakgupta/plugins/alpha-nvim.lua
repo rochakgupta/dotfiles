@@ -19,6 +19,7 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button('i', '  New File', '<cmd>ene<CR>'),
       dashboard.button('r', '  Restore Session', ':lua require("persistence").load()<CR>'),
+      dashboard.button('a', '  Config: aerospace', ':cd ~/.config/aerospace<CR>:e aerospace.toml<CR>'),
       dashboard.button('b', '  Config: bat', ':cd ~/.config/bat<CR>:e config<CR>'),
       dashboard.button('l', '  Config: lazygit', ':cd ~/.config/lazygit<CR>:e config.yml<CR>'),
       dashboard.button('n', '  Config: neovim', ':cd ~/.config/nvim<CR>:e init.lua<CR>'),
