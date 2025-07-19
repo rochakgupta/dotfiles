@@ -65,7 +65,7 @@ cask "contexts" # Purchased
 cask "coteditor"
 cask "daisydisk" # Purchased
 cask "firefox"
-cask "flux"
+cask "flux-app"
 cask "font-agave-nerd-font"
 cask "font-cascadia-mono-nf"
 cask "font-fira-mono-nerd-font"
