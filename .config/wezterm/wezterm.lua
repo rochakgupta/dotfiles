@@ -41,7 +41,7 @@ local font = ({
   { family = 'Mononoki', size = 13, weight = 'DemiBold' },
   { family = 'SauceCodePro', size = 12.5, weight = 'DemiBold' },
   { family = 'UbuntuMono', size = 14.5, weight = 'Regular' },
-})[4]
+})[3]
 
 config.font_size = font.size
 config.font = wezterm.font({
