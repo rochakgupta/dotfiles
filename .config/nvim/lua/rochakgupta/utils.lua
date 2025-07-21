@@ -73,6 +73,14 @@ function M.is_table_value(tbl, value)
   return false
 end
 
+function M.get_table_keys(tbl)
+  keys = {}
+  for k, _ in pairs(tbl) do
+    table.insert(keys, k)
+  end
+  return keys
+end
+
 function M.split(string, separator)
   local tbl = {}
   for str in string.gmatch(string, '[^' .. separator .. ']+') do
