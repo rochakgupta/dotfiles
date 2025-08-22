@@ -4,6 +4,7 @@
 export TERM=xterm-256color
 export CLICOLOR=1
 export KEYTIMEOUT=1
+export XDG_CONFIG_HOME=$HOME/.config
 export PATH=$HOME/.local/bin:$PATH
 
 has() {
@@ -205,7 +206,6 @@ fi
 # lazygit
 ################################################################################
 if has lazygit; then
-    export CONFIG_DIR=$HOME/.config/lazygit
     alias c=lazygit
 else
     warn "lazygit not found"
