@@ -41,6 +41,9 @@ return {
         enabled = vim.g.rg_snacks_explorer,
         replace_netrw = false,
       },
+      image = {
+        formats = {},
+      },
       indent = {
         enabled = vim.g.rg_snacks_indent,
         animate = {
