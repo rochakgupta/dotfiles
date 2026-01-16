@@ -38,7 +38,7 @@ config.audible_bell = 'Disabled'
 local font = ({
   { family = 'FiraMono', size = 12.5, weight = 500 },
   { family = 'JetbrainsMono', size = 12.5, weight = 'DemiBold' },
-  { family = 'Mononoki', size = 13, weight = 'DemiBold' },
+  { family = 'Mononoki', size = 12.5, weight = 'DemiBold' },
   { family = 'SauceCodePro', size = 12.5, weight = 'DemiBold' },
   { family = 'UbuntuMono', size = 14.5, weight = 'Regular' },
 })[3]
