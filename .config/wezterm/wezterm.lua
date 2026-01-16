@@ -6,11 +6,12 @@ local config = wezterm.config_builder()
 
 config.max_fps = 120
 
+local window_padding = 0
 config.window_padding = {
-  left = '0',
-  right = '0',
-  top = '0',
-  bottom = '0',
+  left = window_padding,
+  right = window_padding,
+  top = window_padding,
+  bottom = window_padding,
 }
 
 config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
