@@ -10,7 +10,7 @@ return {
       'saghen/blink.cmp', -- Configured in blink.lua
       cond = vim.g.rg_blink,
     },
-    'SmiteshP/nvim-navbuddy', -- Configured in nvim-navbuddy.lua
+    'hasansujon786/nvim-navbuddy', -- Configured in nvim-navbuddy.lua
     {
       'j-hui/fidget.nvim',
       tag = 'legacy',
