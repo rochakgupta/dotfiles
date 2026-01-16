@@ -14,6 +14,14 @@ return {
     vim.keymap.set('n', '<leader>ha', function()
       harpoon:list():add()
     end, { desc = 'Harpoon: Add file' })
+
+    vim.keymap.set('n', '[h', function()
+      harpoon:list():prev()
+    end, { desc = 'Harpoon: Previous file' })
+    vim.keymap.set('n', ']h', function()
+      harpoon:list():next()
+    end, { desc = 'Harpoon: Next file' })
+
     vim.keymap.set('n', '<leader>hu', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = 'Harpoon: Toggle UI' })
