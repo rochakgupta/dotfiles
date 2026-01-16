@@ -6,6 +6,7 @@ return {
       'junegunn/fzf',
       build = './install --bin',
     },
+    'ThePrimeagen/harpoon',
   },
   config = function()
     local fzf_lua = require('fzf-lua')
@@ -147,16 +148,30 @@ return {
 
       -- Harpoon
       vim.keymap.set('n', '<leader>hs', function()
-        local harpoon_files = require('harpoon'):list()
-        local file_paths = {}
-        for _, item in ipairs(harpoon_files.items) do
-          table.insert(file_paths, item.value)
-        end
-
-        fzf_lua.fzf_exec(file_paths, {
+        fzf_lua.fzf_exec(function(fzf_cb)
+          for _, item in pairs(require('harpoon'):list().items) do
+            if item and item.value then
+              fzf_cb(item.value)
+            end
+          end
+          fzf_cb()
+        end, {
           prompt = 'Harpoon> ',
           previewer = 'builtin',
-          actions = vim.tbl_extend('force', fzf_lua.defaults.actions.files, opts.actions.files),
+          actions = vim.tbl_extend('force', fzf_lua.defaults.actions.files, {
+            ['enter'] = actions.file_edit_or_qf,
+            ['ctrl-s'] = actions.file_split,
+            ['ctrl-v'] = actions.file_vsplit,
+            ['ctrl-q'] = actions.file_edit_or_qf,
+            ['ctrl-x'] = {
+              function(selected_items)
+                for _, selected_item in ipairs(selected_items) do
+                  require('harpoon'):list():remove({ value = selected_item })
+                end
+              end,
+              fzf_lua.actions.resume,
+            },
+          }),
         })
       end, { desc = 'FzfLua + Harpoon: Search files' })
     end
