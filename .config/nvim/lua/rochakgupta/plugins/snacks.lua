@@ -1,5 +1,8 @@
 return {
   'folke/snacks.nvim',
+  dependencies = {
+    'ThePrimeagen/harpoon',
+  },
   priority = 1000,
   lazy = false,
   config = function()
@@ -180,6 +183,52 @@ return {
       vim.keymap.set('n', '<leader>gg', require('snacks.picker').git_log_file, { desc = 'Snacks: Search git log for file' })
       vim.keymap.set('n', '<leader>gb', require('snacks.picker').git_log_line, { desc = 'Snacks: Search git log for line' })
       vim.keymap.set('n', '<leader>gd', require('snacks.picker').git_diff, { desc = 'Snacks: Search git diff' })
+
+      -- Harpoon
+      local normalize_list = function(t)
+        local normalized = {}
+        for _, v in pairs(t) do
+          if v ~= nil then
+            table.insert(normalized, v)
+          end
+        end
+        return normalized
+      end
+      vim.keymap.set('n', '<leader>hs', function()
+        require('snacks.picker')({
+          finder = function()
+            local harpoon = require('harpoon')
+            local file_paths = {}
+            local list = normalize_list(harpoon:list().items)
+            for i, item in ipairs(list) do
+              table.insert(file_paths, { text = item.value, file = item.value })
+            end
+            return file_paths
+          end,
+          win = {
+            input = {
+              keys = { ['<c-x>'] = { 'harpoon_delete', mode = { 'i', 'n' } } },
+            },
+            list = {
+              keys = { ['<c-x>'] = { 'harpoon_delete' } },
+            },
+          },
+          actions = {
+            harpoon_delete = function(picker, item)
+              local harpoon = require('harpoon')
+              local selected_items = picker:selected()
+              if #selected_items == 0 then
+                selected_items = { item }
+              end
+              for _, selected_item in ipairs(selected_items) do
+                harpoon:list():remove({ value = selected_item.text })
+              end
+              harpoon:list().items = normalize_list(harpoon:list().items)
+              picker:find({ refresh = true })
+            end,
+          },
+        })
+      end, { desc = 'Snacks + Harpoon: Search files' })
     end
 
     if vim.g.rg_snacks_words then
