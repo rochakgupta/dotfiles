@@ -40,4 +40,5 @@ nnoremap <leader>e :e ~/.config/ideavim/ideavimrc<CR>
 nnoremap <leader>r :action IdeaVim.ReloadVimRc.reload<CR>
 
 nnoremap gr :action FindUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
 nnoremap <leader>ss :action FindInPath<CR>
