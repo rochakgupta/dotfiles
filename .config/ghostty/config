@@ -4,6 +4,7 @@
 # Additionally, each config option is also explained in detail
 # on Ghostty's website, at https://ghostty.org/docs/config.
 
+background = black
 font-family = Mononoki Nerd Font Mono
 font-style = Bold
 theme = tokyonight
