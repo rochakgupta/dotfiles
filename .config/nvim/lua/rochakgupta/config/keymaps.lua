@@ -20,7 +20,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Keymap to toggle line numbers
-vim.keymap.set('n', '<C-g>', ':set number! relativenumber!<CR>', { desc = 'Toggle line numbers' })
+vim.keymap.set('n', '<M-l>', ':set number! relativenumber!<CR>', { desc = 'Toggle line numbers' })
 
 -- Quickfix/Location list keymaps
 local last_list_type = 'quickfix'
