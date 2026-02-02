@@ -32,7 +32,7 @@ return {
     vim.keymap.set('t', '<M-[>', '<C-\\><C-n>:FloatermPrev<CR>', { desc = 'Floaterm: Previous terminal' })
     vim.keymap.set('t', '<M-x>', '<C-\\><C-n>:FloatermKill<CR>', { desc = 'Floaterm: Kill terminal' })
     vim.keymap.set('n', '<M-x>', ':FloatermKill!<CR>', { desc = 'Floaterm: Kill all terminals' })
-    vim.keymap.set('t', '<M-g>', '<C-\\><C-n>:set number! relativenumber!<CR>A', { desc = 'Floaterm: Toggle line numbers' })
-    vim.keymap.set('t', '<M-Space>', '<C-\\><C-n>', { desc = 'Floaterm: Enter normal mode' })
+    vim.keymap.set('t', '<M-l>', '<C-\\><C-n>:set number! relativenumber!<CR>A', { desc = 'Floaterm: Toggle line numbers' })
+    vim.keymap.set('t', '<M-n>', '<C-\\><C-n>', { desc = 'Floaterm: Enter normal mode' })
   end,
 }
