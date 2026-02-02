@@ -26,7 +26,7 @@ return {
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = 'Harpoon: Toggle UI' })
 
-    for id = 1, 5 do
+    for id = 1, 9 do
       vim.keymap.set('n', '<leader>h' .. id, function()
         harpoon:list():select(id)
       end, { desc = 'Harpoon: Open file [' .. id .. ']' })
