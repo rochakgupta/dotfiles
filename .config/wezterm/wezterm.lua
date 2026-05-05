@@ -37,12 +37,13 @@ end)
 config.audible_bell = 'Disabled'
 
 local font = ({
+  { family = 'ComicShannsMono', size = 13, weight = 'Regular' },
   { family = 'FiraMono', size = 12.5, weight = 500 },
   { family = 'JetbrainsMono', size = 12.5, weight = 'Regular' },
   { family = 'Mononoki', size = 12.5, weight = 'Regular' },
   { family = 'SauceCodePro', size = 12.5, weight = 'Regular' },
   { family = 'UbuntuMono', size = 14.5, weight = 'Regular' },
-})[3]
+})[4]
 
 config.font_size = font.size
 config.font = wezterm.font({
