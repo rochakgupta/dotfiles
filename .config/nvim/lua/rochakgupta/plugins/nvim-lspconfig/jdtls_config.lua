@@ -1,5 +1,4 @@
 local jdtls = require('jdtls')
-local jdtls_setup = require('jdtls.setup')
 local mason_registry = require('mason-registry')
 local utils = require('rochakgupta.utils')
 
@@ -26,7 +25,10 @@ function M.setup(args)
   local jdtls_install = mason_registry.get_package('jdtls'):get_install_path()
   local lombok = jdtls_install .. '/lombok.jar'
 
-  local root_dir = jdtls_setup.find_root({ '.git' }) or vim.fn.getcwd()
+  local project_root = utils.get_project_root()
+  utils.notify_debug('project root: ' .. (project_root or 'nil'))
+
+  local root_dir = project_root or vim.fn.getcwd()
   utils.notify_debug('root: ' .. root_dir)
 
   local data = vim.fn.expand('~/.jdtls' .. root_dir)
