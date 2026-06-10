@@ -8,3 +8,5 @@ set scroll-page-aware "true"
 set scroll-step 20
 set selection-clipboard clipboard
 set window-title-basename "true"
+set window-height 3000
+set window-width 3000
