@@ -118,7 +118,7 @@ fi
 ################################################################################
 # java
 ################################################################################
-JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+JAVA_HOME=/Library/Java/JavaVirtualMachines/21.0.2.jdk/Contents/Home
 if [[ -d $JAVA_HOME ]]; then
     export JAVA_HOME
 else
