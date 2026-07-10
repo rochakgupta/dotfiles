@@ -9,3 +9,5 @@ font-family = Mononoki Nerd Font Mono
 font-style = Bold
 theme = tokyonight
 shell-integration-features = no-cursor
+font-size = 12
+macos-titlebar-style = tabs
