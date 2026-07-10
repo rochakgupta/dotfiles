@@ -110,7 +110,7 @@ fi
 # go
 ################################################################################
 if has go; then
-    export PATH=$PATH:$(go env GOPATH)/bin
+    export PATH=$PATH:$(go env GOBIN)
 else
     warn "go not found"
 fi
