@@ -1,4 +1,5 @@
 tap "gromgit/brewtils"
+tap "homebrew-zathura/zathura", "https://github.com/homebrew-zathura/homebrew-zathura.git", trusted: true
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
@@ -8,7 +9,6 @@ tap "metafates/mangal"
 tap "nikitabobko/tap"
 tap "rochakgupta/versions"
 tap "valkyrie00/bbrew", "https://github.com/Valkyrie00/homebrew-bbrew"
-tap "zegervdv/zathura"
 brew "atuin"
 brew "bash"
 brew "bat"
@@ -61,14 +61,14 @@ brew "gromgit/brewtils/taproom"
 brew "knqyf263/pet/pet"
 brew "metafates/mangal/mangal"
 brew "valkyrie00/bbrew/bbrew"
-brew "zegervdv/zathura/zathura"
 cask "alfred" # Purchased
 brew "anomalyco/tap/opencode", trusted: true
+brew "homebrew-zathura/zathura/zathura"
+brew "homebrew-zathura/zathura/zathura-cb"
+brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
 brew "mhersson/formulas/mpls", trusted: true
 brew "rochakgupta/versions/neovim@0.11.7", trusted: true
 cask "nikitabobko/tap/aerospace"
-brew "zegervdv/zathura/zathura-cb"
-brew "zegervdv/zathura/zathura-pdf-poppler"
 cask "antigravity-cli"
 cask "appcleaner"
 cask "calibre"
