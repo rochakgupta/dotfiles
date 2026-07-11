@@ -51,6 +51,18 @@ return {
           winblend = 0,
         },
       },
+      confirmation = {
+        border = vim.g.rg_border,
+      },
+      progress = {
+        border = vim.g.rg_border,
+      },
+      ssh = {
+        border = vim.g.rg_border,
+      },
+      keymaps_help = {
+        border = vim.g.rg_border,
+      },
     })
     vim.keymap.set('n', '<leader>m', require('oil').open_float, { desc = 'Oil: Open parent directory' })
   end,
