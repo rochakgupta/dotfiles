@@ -36,7 +36,12 @@ return {
       mode = 2,
     }
 
-    local sections_lualine_x = { 'encoding', 'fileformat', 'filetype' }
+    local sections_lualine_x = {
+      'encoding',
+      'fileformat',
+      'filetype',
+    }
+
     if vim.g.rg_lsp_progress then
       table.insert(sections_lualine_x, 1, function()
         return require('lsp-progress').progress()
@@ -56,8 +61,47 @@ return {
       },
       sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { "vim.fn['zoom#statusline']()", filename },
+        lualine_b = {
+          'branch',
+          'diff',
+          'diagnostics',
+        },
+        lualine_c = {
+          filename,
+          {
+            function()
+              return ''
+            end,
+            cond = function()
+              return vim.g.disable_autoformat
+            end,
+            color = function()
+              return 'Special'
+            end,
+          },
+          {
+            function()
+              return '󰚩'
+            end,
+            cond = function()
+              return #require('sidekick.status').cli() > 0
+            end,
+            color = function()
+              return 'Special'
+            end,
+          },
+          {
+            function()
+              return ''
+            end,
+            cond = function()
+              return vim.fn['zoom#statusline']() == 'zoomed'
+            end,
+            color = function()
+              return 'Special'
+            end,
+          },
+        },
         lualine_x = sections_lualine_x,
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
