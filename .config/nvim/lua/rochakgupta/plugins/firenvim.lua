@@ -6,11 +6,9 @@ return {
   'glacambre/firenvim',
   -- Lazy load firenvim
   -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
-  lazy = vim.g.rg_not_started_by_firenvim,
+  cond = vim.g.started_by_firenvim,
   module = false,
-  build = function()
-    vim.fn['firenvim#install'](0)
-  end,
+  build = ':call firenvim#install(0)',
   config = function()
     local filename = function(ext)
       return '/tmp/{hostname}_{pathname%10}' .. '.' .. ext

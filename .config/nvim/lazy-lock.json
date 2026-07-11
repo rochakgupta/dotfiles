@@ -9,7 +9,7 @@
   "blink.cmp": { "branch": "main", "commit": "cb5e346d9e0efa7a3eee7fd4da0b690c48d2a98e" },
   "conform.nvim": { "branch": "nvim-0.9", "commit": "4e97712607bfdcadc097823339599e5bf05f97f9" },
   "fidget.nvim": { "branch": "main", "commit": "688b4fec4517650e29c3e63cfbb6e498b3112ba1" },
-  "firenvim": { "branch": "master", "commit": "e412ab23c5b56b7eb3c361da8a1f8a2e94c51001" },
+  "firenvim": { "branch": "master", "commit": "af775c4a1cef5a1e833ae5c6d81afe229ceb639e" },
   "fzf": { "branch": "master", "commit": "24832e97ef9640e5f859ede8dc163cf3c27145cb" },
   "fzf-floaterm": { "branch": "master", "commit": "c023f97e49e894ac5649894b7e05505b6df9b055" },
   "fzf-lua": { "branch": "main", "commit": "532d463f5c83595192fe740572d8fd6902b2217a" },
