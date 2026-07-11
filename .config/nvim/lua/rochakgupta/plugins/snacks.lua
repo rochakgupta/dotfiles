@@ -116,6 +116,12 @@ return {
               },
             },
           },
+          lines = {
+            layout = {
+              preset = 'dropdown',
+              preview = 'preview',
+            },
+          },
         },
         actions = {
           sidekick_send = function(...)
