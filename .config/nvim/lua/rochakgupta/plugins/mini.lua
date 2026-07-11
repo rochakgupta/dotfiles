@@ -5,7 +5,7 @@ return {
     require('mini.align').setup()
 
     require('mini.bracketed').setup({
-      buffer = { options = { wrap = false } },
+      buffer = { suffix = '', options = { wrap = false } },
       comment = { suffix = '', options = { wrap = false } },
       conflict = { options = { wrap = false } },
       diagnostic = { options = { wrap = false } },
@@ -14,7 +14,7 @@ return {
       jump = { suffix = '', options = { wrap = false } },
       location = { suffix = '', options = { wrap = false } },
       oldfile = { suffix = '', options = { wrap = false } },
-      quickfix = { options = { wrap = false } },
+      quickfix = { suffix = '', options = { wrap = false } },
       treesitter = { suffix = '', options = { wrap = false } },
       undo = { options = { wrap = false } },
       window = { options = { wrap = false } },
