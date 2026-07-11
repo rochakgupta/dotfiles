@@ -7,10 +7,10 @@ tap "metafates/mangal", trusted: true
 tap "mhersson/formulas"
 tap "nikitabobko/tap", trusted: true
 tap "rochakgupta/versions"
-tap "valkyrie00/bbrew", "https://github.com/Valkyrie00/homebrew-bbrew"
 brew "atuin"
 brew "bash"
 brew "bat"
+brew "bbrew"
 brew "bitwarden-cli"
 brew "btop"
 brew "cloc"
@@ -58,7 +58,6 @@ brew "yank"
 brew "zoxide"
 brew "zplug"
 brew "gromgit/brewtils/taproom"
-brew "valkyrie00/bbrew/bbrew"
 cask "alfred" # Purchased
 brew "anomalyco/tap/opencode", trusted: true
 brew "homebrew-zathura/zathura/zathura"
