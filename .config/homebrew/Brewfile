@@ -1,4 +1,3 @@
-tap "gromgit/brewtils"
 tap "homebrew-zathura/zathura", "https://github.com/homebrew-zathura/homebrew-zathura.git", trusted: true
 tap "homebrew/bundle"
 tap "homebrew/core"
@@ -45,6 +44,7 @@ brew "plantuml"
 brew "ripgrep"
 brew "slides"
 brew "starship"
+brew "taproom"
 brew "tmux"
 brew "tree"
 brew "typst"
@@ -57,7 +57,6 @@ brew "yadm"
 brew "yank"
 brew "zoxide"
 brew "zplug"
-brew "gromgit/brewtils/taproom"
 cask "alfred" # Purchased
 brew "anomalyco/tap/opencode", trusted: true
 brew "homebrew-zathura/zathura/zathura"
