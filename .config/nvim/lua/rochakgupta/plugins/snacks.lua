@@ -45,7 +45,7 @@ return {
         replace_netrw = false,
       },
       image = {
-        formats = {},
+        enabled = false,
       },
       indent = {
         enabled = vim.g.rg_snacks_indent,
