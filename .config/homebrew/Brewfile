@@ -1,7 +1,6 @@
 tap "gromgit/brewtils"
 tap "homebrew-zathura/zathura", "https://github.com/homebrew-zathura/homebrew-zathura.git", trusted: true
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "knqyf263/pet"
 tap "martido/graph"
