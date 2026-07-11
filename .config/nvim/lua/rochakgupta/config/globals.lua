@@ -32,15 +32,16 @@ vim.g.rg_snacks_indent = vim.g.rg_not_started_by_firenvim and not vim.g.rg_inden
 vim.g.rg_illuminate = false
 vim.g.rg_snacks_words = not vim.g.rg_illuminate
 
+-- Markdown Preview
+vim.g.rg_markdown_preview = true
+vim.g.rg_mpls = not vim.g.rg_markdown_preview
+
 -- Others
 vim.g.rg_gitlinker = true
 vim.g.rg_gitsigns = vim.g.rg_not_started_by_firenvim -- Buggy and not needed in firenvim, so disabling
 vim.g.rg_lualine = vim.g.rg_not_started_by_firenvim
 vim.g.rg_sleuth = false
 vim.g.rg_yanky = true
-
--- Plugin specific --
-vim.g.rg_plantuml_local = true
 
 -- Log level --
 vim.g.rg_log_level = vim.log.levels.OFF

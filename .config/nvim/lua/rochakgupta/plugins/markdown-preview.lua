@@ -7,11 +7,13 @@ return {
   build = function()
     vim.fn['mkdp#util#install']()
   end,
+  cond = vim.g.rg_markdown_preview,
   config = function()
     -- Run `plantuml -picoweb` to start the server
     vim.g.mkdp_preview_options = {
       uml = {
-        server = vim.g.rg_plantuml_local and 'http://localhost:8080' or 'http://www.plantuml.com/plantuml',
+        server = 'http://localhost:8080',
+        -- server = 'http://www.plantuml.com/plantuml',
         imageFormat = 'svg',
       },
     }
