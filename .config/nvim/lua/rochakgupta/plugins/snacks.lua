@@ -117,11 +117,17 @@ return {
             },
           },
         },
+        actions = {
+          sidekick_send = function(...)
+            return require('sidekick.cli.picker.snacks').send(...)
+          end,
+        },
         win = {
           input = {
             keys = {
               ['<c-a>'] = '',
               ['<c-o>'] = { 'select_all', mode = { 'n', 'i' } },
+              ['<a-a>'] = { 'sidekick_send', mode = { 'n', 'i' } },
             },
           },
           list = {
