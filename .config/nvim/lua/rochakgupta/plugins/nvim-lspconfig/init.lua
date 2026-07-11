@@ -13,11 +13,23 @@ return {
     'hasansujon786/nvim-navbuddy', -- Configured in nvim-navbuddy.lua
     {
       'j-hui/fidget.nvim',
-      tag = 'legacy',
       cond = vim.g.rg_fidget,
       opts = {
-        window = {
-          blend = 0,
+        progress = {
+          ignore_done_already = true,
+          ignore_empty_message = true,
+          display = {
+            render_limit = 3,
+            done_ttl = 1,
+          },
+        },
+        notification = {
+          window = {
+            -- relative = 'win',
+            tabstop = 2,
+            winblend = 100,
+            max_width = 100,
+          },
         },
       },
     },

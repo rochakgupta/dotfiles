@@ -21,8 +21,8 @@ vim.g.rg_nvim_tree = true
 vim.g.rg_snacks_explorer = true
 
 -- Progress
-vim.g.rg_fidget = false
-vim.g.rg_lsp_progress = true
+vim.g.rg_fidget = true
+vim.g.rg_lsp_progress = false
 
 -- Indent line
 vim.g.rg_indent_blankline = vim.g.rg_not_started_by_firenvim
