@@ -65,6 +65,7 @@ brew "valkyrie00/bbrew/bbrew"
 brew "zegervdv/zathura/zathura"
 cask "alfred" # Purchased
 brew "anomalyco/tap/opencode", trusted: true
+brew "mhersson/formulas/mpls", trusted: true
 cask "nikitabobko/tap/aerospace"
 brew "zegervdv/zathura/zathura-cb"
 brew "zegervdv/zathura/zathura-pdf-poppler"
