@@ -3,6 +3,7 @@ return {
   'clangd',
   'esbonio',
   'gopls',
+  'gradle_ls',
   'jdtls',
   'jsonls',
   'lemminx',

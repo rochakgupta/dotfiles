@@ -34,6 +34,8 @@ lspconfig.esbonio.setup({})
 
 lspconfig.gopls.setup({})
 
+lspconfig.gradle_ls.setup({})
+
 vim.api.nvim_create_autocmd('FileType', {
   desc = 'Enable jdtls when a java file is opened',
   pattern = 'java',
