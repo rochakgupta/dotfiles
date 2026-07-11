@@ -3,9 +3,9 @@ tap "homebrew-zathura/zathura", "https://github.com/homebrew-zathura/homebrew-za
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "martido/graph", trusted: true
-tap "nikitabobko/tap"
 tap "metafates/mangal", trusted: true
 tap "mhersson/formulas"
+tap "nikitabobko/tap", trusted: true
 tap "rochakgupta/versions"
 tap "valkyrie00/bbrew", "https://github.com/Valkyrie00/homebrew-bbrew"
 brew "atuin"
