@@ -29,6 +29,7 @@ return {
         'norg',
         'python',
         'regex',
+        'ruby',
         'rust',
         'scss',
         'smithy',
