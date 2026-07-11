@@ -5,8 +5,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "knqyf263/pet"
 tap "martido/graph"
-tap "metafates/mangal"
 tap "nikitabobko/tap"
+tap "metafates/mangal", trusted: true
 tap "rochakgupta/versions"
 tap "valkyrie00/bbrew", "https://github.com/Valkyrie00/homebrew-bbrew"
 brew "atuin"
@@ -60,13 +60,13 @@ brew "zoxide"
 brew "zplug"
 brew "gromgit/brewtils/taproom"
 brew "knqyf263/pet/pet"
-brew "metafates/mangal/mangal"
 brew "valkyrie00/bbrew/bbrew"
 cask "alfred" # Purchased
 brew "anomalyco/tap/opencode", trusted: true
 brew "homebrew-zathura/zathura/zathura"
 brew "homebrew-zathura/zathura/zathura-cb"
 brew "homebrew-zathura/zathura/zathura-pdf-mupdf"
+brew "metafates/mangal/mangal"
 brew "mhersson/formulas/mpls", trusted: true
 brew "rochakgupta/versions/neovim@0.11.7", trusted: true
 cask "nikitabobko/tap/aerospace"
