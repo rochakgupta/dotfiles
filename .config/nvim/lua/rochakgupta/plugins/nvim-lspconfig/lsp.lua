@@ -118,6 +118,11 @@ lspconfig.ts_ls.setup({})
 lspconfig.vimls.setup({})
 
 lspconfig.yamlls.setup({
+  filetypes = {
+    'yaml',
+    'yaml.docker-compose',
+    'yaml.gitlab',
+  },
   settings = {
     redhat = {
       telemetry = {
