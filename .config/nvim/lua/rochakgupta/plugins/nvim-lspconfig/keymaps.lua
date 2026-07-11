@@ -78,6 +78,26 @@ function M.init(bufnr)
     end
   end, 'Go to implementation')
 
+  nmap('ge', function()
+    if vim.g.rg_fzf_lua then
+      require('fzf-lua').lsp_incoming_calls({
+        jump1 = true,
+      })
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_incoming_calls()
+    end
+  end, 'List incoming calls')
+
+  nmap('go', function()
+    if vim.g.rg_fzf_lua then
+      require('fzf-lua').lsp_outgoing_calls()
+    elseif vim.g.rg_snacks_picker then
+      require('snacks.picker').lsp_outgoing_calls({
+        auto_confirm = false,
+      })
+    end
+  end, 'List outgoing calls')
+
   nmap('gt', function()
     if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_typedefs({
