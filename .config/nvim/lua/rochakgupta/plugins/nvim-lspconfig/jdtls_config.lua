@@ -59,8 +59,8 @@ function M.setup(args)
           updateBuildConfiguration = 'interactive',
           runtimes = {
             {
-              name = 'JavaSE-17',
-              path = '/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home',
+              name = 'JavaSE-21',
+              path = '/Library/Java/JavaVirtualMachines/21.0.2.jdk/Contents/Home',
               default = true,
             },
           },
