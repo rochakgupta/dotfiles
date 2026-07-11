@@ -15,7 +15,7 @@ function M.init(bufnr)
   nmap('gd', function()
     if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_definitions({
-        jump_to_single_result = true,
+        jump1 = true,
       })
     elseif vim.g.rg_snacks_picker then
       require('snacks.picker').lsp_definitions()
@@ -35,7 +35,7 @@ function M.init(bufnr)
   nmap('gr', function()
     if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_references({
-        jump_to_single_result = true,
+        jump1 = true,
         includeDeclaration = false,
       })
     elseif vim.g.rg_snacks_picker then
@@ -61,7 +61,7 @@ function M.init(bufnr)
   nmap('gi', function()
     if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_implementations({
-        jump_to_single_result = true,
+        jump1 = true,
       })
     elseif vim.g.rg_snacks_picker then
       require('snacks.picker').lsp_implementations()
@@ -81,7 +81,7 @@ function M.init(bufnr)
   nmap('gt', function()
     if vim.g.rg_fzf_lua then
       require('fzf-lua').lsp_typedefs({
-        jump_to_single_result = true,
+        jump1 = true,
       })
     elseif vim.g.rg_snacks_picker then
       require('snacks.picker').lsp_type_definitions()
