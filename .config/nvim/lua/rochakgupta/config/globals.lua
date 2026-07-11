@@ -41,6 +41,7 @@ vim.g.rg_gitlinker = true
 vim.g.rg_gitsigns = vim.g.rg_not_started_by_firenvim -- Buggy and not needed in firenvim, so disabling
 vim.g.rg_lualine = vim.g.rg_not_started_by_firenvim
 vim.g.rg_sleuth = false
+vim.g.rg_guess_indent = false
 vim.g.rg_yanky = true
 
 -- Log level --
