@@ -122,6 +122,15 @@ return {
               preview = 'preview',
             },
           },
+          git_status = {
+            win = {
+              input = {
+                keys = {
+                  ['<Tab>'] = { 'select_and_next', mode = { 'i', 'n' } },
+                },
+              },
+            },
+          },
         },
         actions = {
           sidekick_send = function(...)
