@@ -33,7 +33,7 @@ return {
           height = 0,
         },
         keys = {
-          prompt = { '<c-z>', 'prompt', mode = 't', desc = 'insert prompt or context' },
+          prompt = { '<c-o>', 'prompt', mode = 't', desc = 'insert prompt or context' },
         },
       },
     },
