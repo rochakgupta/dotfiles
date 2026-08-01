@@ -32,9 +32,11 @@ vim.g.rg_snacks_indent = vim.g.rg_not_firenvim and not vim.g.rg_indent_blankline
 vim.g.rg_illuminate = false
 vim.g.rg_snacks_words = not vim.g.rg_illuminate
 
--- Markdown Preview
+-- Markdown
 vim.g.rg_markdown_preview = true
 vim.g.rg_mpls = not vim.g.rg_markdown_preview
+vim.g.rg_touchup = true
+vim.g.rg_render_markdown = not vim.g.rg_touchup
 
 -- Others
 vim.g.rg_gitlinker = true
