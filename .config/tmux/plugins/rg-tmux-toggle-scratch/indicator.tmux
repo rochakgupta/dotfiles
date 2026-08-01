@@ -4,7 +4,7 @@ current_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 scripts_dir="$current_dir/scripts"
 
 set-hook() {
-    tmux set-hook -g "$1" "run-shell -b \"$scripts_dir/update-indicators.bash\""
+    tmux set-hook -g "$1" "run-shell -b \"$scripts_dir/update-indicators.sh\""
 }
 
 set-hook session-created
