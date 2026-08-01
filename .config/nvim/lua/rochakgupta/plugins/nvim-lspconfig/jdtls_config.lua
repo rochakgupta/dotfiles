@@ -1,5 +1,4 @@
 local jdtls = require('jdtls')
-local mason_registry = require('mason-registry')
 local utils = require('rochakgupta.utils')
 
 local M = {}
@@ -7,7 +6,6 @@ local M = {}
 function M.setup(args)
   local success, err = pcall(function()
     vim.validate({
-      on_attach = { args.on_attach, 'function' },
       capabilities = { args.capabilities, 'table' },
     })
   end)
@@ -17,12 +15,12 @@ function M.setup(args)
     return
   end
 
-  if not mason_registry.is_installed('jdtls') then
+  local jdtls_install = vim.fn.expand('$MASON/packages/jdtls')
+  if vim.fn.isdirectory(jdtls_install) == 0 then
     utils.notify_warn('Install jdtls via mason')
     return
   end
 
-  local jdtls_install = mason_registry.get_package('jdtls'):get_install_path()
   local lombok = jdtls_install .. '/lombok.jar'
 
   local project_root = utils.get_project_root()
@@ -45,7 +43,6 @@ function M.setup(args)
       data,
     },
     root_dir = root_dir,
-    on_attach = args.on_attach,
     capabilities = args.capabilities,
     init_options = {
       extendedClientCapabilities = extended_client_capabilities,

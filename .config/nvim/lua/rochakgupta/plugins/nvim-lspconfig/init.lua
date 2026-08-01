@@ -37,7 +37,6 @@ return {
     'b0o/schemastore.nvim',
   },
   config = function()
-    require('rochakgupta.plugins.nvim-lspconfig.ui')
     require('rochakgupta.plugins.nvim-lspconfig.lsp')
   end,
 }
