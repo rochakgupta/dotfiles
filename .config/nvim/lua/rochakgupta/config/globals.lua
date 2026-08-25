@@ -35,8 +35,7 @@ vim.g.rg_snacks_words = not vim.g.rg_illuminate
 -- Markdown
 vim.g.rg_markdown_preview = true
 vim.g.rg_mpls = not vim.g.rg_markdown_preview
-vim.g.rg_touchup = true
-vim.g.rg_render_markdown = not vim.g.rg_touchup
+vim.g.rg_render_markdown = true
 
 -- Others
 vim.g.rg_gitlinker = true
